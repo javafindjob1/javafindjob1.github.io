@@ -1,1 +1,31 @@
-Hello World
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="htl"></h1>
+  <script>
+    const url = "https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo?room_id=4258901&protocol=0,1&format=0,1,2&codec=0,1,2&qn=0&platform=web&ptype=8&dolby=5&panorama=1&hdr_type=0,1"
+
+    // 使用 fetch 发送 GET 请求
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        document.getElementById("htl").innerHTML = response.statusText;
+        return response.json(); // 假设响应是 JSON 格式
+      })
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+
+  </script>
+</body>
+</html>
