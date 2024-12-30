@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/index.css">
+  <title>尚硅谷</title>
+  <link rel="favicon icon" href="./flex/favicon.ico">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./flex/index.css">
 </head>
+
 <body>
-  <img src="https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/5c0f7ba1010c4e988db3a792a1f6c619~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1735182407&x-signature=Odw3q3xLn2DciHvn4DCPIUBT%2FtI%3D" alt="">
-  <h1 id="htl"></h1>
-  <script>
-    const url = "https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo?room_id=4258901&protocol=0,1&format=0,1,2&codec=0,1,2&qn=0&platform=web&ptype=8&dolby=5&panorama=1&hdr_type=0,1"
-
-    // 使用 fetch 发送 GET 请求
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok ' + response.statusText);
-        }
-        document.getElementById("htl").innerHTML = response.statusText;
-        return response.json(); // 假设响应是 JSON 格式
-      })
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-
-  </script>
+  <header class="page-header clearfix">
+    <ul class="clearfix">
+      <li><a href="#">国内校区</a></li>
+      <li><a href="#">缅甸校区</a></li>
+      <li><a href="#">非洲校区</a></li>
+      <li><a href="#">美国校区</a></li>
+    </ul>
+  </header>
+  <div class="nav">
+    <ul class="">
+      <li>
+        <a href="#">
+          <img src="./flex/item1.png" alt="" srcset="">
+          <span>我的邮箱</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./flex/item2.png" alt="" srcset="">
+          <span>云服务</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./flex/item3.png" alt="" srcset="">
+          <span>手机课堂</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./flex/item4.png" alt="" srcset="">
+          <span>微信服务</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </body>
+
 </html>
