@@ -4,6 +4,7 @@ body {
   background: white url("./bg.jpg") no-repeat center /cover;
 
   display: flex;
+  justify-content: center;
 }
 
 turbo-frame{
@@ -44,3 +45,10 @@ turbo-frame{
 }
 
 /* #endregion 顶部 */
+
+
+/* #region footer */
+footer{
+  text-align: center;
+}
+/* #endregion footer */
