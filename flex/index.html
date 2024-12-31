@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>尚硅谷</title>
+  <link rel="favicon icon" href="./flex/favicon.ico">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./flex/index-flex.css">
+
+  <script src="./turbo.es2017-umd.js" defer></script>
+</head>
+
+<body>
+  <header class="page-header clearfix">
+    <ul class="clearfix">
+      <li>
+        <a href="./flex/component/about.html" 
+        data-turbo-frame="repo-content-turbo-frame" 
+        data-view-component="true"
+        >国内校区</a>
+      </li>
+      <li><a href="#">缅甸校区</a></li>
+      <li><a href="#">非洲校区</a></li>
+      <li><a href="#">美国校区</a></li>
+    </ul>
+  </header>
+  
+  <turbo-frame id="repo-content-turbo-frame" src="./flex/component/nav.html">
+    <p>加载中...</p>
+  </turbo-frame>
+  <script>
+    document.addEventListener("turbo:load", function () {
+      console.log("turbo:load event");
+    });
+    document.addEventListener("turbo:before-visit", function () {
+      console.log("turbo:before-visit event");
+    });
+    document.addEventListener("turbo:before-fetch-request", function () {
+      console.log("turbo:before-fetch-request event");
+    });
+    document.addEventListener("turbo:before-render", function () {
+      console.log("turbo:before-render event");
+    });
+  </script>
+
+
+</body>
+
+</html>

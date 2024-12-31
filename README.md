@@ -11,4 +11,17 @@ git push origin main
 git config --global http.proxy http://localhost:10809
 git config --global https.proxy http://localhost:10809
 
+#turbo-frame使用
+<!-- 主页 -->
+  <script src="./js/turbo.es2017-umd.js" defer></script>
+  
+  <turbo-frame id="repo-content-turbo-frame" src="./flex/component/nav.html">
+    <p>加载中...</p>
+  </turbo-frame>
 
+<!-- 导航页 -->
+  <turbo-frame id="repo-content-turbo-frame">
+    <style>
+    </style>
+    导航页
+  </turbo-frame>

@@ -1,7 +1,8 @@
 html{
  display: flex; 
 }
-
+body{
+}
 body {
   flex: 1;
   flex-direction: column;

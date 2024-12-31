@@ -1,0 +1,154 @@
+<!-- 导航页 -->
+<turbo-frame id="repo-content-turbo-frame">
+  <style>
+    .live {
+      margin: 100px auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .live .room {
+      /* height: 571px; */
+    }
+
+    .live iframe {
+      width: 1130px;
+      height: 630px;
+      border-radius: 5px;
+    }
+    .live ul{
+      
+      height: 630px;
+      overflow-y: auto;
+    }
+    .live ul li {
+      padding: 12px 5px 0;
+      background-color: gray;
+
+      height: 111px;
+      overflow: hidden;
+    }
+
+    .live ul li:last-child {
+      padding-bottom: 12px;
+    }
+
+    .live img {
+      border-radius: 5px;
+      width: 198px;
+      height: 111px;
+
+      box-sizing: border-box;
+    }
+
+    .live p {
+      color: white;
+      margin: -30px 0px 0px 8px;
+      font-size: 14px;
+    }
+
+
+    .live img:hover {
+      cursor: pointer;
+    }
+
+    .live img.active {
+      border: 2px solid orange;
+    }
+  </style>
+
+  <div class="live">
+    <div class="room leftfix">
+      <iframe frameborder="no" framespacing="0" scrolling="no" allow="autoplay; encrypted-media"
+        allowfullscreen="true"></iframe>
+    </div>
+    <ul class="rightfix">
+      <!-- <li><img src="./bilibili/live/斗鱼封面.png"
+          data-src="https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=31394121&quality=0" alt="">
+        <p>阿明纳</p>
+      </li> -->
+    </ul>
+  </div>
+
+  <script>
+    (function () {
+      var dataImg = [{
+        pic: './bilibili/live/31394121.jpg',
+        room: '31394121',
+        name: '阿明纳',
+      },
+      {
+        pic: './bilibili/live/25452169.jpg',
+        room: '4258901',
+        name: '一根大捷豹',
+      },
+      {
+        pic: './bilibili/live/25452169.jpg',
+        room: '5017073',
+        name: '娜可萌萌',
+      },
+      {
+        pic: './bilibili/live/25452169.jpg',
+        room: '2739685',
+        name: '马蜂来了',
+      },
+      {
+        pic: './bilibili/live/25452169.jpg',
+        room: '25452169',
+        name: '尼可在林中之城',
+      },
+      {
+        pic: './bilibili/live/25452169.jpg',
+        room: '30248024',
+        name: '单刷梁总地狱',
+      },
+      {
+        pic: './bilibili/live/25452169.jpg',
+        room: '25322099',
+        name: '冰冰爱球球',
+      },
+      ]
+
+      dataImg.forEach(function (v) {
+        var li = document.createElement('li')
+        var img = document.createElement('img')
+        var p = document.createElement('p')
+        img.src = v.pic
+        img.setAttribute('data-src', 'https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=' + v.room + '&quality=0')
+        p.innerHTML = v.name
+        li.appendChild(img)
+        li.appendChild(p)
+        document.querySelector('.live ul').appendChild(li)
+      })
+
+
+      var dom = {
+        iframe: document.querySelector(".live .room iframe"),
+        imgs: document.querySelectorAll(".live img")
+      }
+
+
+      dom.imgs.forEach(function (v) {
+        console.log(v)
+        v.addEventListener('click', e => changeIframeSrc(e.target))
+      })
+
+      function changeIframeSrc(img) {
+        const livesrc = img.getAttribute('data-src');
+        // 示例：切换 iframe 的 src 属性
+        dom.iframe.src = livesrc;
+        dom.imgs.forEach(function (v) {
+          v.classList.remove('active')
+        })
+        img.classList.add('active')
+      }
+
+      changeIframeSrc(dom.imgs[0])
+
+    })()
+
+
+  </script>
+
+</turbo-frame>

@@ -4,49 +4,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>尚硅谷</title>
-  <link rel="favicon icon" href="./flex/favicon.ico">
+  <title>游戏攻略</title>
+  <link rel="favicon icon" href="./bilibili/favicon.ico">
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./flex/index-flex.css">
+  <link rel="stylesheet" href="./bilibili/index-flex.css">
+
+  <script src="./js/turbo.es2017-umd.js" defer></script>
+
 </head>
 
 <body>
+
   <header class="page-header clearfix">
     <ul class="clearfix">
-      <li><a href="./flex/component/about.html">国内校区</a></li>
-      <li><a href="#">缅甸校区</a></li>
-      <li><a href="#">非洲校区</a></li>
-      <li><a href="#">美国校区</a></li>
+      <li>
+        <a href="./bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
+          data-view-component="true">主播</a>
+      </li>
+      <li><a href="./bilibili/item/item.html" data-turbo-frame="repo-content-turbo-frame"
+          data-view-component="true">装备列表</a></li>
+      <li><a href="./bilibili/hero/hero.html" data-turbo-frame="repo-content-turbo-frame"
+          data-view-component="true">英雄列表</a></li>
+      <li><a href="./bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
+          data-view-component="true">关于</a></li>
     </ul>
   </header>
-  <div class="nav">
-    <ul class="">
-      <li>
-        <a href="#">
-          <img src="./flex/item1.png" alt="" srcset="">
-          <span>我的邮箱</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="./flex/item2.png" alt="" srcset="">
-          <span>云服务</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="./flex/item3.png" alt="" srcset="">
-          <span>手机课堂</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="./flex/item4.png" alt="" srcset="">
-          <span>微信服务</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+
+  <script>
+     (function () {
+      
+      var dom = {
+        nav: document.querySelector(".page-header ul"),
+        nava: document.querySelectorAll(".page-header ul a"),
+      }
+
+      dom.nav.addEventListener('click', e => {
+        console.log(e.target)
+        e.target.tagName == 'A' && changeIframeSrc(e.target)
+     })
+
+      function changeIframeSrc(img) {
+        dom.nava.forEach(function (v) {
+          v.classList.remove('active')
+        })
+        img.classList.add('active')
+      }
+
+      changeIframeSrc(dom.nava[0])
+
+    })()
+
+  </script>
+
+  <turbo-frame id="repo-content-turbo-frame" src="./bilibili/live/live.html">
+    <p>加载中...</p>
+  </turbo-frame>
+
+  <script>
+    document.addEventListener("turbo:load", function () {
+      console.log("turbo:load event");
+    });
+    document.addEventListener("turbo:before-visit", function () {
+      console.log("turbo:before-visit event");
+    });
+    document.addEventListener("turbo:before-fetch-request", function () {
+      console.log("turbo:before-fetch-request event");
+    });
+    document.addEventListener("turbo:before-render", function () {
+      console.log("turbo:before-render event");
+    });
+  </script>
+
+  <footer>
+
+  </footer>
+
+
 </body>
 
 </html>
