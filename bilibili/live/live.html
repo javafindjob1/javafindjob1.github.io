@@ -1,6 +1,7 @@
 <!-- 导航页 -->
 <turbo-frame id="repo-content-turbo-frame">
   <style>
+    
     .live {
       margin: 100px auto;
       display: flex;
@@ -9,16 +10,18 @@
     }
 
     .live .room {
-      /* height: 571px; */
+      width: 1130px;
+      flex-shrink: 1;
     }
 
     .live iframe {
-      width: 1130px;
+      width: 100%;
       height: 630px;
       border-radius: 5px;
     }
     .live ul{
-      
+      width: 218px;
+      flex-shrink: 1;
       height: 630px;
       overflow-y: auto;
     }
@@ -46,6 +49,7 @@
       color: white;
       margin: -30px 0px 0px 8px;
       font-size: 14px;
+      text-wrap: nowrap;
     }
 
 
@@ -59,11 +63,11 @@
   </style>
 
   <div class="live">
-    <div class="room leftfix">
+    <div class="room">
       <iframe frameborder="no" framespacing="0" scrolling="no" allow="autoplay; encrypted-media"
         allowfullscreen="true"></iframe>
     </div>
-    <ul class="rightfix">
+    <ul class="">
       <!-- <li><img src="./bilibili/live/斗鱼封面.png"
           data-src="https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=31394121&quality=0" alt="">
         <p>阿明纳</p>
@@ -79,7 +83,7 @@
         name: '阿明纳',
       },
       {
-        pic: './bilibili/live/25452169.jpg',
+        pic: './bilibili/live/4258901.jpg',
         room: '4258901',
         name: '一根大捷豹',
       },
@@ -128,9 +132,7 @@
         imgs: document.querySelectorAll(".live img")
       }
 
-
       dom.imgs.forEach(function (v) {
-        console.log(v)
         v.addEventListener('click', e => changeIframeSrc(e.target))
       })
 
@@ -146,6 +148,7 @@
 
       changeIframeSrc(dom.imgs[0])
 
+   
     })()
 
 
