@@ -1,0 +1,230 @@
+<turbo-frame id="console-turbo-frame">
+
+
+  <style>
+    .hero .console {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      /* 控制台宽高 */
+      width: 759px;
+
+      /* transform: scale(0.9); */
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+
+    .hero .info {
+      position: absolute;
+      right: 675px;
+      bottom: 500px;
+      width: 1094px;
+      color: white;
+      font-size: 22px;
+      line-height: 1.2em;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .hero .info p {
+      height: 1em;
+    }
+
+    .hero .info.active {
+      opacity: 1;
+    }
+
+    .hero .console-info {
+      position: absolute;
+      right: 278px;
+      bottom: 270px;
+      width: 515px;
+      color: white;
+      font-size: 22px;
+      line-height: 1.2em;;
+      background-color: #0d1b26;
+      border: 2px solid #d2c075;
+      border-radius: 5px;
+      line-break: anywhere;
+      padding: 10px;
+      opacity: 1;
+      visibility: hidden;
+    }
+
+    .hero .console-info p {
+      min-height: 16px;
+      /* word-wrap: break-word; */
+    }
+
+    .hero .console-info p:first-child {
+      margin-bottom: 8px;
+    }
+
+    .hero .console-info.active {
+      opacity: 1;
+    }
+
+
+    .hero .console-item {
+      width: 159px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-end;
+      justify-content: flex-end;
+      /* background-color: #ccffff; */
+    }
+
+    .hero .console-item div[class^="console-item"] {
+      width: 60px;
+      height: 59px;
+      /* background-color: #ccffff; */
+      margin: 3px 4px;
+    }
+
+    .hero .console-item div[class^="console-item-"]:hover .console-info {
+      visibility: visible;
+    }
+
+    .hero .console-ability {
+      width: 375px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: 245px;
+      justify-content: flex-end;
+      align-content: flex-end;
+      /* background-color: red; */
+    }
+
+    .hero .console-ability div[class^="console-ability-"] {
+      width: 75px;
+      height: 75px;
+      /* background-color: #ccffff; */
+      margin: 1px 1.6px;
+    }
+
+    .hero .console-ability div[class^="console-ability-"]:hover .console-info {
+      visibility: visible;
+    }
+
+    .hero .console .console-ability a:before{
+      content: '';
+      display: block;
+      height: 100%;
+    }
+  </style>
+  <div class="info">
+  </div>
+  <div class="console-item">
+    <div class="console-item-1">
+      <!-- <div class="console-info">
+        <p><span style="color:#ccffff">类型：</span><span style="color:#ffcc99">物理伤害、分身<span></p>
+          <p><span style="color:#ccffff">属性：</span><span style="color:#ffcc99">攻击力</span></p>
+          <br>
+          <p><span style="color:#ccffff">红翼天使在附近敌人身上创造</span><span style="color:#ffce00">分身</span><span style="color:#ccffff">进行攻击，分身拥有本体</span><span style="color:#ffce00">78%攻击力，</span><span style="color:#ccffff">额外</span><span style="color:#ffce00">60%攻击速度，</span><span style="color:#ccffff">且无法控制，但也不会受到伤害。最多制造</span><span style="color:#ffcc00">2个</span><span style="color:#ccffff">分身</span></p>
+          <p><span style="color:#ffce00">持续5秒<span></p>
+      </div> -->
+    </div>
+    <div class="console-item-2">
+    </div>
+    <div class="console-item-3">
+    </div>
+    <div class="console-item-4">
+    </div>
+    <div class="console-item-5">
+    </div>
+    <div class="console-item-6">
+    </div>
+  </div>
+  <div class="console-ability">
+    <div class="console-ability-1">
+    </div>
+    <div class="console-ability-2">
+    </div>
+    <div class="console-ability-3">
+    </div>
+    <div class="console-ability-4">
+    </div>
+    <div class="console-ability-5">
+    </div>
+    <div class="console-ability-6">
+    </div>
+    <div class="console-ability-7">
+    </div>
+    <div class="console-ability-8">
+    </div>
+    <div class="console-ability-9">
+    </div>
+    <div class="console-ability-10">
+    </div>
+    <div class="console-ability-11">
+    </div>
+    <div class="console-ability-12">
+    </div>
+  </div>
+  <script>
+    (function () {
+      class Dom {
+        constructor() {
+          this.hero = document.querySelector(".hero")
+          this.heroul = document.querySelector(".hero ul")
+          this.consoleAbility = document.querySelector(".hero .console .console-ability")
+        }
+        get info() {
+          return document.querySelector(".hero .info")
+        }
+        get
+      }
+      var dom = new Dom()
+
+
+      // 动态加载 JavaScript 文件
+      function loadScript(url, callback) {
+        const script = document.createElement('script');
+        script.src = url;
+        script.type = 'text/javascript';
+        script.async = true; // 或 script.defer = true;
+        script.onload = function () {
+          if (callback) callback()
+        }
+        document.head.appendChild(script);
+      }
+
+      // 调用函数加载 x7-data.js
+      loadScript('./bilibili/hero/x7-list/x7-data.js', function () {
+        console.log("加载完成" + window._self.dataHeroId)
+        console.log(data[window._self.dataHeroId]);
+        const hero = data[window._self.dataHeroId]
+        dom.info.innerHTML = hero.intro
+
+        changePifu(dom.consoleAbility.children[0], hero.p1)
+        changePifu(dom.consoleAbility.children[1], hero.p2)
+        changeAbility(dom.consoleAbility.children[6], hero.t)
+        changeAbility(dom.consoleAbility.children[7], hero.d)
+        changeAbility(dom.consoleAbility.children[8], hero.q)
+        changeAbility(dom.consoleAbility.children[9], hero.w)
+        changeAbility(dom.consoleAbility.children[10], hero.e)
+        changeAbility(dom.consoleAbility.children[11], hero.r)
+
+        console.log(hero)
+        console.log(hero.q)
+        dom.info.classList.add('active')
+      });
+
+      function changeAbility(ele, viewData) {
+        if (viewData) {
+          ele.style = `background:url("./bilibili/hero/x7-imgs/${viewData.icon}") no-repeat center center / contain;`
+          ele.innerHTML = `<div class="console-info">${viewData.desc}</div>`
+        }
+      }
+      function changePifu(ele, viewData) {
+        if (viewData) {
+          ele.innerHTML = `<a href="./bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${viewData.desc}</div>`
+          ele.style = `background:url("./bilibili/hero/x7-imgs/${viewData.icon}") no-repeat center center / contain;`
+        }
+      }
+    })()
+
+  </script>
+</turbo-frame>

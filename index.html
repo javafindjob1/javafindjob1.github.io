@@ -14,74 +14,119 @@
 </head>
 
 <body>
+  <div id="app">
+    <header class="page-header clearfix">
+      <div class="type leftfix">
+        <img src="./bilibili/logo.png" alt="">
+      </div>
+      <ul class="menu rightfix clearfix">
+        <li>
+          <a href="./bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">主播</a>
+        </li>
+        <li><a href="./bilibili/item/item.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">装备列表</a></li>
+        <li><a href="./bilibili/hero/hero-list.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">英雄列表</a></li>
+        <li><a href="./bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">关于</a></li>
+      </ul>
 
-  <header class="page-header clearfix">
-    <ul class="clearfix">
-      <li>
-        <a href="./bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
-          data-view-component="true">主播</a>
-      </li>
-      <li><a href="./bilibili/item/item.html" data-turbo-frame="repo-content-turbo-frame"
-          data-view-component="true">装备列表</a></li>
-      <li><a href="./bilibili/hero/hero.html" data-turbo-frame="repo-content-turbo-frame"
-          data-view-component="true">英雄列表</a></li>
-      <li><a href="./bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
-          data-view-component="true">关于</a></li>
-    </ul>
-  </header>
+      <div class="subnav">
+        <ul>
+          <li><a href="#" data-img="./bilibili/header/西7.png" data-turbo="false">西方世界的劫难7</a></li>
+          <li><a href="#" data-img="./bilibili/header/mp.png" data-turbo="false">梦想愿景</a></li>
+        </ul>
+      </div>
+    </header>
 
-  <script>
-     (function () {
-      
-      var dom = {
-        nav: document.querySelector(".page-header ul"),
-        nava: document.querySelectorAll(".page-header ul a"),
-      }
+    <script>
+      (function () {
+        window._self = {}
+        var dom = {
+          type: document.querySelector(".page-header .type img"),
+          menu: document.querySelector(".page-header ul.menu"),
+          menua: document.querySelectorAll(".page-header ul.menu a"),
+          subnav: document.querySelector(".page-header ul.subnav"),
+          subnava: document.querySelectorAll(".page-header ul.subnav a"),
+        }
 
-      dom.nav.addEventListener('click', e => {
-        console.log(e.target)
-        e.target.tagName == 'A' && changeIframeSrc(e.target)
-     })
-
-      function changeIframeSrc(img) {
-        dom.nava.forEach(function (v) {
-          v.classList.remove('active')
+        dom.menu.addEventListener('click', e => {
+          console.log(e.target)
+          e.target.tagName == 'A' && changeIframeSrc(e.target)
         })
-        img.classList.add('active')
-      }
 
-      changeIframeSrc(dom.nava[0])
+        function changeIframeSrc(img) {
+          dom.menua.forEach(function (v) {
+            v.classList.remove('active')
+          })
+          img.classList.add('active')
+        }
 
-    })()
+        changeIframeSrc(dom.menua[0])
 
-  </script>
+        // 游戏分类
+        let preSrc = dom.type.src;
+        dom.subnav.addEventListener('click', e => {
+          console.log(e.target)
+          if (e.target.tagName == 'A') {
+            changeSubnavSrc(e.target.getAttribute('data-img'))
+            preSrc = dom.type.src
+            window._self.type = e.target.innerHTML
+            dom.subnava.forEach(function (v) {
+              v.classList.remove('active')
+            })
+            e.target.classList.add('active')
+          }
+        })
 
-  <turbo-frame id="repo-content-turbo-frame" src="./bilibili/live/live.html">
-    <p>加载中...</p>
-  </turbo-frame>
+        dom.subnav.addEventListener('mouseover', e => {
+          console.log(e.target)
+          e.target.tagName == 'A' && changeSubnavSrc(e.target.getAttribute('data-img'))
+        })
+        dom.subnav.addEventListener('mouseout', e => {
+          console.log(e.target)
+          e.target.tagName == 'A' && changeSubnavSrc(preSrc)
+        })
 
-  <script>
-    document.addEventListener("turbo:load", function () {
-      console.log("turbo:load event");
-    });
-    document.addEventListener("turbo:before-visit", function () {
-      console.log("turbo:before-visit event");
-    });
-    document.addEventListener("turbo:before-fetch-request", function () {
-      console.log("turbo:before-fetch-request event");
-    });
-    document.addEventListener("turbo:before-render", function () {
-      console.log("turbo:before-render event");
-    });
-    document.addEventListener("turbo:render", function () {
-      console.log("turbo:render event");
-    });
-  </script>
+        function changeSubnavSrc(v) {
+          dom.type.src = v;
+        }
 
-  <footer>
-    <span>© 技术支持 Email： java_findjob@163.com</span>
-    <!-- <span> © 网站备案号： 鲁ICP备20016477号-1</span> -->
-  </footer>
+        // changeSubnavSrc(dom.subnava[0])
+
+      })()
+
+    </script>
+
+    <turbo-frame id="repo-content-turbo-frame" src1="./bilibili/live/live.html">
+      <p>加载中...</p>
+    </turbo-frame>
+
+    <script>
+      document.addEventListener("turbo:load", function () {
+        console.log("turbo:load event");
+      });
+      document.addEventListener("turbo:before-visit", function () {
+        console.log("turbo:before-visit event");
+      });
+      document.addEventListener("turbo:before-fetch-request", function () {
+        console.log("turbo:before-fetch-request event");
+      });
+      document.addEventListener("turbo:before-render", function () {
+        console.log("turbo:before-render event");
+      });
+      document.addEventListener("turbo:render", function () {
+        console.log("turbo:render event");
+      });
+    </script>
+
+    <footer>
+      <span>© 技术支持 Email： java_findjob@163.com</span>
+      <!-- <span> © 网站备案号： 鲁ICP备20016477号-1</span> -->
+    </footer>
+
+  </div>
 
 
 </body>

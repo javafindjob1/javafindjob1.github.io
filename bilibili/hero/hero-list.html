@@ -1,0 +1,294 @@
+<!-- 英雄 -->
+<turbo-frame id="repo-content-turbo-frame">
+  <style>
+    .hero {
+      display: flex;
+      height: 100%;
+    }
+
+    .hero .container {
+      flex-shrink: 1;
+      margin: auto;
+      position: relative;
+      transform: scale(0.7);
+    }
+
+    .hero ul.hero-list {
+      width: 1903px;
+      height: 1008px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      
+      background-color: #d2c075;
+    }
+
+    .hero .hero-list a {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero .hero-list a::before {
+      content: '';
+      display: block;
+      height: 100%;
+
+    }
+
+    .hero .hero-list a p {
+      color: white;
+      font-size: 0px;
+      text-align: center;
+    }
+
+    .hero .hero-list a:hover p {
+      color: white;
+      font-size: 16px;
+    }
+
+    .hero .hero-list li {
+      flex-shrink: 1;
+      background:  url("./bilibili/hero/x7hero.png") no-repeat;
+    }
+
+    .hero .hero-list li:not(:last-child, :first-child, [empty]):hover {
+      border-radius: 20px;
+      /* transform: scale(1.2); */
+    }
+
+    .hero .hero-list li[empty] a {
+      cursor: default;
+    }
+  </style>
+  <div class="hero">
+    <div class="container">
+      <ul class="hero-list">
+        <!-- 顶 -->
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <!-- 1排 -->
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>维克多</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>深渊魔女</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>乌玛</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>希尔德</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>冰糖</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>战鹿</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>七煌法师</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>圣剑骑士菲奥娜</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>不死战神</p>
+          </a></li>
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <!-- 2排 -->
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>轮回使者</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>金色魔王</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>晴雪</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>功夫猫咪</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>白藤儿</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>莉夏</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>真神</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>塞雷斯托主教</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>尼娜</p>
+          </a></li>
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <!-- 3排 -->
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>死亡骑士</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>莉莉丝</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>平日京</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>圣十字天使</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>红翼天使</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>光域神官</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>冰霜剑使</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>纸牌秘书</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>奴隶战士</p>
+          </a></li>
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <!-- 四排 -->
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>暗金公爵</p>
+          </a></li>
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>异域剑神</p>
+          </a></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame">
+            <p>太古魔人</p>
+          </a></li>
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+        <!-- 底部 -->
+        <li empty><a href="#" data-turbo="false">
+            <p></p>
+          </a></li>
+      </ul>
+
+      <turbo-frame id="console-turbo-frame" class="console">
+
+      </turbo-frame>
+
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+
+      class Dom {
+        constructor() {
+          this.hero = document.querySelector(".hero")
+          this.heroul = document.querySelector(".hero ul")
+          this.heroli = document.querySelectorAll(".hero li")
+          this.console = document.querySelector("#console-turbo-frame")
+        }
+        get info() {
+          return document.querySelector(".hero .info")
+        }
+      }
+      var dom = new Dom()
+
+
+      // dom.heroli[++index].style = "background-position: 0px 0px; width: 1236px;height: 90px;"
+      var locarr = [
+        [1903],
+        [263, 416, 545, 717, 913, 1026, 1257, 1419, 1517, 1723, 1903],
+        [179, 351, 529, 717, 913, 1050, 1257, 1455, 1594, 1757, 1903],
+        [ 77, 323, 488, 717, 913, 1057, 1297, 1497, 1620, 1820, 1903],
+
+        [405, 717, 1065, 1303, 1620, 1903],
+        [1903],
+      ]
+
+      var heroarr = [
+        [''],
+        ['','H00X', 'H00F', 'H003', 'H00D', 'E006', 'O005', 'H002', 'O001', 'O000',''],
+        ['','U000', 'E003', 'E00Y', 'O003', 'H001', 'O002', 'N006', 'H005', 'H00E',''],
+        ['','U001', 'H000', 'O00J', 'H006', 'E021', 'H00G', 'E00T', 'E00C', 'E029',''],
+        ['','O010','','E03O','O018',''],
+        [''],
+      ]
+
+      var heightArr = [40, 176, 161, 190, 179, 260]
+
+      let index = -1;
+      let height = 0;
+      for (let i = 0; i < locarr.length; i++) {
+        let preWidth = 0;
+
+        let heroIndex = -1;
+        locarr[i].forEach(function (v) {
+          dom.heroli[++index].style = `background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;`
+          preWidth = v
+
+          // 英雄ID
+          const heroId = heroarr[i][++heroIndex]
+          if(heroId !== ''){
+            dom.heroli[index].children[0].setAttribute('data-hero-id', heroId)
+            dom.heroli[index].children[0].href = "./bilibili/hero/hero-console.html"
+          }
+
+        })
+        height += heightArr[i];
+
+      }
+      // locarr.forEach(function (v, i) {
+      //   dom.heroli[++index].style = `background-position: -${preWidth}px -90px; width: ${v - preWidth}px;height: 169px;`
+      //   preWidth = v
+      // })
+
+      // dom.heroul.style = "background-color: orange;"
+
+
+      // 英雄点击事件
+      dom.heroul.addEventListener('click', e => {
+        console.log("55555555555")
+        e.target.tagName == 'A' && changeHeroInfo(e.target)
+      })
+      dom.console.setAttribute("r", new Date().getTime())
+      dom.console.addEventListener('click', e => {
+        console.log("123412341234===" + e.target.tagName)
+        e.target.tagName == 'A' && changeHeroInfo(e.target)
+      })
+
+      function changeHeroInfo(a) {
+        const id = a.getAttribute('data-hero-id')
+        console.log("id=====" + id)
+        window._self.dataHeroId = id
+      }
+
+    })()
+  </script>
+</turbo-frame>
