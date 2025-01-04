@@ -73,6 +73,13 @@ var data = {
 		"intro":"<p><span style=\"color:#ffcc00\">暗金公爵【贾各布】</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#80ff80\">【在平台商城购买此英雄】</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">单体打击能力</span><span style=\"color:#ff0303\">★★★★☆<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">群体打击能力</span><span style=\"color:#ff0303\">★★★★<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">战场生存能力</span><span style=\"color:#ff0303\">★★★★☆<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">战技战术能力</span><span style=\"color:#ff0303\">★★★<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">英雄技能</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">金色大地，中枢之力，荣誉处决，暴行约定，</span><span style=\"color:#ff0000\">正义宣泄<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">英雄介绍</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">拉索姆中部山区的统治者，身披黄金铠甲行神圣盟约，实际上是残暴无度的霸主，以正义之名蹂躏犯错的村民，最终掠取财富归为己有。</span></p>",
 		"intro2":"|cffffcc00暗金公爵【贾各布】|r|n|cff80ff80【在平台商城购买此英雄】|r|n单体打击能力|cffff0303★★★★☆|r|n群体打击能力|cffff0303★★★★|r|n战场生存能力|cffff0303★★★★☆|r|n战技战术能力|cffff0303★★★|r|n|n|cffffcc00英雄技能|r|n金色大地，中枢之力，荣誉处决，暴行约定，|cffff0000正义宣泄|r|n|n|cffffcc00英雄介绍|r|n拉索姆中部山区的统治者，身披黄金铠甲行神圣盟约，实际上是残暴无度的霸主，以正义之名蹂躏犯错的村民，最终掠取财富归为己有。|n",
 		"name":"暗金公爵",
+		"p2":{
+			"desc":"<p><span style=\"color:#ff9900\">暗金公爵皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">金色大地25%几率追加一次</span></p><p><span style=\"color:#ccffff\">暴行约定25%几率追加一次高额攻击</span></p><p><span style=\"color:#ccffff\">正义宣泄附带20%护甲穿透效果</span></p><p><span style=\"color:#ccffff\">暴击伤害+75%</span></p><p><span style=\"color:#ccffff\">闪避+8%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff金色大地25%几率追加一次|n暴行约定25%几率追加一次高额攻击|n正义宣泄附带20%护甲穿透效果|n暴击伤害+75%|n闪避+8%|n专属合成书+1|r",
+			"icon":"war3mapImported\\\\BTNSkin2_Jacob.png",
+			"name":"|cffff9900暗金公爵皮肤2|r",
+			"unitId":"O01B"
+		},
 		"q":{
 			"desc":"<p><span style=\"color:#ffffff\">金色大地</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">伤害、控制</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量、护甲<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">重击地面，对附近敌人造成至少</span><span style=\"color:#ffcc99\">4800+力量x33<span style=\"color:#ccffff\">的伤害，并</span><span style=\"color:#ffcc99\">减速<span style=\"color:#ccffff\">。如果此时敌人已经被减速，则追加</span><span style=\"color:#ffcc99\">2秒眩晕<span style=\"color:#ccffff\">效果。暗金公爵</span><span style=\"color:#ffcc99\">护甲<span style=\"color:#ccffff\">越高，额外伤害越高。</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ffcc99\">每次发动时有20%几率重置冷却时间</span><span style=\"color:#fff\"></span></p>",
 			"desc2":"|cffccffff类型：|r|cffffcc99伤害、控制|n|r|cffccffff属性：|r|cffffcc99力量、护甲|r|n|n|cffccffff重击地面，对附近敌人造成至少|r|cffffcc994800+力量x33|r|cffccffff的伤害，并|r|cffffcc99减速|r|cffccffff。如果此时敌人已经被减速，则追加|r|cffffcc992秒眩晕|r|cffccffff效果。暗金公爵|r|cffffcc99护甲|r|cffccffff越高，额外伤害越高。|n|n|r|cffffcc99每次发动时有20%几率重置冷却时间|r",
@@ -137,8 +144,8 @@ var data = {
 			"name":"能量大炮"
 		},
 		"r":{
-			"desc":"<p><span style=\"color:#ffffff\">方舟神印</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">方舟城主以及方舟部队拥有抵挡指向性法术的魔法护盾。每当触发指向盾，或者施法技能时，都会射出2-3发导弹，随机攻击附近的敌人，造成</span><span style=\"color:#ffcc99\">1200+力量x13<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">导弹数量+2</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害（被动）|n|r|cffccffff属性：|r|cffffcc99力量|n|r|cffccffff|n方舟城主以及方舟部队拥有抵挡指向性法术的魔法护盾。每当触发指向盾，或者施法技能时，都会射出2-3发导弹，随机攻击附近的敌人，造成|r|cffffcc991200+力量x13|r|cffccffff的伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n导弹数量+2|n伤害+25%|r",
+			"desc":"<p><span style=\"color:#ffffff\">方舟神印</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">方舟城主以及方舟部队拥有</span><span style=\"color:#ffcc99\">8秒<span style=\"color:#ccffff\">间隔的指向性魔法护盾。每当触发指向盾，或者施法技能时，都会射出</span><span style=\"color:#ffcc99\">2-3发<span style=\"color:#ccffff\">导弹，随机攻击附近的敌人，造成</span><span style=\"color:#ffcc99\">1200+力量x13<span style=\"color:#ccffff\">的伤害。当方舟部队受到物理攻击时，有</span><span style=\"color:#ffcc99\">24%<span style=\"color:#ccffff\">几率抵挡此次伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">导弹数量+2</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害（被动）|n|r|cffccffff属性：|r|cffffcc99力量|n|r|cffccffff|n方舟城主以及方舟部队拥有|r|cffffcc998秒|r|cffccffff间隔的指向性魔法护盾。每当触发指向盾，或者施法技能时，都会射出|r|cffffcc992-3发|r|cffccffff导弹，随机攻击附近的敌人，造成|r|cffffcc991200+力量x13|r|cffccffff的伤害。当方舟部队受到物理攻击时，有|r|cffffcc9924%|r|cffccffff几率抵挡此次伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n导弹数量+2|n伤害+25%|r",
 			"icon":"war3mapImported\\\\PASBTNSpell_FangZhouShenYin.png",
 			"name":"方舟神印"
 		},
@@ -188,8 +195,8 @@ var data = {
 			"unitId":"O00W"
 		},
 		"q":{
-			"desc":"<p><span style=\"color:#ffffff\">爆雷符</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、控制<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">银之月姬向周围敌人种下爆雷符咒，受到</span><span style=\"color:#ffcc00\">1200+敏捷x12<span style=\"color:#ccffff\">的伤害，并且在</span><span style=\"color:#ffcc00\">2秒<span style=\"color:#ccffff\">后引爆护符，造成</span><span style=\"color:#ffcc00\">同等的<span style=\"color:#ccffff\">爆炸伤害，并眩晕</span><span style=\"color:#ffcc00\">1.5秒<span style=\"color:#ccffff\">。如果已学习</span><span style=\"color:#ffcc00\">鬼针<span style=\"color:#ccffff\">，每次伤害都有几率触发鬼针。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span></p><p><span style=\"color:#cc8dc4\">范围+25%</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、控制|r|cffccffff|n属性：|r|cffffcc99敏捷|r|n|n|cffccffff银之月姬向周围敌人种下爆雷符咒，受到|r|cffffcc001200+敏捷x12|r|cffccffff的伤害，并且在|r|cffffcc002秒|r|cffccffff后引爆护符，造成|r|cffffcc00同等的|r|cffccffff爆炸伤害，并眩晕|r|cffffcc001.5秒|r|cffccffff。如果已学习|r|cffffcc00鬼针|r|cffccffff，每次伤害都有几率触发鬼针。|r|n|r|cffcc8dc4|n皮肤强化：|n伤害+25%|n范围+25%|r",
+			"desc":"<p><span style=\"color:#ffffff\">爆雷符</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、控制<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">银之月姬向周围敌人种下爆雷符咒，受到</span><span style=\"color:#ffcc00\">1200+攻击力x0.63+敏捷x12<span style=\"color:#ccffff\">的伤害，并且在</span><span style=\"color:#ffcc00\">2秒<span style=\"color:#ccffff\">后引爆护符，造成</span><span style=\"color:#ffcc00\">同等的<span style=\"color:#ccffff\">爆炸伤害，并眩晕</span><span style=\"color:#ffcc00\">1.5秒<span style=\"color:#ccffff\">。如果已学习</span><span style=\"color:#ffcc00\">鬼针<span style=\"color:#ccffff\">，每次伤害都有几率触发鬼针。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span></p><p><span style=\"color:#cc8dc4\">范围+25%</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、控制|r|cffccffff|n属性：|r|cffffcc99敏捷、攻击力|r|n|n|cffccffff银之月姬向周围敌人种下爆雷符咒，受到|r|cffffcc001200+攻击力x0.63+敏捷x12|r|cffccffff的伤害，并且在|r|cffffcc002秒|r|cffccffff后引爆护符，造成|r|cffffcc00同等的|r|cffccffff爆炸伤害，并眩晕|r|cffffcc001.5秒|r|cffccffff。如果已学习|r|cffffcc00鬼针|r|cffccffff，每次伤害都有几率触发鬼针。|r|n|r|cffcc8dc4|n皮肤强化：|n伤害+25%|n范围+25%|r",
 			"icon":"ReplaceableTextures\\\\CommandButtons\\\\BTNBansheeMaster.png",
 			"name":"爆雷符"
 		},
@@ -281,8 +288,8 @@ var data = {
 			"unitId":"N00E"
 		},
 		"p2":{
-			"desc":"<p><span style=\"color:#00ffff\">真神皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffffcc00点击后使用该皮肤|r",
+			"desc":"<p><span style=\"color:#00ffff\">真神皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">发动技能时可追加黑粒子，随机追击附近敌人</span></p><p><span style=\"color:#ccffff\">红色枷锁增加伤害</span></p><p><span style=\"color:#ccffff\">圣地增加范围</span></p><p><span style=\"color:#ccffff\">真神之理多重箭攻击附带智力伤害</span></p><p><span style=\"color:#ccffff\">免疫毒素伤害和即死效果</span></p><p><span style=\"color:#ccffff\">法术暴击伤害+20%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#ffcc00\"></span></p><p><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff发动技能时可追加黑粒子，随机追击附近敌人|n红色枷锁增加伤害|n圣地增加范围|n真神之理多重箭攻击附带智力伤害|n免疫毒素伤害和即死效果|n法术暴击伤害+20%|n专属合成书+1|r|cffffcc00|n|r",
 			"icon":"war3mapImported\\\\BTNSkin_ZhenShen2.png",
 			"name":"|cff00ffff真神皮肤2|r",
 			"unitId":"N020"
@@ -370,6 +377,63 @@ var data = {
 			"name":"零劲"
 		}
 	},
+	"O019":{
+		"baseUnitId":"O00J",
+		"d":{
+			"desc":"<p><span style=\"color:#ccffcc\">英雄天赋</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">天赋1：</span><span style=\"color:#fff\">提升33%普通攻击和法术的吸血效率</span></p><p><span style=\"color:#ffcc00\">天赋2：</span><span style=\"color:#fff\">受到攻击时增加怒气提升幅度</span></p>",
+			"desc2":"|cffffcc00天赋1：|r提升33%普通攻击和法术的吸血效率|n|cffffcc00天赋2：|r受到攻击时增加怒气提升幅度",
+			"icon":"war3mapImported\\\\PASBTNItem_JiaBaiLieGuangHui.png",
+			"name":"|cffccffcc英雄天赋|r"
+		},
+		"e":{
+			"desc":"<p><span style=\"color:#ffffff\">蛰魂.改</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">增益（被动）</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">金之尊者增加</span><span style=\"color:#ffcc00\">130%<span style=\"color:#ccffff\">暴击伤害和</span><span style=\"color:#ffcc00\">45%<span style=\"color:#ccffff\">法术暴击伤害。每当攻击</span><span style=\"color:#ffcc00\">7次<span style=\"color:#ccffff\">后，接下来</span><span style=\"color:#ffcc00\">2次<span style=\"color:#ccffff\">攻击必定造成暴击；每发动</span><span style=\"color:#ffcc00\">7次<span style=\"color:#ccffff\">法术后，接下来</span><span style=\"color:#ffcc00\">2次<span style=\"color:#ccffff\">法术必定造成法术暴击。并且每次发动技能瞬间，可短暂免疫伤害。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99增益（被动）|n|r|cffccffff|n金之尊者增加|r|cffffcc00130%|r|cffccffff暴击伤害和|r|cffffcc0045%|r|cffccffff法术暴击伤害。每当攻击|r|cffffcc007次|r|cffccffff后，接下来|r|cffffcc002次|r|cffccffff攻击必定造成暴击；每发动|r|cffffcc007次|r|cffccffff法术后，接下来|r|cffffcc002次|r|cffccffff法术必定造成法术暴击。并且每次发动技能瞬间，可短暂免疫伤害。|r",
+			"icon":"war3mapImported\\\\PASBTNSpell_ZheHun.png",
+			"name":"蛰魂.改"
+		},
+		"intro":"<p><span style=\"color:#ffcc00\">金之尊者【平日京】</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#80ff80\">【平台商城购买英雄激活】</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">单体打击能力</span><span style=\"color:#ff0303\">★★★★★<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">群体打击能力</span><span style=\"color:#ff0303\">★★★★☆<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">战场生存能力</span><span style=\"color:#ff0303\">★★★<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">战技战术能力</span><span style=\"color:#ff0303\">★★★☆<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">英雄技能</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">风雷爪斩，破碎淋漓，蛰魂，赤魂，</span><span style=\"color:#ff0000\">永劫神灭<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">英雄介绍</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">曾是东方帝国高层精英，为报复杀父之仇而蛰伏帝国内部，为人行事心狠手辣，不择手段。最终在时轮击毙仇人，但自己也流放边荒大陆苦役。</span></p>",
+		"intro2":"|cffffcc00金之尊者【平日京】|r|n|cff80ff80【平台商城购买英雄激活】|r|n单体打击能力|cffff0303★★★★★|r|n群体打击能力|cffff0303★★★★☆|r|n战场生存能力|cffff0303★★★|r|n战技战术能力|cffff0303★★★☆|r|n|n|cffffcc00英雄技能|r|n风雷爪斩，破碎淋漓，蛰魂，赤魂，|cffff0000永劫神灭|r|n|n|cffffcc00英雄介绍|r|n曾是东方帝国高层精英，为报复杀父之仇而蛰伏帝国内部，为人行事心狠手辣，不择手段。最终在时轮击毙仇人，但自己也流放边荒大陆苦役。|n",
+		"name":"金之尊者",
+		"p1":{
+			"desc":"<p><span style=\"color:#ffff00\">金之尊者皮肤1</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|r",
+			"icon":"war3mapImported\\\\BTNSkin_JinZhiZunZhe1.png",
+			"name":"|cffffff00金之尊者皮肤1|r",
+			"unitId":"O004"
+		},
+		"p2":{
+			"desc":"<p><span style=\"color:#cc99ff\">金之尊者皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">暗属性攻防【皮肤2专用】</span></p><p><span style=\"color:#ccffff\">爆气状态下大幅增加攻击力</span></p><p><span style=\"color:#ccffff\">破碎淋漓增加25%伤害</span></p><p><span style=\"color:#ccffff\">赤魂提升护甲穿透效果36→49</span></p><p><span style=\"color:#ccffff\">攻击力成长+33%</span></p><p><span style=\"color:#ccffff\">法术抗性+10%</span></p><p><span style=\"color:#ccffff\">闪避+15%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#99ccff\"></span></p><p><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff暗属性攻防【皮肤2专用】|n爆气状态下大幅增加攻击力|n破碎淋漓增加25%伤害|n赤魂提升护甲穿透效果36→49|n攻击力成长+33%|n法术抗性+10%|n闪避+15%|n专属合成书+1|r|cff99ccff|n|r",
+			"icon":"war3mapImported\\\\BTNSkin2_PRJ.png",
+			"name":"|cffcc99ff金之尊者皮肤2|r",
+			"unitId":"O019"
+		},
+		"q":{
+			"desc":"<p><span style=\"color:#ffffff\">破碎淋漓</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、负面状态<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">金之尊者用利爪攻击身边所有敌人，造成相关</span><span style=\"color:#ffcc00\">2400+敏捷x26+攻击力x0.9<span style=\"color:#ccffff\">的伤害，每个敌人回复自身</span><span style=\"color:#ffcc00\">6%<span style=\"color:#ccffff\">生命值。如果身边的敌人较多，可降低该技能的</span><span style=\"color:#ffcc00\">冷却时间<span style=\"color:#ccffff\">。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、负面状态|r|cffccffff|n属性：|r|cffffcc99敏捷、攻击力|r|n|n|cffccffff金之尊者用利爪攻击身边所有敌人，造成相关|r|cffffcc002400+敏捷x26+攻击力x0.9|r|cffccffff的伤害，每个敌人回复自身|r|cffffcc006%|r|cffccffff生命值。如果身边的敌人较多，可降低该技能的|r|cffffcc00冷却时间|r|cffccffff。|r",
+			"icon":"war3mapImported\\\\BTNSpell_PoSuiLingLi2.png",
+			"name":"破碎淋漓"
+		},
+		"r":{
+			"desc":"<p><span style=\"color:#ffffff\">赤魂.改</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">增益、回复（被动）</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">金之尊者杀死敌人后，立即回复至少</span><span style=\"color:#ffcc00\">3800点<span style=\"color:#ccffff\">生命值，并且普通攻击附带</span><span style=\"color:#ffcc00\">49%<span style=\"color:#ccffff\">护甲穿透效果。当金之尊者受到被净化的敌人攻击时，会减免</span><span style=\"color:#ffcc00\">36%<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99增益、回复（被动）|n|r|n|cffccffff金之尊者杀死敌人后，立即回复至少|r|cffffcc003800点|r|cffccffff生命值，并且普通攻击附带|r|cffffcc0049%|r|cffccffff护甲穿透效果。当金之尊者受到被净化的敌人攻击时，会减免|r|cffffcc0036%|r|cffccffff的伤害。|r|n",
+			"icon":"war3mapImported\\\\PASBTNSpell_LiHaiYuanZe.png",
+			"name":"赤魂.改"
+		},
+		"t":{
+			"desc":"<p><span style=\"color:#ffffff\">永劫神灭</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">金之尊者向前方射出</span><span style=\"color:#ffcc00\">11道<span style=\"color:#ccffff\">巨型闪电，每道闪电造成</span><span style=\"color:#ffcc00\">敏捷x25+攻击力x2.5<span style=\"color:#ccffff\">的伤害，并净化。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害|n|r|cffccffff属性：|r|cffffcc99敏捷、攻击力|r|n|n|cffccffff金之尊者向前方射出|r|cffffcc0011道|r|cffccffff巨型闪电，每道闪电造成|r|cffffcc00敏捷x25+攻击力x2.5|r|cffccffff的伤害，并净化。|r",
+			"icon":"war3mapImported\\\\BTNSpell_ShengXingZhuiLuo2.png",
+			"name":"永劫神灭"
+		},
+		"unitId":"O019",
+		"w":{
+			"desc":"<p><span style=\"color:#ffffff\">风雷爪斩</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">魔化尊者投掷出一具金爪，将目标以及附近敌人拉住面前，造成</span><span style=\"color:#ffcc00\">2400+敏捷x33+攻击力x1.9<span style=\"color:#ccffff\">伤害，并</span><span style=\"color:#ffcc00\">净化<span style=\"color:#ccffff\">和</span><span style=\"color:#ffcc00\">吸血<span style=\"color:#ccffff\">。如果此时身边</span><span style=\"color:#ffcc00\">敌人超过5个<span style=\"color:#ccffff\">，还将追加一次</span><span style=\"color:#ffcc00\">破碎淋漓<span style=\"color:#ccffff\">。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害|n|r|cffccffff属性：|r|cffffcc99敏捷、攻击力|r|n|n|cffccffff魔化尊者投掷出一具金爪，将目标以及附近敌人拉住面前，造成|r|cffffcc002400+敏捷x33+攻击力x1.9|r|cffccffff伤害，并|r|cffffcc00净化|r|cffccffff和|r|cffffcc00吸血|r|cffccffff。如果此时身边|r|cffffcc00敌人超过5个|r|cffccffff，还将追加一次|r|cffffcc00破碎淋漓|r|cffccffff。|r",
+			"icon":"war3mapImported\\\\BTNSpell_FengLeiShenZhua.png",
+			"name":"风雷爪斩"
+		}
+	},
 	"O00Y":{
 		"baseUnitId":"O005",
 		"d":{
@@ -452,8 +516,8 @@ var data = {
 			"unitId":"N00E"
 		},
 		"p2":{
-			"desc":"<p><span style=\"color:#00ffff\">真神皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffffcc00点击后使用该皮肤|r",
+			"desc":"<p><span style=\"color:#00ffff\">真神皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">发动技能时可追加黑粒子，随机追击附近敌人</span></p><p><span style=\"color:#ccffff\">红色枷锁增加伤害</span></p><p><span style=\"color:#ccffff\">圣地增加范围</span></p><p><span style=\"color:#ccffff\">真神之理多重箭攻击附带智力伤害</span></p><p><span style=\"color:#ccffff\">免疫毒素伤害和即死效果</span></p><p><span style=\"color:#ccffff\">法术暴击伤害+20%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#ffcc00\"></span></p><p><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff发动技能时可追加黑粒子，随机追击附近敌人|n红色枷锁增加伤害|n圣地增加范围|n真神之理多重箭攻击附带智力伤害|n免疫毒素伤害和即死效果|n法术暴击伤害+20%|n专属合成书+1|r|cffffcc00|n|r",
 			"icon":"war3mapImported\\\\BTNSkin_ZhenShen2.png",
 			"name":"|cff00ffff真神皮肤2|r",
 			"unitId":"N020"
@@ -482,6 +546,56 @@ var data = {
 			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、控制|n|r|cffccffff属性：|r|cffffcc99智力|r|n|n|cffccffff真神锁住制定目标附近的敌人，造成|r|cffffcc002400+智力x32.5|r|cffccffff的伤害。被锁住的敌人将无法行动。对|r|cffffcc00BOSS|r|cffccffff和|r|cffffcc00生命值低于一半|r|cffccffff的敌人还能造成额外|r|cffffcc0070%|r|cffccffff伤害。|n|r",
 			"icon":"war3mapImported\\\\BTNSpell_HongSeJiaSuo.png",
 			"name":"红色枷锁"
+		}
+	},
+	"O01B":{
+		"baseUnitId":"O010",
+		"d":{
+			"desc":"<p><span style=\"color:#ccffcc\">英雄天赋</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">天赋1：</span><span style=\"color:#fff\">杀敌回血+8%</span></p><p><span style=\"color:#ffcc00\">天赋2：</span><span style=\"color:#fff\">法术抗性+10%</span></p>",
+			"desc2":"|cffffcc00天赋1：|r杀敌回血+8%|n|cffffcc00天赋2：|r法术抗性+10%",
+			"icon":"war3mapImported\\\\PASBTNItem_JiaBaiLieGuangHui.png",
+			"name":"|cffccffcc英雄天赋|r"
+		},
+		"e":{
+			"desc":"<p><span style=\"color:#ffffff\">荣誉处决</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">增益（被动）<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">增加</span><span style=\"color:#ffcc99\">20%<span style=\"color:#ccffff\">暴击率和</span><span style=\"color:#ffcc99\">140%<span style=\"color:#ccffff\">暴击伤害，并且当敌人拥有魔法效果，每个魔法效果额外增加</span><span style=\"color:#ffcc99\">6%<span style=\"color:#ccffff\">物理伤害。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99增益（被动）|r|n|n|cffccffff增加|r|cffffcc9920%|r|cffccffff暴击率和|r|cffffcc99140%|r|cffccffff暴击伤害，并且当敌人拥有魔法效果，每个魔法效果额外增加|r|cffffcc996%|r|cffccffff物理伤害。|r",
+			"icon":"war3mapImported\\\\PASBTNSpell_Jacob_ZhengYiXuanXie.png",
+			"name":"荣誉处决"
+		},
+		"intro":"<p><span style=\"color:#ffcc00\">暗金公爵【贾各布】</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#80ff80\">【在平台商城购买此英雄】</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">单体打击能力</span><span style=\"color:#ff0303\">★★★★☆<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">群体打击能力</span><span style=\"color:#ff0303\">★★★★<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">战场生存能力</span><span style=\"color:#ff0303\">★★★★☆<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">战技战术能力</span><span style=\"color:#ff0303\">★★★<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">英雄技能</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">金色大地，中枢之力，荣誉处决，暴行约定，</span><span style=\"color:#ff0000\">正义宣泄<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">英雄介绍</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">拉索姆中部山区的统治者，身披黄金铠甲行神圣盟约，实际上是残暴无度的霸主，以正义之名蹂躏犯错的村民，最终掠取财富归为己有。</span></p>",
+		"intro2":"|cffffcc00暗金公爵【贾各布】|r|n|cff80ff80【在平台商城购买此英雄】|r|n单体打击能力|cffff0303★★★★☆|r|n群体打击能力|cffff0303★★★★|r|n战场生存能力|cffff0303★★★★☆|r|n战技战术能力|cffff0303★★★|r|n|n|cffffcc00英雄技能|r|n金色大地，中枢之力，荣誉处决，暴行约定，|cffff0000正义宣泄|r|n|n|cffffcc00英雄介绍|r|n拉索姆中部山区的统治者，身披黄金铠甲行神圣盟约，实际上是残暴无度的霸主，以正义之名蹂躏犯错的村民，最终掠取财富归为己有。|n",
+		"name":"暗金公爵",
+		"p2":{
+			"desc":"<p><span style=\"color:#ff9900\">暗金公爵皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">金色大地25%几率追加一次</span></p><p><span style=\"color:#ccffff\">暴行约定25%几率追加一次高额攻击</span></p><p><span style=\"color:#ccffff\">正义宣泄附带20%护甲穿透效果</span></p><p><span style=\"color:#ccffff\">暴击伤害+75%</span></p><p><span style=\"color:#ccffff\">闪避+8%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff金色大地25%几率追加一次|n暴行约定25%几率追加一次高额攻击|n正义宣泄附带20%护甲穿透效果|n暴击伤害+75%|n闪避+8%|n专属合成书+1|r",
+			"icon":"war3mapImported\\\\BTNSkin2_Jacob.png",
+			"name":"|cffff9900暗金公爵皮肤2|r",
+			"unitId":"O01B"
+		},
+		"q":{
+			"desc":"<p><span style=\"color:#ffffff\">金色大地</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">伤害、控制</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量、护甲<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">重击地面，对附近敌人造成至少</span><span style=\"color:#ffcc99\">4800+力量x33<span style=\"color:#ccffff\">的伤害，并</span><span style=\"color:#ffcc99\">减速<span style=\"color:#ccffff\">。如果此时敌人已经被减速，则追加</span><span style=\"color:#ffcc99\">2秒眩晕<span style=\"color:#ccffff\">效果。暗金公爵</span><span style=\"color:#ffcc99\">护甲<span style=\"color:#ccffff\">越高，额外伤害越高。</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ffcc99\">每次发动时有20%几率重置冷却时间</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99伤害、控制|n|r|cffccffff属性：|r|cffffcc99力量、护甲|r|n|n|cffccffff重击地面，对附近敌人造成至少|r|cffffcc994800+力量x33|r|cffccffff的伤害，并|r|cffffcc99减速|r|cffccffff。如果此时敌人已经被减速，则追加|r|cffffcc992秒眩晕|r|cffccffff效果。暗金公爵|r|cffffcc99护甲|r|cffccffff越高，额外伤害越高。|n|n|r|cffffcc99每次发动时有20%几率重置冷却时间|r",
+			"icon":"war3mapImported\\\\BTNSpell_Jacob_JinSeDaDi.png",
+			"name":"金色大地"
+		},
+		"r":{
+			"desc":"<p><span style=\"color:#ffffff\">暴行约定</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">增益、回复（被动）</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">每次施放/结束技能时，都能回复</span><span style=\"color:#ffcc99\">20%<span style=\"color:#ccffff\">生命值。在下一次攻击时增加</span><span style=\"color:#ffcc99\">750%<span style=\"color:#ccffff\">攻击力和</span><span style=\"color:#ffcc99\">80%<span style=\"color:#ccffff\">暴击率。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99增益、回复（被动）|n|r|n|cffccffff每次施放/结束技能时，都能回复|r|cffffcc9920%|r|cffccffff生命值。在下一次攻击时增加|r|cffffcc99750%|r|cffccffff攻击力和|r|cffffcc9980%|r|cffccffff暴击率。|r",
+			"icon":"war3mapImported\\\\PASBTNSpell_Jacob_BaoXingYueDing.png",
+			"name":"暴行约定"
+		},
+		"t":{
+			"desc":"<p><span style=\"color:#ffffff\">正义宣泄</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">增益<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">暗金公爵在行进中快速挥动武器，短时间内提升</span><span style=\"color:#ffcc99\">500%<span style=\"color:#ccffff\">攻击速度（可突破上限）和</span><span style=\"color:#ffcc99\">50%<span style=\"color:#ccffff\">范围伤害。</span></p><p><span style=\"color:#ffcc99\">持续9秒</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99增益|r|n|n|cffccffff暗金公爵在行进中快速挥动武器，短时间内提升|r|cffffcc99500%|r|cffccffff攻击速度（可突破上限）和|r|cffffcc9950%|r|cffccffff范围伤害。|n|r|cffffcc99持续9秒|r",
+			"icon":"war3mapImported\\\\BTNSpell_Jacob_RongYuChuJue.png",
+			"name":"正义宣泄"
+		},
+		"unitId":"O01B",
+		"w":{
+			"desc":"<p><span style=\"color:#ffffff\">中枢之力</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">增益</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量、回血速度、法术抗性、护甲</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">获得无懈可击的力量，提升</span><span style=\"color:#ffcc99\">750点<span style=\"color:#ccffff\">力量、</span><span style=\"color:#ffcc99\">6%<span style=\"color:#ccffff\">回血速度、</span><span style=\"color:#ffcc99\">20%<span style=\"color:#ccffff\">法术抗性和</span><span style=\"color:#ffcc99\">300点<span style=\"color:#ccffff\">护甲。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99增益|n|r|cffccffff属性：|r|cffffcc99力量、回血速度、法术抗性、护甲|n|r|n|cffccffff获得无懈可击的力量，提升|r|cffffcc99750点|r|cffccffff力量、|r|cffffcc996%|r|cffccffff回血速度、|r|cffffcc9920%|r|cffccffff法术抗性和|r|cffffcc99300点|r|cffccffff护甲。|r",
+			"icon":"war3mapImported\\\\BTNSpell_Jacob_zhongshuzhili.png",
+			"name":"中枢之力"
 		}
 	},
 	"U001":{
@@ -579,8 +693,8 @@ var data = {
 			"name":"能量大炮"
 		},
 		"r":{
-			"desc":"<p><span style=\"color:#ffffff\">方舟神印</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">方舟城主以及方舟部队拥有抵挡指向性法术的魔法护盾。每当触发指向盾，或者施法技能时，都会射出2-3发导弹，随机攻击附近的敌人，造成</span><span style=\"color:#ffcc99\">1200+力量x13<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">导弹数量+2</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害（被动）|n|r|cffccffff属性：|r|cffffcc99力量|n|r|cffccffff|n方舟城主以及方舟部队拥有抵挡指向性法术的魔法护盾。每当触发指向盾，或者施法技能时，都会射出2-3发导弹，随机攻击附近的敌人，造成|r|cffffcc991200+力量x13|r|cffccffff的伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n导弹数量+2|n伤害+25%|r",
+			"desc":"<p><span style=\"color:#ffffff\">方舟神印</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">方舟城主以及方舟部队拥有</span><span style=\"color:#ffcc99\">8秒<span style=\"color:#ccffff\">间隔的指向性魔法护盾。每当触发指向盾，或者施法技能时，都会射出</span><span style=\"color:#ffcc99\">2-3发<span style=\"color:#ccffff\">导弹，随机攻击附近的敌人，造成</span><span style=\"color:#ffcc99\">1200+力量x13<span style=\"color:#ccffff\">的伤害。当方舟部队受到物理攻击时，有</span><span style=\"color:#ffcc99\">24%<span style=\"color:#ccffff\">几率抵挡此次伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">导弹数量+2</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害（被动）|n|r|cffccffff属性：|r|cffffcc99力量|n|r|cffccffff|n方舟城主以及方舟部队拥有|r|cffffcc998秒|r|cffccffff间隔的指向性魔法护盾。每当触发指向盾，或者施法技能时，都会射出|r|cffffcc992-3发|r|cffccffff导弹，随机攻击附近的敌人，造成|r|cffffcc991200+力量x13|r|cffccffff的伤害。当方舟部队受到物理攻击时，有|r|cffffcc9924%|r|cffccffff几率抵挡此次伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n导弹数量+2|n伤害+25%|r",
 			"icon":"war3mapImported\\\\PASBTNSpell_FangZhouShenYin.png",
 			"name":"方舟神印"
 		},
@@ -794,10 +908,11 @@ var data = {
 			"unitId":"O004"
 		},
 		"p2":{
-			"desc":"<p><span style=\"color:#cc99ff\">金之尊者皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffffcc00点击后使用该皮肤|r",
+			"desc":"<p><span style=\"color:#cc99ff\">金之尊者皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">暗属性攻防【皮肤2专用】</span></p><p><span style=\"color:#ccffff\">爆气状态下大幅增加攻击力</span></p><p><span style=\"color:#ccffff\">破碎淋漓增加25%伤害</span></p><p><span style=\"color:#ccffff\">赤魂提升护甲穿透效果36→49</span></p><p><span style=\"color:#ccffff\">攻击力成长+33%</span></p><p><span style=\"color:#ccffff\">法术抗性+10%</span></p><p><span style=\"color:#ccffff\">闪避+15%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#99ccff\"></span></p><p><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff暗属性攻防【皮肤2专用】|n爆气状态下大幅增加攻击力|n破碎淋漓增加25%伤害|n赤魂提升护甲穿透效果36→49|n攻击力成长+33%|n法术抗性+10%|n闪避+15%|n专属合成书+1|r|cff99ccff|n|r",
 			"icon":"war3mapImported\\\\BTNSkin2_PRJ.png",
-			"name":"|cffcc99ff金之尊者皮肤2|r"
+			"name":"|cffcc99ff金之尊者皮肤2|r",
+			"unitId":"O019"
 		},
 		"q":{
 			"desc":"<p><span style=\"color:#ffffff\">破碎淋漓</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、负面状态<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">金之尊者用利爪攻击身边所有敌人，造成相关</span><span style=\"color:#ffcc00\">2400+敏捷x26+攻击力x0.9<span style=\"color:#ccffff\">的伤害，每个敌人回复自身</span><span style=\"color:#ffcc00\">6%<span style=\"color:#ccffff\">生命值。如果身边的敌人较多，可降低该技能的</span><span style=\"color:#ffcc00\">冷却时间<span style=\"color:#ccffff\">。</span><span style=\"color:#fff\"></span></p>",
@@ -1005,8 +1120,8 @@ var data = {
 			"name":"|cffccffcc英雄天赋|r"
 		},
 		"e":{
-			"desc":"<p><span style=\"color:#ffffff\">风刃壁</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">智力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">七煌法师为一名友军提供风刃护盾，减少</span><span style=\"color:#ffcc00\">30%<span style=\"color:#ccffff\">近战伤害，并反弹</span><span style=\"color:#ffcc00\">1200+智力x19<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">风刃壁状态下，自身普通攻击附带智力伤害</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害|n|r|cffccffff属性：|r|cffffcc99智力|r|n|n|cffccffff七煌法师为一名友军提供风刃护盾，减少|r|cffffcc0030%|r|cffccffff近战伤害，并反弹|r|cffffcc001200+智力x19|r|cffccffff的伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n风刃壁状态下，自身普通攻击附带智力伤害|r",
+			"desc":"<p><span style=\"color:#ffffff\">风刃壁</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">智力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">七煌法师为一名友军提供风刃护盾，减少</span><span style=\"color:#ffcc00\">30%<span style=\"color:#ccffff\">近距离物理伤害，并反弹</span><span style=\"color:#ffcc00\">1200+智力x19<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">风刃壁状态下，自身普通攻击附带智力伤害</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害|n|r|cffccffff属性：|r|cffffcc99智力|r|n|n|cffccffff七煌法师为一名友军提供风刃护盾，减少|r|cffffcc0030%|r|cffccffff近距离物理伤害，并反弹|r|cffffcc001200+智力x19|r|cffccffff的伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n风刃壁状态下，自身普通攻击附带智力伤害|r",
 			"icon":"war3mapImported\\\\BTNSpell_FengRenBi.png",
 			"name":"风刃壁"
 		},
@@ -1427,8 +1542,8 @@ var data = {
 			"unitId":"O00W"
 		},
 		"q":{
-			"desc":"<p><span style=\"color:#ffffff\">爆雷符</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、控制<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">银之月姬向周围敌人种下爆雷符咒，受到</span><span style=\"color:#ffcc00\">1200+敏捷x12<span style=\"color:#ccffff\">的伤害，并且在</span><span style=\"color:#ffcc00\">2秒<span style=\"color:#ccffff\">后引爆护符，造成</span><span style=\"color:#ffcc00\">同等的<span style=\"color:#ccffff\">爆炸伤害，并眩晕</span><span style=\"color:#ffcc00\">1.5秒<span style=\"color:#ccffff\">。如果已学习</span><span style=\"color:#ffcc00\">鬼针<span style=\"color:#ccffff\">，每次伤害都有几率触发鬼针。</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、控制|r|cffccffff|n属性：|r|cffffcc99敏捷|r|n|n|cffccffff银之月姬向周围敌人种下爆雷符咒，受到|r|cffffcc001200+敏捷x12|r|cffccffff的伤害，并且在|r|cffffcc002秒|r|cffccffff后引爆护符，造成|r|cffffcc00同等的|r|cffccffff爆炸伤害，并眩晕|r|cffffcc001.5秒|r|cffccffff。如果已学习|r|cffffcc00鬼针|r|cffccffff，每次伤害都有几率触发鬼针。|r",
+			"desc":"<p><span style=\"color:#ffffff\">爆雷符</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、控制<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">银之月姬向周围敌人种下爆雷符咒，受到</span><span style=\"color:#ffcc00\">1200+攻击力x0.63+敏捷x12<span style=\"color:#ccffff\">的伤害，并且在</span><span style=\"color:#ffcc00\">2秒<span style=\"color:#ccffff\">后引爆护符，造成</span><span style=\"color:#ffcc00\">同等的<span style=\"color:#ccffff\">爆炸伤害，并眩晕</span><span style=\"color:#ffcc00\">1.5秒<span style=\"color:#ccffff\">。如果已学习</span><span style=\"color:#ffcc00\">鬼针<span style=\"color:#ccffff\">，每次伤害都有几率触发鬼针。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、控制|r|cffccffff|n属性：|r|cffffcc99敏捷、攻击力|r|n|n|cffccffff银之月姬向周围敌人种下爆雷符咒，受到|r|cffffcc001200+攻击力x0.63+敏捷x12|r|cffccffff的伤害，并且在|r|cffffcc002秒|r|cffccffff后引爆护符，造成|r|cffffcc00同等的|r|cffccffff爆炸伤害，并眩晕|r|cffffcc001.5秒|r|cffccffff。如果已学习|r|cffffcc00鬼针|r|cffccffff，每次伤害都有几率触发鬼针。|r",
 			"icon":"ReplaceableTextures\\\\CommandButtons\\\\BTNBansheeMaster.png",
 			"name":"爆雷符"
 		},
@@ -1746,8 +1861,8 @@ var data = {
 			"name":"|cffccffcc英雄天赋|r"
 		},
 		"e":{
-			"desc":"<p><span style=\"color:#ffffff\">风刃壁</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">智力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">七煌法师为一名友军提供风刃护盾，减少</span><span style=\"color:#ffcc00\">30%<span style=\"color:#ccffff\">近战伤害，并反弹</span><span style=\"color:#ffcc00\">1200+智力x19<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">风刃壁状态下，自身普通攻击附带智力伤害</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害|n|r|cffccffff属性：|r|cffffcc99智力|r|n|n|cffccffff七煌法师为一名友军提供风刃护盾，减少|r|cffffcc0030%|r|cffccffff近战伤害，并反弹|r|cffffcc001200+智力x19|r|cffccffff的伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n风刃壁状态下，自身普通攻击附带智力伤害|r",
+			"desc":"<p><span style=\"color:#ffffff\">风刃壁</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">智力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">七煌法师为一名友军提供风刃护盾，减少</span><span style=\"color:#ffcc00\">30%<span style=\"color:#ccffff\">近距离物理伤害，并反弹</span><span style=\"color:#ffcc00\">1200+智力x19<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">风刃壁状态下，自身普通攻击附带智力伤害</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害|n|r|cffccffff属性：|r|cffffcc99智力|r|n|n|cffccffff七煌法师为一名友军提供风刃护盾，减少|r|cffffcc0030%|r|cffccffff近距离物理伤害，并反弹|r|cffffcc001200+智力x19|r|cffccffff的伤害。|r|n|r|cffcc8dc4|n皮肤强化：|n风刃壁状态下，自身普通攻击附带智力伤害|r",
 			"icon":"war3mapImported\\\\BTNSpell_FengRenBi.png",
 			"name":"风刃壁"
 		},
@@ -1889,8 +2004,8 @@ var data = {
 			"name":"能量大炮"
 		},
 		"r":{
-			"desc":"<p><span style=\"color:#ffffff\">方舟神印</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">方舟城主以及方舟部队拥有抵挡指向性法术的魔法护盾。每当触发指向盾，或者施法技能时，都会射出2-3发导弹，随机攻击附近的敌人，造成</span><span style=\"color:#ffcc99\">1200+力量x13<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害（被动）|n|r|cffccffff属性：|r|cffffcc99力量|n|r|cffccffff|n方舟城主以及方舟部队拥有抵挡指向性法术的魔法护盾。每当触发指向盾，或者施法技能时，都会射出2-3发导弹，随机攻击附近的敌人，造成|r|cffffcc991200+力量x13|r|cffccffff的伤害。|r",
+			"desc":"<p><span style=\"color:#ffffff\">方舟神印</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">力量</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">方舟城主以及方舟部队拥有</span><span style=\"color:#ffcc99\">8秒<span style=\"color:#ccffff\">间隔的指向性魔法护盾。每当触发指向盾，或者施法技能时，都会射出</span><span style=\"color:#ffcc99\">2-3发<span style=\"color:#ccffff\">导弹，随机攻击附近的敌人，造成</span><span style=\"color:#ffcc99\">1200+力量x13<span style=\"color:#ccffff\">的伤害。当方舟部队受到物理攻击时，有</span><span style=\"color:#ffcc99\">24%<span style=\"color:#ccffff\">几率抵挡此次伤害。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害（被动）|n|r|cffccffff属性：|r|cffffcc99力量|n|r|cffccffff|n方舟城主以及方舟部队拥有|r|cffffcc998秒|r|cffccffff间隔的指向性魔法护盾。每当触发指向盾，或者施法技能时，都会射出|r|cffffcc992-3发|r|cffccffff导弹，随机攻击附近的敌人，造成|r|cffffcc991200+力量x13|r|cffccffff的伤害。当方舟部队受到物理攻击时，有|r|cffffcc9924%|r|cffccffff几率抵挡此次伤害。|r",
 			"icon":"war3mapImported\\\\PASBTNSpell_FangZhouShenYin.png",
 			"name":"方舟神印"
 		},
@@ -1946,8 +2061,8 @@ var data = {
 			"name":"遥远冰川"
 		},
 		"r":{
-			"desc":"<p><span style=\"color:#ffffff\">冰霜铠甲</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#fdca00\">增益、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#fdca00\">力量、护甲</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">冰霜剑使永久增加</span><span style=\"color:#ffcc00\">100点<span style=\"color:#ccffff\">护甲，攻击她的近战单位有</span><span style=\"color:#ffcc00\">20%<span style=\"color:#ccffff\">几率被霜冻减速，受到</span><span style=\"color:#ffcc00\">1200+力量x19<span style=\"color:#ccffff\">的范围伤害。冰霜剑使护甲越高，反弹伤害越高。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">受到近战攻击时15%几率冻结敌人1.5秒</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cfffdca00增益、魔法伤害（被动）|n|r|cffccffff属性：|r|cfffdca00力量、护甲|n|r|cffccffff|n冰霜剑使永久增加|r|cffffcc00100点|r|cffccffff护甲，攻击她的近战单位有|r|cffffcc0020%|r|cffccffff几率被霜冻减速，受到|r|cffffcc001200+力量x19|r|cffccffff的范围伤害。冰霜剑使护甲越高，反弹伤害越高。|r|n|r|cffcc8dc4|n皮肤强化：|n受到近战攻击时15%几率冻结敌人1.5秒|r",
+			"desc":"<p><span style=\"color:#ffffff\">冰霜铠甲</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#fdca00\">增益、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#fdca00\">力量、护甲</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">冰霜剑使永久增加</span><span style=\"color:#ffcc00\">200点<span style=\"color:#ccffff\">护甲，攻击她的近战单位有</span><span style=\"color:#ffcc00\">20%<span style=\"color:#ccffff\">几率被霜冻减速，受到</span><span style=\"color:#ffcc00\">1200+力量x19<span style=\"color:#ccffff\">的范围伤害。冰霜剑使护甲越高，反弹伤害越高。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">受到近战攻击时15%几率冻结敌人1.5秒</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cfffdca00增益、魔法伤害（被动）|n|r|cffccffff属性：|r|cfffdca00力量、护甲|n|r|cffccffff|n冰霜剑使永久增加|r|cffffcc00200点|r|cffccffff护甲，攻击她的近战单位有|r|cffffcc0020%|r|cffccffff几率被霜冻减速，受到|r|cffffcc001200+力量x19|r|cffccffff的范围伤害。冰霜剑使护甲越高，反弹伤害越高。|r|n|r|cffcc8dc4|n皮肤强化：|n受到近战攻击时15%几率冻结敌人1.5秒|r",
 			"icon":"war3mapImported\\\\PASBTNSpell_PLD_BingShuangKaiJia.png",
 			"name":"冰霜铠甲"
 		},
@@ -1997,8 +2112,8 @@ var data = {
 			"unitId":"O00W"
 		},
 		"q":{
-			"desc":"<p><span style=\"color:#ffffff\">爆雷符</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、控制<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">银之月姬向周围敌人种下爆雷符咒，受到</span><span style=\"color:#ffcc00\">1200+敏捷x12<span style=\"color:#ccffff\">的伤害，并且在</span><span style=\"color:#ffcc00\">2秒<span style=\"color:#ccffff\">后引爆护符，造成</span><span style=\"color:#ffcc00\">同等的<span style=\"color:#ccffff\">爆炸伤害，并眩晕</span><span style=\"color:#ffcc00\">1.5秒<span style=\"color:#ccffff\">。如果已学习</span><span style=\"color:#ffcc00\">鬼针<span style=\"color:#ccffff\">，每次伤害都有几率触发鬼针。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span></p><p><span style=\"color:#cc8dc4\">范围+25%</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、控制|r|cffccffff|n属性：|r|cffffcc99敏捷|r|n|n|cffccffff银之月姬向周围敌人种下爆雷符咒，受到|r|cffffcc001200+敏捷x12|r|cffccffff的伤害，并且在|r|cffffcc002秒|r|cffccffff后引爆护符，造成|r|cffffcc00同等的|r|cffccffff爆炸伤害，并眩晕|r|cffffcc001.5秒|r|cffccffff。如果已学习|r|cffffcc00鬼针|r|cffccffff，每次伤害都有几率触发鬼针。|r|n|r|cffcc8dc4|n皮肤强化：|n伤害+25%|n范围+25%|r",
+			"desc":"<p><span style=\"color:#ffffff\">爆雷符</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、控制<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">银之月姬向周围敌人种下爆雷符咒，受到</span><span style=\"color:#ffcc00\">1200+攻击力x0.63+敏捷x12<span style=\"color:#ccffff\">的伤害，并且在</span><span style=\"color:#ffcc00\">2秒<span style=\"color:#ccffff\">后引爆护符，造成</span><span style=\"color:#ffcc00\">同等的<span style=\"color:#ccffff\">爆炸伤害，并眩晕</span><span style=\"color:#ffcc00\">1.5秒<span style=\"color:#ccffff\">。如果已学习</span><span style=\"color:#ffcc00\">鬼针<span style=\"color:#ccffff\">，每次伤害都有几率触发鬼针。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">伤害+25%</span></p><p><span style=\"color:#cc8dc4\">范围+25%</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99魔法伤害、控制|r|cffccffff|n属性：|r|cffffcc99敏捷、攻击力|r|n|n|cffccffff银之月姬向周围敌人种下爆雷符咒，受到|r|cffffcc001200+攻击力x0.63+敏捷x12|r|cffccffff的伤害，并且在|r|cffffcc002秒|r|cffccffff后引爆护符，造成|r|cffffcc00同等的|r|cffccffff爆炸伤害，并眩晕|r|cffffcc001.5秒|r|cffccffff。如果已学习|r|cffffcc00鬼针|r|cffccffff，每次伤害都有几率触发鬼针。|r|n|r|cffcc8dc4|n皮肤强化：|n伤害+25%|n范围+25%|r",
 			"icon":"ReplaceableTextures\\\\CommandButtons\\\\BTNBansheeMaster.png",
 			"name":"爆雷符"
 		},
@@ -2895,10 +3010,11 @@ var data = {
 			"unitId":"O004"
 		},
 		"p2":{
-			"desc":"<p><span style=\"color:#cc99ff\">金之尊者皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffffcc00点击后使用该皮肤|r",
+			"desc":"<p><span style=\"color:#cc99ff\">金之尊者皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">暗属性攻防【皮肤2专用】</span></p><p><span style=\"color:#ccffff\">爆气状态下大幅增加攻击力</span></p><p><span style=\"color:#ccffff\">破碎淋漓增加25%伤害</span></p><p><span style=\"color:#ccffff\">赤魂提升护甲穿透效果36→49</span></p><p><span style=\"color:#ccffff\">攻击力成长+33%</span></p><p><span style=\"color:#ccffff\">法术抗性+10%</span></p><p><span style=\"color:#ccffff\">闪避+15%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#99ccff\"></span></p><p><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff暗属性攻防【皮肤2专用】|n爆气状态下大幅增加攻击力|n破碎淋漓增加25%伤害|n赤魂提升护甲穿透效果36→49|n攻击力成长+33%|n法术抗性+10%|n闪避+15%|n专属合成书+1|r|cff99ccff|n|r",
 			"icon":"war3mapImported\\\\BTNSkin2_PRJ.png",
-			"name":"|cffcc99ff金之尊者皮肤2|r"
+			"name":"|cffcc99ff金之尊者皮肤2|r",
+			"unitId":"O019"
 		},
 		"q":{
 			"desc":"<p><span style=\"color:#ffffff\">破碎淋漓</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">魔法伤害、负面状态<span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">敏捷、攻击力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">金之尊者用利爪攻击身边所有敌人，造成相关</span><span style=\"color:#ffcc00\">2400+敏捷x26+攻击力x0.9<span style=\"color:#ccffff\">的伤害，每个敌人回复自身</span><span style=\"color:#ffcc00\">6%<span style=\"color:#ccffff\">生命值。如果身边的敌人较多，可降低该技能的</span><span style=\"color:#ffcc00\">冷却时间<span style=\"color:#ccffff\">。</span><span style=\"color:#fff\"></span></p>",
@@ -2951,8 +3067,8 @@ var data = {
 			"unitId":"N00E"
 		},
 		"p2":{
-			"desc":"<p><span style=\"color:#00ffff\">真神皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffffcc00点击后使用该皮肤|r",
+			"desc":"<p><span style=\"color:#00ffff\">真神皮肤2</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">点击后使用该皮肤</span></p><p><span style=\"color:#ccffff\">发动技能时可追加黑粒子，随机追击附近敌人</span></p><p><span style=\"color:#ccffff\">红色枷锁增加伤害</span></p><p><span style=\"color:#ccffff\">圣地增加范围</span></p><p><span style=\"color:#ccffff\">真神之理多重箭攻击附带智力伤害</span></p><p><span style=\"color:#ccffff\">免疫毒素伤害和即死效果</span></p><p><span style=\"color:#ccffff\">法术暴击伤害+20%</span></p><p><span style=\"color:#ccffff\">专属合成书+1</span><span style=\"color:#ffcc00\"></span></p><p><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffffcc00点击后使用该皮肤|n|r|cffccffff发动技能时可追加黑粒子，随机追击附近敌人|n红色枷锁增加伤害|n圣地增加范围|n真神之理多重箭攻击附带智力伤害|n免疫毒素伤害和即死效果|n法术暴击伤害+20%|n专属合成书+1|r|cffffcc00|n|r",
 			"icon":"war3mapImported\\\\BTNSkin_ZhenShen2.png",
 			"name":"|cff00ffff真神皮肤2|r",
 			"unitId":"N020"
@@ -3220,8 +3336,8 @@ var data = {
 			"name":"|cffccffcc英雄天赋|r"
 		},
 		"e":{
-			"desc":"<p><span style=\"color:#ffffff\">风刃壁</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">智力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">七煌法师为一名友军提供风刃护盾，减少</span><span style=\"color:#ffcc00\">30%<span style=\"color:#ccffff\">近战伤害，并反弹</span><span style=\"color:#ffcc00\">1200+智力x19<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害|n|r|cffccffff属性：|r|cffffcc99智力|r|n|n|cffccffff七煌法师为一名友军提供风刃护盾，减少|r|cffffcc0030%|r|cffccffff近战伤害，并反弹|r|cffffcc001200+智力x19|r|cffccffff的伤害。|r",
+			"desc":"<p><span style=\"color:#ffffff\">风刃壁</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#ffcc99\">护盾、魔法伤害</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#ffcc99\">智力<span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ccffff\">七煌法师为一名友军提供风刃护盾，减少</span><span style=\"color:#ffcc00\">30%<span style=\"color:#ccffff\">近距离物理伤害，并反弹</span><span style=\"color:#ffcc00\">1200+智力x19<span style=\"color:#ccffff\">的伤害。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cffffcc99护盾、魔法伤害|n|r|cffccffff属性：|r|cffffcc99智力|r|n|n|cffccffff七煌法师为一名友军提供风刃护盾，减少|r|cffffcc0030%|r|cffccffff近距离物理伤害，并反弹|r|cffffcc001200+智力x19|r|cffccffff的伤害。|r",
 			"icon":"war3mapImported\\\\BTNSpell_FengRenBi.png",
 			"name":"风刃壁"
 		},
@@ -3363,8 +3479,8 @@ var data = {
 			"name":"遥远冰川"
 		},
 		"r":{
-			"desc":"<p><span style=\"color:#ffffff\">冰霜铠甲</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#fdca00\">增益、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#fdca00\">力量、护甲</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">冰霜剑使永久增加</span><span style=\"color:#ffcc00\">100点<span style=\"color:#ccffff\">护甲，攻击她的近战单位有</span><span style=\"color:#ffcc00\">20%<span style=\"color:#ccffff\">几率被霜冻减速，受到</span><span style=\"color:#ffcc00\">1200+力量x19<span style=\"color:#ccffff\">的范围伤害。冰霜剑使护甲越高，反弹伤害越高。</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cfffdca00增益、魔法伤害（被动）|n|r|cffccffff属性：|r|cfffdca00力量、护甲|n|r|cffccffff|n冰霜剑使永久增加|r|cffffcc00100点|r|cffccffff护甲，攻击她的近战单位有|r|cffffcc0020%|r|cffccffff几率被霜冻减速，受到|r|cffffcc001200+力量x19|r|cffccffff的范围伤害。冰霜剑使护甲越高，反弹伤害越高。|r",
+			"desc":"<p><span style=\"color:#ffffff\">冰霜铠甲</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#fdca00\">增益、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#fdca00\">力量、护甲</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">冰霜剑使永久增加</span><span style=\"color:#ffcc00\">200点<span style=\"color:#ccffff\">护甲，攻击她的近战单位有</span><span style=\"color:#ffcc00\">20%<span style=\"color:#ccffff\">几率被霜冻减速，受到</span><span style=\"color:#ffcc00\">1200+力量x19<span style=\"color:#ccffff\">的范围伤害。冰霜剑使护甲越高，反弹伤害越高。</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cfffdca00增益、魔法伤害（被动）|n|r|cffccffff属性：|r|cfffdca00力量、护甲|n|r|cffccffff|n冰霜剑使永久增加|r|cffffcc00200点|r|cffccffff护甲，攻击她的近战单位有|r|cffffcc0020%|r|cffccffff几率被霜冻减速，受到|r|cffffcc001200+力量x19|r|cffccffff的范围伤害。冰霜剑使护甲越高，反弹伤害越高。|r",
 			"icon":"war3mapImported\\\\PASBTNSpell_PLD_BingShuangKaiJia.png",
 			"name":"冰霜铠甲"
 		},
@@ -4119,8 +4235,8 @@ var data = {
 			"name":"遥远冰川"
 		},
 		"r":{
-			"desc":"<p><span style=\"color:#ffffff\">冰霜铠甲</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#fdca00\">增益、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#fdca00\">力量、护甲</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">冰霜剑使永久增加</span><span style=\"color:#ffcc00\">100点<span style=\"color:#ccffff\">护甲，攻击她的近战单位有</span><span style=\"color:#ffcc00\">20%<span style=\"color:#ccffff\">几率被霜冻减速，受到</span><span style=\"color:#ffcc00\">1200+力量x19<span style=\"color:#ccffff\">的范围伤害。冰霜剑使护甲越高，反弹伤害越高。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">受到近战攻击时15%几率冻结敌人1.5秒</span><span style=\"color:#fff\"></span></p>",
-			"desc2":"|cffccffff类型：|r|cfffdca00增益、魔法伤害（被动）|n|r|cffccffff属性：|r|cfffdca00力量、护甲|n|r|cffccffff|n冰霜剑使永久增加|r|cffffcc00100点|r|cffccffff护甲，攻击她的近战单位有|r|cffffcc0020%|r|cffccffff几率被霜冻减速，受到|r|cffffcc001200+力量x19|r|cffccffff的范围伤害。冰霜剑使护甲越高，反弹伤害越高。|r|n|r|cffcc8dc4|n皮肤强化：|n受到近战攻击时15%几率冻结敌人1.5秒|r",
+			"desc":"<p><span style=\"color:#ffffff\">冰霜铠甲</span></p><p><span style=\"color:#ccffff\">类型：</span><span style=\"color:#fdca00\">增益、魔法伤害（被动）</span></p><p><span style=\"color:#ccffff\">属性：</span><span style=\"color:#fdca00\">力量、护甲</span></p><p><span style=\"color:#ccffff\"></span></p><p><span style=\"color:#ccffff\">冰霜剑使永久增加</span><span style=\"color:#ffcc00\">200点<span style=\"color:#ccffff\">护甲，攻击她的近战单位有</span><span style=\"color:#ffcc00\">20%<span style=\"color:#ccffff\">几率被霜冻减速，受到</span><span style=\"color:#ffcc00\">1200+力量x19<span style=\"color:#ccffff\">的范围伤害。冰霜剑使护甲越高，反弹伤害越高。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#cc8dc4\"></span></p><p><span style=\"color:#cc8dc4\">皮肤强化：</span></p><p><span style=\"color:#cc8dc4\">受到近战攻击时15%几率冻结敌人1.5秒</span><span style=\"color:#fff\"></span></p>",
+			"desc2":"|cffccffff类型：|r|cfffdca00增益、魔法伤害（被动）|n|r|cffccffff属性：|r|cfffdca00力量、护甲|n|r|cffccffff|n冰霜剑使永久增加|r|cffffcc00200点|r|cffccffff护甲，攻击她的近战单位有|r|cffffcc0020%|r|cffccffff几率被霜冻减速，受到|r|cffffcc001200+力量x19|r|cffccffff的范围伤害。冰霜剑使护甲越高，反弹伤害越高。|r|n|r|cffcc8dc4|n皮肤强化：|n受到近战攻击时15%几率冻结敌人1.5秒|r",
 			"icon":"war3mapImported\\\\PASBTNSpell_PLD_BingShuangKaiJia.png",
 			"name":"冰霜铠甲"
 		},
