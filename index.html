@@ -24,8 +24,8 @@
           <a href="/bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
             data-view-component="true">主播</a>
         </li>
-        <li><a href="/bilibili/item/item.html" data-turbo-frame="repo-content-turbo-frame"
-            data-view-component="true">装备列表</a></li>
+        <!-- <li><a href="/bilibili/item/item.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">装备列表</a></li> -->
         <li><a href="/bilibili/hero/hero-list.html" data-turbo-frame="repo-content-turbo-frame"
             data-view-component="true">英雄列表</a></li>
         <li><a href="/bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
@@ -34,15 +34,15 @@
 
       <div class="subnav">
         <ul>
-          <li><a href="#" data-img="/bilibili/header/西7.png" data-turbo="false">西方世界的劫难7</a></li>
-          <li><a href="#" data-img="/bilibili/header/mp.png" data-turbo="false">梦想愿景</a></li>
+          <li><a href="#x7" data-img="/bilibili/header/西7.png" data-turbo="false">西方世界的劫难7</a></li>
+          <li><a href="#mp" data-img="/bilibili/header/mp.png"  data-turbo="false">梦想愿景</a></li>
         </ul>
       </div>
     </header>
 
     <script>
       (function () {
-        window._self = {}
+
         var dom = {
           type: document.querySelector(".page-header .type img"),
           menu: document.querySelector(".page-header ul.menu"),
@@ -63,20 +63,20 @@
           img.classList.add('active')
         }
 
-        changeIframeSrc(dom.menua[0])
+
 
         // 游戏分类
         let preSrc = dom.type.src;
         dom.subnav.addEventListener('click', e => {
           console.log(e.target)
           if (e.target.tagName == 'A') {
-            changeSubnavSrc(e.target.getAttribute('data-img'))
-            preSrc = dom.type.src
-            window._self.type = e.target.innerHTML
+            preSrc = e.target.getAttribute('data-img')
+            recordAnchor(e)
             dom.subnava.forEach(function (v) {
               v.classList.remove('active')
             })
             e.target.classList.add('active')
+
           }
         })
 
@@ -93,19 +93,61 @@
           dom.type.src = v;
         }
 
-        // changeSubnavSrc(dom.subnava[0])
+        // 默认展示哪个游戏
+        // changeSubnavSrc(dom.subnava[2])
+
+        /**
+         * 记录锚点供其他页面识别游戏类别
+         */
+        function recordAnchor(e) {
+          window._self = window._self || {}
+          if (e) {
+            window._self.type = e.target.getAttribute('href')
+            changeSubnavSrc(e.target.getAttribute('data-img'))
+          } else {
+            // 获取URL中的锚点
+            const hash = window.location.hash
+            if(hash==='#'){
+              hash = '#x7'
+            }
+            window._self.type = hash
+            changeSubnavSrc(dom.subnav.querySelector(`a[href="${hash}"]`).getAttribute('data-img'))
+          }
+
+          initMenu()
+        }
+        recordAnchor()
+
+
+        // 禁止所有元素被拖拽 防止a链接出现url
+        document.addEventListener('dragstart', function (e) {
+          e.preventDefault();
+        });
 
       })()
 
     </script>
 
-    <turbo-frame id="repo-content-turbo-frame" src1="/bilibili/live/live.html">
+    <turbo-frame id="repo-content-turbo-frame" src1="/bilibili/hero/hero-list.html">
       <p>加载中...</p>
     </turbo-frame>
 
     <script>
+      function initMenu(){
+        {
+          // 创建一个新的点击事件
+          const clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+          });
+          // 触发点击事件
+          document.querySelector(".page-header ul.menu li:nth-child(2) a").dispatchEvent(clickEvent);
+        }
+      }
       document.addEventListener("turbo:load", function () {
         console.log("turbo:load event");
+        initMenu()
       });
       document.addEventListener("turbo:before-visit", function () {
         console.log("turbo:before-visit event");
@@ -119,6 +161,20 @@
       document.addEventListener("turbo:render", function () {
         console.log("turbo:render event");
       });
+
+
+      // 动态加载 JavaScript 文件
+      function loadScript(url, callback) {
+        const script = document.createElement('script');
+        script.src = url;
+        script.type = 'text/javascript';
+        script.async = true; // 或 script.defer = true;
+        script.onload = function () {
+          if (callback) callback()
+        }
+        document.head.appendChild(script);
+      }
+
     </script>
 
     <footer>

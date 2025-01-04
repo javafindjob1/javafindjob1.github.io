@@ -1,12 +1,165 @@
 <!-- 关于 -->
 <turbo-frame id="repo-content-turbo-frame">
   <style>
+    #repo-content-turbo-frame{
+      display: flex;
+    }
+    #about {
+      margin: auto;
+    }
+    
+    #about section {
+      border-radius: 8px;
+      border: 1px solid #e9e8e8;
+      box-shadow: 0 0 20px white;
+      margin: 50px;
+      padding: 20px;
+      height: 300px;
+    }
+    
+    #about section {
+      width: 1000px;
+    }
 
+    #about p {
+      font-size: 16px;
+    }
+    
+    #about h2 {
+      font-size: 30px;
+    }
+
+    
+    /* #region 建议 */
+    #about .suggestion{
+      position: relative;
+    }
+    #about .suggestion p:last-child{
+      position: absolute;
+      bottom: 0;
+    }
+
+    #about .suggestion ul{
+      list-style-type: disc;
+      margin-left: 50px;
+    }
+
+    /* #endregion */
+
+    /* #region 招租 */
+    #about .store{
+      position: relative;
+    }
+    #about .store p:last-child{
+      position: absolute;
+      bottom: 0;
+    }
+    /* #endregion */
+
+
+    /* #region 赞助 */
+    #about .top {
+      font-size: 0;
+      height: 24px;
+    }
+
+    #about .top span{
+      font-size: 16px;
+      vertical-align: middle;
+    }
+
+    #about .top i {
+      display: inline-block;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+      background: url("/bilibili/about/icon_hot_board_stick.svg") no-repeat 50%/contain;
+    }
+    #about .top img{
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    
+    #about p[class^="top"] i
+     {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+    }
+
+    #about p.top1 i {
+      color: #FE2D46;
+    }
+
+    #about p.top2 i {
+      color: #F60;
+    }
+
+    #about p.top3 i {
+      color: #FAA90E;
+    }
+
+    #about p.top4 i {
+      color: #9195A3;
+    }
+
+    #about .pay img {
+      width: 100px;
+      transition: all 0.2s ease-in-out;
+      display: inline;
+      margin: 0 20px;
+      border-radius: 5px;
+      vertical-align: middle;
+    }
+
+    #about .pay img:hover {
+      transform: scale(2);
+    }
+
+    #about .thanks{
+      position: relative;
+    }
+
+    #about .thanks p:last-child{
+      position: absolute;
+      top: 33px;
+      right: 25px;
+    }
+    /* #endregion */
   </style>
-  <article>
-    <section>
-      <h2>水友</h2>
-      <p></p>
+  <article id="about">
+    <section class="suggestion">
+      <h2>建议或者新图</h2>
+      <p>如果您有好的想法，请留言</p>
+      <p>如果您对其他图也想实现类似的效果，需要完成以下几个步骤：</p>
+      <ul>
+        <li>一张或几张图片 像素为1900 × 1010</li>
+        <li>同类英雄的关联关系，表示为{A:[A1,A2]}</li>
+        <li>英雄技能的数组，表示为{A:[Q,W,E,R,T]}</li>
+        <li>英雄物品的数组，表示为{A:[C1,C2,C3,C4]}</li>
+      </ul>
     </section>
+    <section class="store">
+      <h2>招租</h2>
+      <p>联系邮箱：java_findjob@163.com</p>
+    </section>
+
+    <section class="thanks">
+      <h2>感谢老板充电</h2>
+      <p>老板大气</p>
+      <p class="top"><i></i></p>
+      <p class="top1"><i>1</i></p>
+      <p class="top2"><i>2</i></p>
+      <p class="top3"><i>3</i></p>
+      <p class="top4"><i>4</i></p>
+      <p class="pay">
+        <img src="/bilibili/about/aliPay.jpg" alt="">
+        <img src="/bilibili/about/pay.jpg" alt="">
+      </p>
+    </section>
+
   </article>
 </turbo-frame>

@@ -66,6 +66,7 @@
     <div class="room">
       <iframe frameborder="no" framespacing="0" scrolling="no" allow="autoplay; encrypted-media"
         allowfullscreen="true"></iframe>
+
     </div>
     <ul class="">
       <!-- <li><img src="/bilibili/live/斗鱼封面.png"
@@ -147,6 +148,21 @@
       }
 
       changeIframeSrc(dom.imgs[0])
+
+
+
+      function fetchData() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=193337&start=0&limit=5', true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var dataImg = JSON.parse(xhr.responseText);
+            console.log(dataImg)
+          }
+        };
+        xhr.send();
+      }
+      fetchData()
 
    
     })()

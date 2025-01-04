@@ -28,6 +28,9 @@ git config --global https.proxy http://localhost:10809
 <!-- 禁止跳转 -->
 <a href="" data-turbo="false"></a>
 
+#地图更新日志
+https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=193337&start=0&limit=5
+https://kk.kkdzpt.com/map/193337/detail
 
 #live server配置项目根目录
 1. vscode【设置】 

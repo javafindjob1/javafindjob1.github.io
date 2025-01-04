@@ -22,13 +22,15 @@
       flex-wrap: wrap;
       justify-content: center;
       align-content: center;
-      
-      background-color: #d2c075;
+
+      /* background-color: #d2c075; */
     }
 
     .hero .hero-list a {
       width: 100%;
       height: 100%;
+      /* 防止文本被选中，避免拖动 */
+      user-select: none;
     }
 
     .hero .hero-list a::before {
@@ -57,143 +59,13 @@
       border-radius: 20px;
       /* transform: scale(1.2); */
     }
-
-    .hero .hero-list li[empty] a {
-      cursor: default;
-    }
   </style>
   <div class="hero">
     <div class="container">
       <ul class="hero-list">
-        <!-- 顶 -->
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <!-- 1排 -->
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>维克多</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>深渊魔女</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>乌玛</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>希尔德</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>冰糖</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>战鹿</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>七煌法师</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>圣剑骑士菲奥娜</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>不死战神</p>
-          </a></li>
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <!-- 2排 -->
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>轮回使者</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>金色魔王</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>晴雪</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>功夫猫咪</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>白藤儿</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>莉夏</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>真神</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>塞雷斯托主教</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>尼娜</p>
-          </a></li>
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <!-- 3排 -->
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>死亡骑士</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>莉莉丝</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>平日京</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>圣十字天使</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>红翼天使</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>光域神官</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>冰霜剑使</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>纸牌秘书</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>奴隶战士</p>
-          </a></li>
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <!-- 四排 -->
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>暗金公爵</p>
-          </a></li>
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>异域剑神</p>
-          </a></li>
-        <li><a href="#" data-turbo-frame="console-turbo-frame">
-            <p>太古魔人</p>
-          </a></li>
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
-        <!-- 底部 -->
-        <li empty><a href="#" data-turbo="false">
-            <p></p>
-          </a></li>
+        <!-- <li empty></li>
+        <li><a href="#" data-turbo-frame="console-turbo-frame"></a></li>
+        <li empty></li> -->
       </ul>
 
       <turbo-frame id="console-turbo-frame" class="console">
@@ -207,11 +79,59 @@
   <script>
     (function () {
 
+      // 获取URL中的锚点
+      window._self = window._self || { type: "#mp" }
+      const hash = window._self.type;
+      if (hash === "#mp") {
+        var locArr = [
+          [1903],
+          [413, 585, 757, 956, 1159, 1347, 1523, 1903],
+          [360, 545, 757, 956, 1159, 1347, 1583, 1903],
+          [280, 545, 757, 956, 1159, 1407, 1623, 1903],
+          [250, 495, 757, 956, 1159, 1437, 1693, 1903],
+          [1903],
+        ]
+
+        var heroArr = [
+          [''],
+          ['', 'O000', 'E011', 'E004', 'E008', 'E016', 'H00S', ''],
+          ['', 'O001', 'O003', 'E015', 'H006', 'H007', 'H00H', ''],
+          ['', 'O004', 'E01H', 'O00M', 'N06G', 'E014', 'H005', ''],
+          ['', 'N02D',     '',     '', 'O002', 'H00B', 'H00U', ''],
+          [''],
+        ]
+
+        var heightArr = [50, 151, 161, 190, 169, 286]
+
+        var heroImg = '/mp/mp-heros.png'
+      }else {
+        var locArr = [
+          [1903],
+          [263, 416, 545, 717, 913, 1026, 1257, 1419, 1517, 1723, 1903],
+          [179, 351, 529, 717, 913, 1050, 1257, 1455, 1594, 1757, 1903],
+          [77,  323, 488, 717, 913, 1057, 1297, 1497, 1620, 1820, 1903],
+
+          [405, 717, 1065, 1303, 1620, 1903],
+          [1903],
+        ]
+
+        var heroArr = [
+          [''],
+          ['', 'H00X', 'H00F', 'H003', 'H00D', 'E006', 'O005', 'H002', 'O001', 'O000', ''],
+          ['', 'U000', 'E003', 'E00Y', 'O003', 'H001', 'O002', 'N006', 'H005', 'H00E', ''],
+          ['', 'U001', 'H000', 'O00J', 'H006', 'E021', 'H00G', 'E00T', 'E00C', 'E029', ''],
+          ['', 'O010', '', 'E03O', 'O018', ''],
+          [''],
+        ]
+
+        var heightArr = [40, 176, 161, 190, 179, 260]
+        var heroImg = '/x7/x7-heros.png'
+      }
+
       class Dom {
         constructor() {
           this.hero = document.querySelector(".hero")
-          this.heroul = document.querySelector(".hero ul")
-          this.heroli = document.querySelectorAll(".hero li")
+          this.heroul = document.querySelector(".hero ul.hero-list")
           this.console = document.querySelector("#console-turbo-frame")
         }
         get info() {
@@ -221,55 +141,41 @@
       var dom = new Dom()
 
 
-      // dom.heroli[++index].style = "background-position: 0px 0px; width: 1236px;height: 90px;"
-      var locarr = [
-        [1903],
-        [263, 416, 545, 717, 913, 1026, 1257, 1419, 1517, 1723, 1903],
-        [179, 351, 529, 717, 913, 1050, 1257, 1455, 1594, 1757, 1903],
-        [ 77, 323, 488, 717, 913, 1057, 1297, 1497, 1620, 1820, 1903],
-
-        [405, 717, 1065, 1303, 1620, 1903],
-        [1903],
-      ]
-
-      var heroarr = [
-        [''],
-        ['','H00X', 'H00F', 'H003', 'H00D', 'E006', 'O005', 'H002', 'O001', 'O000',''],
-        ['','U000', 'E003', 'E00Y', 'O003', 'H001', 'O002', 'N006', 'H005', 'H00E',''],
-        ['','U001', 'H000', 'O00J', 'H006', 'E021', 'H00G', 'E00T', 'E00C', 'E029',''],
-        ['','O010','','E03O','O018',''],
-        [''],
-      ]
-
-      var heightArr = [40, 176, 161, 190, 179, 260]
-
       let index = -1;
       let height = 0;
-      for (let i = 0; i < locarr.length; i++) {
+
+      var ulHtml = ''
+      for (let i = 0; i < locArr.length; i++) {
         let preWidth = 0;
 
         let heroIndex = -1;
-        locarr[i].forEach(function (v) {
-          dom.heroli[++index].style = `background: url("/x7/x7-heros.png") no-repeat;background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;`
-          preWidth = v
+        locArr[i].forEach(function (v) {
+          // <li empty></li>
+          // <li><a href="#" data-turbo-frame="console-turbo-frame"></a></li>
+          // <li empty></li> 
 
           // 英雄ID
-          const heroId = heroarr[i][++heroIndex]
-          if(heroId !== ''){
-            dom.heroli[index].children[0].setAttribute('data-hero-id', heroId)
-            dom.heroli[index].children[0].href = "/bilibili/hero/hero-console.html"
+          const heroId = heroArr[i][++heroIndex]
+          if (heroId !== '') {
+            let liHtml = `
+            <li style="background: url('${heroImg}') no-repeat;background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;">
+              <a href="/bilibili/hero/hero-console.html" data-hero-id="${heroId}" data-turbo-frame="console-turbo-frame" class="no-drag" title=""></a>
+            </li>`
+            ulHtml += liHtml
+          } else {
+            let liHtml = `
+            <li empty style="background: url('${heroImg}') no-repeat;background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;">
+            </li>`
+            ulHtml += liHtml
           }
+          preWidth = v
 
         })
         height += heightArr[i];
 
       }
-      // locarr.forEach(function (v, i) {
-      //   dom.heroli[++index].style = `background-position: -${preWidth}px -90px; width: ${v - preWidth}px;height: 169px;`
-      //   preWidth = v
-      // })
-
-      // dom.heroul.style = "background-color: orange;"
+      dom.heroul.innerHTML = ulHtml
+      dom.heroul.style = "background-color: #d2c075;"
 
 
       // 英雄点击事件
@@ -289,4 +195,5 @@
 
     })()
   </script>
+  
 </turbo-frame>
