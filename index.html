@@ -107,7 +107,7 @@
           } else {
             // 获取URL中的锚点
             const hash = window.location.hash
-            if(hash==='#'){
+            if(hash==='#' || hash === ''){
               hash = '#x7'
             }
             window._self.type = hash
