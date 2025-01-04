@@ -192,7 +192,7 @@
       }
 
       // 调用函数加载 x7-data.js
-      loadScript('./bilibili/hero/x7-list/x7-data.js', function () {
+      loadScript('/x7/x7-data.js', function () {
         console.log("加载完成" + window._self.dataHeroId)
         console.log(data[window._self.dataHeroId]);
         const hero = data[window._self.dataHeroId]
@@ -214,14 +214,14 @@
 
       function changeAbility(ele, viewData) {
         if (viewData) {
-          ele.style = `background:url("./bilibili/hero/x7-imgs/${viewData.icon}") no-repeat center center / contain;`
+          ele.style = `background:url("/x7/x7-imgs/${viewData.icon}") no-repeat center center / contain;`
           ele.innerHTML = `<div class="console-info">${viewData.desc}</div>`
         }
       }
       function changePifu(ele, viewData) {
         if (viewData) {
-          ele.innerHTML = `<a href="./bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${viewData.desc}</div>`
-          ele.style = `background:url("./bilibili/hero/x7-imgs/${viewData.icon}") no-repeat center center / contain;`
+          ele.innerHTML = `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${viewData.desc}</div>`
+          ele.style = `background:url("/x7/x7-imgs/${viewData.icon}") no-repeat center center / contain;`
         }
       }
     })()

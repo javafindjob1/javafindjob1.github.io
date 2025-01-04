@@ -51,7 +51,6 @@
 
     .hero .hero-list li {
       flex-shrink: 1;
-      background:  url("./bilibili/hero/x7hero.png") no-repeat;
     }
 
     .hero .hero-list li:not(:last-child, :first-child, [empty]):hover {
@@ -251,14 +250,14 @@
 
         let heroIndex = -1;
         locarr[i].forEach(function (v) {
-          dom.heroli[++index].style = `background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;`
+          dom.heroli[++index].style = `background: url("/x7/x7-heros.png") no-repeat;background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;`
           preWidth = v
 
           // 英雄ID
           const heroId = heroarr[i][++heroIndex]
           if(heroId !== ''){
             dom.heroli[index].children[0].setAttribute('data-hero-id', heroId)
-            dom.heroli[index].children[0].href = "./bilibili/hero/hero-console.html"
+            dom.heroli[index].children[0].href = "/bilibili/hero/hero-console.html"
           }
 
         })
@@ -275,12 +274,10 @@
 
       // 英雄点击事件
       dom.heroul.addEventListener('click', e => {
-        console.log("55555555555")
         e.target.tagName == 'A' && changeHeroInfo(e.target)
       })
       dom.console.setAttribute("r", new Date().getTime())
       dom.console.addEventListener('click', e => {
-        console.log("123412341234===" + e.target.tagName)
         e.target.tagName == 'A' && changeHeroInfo(e.target)
       })
 

@@ -25,7 +25,19 @@ git config --global https.proxy http://localhost:10809
     </style>
     导航页
   </turbo-frame>
+<!-- 禁止跳转 -->
+<a href="" data-turbo="false"></a>
 
+
+#live server配置项目根目录
+1. vscode【设置】 
+2. 搜【live server】
+3. 修改 live server:settings.json
+4. 重启vscdoe
+
+#排查下面代码，超过屏幕宽度出现滚动条
+width: 100%;
+padding: 20px;
 
 #英雄列表
 war3map.j
