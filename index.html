@@ -35,12 +35,13 @@
       <div class="subnav">
         <ul>
           <li><a href="#x7" data-img="/bilibili/header/西7.png" data-turbo="false">西方世界的劫难7</a></li>
-          <li><a href="#mp" data-img="/bilibili/header/mp.png"  data-turbo="false">梦想愿景</a></li>
+          <li><a href="#mp" data-img="/bilibili/header/mp.png" data-turbo="false">梦想愿景</a></li>
         </ul>
       </div>
     </header>
 
     <script>
+
       (function () {
 
         var dom = {
@@ -89,40 +90,64 @@
           e.target.tagName == 'A' && changeSubnavSrc(preSrc)
         })
 
-        function changeSubnavSrc(v) {
-          dom.type.src = v;
-        }
 
         // 默认展示哪个游戏
         // changeSubnavSrc(dom.subnava[2])
 
+        function initMenu() {
+          // 创建一个新的点击事件
+          const clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+          });
+          // 触发点击事件
+          document.querySelector(".page-header ul.menu li:nth-child(2) a").dispatchEvent(clickEvent);
+        }
+
+        function changeSubnavSrc(v) {
+          dom.type.src = v;
+        }
         /**
-         * 记录锚点供其他页面识别游戏类别
-         */
+          * 记录锚点供其他页面识别游戏类别
+          */
         function recordAnchor(e) {
           window._self = window._self || {}
           if (e) {
             window._self.type = e.target.getAttribute('href')
             changeSubnavSrc(e.target.getAttribute('data-img'))
+
           } else {
             // 获取URL中的锚点
             let hash = window.location.hash
-            if(hash==='#' || hash === ''){
+            if (hash === '#' || hash === '') {
               hash = '#x7'
             }
-            console.log("hash==="+hash)
+            console.log("hash===" + hash)
             window._self.type = hash
-            changeSubnavSrc(dom.subnav.querySelector(`a[href="${hash}"]`).getAttribute('data-img'))
+            const src = dom.subnav.querySelector(`a[href="${hash}"]`).getAttribute('data-img')
+            changeSubnavSrc(src)
+            preSrc = src
           }
 
           initMenu()
         }
-        recordAnchor()
 
-
-        // 禁止所有元素被拖拽 防止a链接出现url
-        document.addEventListener('dragstart', function (e) {
-          e.preventDefault();
+        document.addEventListener("turbo:load", function () {
+          console.log("turbo:load event");
+          recordAnchor && recordAnchor()
+        });
+        document.addEventListener("turbo:before-visit", function () {
+          console.log("turbo:before-visit event");
+        });
+        document.addEventListener("turbo:before-fetch-request", function () {
+          console.log("turbo:before-fetch-request event");
+        });
+        document.addEventListener("turbo:before-render", function () {
+          console.log("turbo:before-render event");
+        });
+        document.addEventListener("turbo:render", function () {
+          console.log("turbo:render event");
         });
 
       })()
@@ -134,35 +159,6 @@
     </turbo-frame>
 
     <script>
-      function initMenu(){
-        {
-          // 创建一个新的点击事件
-          const clickEvent = new MouseEvent('click', {
-            view: window,
-            bubbles: true,
-            cancelable: true
-          });
-          // 触发点击事件
-          document.querySelector(".page-header ul.menu li:nth-child(2) a").dispatchEvent(clickEvent);
-        }
-      }
-      document.addEventListener("turbo:load", function () {
-        console.log("turbo:load event");
-        initMenu()
-      });
-      document.addEventListener("turbo:before-visit", function () {
-        console.log("turbo:before-visit event");
-      });
-      document.addEventListener("turbo:before-fetch-request", function () {
-        console.log("turbo:before-fetch-request event");
-      });
-      document.addEventListener("turbo:before-render", function () {
-        console.log("turbo:before-render event");
-      });
-      document.addEventListener("turbo:render", function () {
-        console.log("turbo:render event");
-      });
-
 
       // 动态加载 JavaScript 文件
       function loadScript(url, callback) {
@@ -175,6 +171,11 @@
         }
         document.head.appendChild(script);
       }
+
+      // 禁止所有元素被拖拽 防止a链接出现url
+      document.addEventListener('dragstart', function (e) {
+        e.preventDefault();
+      });
 
     </script>
 
