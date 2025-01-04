@@ -7,7 +7,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-狂战神|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">巴尔萨克出生在一个并未完全开化的部族，族人大多蠢笨而粗鲁。但魔蚀侵袭之严重，让这帮迟钝的蛮族人也意识到世界开始倾覆。为此，部族不得不派出部落里的精英前往大陆的中心探索衰染的原因，他就是其中一个。外面的世界比他想象的更糟糕，可当他重归部落，却发现这里已是一片废墟。</span></p>",
 			"desc2":"巴尔萨克出生在一个并未完全开化的部族，族人大多蠢笨而粗鲁。但魔蚀侵袭之严重，让这帮迟钝的蛮族人也意识到世界开始倾覆。为此，部族不得不派出部落里的精英前往大陆的中心探索衰染的原因，他就是其中一个。外面的世界比他想象的更糟糕，可当他重归部落，却发现这里已是一片废墟。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -39,7 +39,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNSTR-1P-R.png",
 			"name":"刃"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">灭</span></p><p><span style=\"color:#d6d5b7\">斯忒娅能轻易发现敌人的弱点并给予痛击。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span></p><p><span style=\"color:#fff\">物理攻击时有</span><span style=\"color:#f4606c\">8%<span style=\"color:#fff\">机率造成</span><span style=\"color:#f4606c\">7<span style=\"color:#fff\">倍暴击，</span><span style=\"color:#f4606c\">5%<span style=\"color:#fff\">机率造成</span><span style=\"color:#f4606c\">8<span style=\"color:#fff\">倍暴击，</span><span style=\"color:#f4606c\">2%<span style=\"color:#fff\">机率造成</span><span style=\"color:#f4606c\">9<span style=\"color:#fff\">倍暴击。三种暴击机率线性叠加，</span><span style=\"color:#f4606c\">不衰减<span style=\"color:#fff\">。同时提高自身</span><span style=\"color:#f4606c\">0.6%×绝的技能等级<span style=\"color:#fff\">的</span><span style=\"color:#f4606c\">普通攻击吸血<span style=\"color:#fff\">和</span><span style=\"color:#f4606c\">物理吸血<span style=\"color:#fff\">。</span></p>",
 			"desc2":"|cffd6d5b7斯忒娅能轻易发现敌人的弱点并给予痛击。|r|n|n|cffbeedc7被动效果：|n|r物理攻击时有|cfff4606c8%|r机率造成|cfff4606c7|r倍暴击，|cfff4606c5%|r机率造成|cfff4606c8|r倍暴击，|cfff4606c2%|r机率造成|cfff4606c9|r倍暴击。三种暴击机率线性叠加，|cfff4606c不衰减|r。同时提高自身|cfff4606c0.6%×绝的技能等级|r的|cfff4606c普通攻击吸血|r和|cfff4606c物理吸血|r。",
 			"icon":"war3mapImported\\\\BTNSTR-1P-T.png",
@@ -60,7 +60,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-白银骑士|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">斯里薇尔并不隶属某个国家或者组织，她是一名游历四方的骑士，以凡体得到了战神的认同。旅途中，她从怪物手中救下了许多普通居民。魔蚀后人们的境遇令她担忧世界的走向，她决定去解决一直没有被处理的灾难。</span></p>",
 			"desc2":"斯里薇尔并不隶属某个国家或者组织，她是一名游历四方的骑士，以凡体得到了战神的认同。旅途中，她从怪物手中救下了许多普通居民。魔蚀后人们的境遇令她担忧世界的走向，她决定去解决一直没有被处理的灾难。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -85,7 +85,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNSTR-3-R.png",
 			"name":"银白守御"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">银冠</span></p><p><span style=\"color:#d6d5b7\">这副银冠代表着战神对斯里薇尔的认同，仅是携带在身上就可以大幅强化自身的能力。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">提高自身</span><span style=\"color:#f4606c\">300<span style=\"color:#fff\">点全能力，每隔</span><span style=\"color:#f4606c\">12<span style=\"color:#fff\">秒清除自身的负面状态。同时增强自身技能。</span></p><p><span style=\"color:#bee7e9\">银之转化：</span><span style=\"color:#fff\">提高<span style=\"color:#f4606c\">40%</span><span style=\"color:#fff\">护甲转化为攻击力的比率。</span></p><p><span style=\"color:#bee7e9\">银星庇护：</span><span style=\"color:#fff\">被<span style=\"color:#f4606c\">霸主</span><span style=\"color:#fff\">或<span style=\"color:#ff00ff\">稀有精英</span><span style=\"color:#fff\">攻击会额外叠加<span style=\"color:#f4606c\">4</span><span style=\"color:#fff\">层受击次数，提高<span style=\"color:#f4606c\">40%</span><span style=\"color:#fff\">伤害减免上限。</span></p><p><span style=\"color:#bee7e9\">银突：</span><span style=\"color:#fff\">提高<span style=\"color:#f4606c\">32%</span><span style=\"color:#fff\">银突的触发机率。</span></p><p><span style=\"color:#bee7e9\">银白守御：</span><span style=\"color:#fff\">提高<span style=\"color:#f4606c\">40%</span><span style=\"color:#fff\">反击伤害。</span></p>",
 			"desc2":"|cffd6d5b7这副银冠代表着战神对斯里薇尔的认同，仅是携带在身上就可以大幅强化自身的能力。|r|n|n|cffbeedc7被动效果：|r|n提高自身|cfff4606c300|r点全能力，每隔|cfff4606c12|r秒清除自身的负面状态。同时增强自身技能。|n|cffbee7e9银之转化：|r提高|cfff4606c40%|r护甲转化为攻击力的比率。|n|cffbee7e9银星庇护：|r被|cfff4606c霸主|r或|cffff00ff稀有精英|r攻击会额外叠加|cfff4606c4|r层受击次数，提高|cfff4606c40%|r伤害减免上限。|n|cffbee7e9银突：|r提高|cfff4606c32%|r银突的触发机率。|n|cffbee7e9银白守御：|r提高|cfff4606c40%|r反击伤害。",
 			"icon":"war3mapImported\\\\BTNSTR-3-T.png",
@@ -106,7 +106,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-蜜丝提克|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">没有人知道她从哪里来，也很难得知她的魔法力量为谁而服务。只知道这个带着兜帽的女人，神秘而难以接触，浑身散发着冰冷的气息。她对占卜有着令人惊奇的天赋。最近，她似乎看到了新的未来，于是她加入了冒险队伍。</span></p>",
 			"desc2":"没有人知道她从哪里来，也很难得知她的魔法力量为谁而服务。只知道这个带着兜帽的女人，神秘而难以接触，浑身散发着冰冷的气息。她对占卜有着令人惊奇的天赋。最近，她似乎看到了新的未来，于是她加入了冒险队伍。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -131,7 +131,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-4-R.png",
 			"name":"烈风爆破"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">奥术掌控</span></p><p><span style=\"color:#d6d5b7\">蜜丝提克的奥术天赋极高，这使其能够精炼自己的元素法术。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span></p><p><span style=\"color:#fff\">提高自身</span><span style=\"color:#f4606c\">40%<span style=\"color:#fff\">的法术伤害，在蜜丝提克</span><span style=\"color:#f4606c\">900<span style=\"color:#fff\">码范围内的友方单位会减少</span><span style=\"color:#f4606c\">20%<span style=\"color:#fff\">受到的法术伤害。施放元素法术时，会回复自身</span><span style=\"color:#f4606c\">智力×3<span style=\"color:#fff\">的生命值。</span></p>",
 			"desc2":"|cffd6d5b7蜜丝提克的奥术天赋极高，这使其能够精炼自己的元素法术。|r|n|n|cffbeedc7被动效果：|n|r提高自身|cfff4606c40%|r的法术伤害，在蜜丝提克|cfff4606c900|r码范围内的友方单位会减少|cfff4606c20%|r受到的法术伤害。施放元素法术时，会回复自身|cfff4606c智力×3|r的生命值。",
 			"icon":"war3mapImported\\\\BTNINT-4-T.png",
@@ -153,7 +153,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-海里尔|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">海里尔从年轻起就开始为教会工作，独自坚守着神赐的岗位。魔蚀带来的前所未有的危机，让他无法置身事外。他决意为守护净土而战，用手中的圣杖，带领黑暗中的人们寻找光明。</span></p>",
 			"desc2":"海里尔从年轻起就开始为教会工作，独自坚守着神赐的岗位。魔蚀带来的前所未有的危机，让他无法置身事外。他决意为守护净土而战，用手中的圣杖，带领黑暗中的人们寻找光明。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -185,7 +185,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-1-R.png",
 			"name":"灵域"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">灵泽恩赐</span></p><p><span style=\"color:#d6d5b7\">展开灵光的结界，保护结界中的冒险者们。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">在指定区域释放结界，使得指定点</span><span style=\"color:#f4606c\">500<span style=\"color:#fff\">码范围内的所有友方单位回复</span><span style=\"color:#f4606c\">100%<span style=\"color:#fff\">生命值，并使其受到的物理伤害降低</span><span style=\"color:#f4606c\">70%<span style=\"color:#fff\">，持续</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">35<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7展开灵光的结界，保护结界中的冒险者们。|r|n|n|cffecad9e主动效果：|r|n在指定区域释放结界，使得指定点|cfff4606c500|r码范围内的所有友方单位回复|cfff4606c100%|r生命值，并使其受到的物理伤害降低|cfff4606c70%|r，持续|cfff4606c5|r秒。|n冷却时间|cfff4606c35|r秒。",
 			"icon":"war3mapImported\\\\BTNINT-1-T.png",
@@ -206,7 +206,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-萨恩德|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">某个小镇里发生了一场空前的雷暴。雷暴过后，被夷为平地的那里只剩下了萨恩德自己。当他醒来时，发现自己已完全变了样子。他怀疑自己的异变可能与魔蚀有关，便加入了冒险的队伍。</span></p>",
 			"desc2":"某个小镇里发生了一场空前的雷暴。雷暴过后，被夷为平地的那里只剩下了萨恩德自己。当他醒来时，发现自己已完全变了样子。他怀疑自己的异变可能与魔蚀有关，便加入了冒险的队伍。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -231,7 +231,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-3-R.png",
 			"name":"雷暴领域"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">狂电连袭</span></p><p><span style=\"color:#d6d5b7\">召唤多道大型狂雷，轰击目标区域。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">每隔</span><span style=\"color:#f4606c\">0.3<span style=\"color:#fff\">秒在目标区域降下一道大型落雷，对</span><span style=\"color:#f4606c\">300<span style=\"color:#fff\">码范围内的所有敌方单位造成</span><span style=\"color:#f4606c\">1280+智力×8<span style=\"color:#fff\">的法术伤害；如果目标正在被</span><span style=\"color:#f4606c\">净化<span style=\"color:#fff\">，落雷的伤害值提高</span><span style=\"color:#f4606c\">10%<span style=\"color:#fff\">；如果目标处于</span><span style=\"color:#f4606c\">震晕<span style=\"color:#fff\">状态，落雷的伤害值提高</span><span style=\"color:#f4606c\">25%<span style=\"color:#fff\">，总共召唤</span><span style=\"color:#f4606c\">10<span style=\"color:#fff\">道落雷。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">18<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7召唤多道大型狂雷，轰击目标区域。|r|n|n|cffecad9e主动效果：|r|n每隔|cfff4606c0.3|r秒在目标区域降下一道大型落雷，对|cfff4606c300|r码范围内的所有敌方单位造成|cfff4606c1280+智力×8|r的法术伤害；如果目标正在被|cfff4606c净化|r，落雷的伤害值提高|cfff4606c10%|r；如果目标处于|cfff4606c震晕|r状态，落雷的伤害值提高|cfff4606c25%|r，总共召唤|cfff4606c10|r道落雷。|n冷却时间|cfff4606c18|r秒。",
 			"icon":"war3mapImported\\\\BTNINT-3-T.png",
@@ -253,7 +253,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-赫卡莉|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">魔蚀并没有波及到赫卡莉的故乡-耀光森林。但是象征正义和勇气的她不允许自己置身事外。在她的旅途中，赫卡莉曾与自己的光之精灵面对魔蚀变异的怪物，保护了无数无辜的生命。</span></p>",
 			"desc2":"魔蚀并没有波及到赫卡莉的故乡-耀光森林。但是象征正义和勇气的她不允许自己置身事外。在她的旅途中，赫卡莉曾与自己的光之精灵面对魔蚀变异的怪物，保护了无数无辜的生命。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -285,7 +285,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-3-R.png",
 			"name":"疾光"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">耀光强化</span></p><p><span style=\"color:#d6d5b7\">强化自身的耀光力量，使得自己与光之精灵的配合更加默契。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">提高</span><span style=\"color:#f4606c\">40%<span style=\"color:#fff\">光属性护甲的法术抗性效率，使耀光圣矢的触发机率提高到</span><span style=\"color:#f4606c\">100%<span style=\"color:#fff\">，有</span><span style=\"color:#f4606c\">60%<span style=\"color:#fff\">机率多召唤</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">只光之精灵进行协助射击，有</span><span style=\"color:#f4606c\">30%<span style=\"color:#fff\">机率再多召唤</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">只光之精灵进行射击。</span></p>",
 			"desc2":"|cffd6d5b7强化自身的耀光力量，使得自己与光之精灵的配合更加默契。|r|n|n|cffbeedc7被动效果：|r|n提高|cfff4606c40%|r光属性护甲的法术抗性效率，使耀光圣矢的触发机率提高到|cfff4606c100%|r，有|cfff4606c60%|r机率多召唤|cfff4606c1|r只光之精灵进行协助射击，有|cfff4606c30%|r机率再多召唤|cfff4606c1|r只光之精灵进行射击。",
 			"icon":"war3mapImported\\\\BTNAGI-3-T.png",
@@ -306,7 +306,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-希科|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">一名神秘的刺客，据说他曾经是某个暗部组织的首领。由于魔蚀肆虐，他的组织所隶属的国家似乎已经灭亡，组织也被解散。无处可去的他决定踏上冒险旅途，希望找到自己的下一个归宿。</span></p>",
 			"desc2":"一名神秘的刺客，据说他曾经是某个暗部组织的首领。由于魔蚀肆虐，他的组织所隶属的国家似乎已经灭亡，组织也被解散。无处可去的他决定踏上冒险旅途，希望找到自己的下一个归宿。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -331,7 +331,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-5-R.png",
 			"name":"无形"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">镰刃追击</span></p><p><span style=\"color:#d6d5b7\">精通镰刃的希科可以在攻击时迅速地反应。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span></p><p><span style=\"color:#fff\">普通攻击时会攻击</span><span style=\"color:#f4606c\">2<span style=\"color:#fff\">次，在这两次攻击中：第一次攻击造成</span><span style=\"color:#f4606c\">攻击力<span style=\"color:#fff\">的</span><span style=\"color:#ea9f03\">土属性<span style=\"color:#fff\">物理伤害，第二次攻击造成</span><span style=\"color:#f4606c\">攻击力×50%+敏捷×5+自身等级×150<span style=\"color:#fff\">的法术伤害。</span></p>",
 			"desc2":"|cffd6d5b7精通镰刃的希科可以在攻击时迅速地反应。|r|n|n|cffbeedc7被动效果：|n|r普通攻击时会攻击|cfff4606c2|r次，在这两次攻击中：第一次攻击造成|cfff4606c攻击力|r的|cffea9f03土属性|r物理伤害，第二次攻击造成|cfff4606c攻击力×50%+敏捷×5+自身等级×150|r的法术伤害。",
 			"icon":"war3mapImported\\\\BTNAGI-5-T.png",
@@ -353,7 +353,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-赫卡莉|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">魔蚀并没有波及到赫卡莉的故乡-耀光森林。但是象征正义和勇气的她不允许自己置身事外。在她的旅途中，赫卡莉曾与自己的光之精灵面对魔蚀变异的怪物，保护了无数无辜的生命。</span></p>",
 			"desc2":"魔蚀并没有波及到赫卡莉的故乡-耀光森林。但是象征正义和勇气的她不允许自己置身事外。在她的旅途中，赫卡莉曾与自己的光之精灵面对魔蚀变异的怪物，保护了无数无辜的生命。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -386,7 +386,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-3-R.png",
 			"name":"疾光"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">耀光强化</span></p><p><span style=\"color:#d6d5b7\">强化自身的耀光力量，使得自己与光之精灵的配合更加默契。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">提高</span><span style=\"color:#f4606c\">50%<span style=\"color:#fff\">光属性护甲的法术抗性效率，使耀光圣矢的触发机率提高到</span><span style=\"color:#f4606c\">100%<span style=\"color:#fff\">，有</span><span style=\"color:#f4606c\">60%<span style=\"color:#fff\">机率多召唤</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">只光之精灵进行协助射击，有</span><span style=\"color:#f4606c\">30%<span style=\"color:#fff\">机率再多召唤</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">只光之精灵进行射击。</span></p>",
 			"desc2":"|cffd6d5b7强化自身的耀光力量，使得自己与光之精灵的配合更加默契。|r|n|n|cffbeedc7被动效果：|r|n提高|cfff4606c50%|r光属性护甲的法术抗性效率，使耀光圣矢的触发机率提高到|cfff4606c100%|r，有|cfff4606c60%|r机率多召唤|cfff4606c1|r只光之精灵进行协助射击，有|cfff4606c30%|r机率再多召唤|cfff4606c1|r只光之精灵进行射击。",
 			"icon":"war3mapImported\\\\BTNAGI-3-T.png",
@@ -407,7 +407,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-万|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">万是地精十兄弟中的老大。不同于他的兄弟们，万更喜欢研究机械和打造技术。此次他与冒险者们结伴，一方面是为解决魔蚀，让地精兄弟们的生意更加兴隆，另一方面也是为了研究如何将某些力量应用于生产生活中。</span></p>",
 			"desc2":"万是地精十兄弟中的老大。不同于他的兄弟们，万更喜欢研究机械和打造技术。此次他与冒险者们结伴，一方面是为解决魔蚀，让地精兄弟们的生意更加兴隆，另一方面也是为了研究如何将某些力量应用于生产生活中。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -432,7 +432,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNSTR-4-R.png",
 			"name":"增幅"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">动力铠甲·激活</span></p><p><span style=\"color:#d6d5b7\">激活动力铠甲，使得自身在一段时间内大幅强化。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使用后提高自身</span><span style=\"color:#f4606c\">360<span style=\"color:#fff\">点力量，</span><span style=\"color:#f4606c\">25%<span style=\"color:#fff\">法术抗性，每秒回复</span><span style=\"color:#f4606c\">14%<span style=\"color:#fff\">最大生命值，受到</span><span style=\"color:#beedc7\">风属性攻击<span style=\"color:#fff\">时降低</span><span style=\"color:#f4606c\">25%<span style=\"color:#fff\">自身受到的所有伤害，持续</span><span style=\"color:#f4606c\">15<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">30<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7激活动力铠甲，使得自身在一段时间内大幅强化。|r|n|n|cffecad9e主动效果：|r|n使用后提高自身|cfff4606c360|r点力量，|cfff4606c25%|r法术抗性，每秒回复|cfff4606c14%|r最大生命值，受到|cffbeedc7风属性攻击|r时降低|cfff4606c25%|r自身受到的所有伤害，持续|cfff4606c15|r秒。|n冷却时间|cfff4606c30|r秒。",
 			"icon":"war3mapImported\\\\BTNSTR-4-T.png",
@@ -453,7 +453,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-纳迪尔|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">他有很多的身份和传说，他以各种面目出现，鹰隼、鹿、狼，甚至是亦可枯朽的古树，没有人能说清楚哪一个才是他的本质。他是自然的共鸣使，任何胆敢亵渎时光古树的生物，都是他的敌人。当魔物开始打扰到他幽静的家园时，他意识到自己该走出森林做些什么了。</span></p>",
 			"desc2":"他有很多的身份和传说，他以各种面目出现，鹰隼、鹿、狼，甚至是亦可枯朽的古树，没有人能说清楚哪一个才是他的本质。他是自然的共鸣使，任何胆敢亵渎时光古树的生物，都是他的敌人。当魔物开始打扰到他幽静的家园时，他意识到自己该走出森林做些什么了。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -478,7 +478,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-5-R.png",
 			"name":"始源灵力"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">翠绿风暴</span></p><p><span style=\"color:#d6d5b7\">召唤巨大的自然风暴，令风暴中的怪物感受自然之怒。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">延迟</span><span style=\"color:#f4606c\">1.5<span style=\"color:#fff\">秒后，在目标区域</span><span style=\"color:#f4606c\">600<span style=\"color:#fff\">码范围内引发自然风暴，对其中所有敌方单位造成</span><span style=\"color:#f4606c\">18000+智力×240<span style=\"color:#fff\">的法术伤害。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">45<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7召唤巨大的自然风暴，令风暴中的怪物感受自然之怒。|r|n|n|cffecad9e主动效果：|r|n延迟|cfff4606c1.5|r秒后，在目标区域|cfff4606c600|r码范围内引发自然风暴，对其中所有敌方单位造成|cfff4606c18000+智力×240|r的法术伤害。|n冷却时间|cfff4606c45|r秒。",
 			"icon":"war3mapImported\\\\BTNINT-5-T.png",
@@ -493,7 +493,7 @@ var data = {
 		}
 	},
 	"N00E":{
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">万是地精十兄弟中的老大。不同于他的兄弟们，万更喜欢研究机械和打造技术。此次他与冒险者们结伴，一方面是为解决魔蚀，让地精兄弟们的生意更加兴隆，另一方面也是为了研究如何将某些力量应用于生产生活中。</span></p>",
 			"desc2":"万是地精十兄弟中的老大。不同于他的兄弟们，万更喜欢研究机械和打造技术。此次他与冒险者们结伴，一方面是为解决魔蚀，让地精兄弟们的生意更加兴隆，另一方面也是为了研究如何将某些力量应用于生产生活中。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -535,7 +535,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-雅弥|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">远离魔蚀大陆的遥之彼方暗之国，历来能人辈出，各行各业皆不乏精英人士，而熟稔各种隐暗箭术的雅弥正是暗之国的精英弓箭手。在一次任务中，她突然感到一阵莫名恍惚，随后发现四周景色有异。经过一番探查，她最终意识到自己所在之地已非暗之国。她很快掌握了这里的基本信息，加入了冒险队伍，寻求回归祖国的办法。</span></p>",
 			"desc2":"远离魔蚀大陆的遥之彼方暗之国，历来能人辈出，各行各业皆不乏精英人士，而熟稔各种隐暗箭术的雅弥正是暗之国的精英弓箭手。在一次任务中，她突然感到一阵莫名恍惚，随后发现四周景色有异。经过一番探查，她最终意识到自己所在之地已非暗之国。她很快掌握了这里的基本信息，加入了冒险队伍，寻求回归祖国的办法。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -567,7 +567,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-6-R.png",
 			"name":"暗之强化"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">绝暗箭</span></p><p><span style=\"color:#d6d5b7\">汲取凝集所有隐暗之力制作一只巨大的箭矢并向前射出。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">向前方射出一只巨大的隐暗箭，对</span><span style=\"color:#f4606c\">600<span style=\"color:#fff\">码直线范围内的敌方单位造成</span><span style=\"color:#f4606c\">16000+攻击力×1600%<span style=\"color:#fff\">的</span><span style=\"color:#c552e6\">暗属性<span style=\"color:#fff\">物理伤害，巨大隐暗箭飞行</span><span style=\"color:#f4606c\">600<span style=\"color:#fff\">码后会崩裂为</span><span style=\"color:#f4606c\">24<span style=\"color:#fff\">支小型隐暗箭，每支对触碰单位造成</span><span style=\"color:#f4606c\">800+攻击力×80%<span style=\"color:#fff\">的</span><span style=\"color:#c552e6\">暗属性<span style=\"color:#fff\">物理伤害。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">46<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使得</span><span style=\"color:#f4606c\">暗之强化<span style=\"color:#fff\">技能对自身提高的攻击力变为原来的</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">倍。</span></p>",
 			"desc2":"|cffd6d5b7汲取凝集所有隐暗之力制作一只巨大的箭矢并向前射出。|r|n|n|cffecad9e主动效果：|r|n向前方射出一只巨大的隐暗箭，对|cfff4606c600|r码直线范围内的敌方单位造成|cfff4606c16000+攻击力×1600%|r的|cffc552e6暗属性|r物理伤害，巨大隐暗箭飞行|cfff4606c600|r码后会崩裂为|cfff4606c24|r支小型隐暗箭，每支对触碰单位造成|cfff4606c800+攻击力×80%|r的|cffc552e6暗属性|r物理伤害。|n冷却时间|cfff4606c46|r秒。|n|n|cffbeedc7被动效果：|r|n使得|cfff4606c暗之强化|r技能对自身提高的攻击力变为原来的|cfff4606c5|r倍。",
 			"icon":"war3mapImported\\\\BTNAGI-6-T.png",
@@ -589,7 +589,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-海里尔|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">海里尔从年轻起就开始为教会工作，独自坚守着神赐的岗位。魔蚀带来的前所未有的危机，让他无法置身事外。他决意为守护净土而战，用手中的圣杖，带领黑暗中的人们寻找光明。</span></p>",
 			"desc2":"海里尔从年轻起就开始为教会工作，独自坚守着神赐的岗位。魔蚀带来的前所未有的危机，让他无法置身事外。他决意为守护净土而战，用手中的圣杖，带领黑暗中的人们寻找光明。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -622,7 +622,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-1-R.png",
 			"name":"灵域"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">灵泽恩赐</span></p><p><span style=\"color:#d6d5b7\">展开灵光的结界，保护结界中的冒险者们。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">在指定区域释放结界，使得指定点</span><span style=\"color:#f4606c\">500<span style=\"color:#fff\">码范围内的所有友方单位回复</span><span style=\"color:#f4606c\">100%<span style=\"color:#fff\">生命值，并使其受到的物理伤害降低</span><span style=\"color:#f4606c\">70%<span style=\"color:#fff\">，同时附加</span><span style=\"color:#f4606c\">20%<span style=\"color:#fff\">全伤害增幅效果，持续</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">35<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7展开灵光的结界，保护结界中的冒险者们。|r|n|n|cffecad9e主动效果：|r|n在指定区域释放结界，使得指定点|cfff4606c500|r码范围内的所有友方单位回复|cfff4606c100%|r生命值，并使其受到的物理伤害降低|cfff4606c70%|r，同时附加|cfff4606c20%|r全伤害增幅效果，持续|cfff4606c5|r秒。|n冷却时间|cfff4606c35|r秒。",
 			"icon":"war3mapImported\\\\BTNINT-1-T.png",
@@ -637,7 +637,7 @@ var data = {
 		}
 	},
 	"H00B":{
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">菲朗特匹斯德出生于一个平凡的农民家庭，从小家人就教导他要慷慨无私。他从不为自己索取任何回报，总是将荣誉和奖励让给他人。他的慷慨不仅体现在物质上，更体现在他对待每一个人的尊重与关怀上。而他的行为激励着每一个遇到他的人，让他们相信，即使在这个充满挑战的世界中，善良和慷慨依然能够带来希望和光明。</span></p>",
 			"desc2":"菲朗特匹斯德出生于一个平凡的农民家庭，从小家人就教导他要慷慨无私。他从不为自己索取任何回报，总是将荣誉和奖励让给他人。他的慷慨不仅体现在物质上，更体现在他对待每一个人的尊重与关怀上。而他的行为激励着每一个遇到他的人，让他们相信，即使在这个充满挑战的世界中，善良和慷慨依然能够带来希望和光明。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -662,7 +662,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-8-R.png",
 			"name":"传送·善"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">无私之人</span></p><p><span style=\"color:#d6d5b7\">这个人，就是慷慨与无私的化身。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">初始时便拥有</span><span style=\"color:#f4606c\">所有<span style=\"color:#fff\">技能。在选择慷慨之人后，所有冒险者的初始</span><span style=\"color:#f4606c\">灵格刷新次数<span style=\"color:#fff\">提高</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">次。当慷慨之人的</span><span style=\"color:#f4606c\">等级<span style=\"color:#fff\">上升时，全体冒险者额外获得</span><span style=\"color:#f4606c\">2<span style=\"color:#fff\">点全属性；当慷慨之人</span><span style=\"color:#f4606c\">死亡<span style=\"color:#fff\">时，全体冒险者降低</span><span style=\"color:#f4606c\">2<span style=\"color:#fff\">点全属性（属性降低次数</span><span style=\"color:#f4606c\">不会超过<span style=\"color:#fff\">属性提高次数）。</span></p>",
 			"desc2":"|cffd6d5b7这个人，就是慷慨与无私的化身。|r|n|n|cffbeedc7被动效果：|r|n初始时便拥有|cfff4606c所有|r技能。在选择慷慨之人后，所有冒险者的初始|cfff4606c灵格刷新次数|r提高|cfff4606c5|r次。当慷慨之人的|cfff4606c等级|r上升时，全体冒险者额外获得|cfff4606c2|r点全属性；当慷慨之人|cfff4606c死亡|r时，全体冒险者降低|cfff4606c2|r点全属性（属性降低次数|cfff4606c不会超过|r属性提高次数）。",
 			"icon":"war3mapImported\\\\BTNINT-8-T.png",
@@ -683,7 +683,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-烈斗|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">她是极东之都最有天赋的女斗士，有人传言她带有巨熊的血统。她对自己的武力有很强的自信，唯有无尽的战斗和挑衅能让她热血沸腾。加入冒险队伍的她只为遭遇更强的怪物。</span></p>",
 			"desc2":"她是极东之都最有天赋的女斗士，有人传言她带有巨熊的血统。她对自己的武力有很强的自信，唯有无尽的战斗和挑衅能让她热血沸腾。加入冒险队伍的她只为遭遇更强的怪物。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -708,7 +708,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNSTR-5-R.png",
 			"name":"燃怒"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">烛渊</span></p><p><span style=\"color:#d6d5b7\">战斗越是激烈，莱芙就越能发挥出她狂暴的力量。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">根据自身的</span><span style=\"color:#f4606c\">最大生命值<span style=\"color:#fff\">提高攻击力，每</span><span style=\"color:#f4606c\">10<span style=\"color:#fff\">点最大生命值提高</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">点攻击力。受到伤害时，提高自身</span><span style=\"color:#f4606c\">已损失的生命百分比×50%<span style=\"color:#fff\">法术抗性。每</span><span style=\"color:#f4606c\">1000<span style=\"color:#fff\">点已损失生命值提高自身</span><span style=\"color:#f4606c\">10<span style=\"color:#fff\">点护甲。</span></p>",
 			"desc2":"|cffd6d5b7战斗越是激烈，莱芙就越能发挥出她狂暴的力量。|r|n|n|cffbeedc7被动效果：|r|n根据自身的|cfff4606c最大生命值|r提高攻击力，每|cfff4606c10|r点最大生命值提高|cfff4606c5|r点攻击力。受到伤害时，提高自身|cfff4606c已损失的生命百分比×50%|r法术抗性。每|cfff4606c1000|r点已损失生命值提高自身|cfff4606c10|r点护甲。",
 			"icon":"war3mapImported\\\\BTNSTR-5-T.png",
@@ -729,7 +729,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-梅洛|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">在遥远的深海之中，有一个被神秘力量守护的王国，那里居住着一群美丽的海洋生物-美人鱼，其中最为璀璨的便是法术高超的美人鱼公主梅洛。在她的带领下，海洋王国抵御了一次又一次魔蚀的侵扰。可是旷日的灾难使得美人鱼们无法正常的生活，最终，梅洛公主决定挺身而出，前往遗失王都寻找解决魔蚀源头的办法。</span></p>",
 			"desc2":"在遥远的深海之中，有一个被神秘力量守护的王国，那里居住着一群美丽的海洋生物-美人鱼，其中最为璀璨的便是法术高超的美人鱼公主梅洛。在她的带领下，海洋王国抵御了一次又一次魔蚀的侵扰。可是旷日的灾难使得美人鱼们无法正常的生活，最终，梅洛公主决定挺身而出，前往遗失王都寻找解决魔蚀源头的办法。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -754,7 +754,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-2-R.png",
 			"name":"海之宠儿"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">深海穹笼</span></p><p><span style=\"color:#d6d5b7\">召唤大量海水形成海之穹笼，将怪物们溺入其中。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">将目标区域</span><span style=\"color:#f4606c\">400<span style=\"color:#fff\">码范围内的所有敌方单位陷入深海穹笼中，每秒造成</span><span style=\"color:#f4606c\">（19800+智力×21）×技能等级<span style=\"color:#fff\">的法术伤害，</span><span style=\"color:#f4606c\">3<span style=\"color:#fff\">秒后穹笼损毁，造成</span><span style=\"color:#f4606c\">138600+智力×147<span style=\"color:#fff\">的法术伤害。处在穹笼中的单位会一直被泡沫包裹，穹笼损毁后泡沫包裹仍能持续</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">秒。穹笼存在期间任何进入的敌方单位都会被作用。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">35<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7召唤大量海水形成海之穹笼，将怪物们溺入其中。|r|n|n|cffecad9e主动效果：|r|n将目标区域|cfff4606c400|r码范围内的所有敌方单位陷入深海穹笼中，每秒造成|cfff4606c（19800+智力×21）×技能等级|r的法术伤害，|cfff4606c3|r秒后穹笼损毁，造成|cfff4606c138600+智力×147|r的法术伤害。处在穹笼中的单位会一直被泡沫包裹，穹笼损毁后泡沫包裹仍能持续|cfff4606c1|r秒。穹笼存在期间任何进入的敌方单位都会被作用。|n冷却时间|cfff4606c35|r秒。",
 			"icon":"war3mapImported\\\\BTNINT-2-T.png",
@@ -776,7 +776,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-岩之巨人|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">罗克本是一名人类探险家。在大山中探险的他莫名被席卷而来的瘴气冲洒全身，等他睁开眼睛时，发现自己已经与环境融为一体。在他回到小镇后，所到之处全是惊恐的目光。被普通人类敬而远之的他开始探索如何能恢复原来的样貌。</span></p>",
 			"desc2":"罗克本是一名人类探险家。在大山中探险的他莫名被席卷而来的瘴气冲洒全身，等他睁开眼睛时，发现自己已经与环境融为一体。在他回到小镇后，所到之处全是惊恐的目光。被普通人类敬而远之的他开始探索如何能恢复原来的样貌。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -808,7 +808,7 @@ var data = {
 			"icon":"ReplaceableTextures\\\\CommandButtons\\\\BTNEatTree.png",
 			"name":"旋转树击"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">岩之雨</span></p><p><span style=\"color:#d6d5b7\">令多处岩石发生崩裂，四散飞溅的碎石如雨一般落下。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使得指定区域边缘的</span><span style=\"color:#f4606c\">6<span style=\"color:#fff\">处岩石发生崩裂，崩裂的岩石会溅射到区域</span><span style=\"color:#f4606c\">500<span style=\"color:#fff\">码范围内所有敌方单位，造成</span><span style=\"color:#f4606c\">当前所学习的岩石投掷技能的技能伤害<span style=\"color:#fff\">的</span><span style=\"color:#ea9f03\">土属性<span style=\"color:#fff\">物理伤害。崩裂岩石的大小出现概率与</span><span style=\"color:#f4606c\">岩石投掷<span style=\"color:#fff\">一致。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">46<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7令多处岩石发生崩裂，四散飞溅的碎石如雨一般落下。|r|n|n|cffecad9e主动效果：|r|n使得指定区域边缘的|cfff4606c6|r处岩石发生崩裂，崩裂的岩石会溅射到区域|cfff4606c500|r码范围内所有敌方单位，造成|cfff4606c当前所学习的岩石投掷技能的技能伤害|r的|cffea9f03土属性|r物理伤害。崩裂岩石的大小出现概率与|cfff4606c岩石投掷|r一致。|n冷却时间|cfff4606c46|r秒。",
 			"icon":"ReplaceableTextures\\\\CommandButtons\\\\BTNTaunt.png",
@@ -829,7 +829,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-暗礁之龙|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">在遥远的过去，暗礁龙族是海洋的统治者，拥有龙种的力量和控制水流的能力。但随着时间的流逝，他们的力量逐渐衰弱，最终在一场灾难中几乎全族覆灭。美露莘，作为唯一的幸存者，她必须探索海洋及大陆的每一个角落，寻找复兴族群的可能和秘密。</span></p>",
 			"desc2":"在遥远的过去，暗礁龙族是海洋的统治者，拥有龙种的力量和控制水流的能力。但随着时间的流逝，他们的力量逐渐衰弱，最终在一场灾难中几乎全族覆灭。美露莘，作为唯一的幸存者，她必须探索海洋及大陆的每一个角落，寻找复兴族群的可能和秘密。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -854,7 +854,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNSTR-7-R.png",
 			"name":"暗礁龙种"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">无人知晓的无垢搏动</span></p><p><span style=\"color:#d6d5b7\">“自愤怒的天穹中出现吧。雷之轰鸣，水之震颤，火之气息。在末世之中，如初生啼哭...”</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">在目标区域</span><span style=\"color:#f4606c\">300<span style=\"color:#fff\">码范围内降临三只龙种，对其中所有敌方单位造成</span><span style=\"color:#f4606c\">20000+力量×230<span style=\"color:#fff\">的</span><span style=\"color:#f4606c\">法术伤害<span style=\"color:#fff\">，而后每隔</span><span style=\"color:#f4606c\">0.95<span style=\"color:#fff\">秒对范围内的所有敌方单位造成</span><span style=\"color:#f4606c\">2000+力量×20<span style=\"color:#fff\">的</span><span style=\"color:#f4606c\">法术伤害<span style=\"color:#fff\">和</span><span style=\"color:#f4606c\">净化<span style=\"color:#fff\">效果，总计</span><span style=\"color:#f4606c\">6<span style=\"color:#fff\">次。如果自身处于</span><span style=\"color:#00ffff\">蓝龙环绕<span style=\"color:#fff\">状态，造成伤害的同时会持续</span><span style=\"color:#f4606c\">清除<span style=\"color:#fff\">友方单位的</span><span style=\"color:#f4606c\">负面异常<span style=\"color:#fff\">状态；如果自身处于</span><span style=\"color:#cc99ff\">黑龙环绕<span style=\"color:#fff\">状态，造成伤害的同时会附加</span><span style=\"color:#f4606c\">攻击力×200%<span style=\"color:#fff\">的</span><span style=\"color:#cc99ff\">暗属性<span style=\"color:#fff\">物理伤害。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">44<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7“自愤怒的天穹中出现吧。雷之轰鸣，水之震颤，火之气息。在末世之中，如初生啼哭...”|r|n|n|cffecad9e主动效果：|r|n在目标区域|cfff4606c300|r码范围内降临三只龙种，对其中所有敌方单位造成|cfff4606c20000+力量×230|r的|cfff4606c法术伤害|r，而后每隔|cfff4606c0.95|r秒对范围内的所有敌方单位造成|cfff4606c2000+力量×20|r的|cfff4606c法术伤害|r和|cfff4606c净化|r效果，总计|cfff4606c6|r次。如果自身处于|cff00ffff蓝龙环绕|r状态，造成伤害的同时会持续|cfff4606c清除|r友方单位的|cfff4606c负面异常|r状态；如果自身处于|cffcc99ff黑龙环绕|r状态，造成伤害的同时会附加|cfff4606c攻击力×200%|r的|cffcc99ff暗属性|r物理伤害。|n冷却时间|cfff4606c44|r秒。",
 			"icon":"war3mapImported\\\\BTNSTR-7-T.png",
@@ -876,7 +876,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-雅弥|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">远离魔蚀大陆的遥之彼方暗之国，历来能人辈出，各行各业皆不乏精英人士，而熟稔各种隐暗箭术的雅弥正是暗之国的精英弓箭手。在一次任务中，她突然感到一阵莫名恍惚，随后发现四周景色有异。经过一番探查，她最终意识到自己所在之地已非暗之国。她很快掌握了这里的基本信息，加入了冒险队伍，寻求回归祖国的办法。</span></p>",
 			"desc2":"远离魔蚀大陆的遥之彼方暗之国，历来能人辈出，各行各业皆不乏精英人士，而熟稔各种隐暗箭术的雅弥正是暗之国的精英弓箭手。在一次任务中，她突然感到一阵莫名恍惚，随后发现四周景色有异。经过一番探查，她最终意识到自己所在之地已非暗之国。她很快掌握了这里的基本信息，加入了冒险队伍，寻求回归祖国的办法。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -909,7 +909,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-6-R.png",
 			"name":"暗之强化"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">绝暗箭</span></p><p><span style=\"color:#d6d5b7\">汲取凝集所有隐暗之力制作一只巨大的箭矢并向前射出。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">向前方射出一只巨大的隐暗箭，对</span><span style=\"color:#f4606c\">600<span style=\"color:#fff\">码直线范围内的敌方单位造成</span><span style=\"color:#f4606c\">20000+攻击力×2000%<span style=\"color:#fff\">的</span><span style=\"color:#c552e6\">暗属性<span style=\"color:#fff\">物理伤害，巨大隐暗箭飞行</span><span style=\"color:#f4606c\">600<span style=\"color:#fff\">码后会崩裂为</span><span style=\"color:#f4606c\">24<span style=\"color:#fff\">支小型隐暗箭，每支对触碰单位造成</span><span style=\"color:#f4606c\">800+攻击力×80%<span style=\"color:#fff\">的</span><span style=\"color:#c552e6\">暗属性<span style=\"color:#fff\">物理伤害。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">46<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使得</span><span style=\"color:#f4606c\">暗之强化<span style=\"color:#fff\">技能对自身提高的攻击力变为原来的</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">倍。</span></p>",
 			"desc2":"|cffd6d5b7汲取凝集所有隐暗之力制作一只巨大的箭矢并向前射出。|r|n|n|cffecad9e主动效果：|r|n向前方射出一只巨大的隐暗箭，对|cfff4606c600|r码直线范围内的敌方单位造成|cfff4606c20000+攻击力×2000%|r的|cffc552e6暗属性|r物理伤害，巨大隐暗箭飞行|cfff4606c600|r码后会崩裂为|cfff4606c24|r支小型隐暗箭，每支对触碰单位造成|cfff4606c800+攻击力×80%|r的|cffc552e6暗属性|r物理伤害。|n冷却时间|cfff4606c46|r秒。|n|n|cffbeedc7被动效果：|r|n使得|cfff4606c暗之强化|r技能对自身提高的攻击力变为原来的|cfff4606c5|r倍。",
 			"icon":"war3mapImported\\\\BTNAGI-6-T.png",
@@ -931,7 +931,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-蓓雷德|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">蓓雷德是遥远剑之都的皇家剑士。遗失王都中心爆发魔蚀时，她还在祖国抵御着异邦入侵者的进攻。几年过去，异邦入侵者已被歼灭。当魔蚀的消息传到剑之都时，为防患于未然，她立刻踏上了旅途。一路上，她以自己独特的剑术铲除怪物，帮助了许多居民。</span></p>",
 			"desc2":"蓓雷德是遥远剑之都的皇家剑士。遗失王都中心爆发魔蚀时，她还在祖国抵御着异邦入侵者的进攻。几年过去，异邦入侵者已被歼灭。当魔蚀的消息传到剑之都时，为防患于未然，她立刻踏上了旅途。一路上，她以自己独特的剑术铲除怪物，帮助了许多居民。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -964,7 +964,7 @@ var data = {
 			"icon":"ReplaceableTextures\\\\PassiveButtons\\\\PASBTNElunesBlessing.png",
 			"name":"月震"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">月华</span></p><p><span style=\"color:#d6d5b7\">累积的战斗经验使得蓓雷德能够熟练地使用双剑。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">等级1：</span><span style=\"color:#fff\">施放<span style=\"color:#f4606c\">月升·疾</span><span style=\"color:#fff\">和<span style=\"color:#f4606c\">月升·凶</span><span style=\"color:#fff\">将不会吸收<span style=\"color:#f4606c\">月落</span><span style=\"color:#fff\">状态。直接获得增益。</span></p><p><span style=\"color:#ffcc00\">等级2：</span><span style=\"color:#fff\">施放<span style=\"color:#f4606c\">月升·凶</span><span style=\"color:#fff\">时，若目标存在<span style=\"color:#f4606c\">月落</span><span style=\"color:#fff\">状态，将额外提高自身<span style=\"color:#f4606c\">3%×月升·凶技能等级</span><span style=\"color:#fff\">物理伤害，持续<span style=\"color:#f4606c\">7</span><span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#ffcc00\">等级3：</span><span style=\"color:#fff\">只要<span style=\"color:#f4606c\">月升·疾</span><span style=\"color:#fff\">和<span style=\"color:#f4606c\">月升·凶</span><span style=\"color:#fff\">命中目标就可以获得增益。</span></p><p><span style=\"color:#ffcc00\">等级4：</span><span style=\"color:#fff\">若学习了<span style=\"color:#f4606c\">月震</span><span style=\"color:#fff\">，自身造成的伤害将无视目标<span style=\"color:#f4606c\">20%</span><span style=\"color:#fff\">的任何抗性。</span></p>",
 			"desc2":"|cffd6d5b7累积的战斗经验使得蓓雷德能够熟练地使用双剑。|r|n|n|cffbeedc7被动效果：|r|n|cffffcc00等级1：|r施放|cfff4606c月升·疾|r和|cfff4606c月升·凶|r将不会吸收|cfff4606c月落|r状态。直接获得增益。|n|cffffcc00等级2：|r施放|cfff4606c月升·凶|r时，若目标存在|cfff4606c月落|r状态，将额外提高自身|cfff4606c3%×月升·凶技能等级|r物理伤害，持续|cfff4606c7|r秒。|n|cffffcc00等级3：|r只要|cfff4606c月升·疾|r和|cfff4606c月升·凶|r命中目标就可以获得增益。|n|cffffcc00等级4：|r若学习了|cfff4606c月震|r，自身造成的伤害将无视目标|cfff4606c20%|r的任何抗性。",
 			"icon":"war3mapImported\\\\BTNAGI-2-T.png",
@@ -986,7 +986,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-狂战神|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">巴尔萨克出生在一个并未完全开化的部族，族人大多蠢笨而粗鲁。但魔蚀侵袭之严重，让这帮迟钝的蛮族人也意识到世界开始倾覆。为此，部族不得不派出部落里的精英前往大陆的中心探索衰染的原因，他就是其中一个。外面的世界比他想象的更糟糕，可当他重归部落，却发现这里已是一片废墟。</span></p>",
 			"desc2":"巴尔萨克出生在一个并未完全开化的部族，族人大多蠢笨而粗鲁。但魔蚀侵袭之严重，让这帮迟钝的蛮族人也意识到世界开始倾覆。为此，部族不得不派出部落里的精英前往大陆的中心探索衰染的原因，他就是其中一个。外面的世界比他想象的更糟糕，可当他重归部落，却发现这里已是一片废墟。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1018,7 +1018,7 @@ var data = {
 			"icon":"BTNSTR-1-W.png",
 			"name":"风暴斧斩"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">刃舞</span></p><p><span style=\"color:#d6d5b7\">丰富的战斗经验使得巴尔萨克可以轻易发现敌人的弱点，对敌人造成致命一击。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span></p><p><span style=\"color:#fff\">物理攻击时有</span><span style=\"color:#f4606c\">8%<span style=\"color:#fff\">机率造成</span><span style=\"color:#f4606c\">6<span style=\"color:#fff\">倍暴击，</span><span style=\"color:#f4606c\">5%<span style=\"color:#fff\">机率造成</span><span style=\"color:#f4606c\">7<span style=\"color:#fff\">倍暴击，</span><span style=\"color:#f4606c\">2%<span style=\"color:#fff\">机率造成</span><span style=\"color:#f4606c\">8<span style=\"color:#fff\">倍暴击。三种暴击机率线性叠加，</span><span style=\"color:#f4606c\">不衰减<span style=\"color:#fff\">。若学习了</span><span style=\"color:#f4606c\">狂暴战魂<span style=\"color:#fff\">，会在刃舞暴击时吸收</span><span style=\"color:#f4606c\">1%×狂暴战魂技能等级<span style=\"color:#fff\">的伤害来回复生命值。若学习了</span><span style=\"color:#f4606c\">歼灭挥斩<span style=\"color:#fff\">，每次物理攻击都会在自身所在位置处施放小型挥斩，对</span><span style=\"color:#f4606c\">300<span style=\"color:#fff\">码范围内的所有敌方单位造成</span><span style=\"color:#f4606c\">4%×攻击力×歼灭挥斩技能等级<span style=\"color:#fff\">的</span><span style=\"color:#f4606c\">火属性<span style=\"color:#fff\">物理伤害。</span></p>",
 			"desc2":"|cffd6d5b7丰富的战斗经验使得巴尔萨克可以轻易发现敌人的弱点，对敌人造成致命一击。|r|n|n|cffbeedc7被动效果：|n|r物理攻击时有|cfff4606c8%|r机率造成|cfff4606c6|r倍暴击，|cfff4606c5%|r机率造成|cfff4606c7|r倍暴击，|cfff4606c2%|r机率造成|cfff4606c8|r倍暴击。三种暴击机率线性叠加，|cfff4606c不衰减|r。若学习了|cfff4606c狂暴战魂|r，会在刃舞暴击时吸收|cfff4606c1%×狂暴战魂技能等级|r的伤害来回复生命值。若学习了|cfff4606c歼灭挥斩|r，每次物理攻击都会在自身所在位置处施放小型挥斩，对|cfff4606c300|r码范围内的所有敌方单位造成|cfff4606c4%×攻击力×歼灭挥斩技能等级|r的|cfff4606c火属性|r物理伤害。|n",
 			"icon":"PASBTNSTR-1-E.png",
@@ -1040,7 +1040,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-猫灵|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">由自然的地之力给养而来的猫灵对魔蚀并没有那么感兴趣。它只是在随意游玩，碰巧遇到了旅行者们，又碰巧心情好，就加入了小队。对它来说，没有比自由和快乐更重要的事情了。</span></p>",
 			"desc2":"由自然的地之力给养而来的猫灵对魔蚀并没有那么感兴趣。它只是在随意游玩，碰巧遇到了旅行者们，又碰巧心情好，就加入了小队。对它来说，没有比自由和快乐更重要的事情了。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1072,7 +1072,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNSTR-2-R.png",
 			"name":"大地祝福"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">崩山裂地击</span></p><p><span style=\"color:#d6d5b7\">以全身之力击碎地面，使得大地为之震颤。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">跳向</span><span style=\"color:#f4606c\">800<span style=\"color:#fff\">码内的指定敌方目标，对目标及其周围</span><span style=\"color:#f4606c\">400<span style=\"color:#fff\">码范围内的所有敌方单位造成</span><span style=\"color:#f4606c\">12000+力量×120<span style=\"color:#fff\">的法术伤害，并眩晕敌人</span><span style=\"color:#f4606c\">3<span style=\"color:#fff\">秒。如果此时自身存在</span><span style=\"color:#f4606c\">猫返<span style=\"color:#fff\">状态，将会附加</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">次余震，每次对目标点</span><span style=\"color:#f4606c\">200<span style=\"color:#fff\">码范围内的敌人造成</span><span style=\"color:#f4606c\">2400+力量×24<span style=\"color:#fff\">的法术伤害。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">44<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\">跳跃过程中</span><span style=\"color:#f4606c\">无敌<span style=\"color:#fff\">。</span></p>",
 			"desc2":"|cffd6d5b7以全身之力击碎地面，使得大地为之震颤。|r|n|n|cffecad9e主动效果：|r|n跳向|cfff4606c800|r码内的指定敌方目标，对目标及其周围|cfff4606c400|r码范围内的所有敌方单位造成|cfff4606c12000+力量×120|r的法术伤害，并眩晕敌人|cfff4606c3|r秒。如果此时自身存在|cfff4606c猫返|r状态，将会附加|cfff4606c5|r次余震，每次对目标点|cfff4606c200|r码范围内的敌人造成|cfff4606c2400+力量×24|r的法术伤害。|n冷却时间|cfff4606c44|r秒。|n跳跃过程中|cfff4606c无敌|r。",
 			"icon":"war3mapImported\\\\BTNSTR-2-T.png",
@@ -1093,7 +1093,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-莎奈|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">莎奈是来自其他国家的精英重炮手。在听说这里有长达几年没有解决的散播性灾难后，他们派出莎奈来到大陆彼岸进行帮助和调查，期望阻止魔蚀蔓延到本土。</span></p>",
 			"desc2":"莎奈是来自其他国家的精英重炮手。在听说这里有长达几年没有解决的散播性灾难后，他们派出莎奈来到大陆彼岸进行帮助和调查，期望阻止魔蚀蔓延到本土。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1118,7 +1118,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-4-R.png",
 			"name":"重炮改良"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">瞄准</span></p><p><span style=\"color:#d6d5b7\">使用重炮的莎奈有独特的瞄准技巧。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使用后提高自身</span><span style=\"color:#f4606c\">70%<span style=\"color:#fff\">总体攻击力，重炮模式下还会提供</span><span style=\"color:#f4606c\">30%<span style=\"color:#fff\">的物理伤害减免。持续</span><span style=\"color:#f4606c\">10<span style=\"color:#fff\">秒。（总体攻击力=基础攻击力+附加攻击力）</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">18<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">提高自身的基础攻击力成长为原来的</span><span style=\"color:#f4606c\">2<span style=\"color:#fff\">倍，重炮模式下基础攻击力成长为原来的</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">倍，但是攻击速度上限下降</span><span style=\"color:#f4606c\">200%<span style=\"color:#fff\">。（每</span><span style=\"color:#f4606c\">1%<span style=\"color:#fff\">攻击速度上限影响</span><span style=\"color:#f4606c\">0.2%<span style=\"color:#fff\">攻击速度获取效率）</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#a0eee1\">输入“-switch”可切换为重炮模式，只有在等级为1时才可切换，且切换后无法再改变形态。</span><span style=\"color:#fff\"></span></p>",
 			"desc2":"|cffd6d5b7使用重炮的莎奈有独特的瞄准技巧。|r|n|n|cffecad9e主动效果：|r|n使用后提高自身|cfff4606c70%|r总体攻击力，重炮模式下还会提供|cfff4606c30%|r的物理伤害减免。持续|cfff4606c10|r秒。（总体攻击力=基础攻击力+附加攻击力）|n冷却时间|cfff4606c18|r秒。|n|n|cffbeedc7被动效果：|r|n提高自身的基础攻击力成长为原来的|cfff4606c2|r倍，重炮模式下基础攻击力成长为原来的|cfff4606c5|r倍，但是攻击速度上限下降|cfff4606c200%|r。（每|cfff4606c1%|r攻击速度上限影响|cfff4606c0.2%|r攻击速度获取效率）|n|n|cffa0eee1输入“-switch”可切换为重炮模式，只有在等级为1时才可切换，且切换后无法再改变形态。|r",
 			"icon":"war3mapImported\\\\BTNAGI-4-T.png",
@@ -1139,7 +1139,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-帕莉丝|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">帕莉丝是无依无靠的孤女，被自顾不暇的村民们送到教堂，却意外幸存下来，并领悟了罚光之力。她感恩神的拯救，并立誓从此成为神仆。在魔蚀中，可怕的怪物吞噬着一切，这对她来说是痛苦的折磨。因此她离开没人造访的教堂，将毫无保留的关怀献给孤弱与幼小。她无私的付出使得冒险队中出现了一种极其融洽的氛围。</span></p>",
 			"desc2":"帕莉丝是无依无靠的孤女，被自顾不暇的村民们送到教堂，却意外幸存下来，并领悟了罚光之力。她感恩神的拯救，并立誓从此成为神仆。在魔蚀中，可怕的怪物吞噬着一切，这对她来说是痛苦的折磨。因此她离开没人造访的教堂，将毫无保留的关怀献给孤弱与幼小。她无私的付出使得冒险队中出现了一种极其融洽的氛围。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1164,7 +1164,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-6-R.png",
 			"name":"天罚"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">罚光解放</span></p><p><span style=\"color:#d6d5b7\">解放所有罚光能量，使自己在一段时间内大幅强化。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使用后强化自身所有主动技能，持续</span><span style=\"color:#f4606c\">20<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\">·</span><span style=\"color:#f7f295\">晖降<span style=\"color:#fff\">：五道晖光从天而降，作用范围提高</span><span style=\"color:#f4606c\">50%<span style=\"color:#fff\">，技能伤害提高为原来的</span><span style=\"color:#f4606c\">260%<span style=\"color:#fff\">。</span></p><p><span style=\"color:#fff\">·</span><span style=\"color:#f7f295\">曦光阵<span style=\"color:#fff\">：施放时会产生大型曦光阵，作用范围提高到</span><span style=\"color:#f4606c\">450<span style=\"color:#fff\">码，技能伤害提高为原来的</span><span style=\"color:#f4606c\">175%<span style=\"color:#fff\">，并且会在中心附加</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">次未强化的晖降。</span></p><p><span style=\"color:#fff\">·</span><span style=\"color:#f7f295\">涤罪<span style=\"color:#fff\">：施放后会额外对自身施放</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">次涤罪。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">46<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">提高</span><span style=\"color:#f4606c\">天罚<span style=\"color:#fff\">技能</span><span style=\"color:#f4606c\">12%<span style=\"color:#fff\">的法术暴击机率。</span></p>",
 			"desc2":"|cffd6d5b7解放所有罚光能量，使自己在一段时间内大幅强化。|r|n|n|cffecad9e主动效果：|r|n使用后强化自身所有主动技能，持续|cfff4606c20|r秒。|n·|cfff7f295晖降|r：五道晖光从天而降，作用范围提高|cfff4606c50%|r，技能伤害提高为原来的|cfff4606c260%|r。|n·|cfff7f295曦光阵|r：施放时会产生大型曦光阵，作用范围提高到|cfff4606c450|r码，技能伤害提高为原来的|cfff4606c175%|r，并且会在中心附加|cfff4606c1|r次未强化的晖降。|n·|cfff7f295涤罪|r：施放后会额外对自身施放|cfff4606c1|r次涤罪。|n冷却时间|cfff4606c46|r秒。|n|n|cffbeedc7被动效果：|r|n提高|cfff4606c天罚|r技能|cfff4606c12%|r的法术暴击机率。",
 			"icon":"war3mapImported\\\\BTNINT-6-T.png",
@@ -1179,7 +1179,7 @@ var data = {
 		}
 	},
 	"H00U":{
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">缪斯是一位来自神秘森林的精灵族少女，她拥有操控音律和编织魔法的能力，音符既是她的朋友，也是她用以保护家园的武器。魔蚀肆虐的世界里，她用调谐的魔法为冒险者们带来胜利的希望。</span></p>",
 			"desc2":"缪斯是一位来自神秘森林的精灵族少女，她拥有操控音律和编织魔法的能力，音符既是她的朋友，也是她用以保护家园的武器。魔蚀肆虐的世界里，她用调谐的魔法为冒险者们带来胜利的希望。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1204,7 +1204,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNINT-7-R.png",
 			"name":"音律"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">同调</span></p><p><span style=\"color:#d6d5b7\">尝试与一名冒险者同调，有可能会发生不可思议的现象。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使目标友方单位成为</span><span style=\"color:#f4606c\">同调者<span style=\"color:#fff\">，提高自身和同调者</span><span style=\"color:#f4606c\">缪斯基础智力值×（5%+技能等级×5%）<span style=\"color:#fff\">的全能力，同时为双方提供</span><span style=\"color:#f4606c\">3%×技能等级<span style=\"color:#fff\">的护甲穿透和法术穿透。当缪斯受到</span><span style=\"color:#f4606c\">跃动音符<span style=\"color:#fff\">的治疗效果时，</span><span style=\"color:#f4606c\">同调者<span style=\"color:#fff\">也会受到相应的治疗。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">60<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#f4606c\">无法</span><span style=\"color:#fff\">与<span style=\"color:#cc99ff\">隐暗射手</span><span style=\"color:#fff\">同调。</span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#d1ba74\">特殊效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">？？？</span></p>",
 			"desc2":"|cffd6d5b7尝试与一名冒险者同调，有可能会发生不可思议的现象。|r|n|n|cffecad9e主动效果：|r|n使目标友方单位成为|cfff4606c同调者|r，提高自身和同调者|cfff4606c缪斯基础智力值×（5%+技能等级×5%）|r的全能力，同时为双方提供|cfff4606c3%×技能等级|r的护甲穿透和法术穿透。当缪斯受到|cfff4606c跃动音符|r的治疗效果时，|cfff4606c同调者|r也会受到相应的治疗。|n冷却时间|cfff4606c60|r秒。|n|cfff4606c无法|r与|cffcc99ff隐暗射手|r同调。|n|n|cffd1ba74特殊效果：|r|n？？？",
 			"icon":"war3mapImported\\\\BTNINT-7-T.png",
@@ -1225,7 +1225,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-达克尼斯|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">达克尼斯来自于以速度著称的幻影族，他的成绩在族群的培养体制中一直无人能比。在结业仪式上，因魔蚀而变异的怪物如潮涌般侵入族群，族人奋起抵抗，但最终只有达克尼斯侥幸逃脱。消沉了几年后，他决定募集伙伴，前往魔蚀爆发的中心解决这场旷世灾难。</span></p>",
 			"desc2":"达克尼斯来自于以速度著称的幻影族，他的成绩在族群的培养体制中一直无人能比。在结业仪式上，因魔蚀而变异的怪物如潮涌般侵入族群，族人奋起抵抗，但最终只有达克尼斯侥幸逃脱。消沉了几年后，他决定募集伙伴，前往魔蚀爆发的中心解决这场旷世灾难。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1250,7 +1250,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-1-R.png",
 			"name":"暗影加护"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">十影葬</span></p><p><span style=\"color:#d6d5b7\">达克尼斯制造出多个幻影，向目标发动冲击。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">每隔</span><span style=\"color:#f4606c\">0.2<span style=\"color:#fff\">秒在自身周围产生</span><span style=\"color:#f4606c\">1<span style=\"color:#fff\">个幻影，对目标点发动冲击，每次造成</span><span style=\"color:#f4606c\">（600+敏捷×7）×技能等级）<span style=\"color:#fff\">的法术伤害。一共生成</span><span style=\"color:#f4606c\">10<span style=\"color:#fff\">个幻影，生成幻影期间，如果已经学习了</span><span style=\"color:#f4606c\">潜影匿<span style=\"color:#fff\">，潜影匿发动机率提高到</span><span style=\"color:#f4606c\">100%<span style=\"color:#fff\">。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">45<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7达克尼斯制造出多个幻影，向目标发动冲击。|r|n|n|cffecad9e主动效果：|r|n每隔|cfff4606c0.2|r秒在自身周围产生|cfff4606c1|r个幻影，对目标点发动冲击，每次造成|cfff4606c（600+敏捷×7）×技能等级）|r的法术伤害。一共生成|cfff4606c10|r个幻影，生成幻影期间，如果已经学习了|cfff4606c潜影匿|r，潜影匿发动机率提高到|cfff4606c100%|r。|n冷却时间|cfff4606c45|r秒。",
 			"icon":"war3mapImported\\\\BTNAGI-1-T.png",
@@ -1272,7 +1272,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-蓓雷德|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">蓓雷德是遥远剑之都的皇家剑士。遗失王都中心爆发魔蚀时，她还在祖国抵御着异邦入侵者的进攻。几年过去，异邦入侵者已被歼灭。当魔蚀的消息传到剑之都时，为防患于未然，她立刻踏上了旅途。一路上，她以自己独特的剑术铲除怪物，帮助了许多居民。</span></p>",
 			"desc2":"蓓雷德是遥远剑之都的皇家剑士。遗失王都中心爆发魔蚀时，她还在祖国抵御着异邦入侵者的进攻。几年过去，异邦入侵者已被歼灭。当魔蚀的消息传到剑之都时，为防患于未然，她立刻踏上了旅途。一路上，她以自己独特的剑术铲除怪物，帮助了许多居民。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1304,7 +1304,7 @@ var data = {
 			"icon":"ReplaceableTextures\\\\PassiveButtons\\\\PASBTNElunesBlessing.png",
 			"name":"月震"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">月华</span></p><p><span style=\"color:#d6d5b7\">累积的战斗经验使得蓓雷德能够熟练地使用双剑。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffcc00\">等级1：</span><span style=\"color:#fff\">施放<span style=\"color:#f4606c\">月升·疾</span><span style=\"color:#fff\">和<span style=\"color:#f4606c\">月升·凶</span><span style=\"color:#fff\">将不会吸收<span style=\"color:#f4606c\">月落</span><span style=\"color:#fff\">状态。直接获得增益。</span></p><p><span style=\"color:#ffcc00\">等级2：</span><span style=\"color:#fff\">施放<span style=\"color:#f4606c\">月升·凶</span><span style=\"color:#fff\">时，若目标存在<span style=\"color:#f4606c\">月落</span><span style=\"color:#fff\">状态，将额外提高自身<span style=\"color:#f4606c\">3%×月升·凶技能等级</span><span style=\"color:#fff\">物理伤害，持续<span style=\"color:#f4606c\">7</span><span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#ffcc00\">等级3：</span><span style=\"color:#fff\">只要<span style=\"color:#f4606c\">月升·疾</span><span style=\"color:#fff\">和<span style=\"color:#f4606c\">月升·凶</span><span style=\"color:#fff\">命中目标就可以获得增益。</span></p><p><span style=\"color:#ffcc00\">等级4：</span><span style=\"color:#fff\">若学习了<span style=\"color:#f4606c\">月震</span><span style=\"color:#fff\">，自身造成的伤害将无视目标<span style=\"color:#f4606c\">20%</span><span style=\"color:#fff\">的任何抗性。</span></p>",
 			"desc2":"|cffd6d5b7累积的战斗经验使得蓓雷德能够熟练地使用双剑。|r|n|n|cffbeedc7被动效果：|r|n|cffffcc00等级1：|r施放|cfff4606c月升·疾|r和|cfff4606c月升·凶|r将不会吸收|cfff4606c月落|r状态。直接获得增益。|n|cffffcc00等级2：|r施放|cfff4606c月升·凶|r时，若目标存在|cfff4606c月落|r状态，将额外提高自身|cfff4606c3%×月升·凶技能等级|r物理伤害，持续|cfff4606c7|r秒。|n|cffffcc00等级3：|r只要|cfff4606c月升·疾|r和|cfff4606c月升·凶|r命中目标就可以获得增益。|n|cffffcc00等级4：|r若学习了|cfff4606c月震|r，自身造成的伤害将无视目标|cfff4606c20%|r的任何抗性。",
 			"icon":"war3mapImported\\\\BTNAGI-2-T.png",
@@ -1325,7 +1325,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-剑影|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">在自己的国度里，他曾是以为居无定所的浪人剑客，凭借精妙的剑术和强大的力量浪迹天涯。时空交叉，位面错乱，在一场酒醉过后他无意中闯入了魔蚀的世界。初到时的震撼并没有持续太久，他很快开始学习如何在陌生的大陆生存。他脱去身上格格不入的异国长跑，随手捡来的长剑成了他御敌的利器。</span></p>",
 			"desc2":"在自己的国度里，他曾是以为居无定所的浪人剑客，凭借精妙的剑术和强大的力量浪迹天涯。时空交叉，位面错乱，在一场酒醉过后他无意中闯入了魔蚀的世界。初到时的震撼并没有持续太久，他很快开始学习如何在陌生的大陆生存。他脱去身上格格不入的异国长跑，随手捡来的长剑成了他御敌的利器。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1350,7 +1350,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNAGI-7-R.png",
 			"name":"闪散击"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">分影掠幻</span></p><p><span style=\"color:#d6d5b7\">剑影可以灵活的运用自己的各种招式。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#beedc7\">被动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">降低</span><span style=\"color:#f4606c\">20%<span style=\"color:#fff\">自身受到的</span><span style=\"color:#beedc7\">风属性<span style=\"color:#fff\">物理伤害，提高自身</span><span style=\"color:#f4606c\">20%<span style=\"color:#fff\">法术抗性。施放</span><span style=\"color:#f4606c\">匿形<span style=\"color:#fff\">后，在</span><span style=\"color:#f4606c\">3.5<span style=\"color:#fff\">秒内提高自身</span><span style=\"color:#f4606c\">40%<span style=\"color:#fff\">法术抗性；施放</span><span style=\"color:#f4606c\">剑影分身<span style=\"color:#fff\">后，在</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">秒内降低</span><span style=\"color:#f4606c\">24%<span style=\"color:#fff\">自身受到的物理伤害；施放</span><span style=\"color:#f4606c\">闪散击<span style=\"color:#fff\">后，在</span><span style=\"color:#f4606c\">5<span style=\"color:#fff\">秒内提高自身及残影</span><span style=\"color:#f4606c\">32%<span style=\"color:#fff\">物理伤害。</span></p>",
 			"desc2":"|cffd6d5b7剑影可以灵活的运用自己的各种招式。|r|n|n|cffbeedc7被动效果：|r|n降低|cfff4606c20%|r自身受到的|cffbeedc7风属性|r物理伤害，提高自身|cfff4606c20%|r法术抗性。施放|cfff4606c匿形|r后，在|cfff4606c3.5|r秒内提高自身|cfff4606c40%|r法术抗性；施放|cfff4606c剑影分身|r后，在|cfff4606c5|r秒内降低|cfff4606c24%|r自身受到的物理伤害；施放|cfff4606c闪散击|r后，在|cfff4606c5|r秒内提高自身及残影|cfff4606c32%|r物理伤害。",
 			"icon":"war3mapImported\\\\BTNAGI-7-T.png",
@@ -1372,7 +1372,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-猫灵|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">由自然的地之力给养而来的猫灵对魔蚀并没有那么感兴趣。它只是在随意游玩，碰巧遇到了旅行者们，又碰巧心情好，就加入了小队。对它来说，没有比自由和快乐更重要的事情了。</span></p>",
 			"desc2":"由自然的地之力给养而来的猫灵对魔蚀并没有那么感兴趣。它只是在随意游玩，碰巧遇到了旅行者们，又碰巧心情好，就加入了小队。对它来说，没有比自由和快乐更重要的事情了。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1405,7 +1405,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNSTR-2-R.png",
 			"name":"大地祝福"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">崩山裂地击</span></p><p><span style=\"color:#d6d5b7\">以全身之力击碎地面，使得大地为之震颤。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">跳向</span><span style=\"color:#f4606c\">800<span style=\"color:#fff\">码内的指定敌方目标，对目标及其周围</span><span style=\"color:#f4606c\">400<span style=\"color:#fff\">码范围内的所有敌方单位造成</span><span style=\"color:#f4606c\">20000+力量×160<span style=\"color:#fff\">的法术伤害，并眩晕敌人</span><span style=\"color:#f4606c\">3<span style=\"color:#fff\">秒。如果此时自身存在</span><span style=\"color:#f4606c\">猫返<span style=\"color:#fff\">状态，将会附加</span><span style=\"color:#f4606c\">7<span style=\"color:#fff\">次余震，每次对目标点</span><span style=\"color:#f4606c\">200<span style=\"color:#fff\">码范围内的敌人造成</span><span style=\"color:#f4606c\">4000+力量×32<span style=\"color:#fff\">的法术伤害。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">44<span style=\"color:#fff\">秒。</span></p><p><span style=\"color:#fff\">跳跃过程中</span><span style=\"color:#f4606c\">无敌<span style=\"color:#fff\">。</span></p>",
 			"desc2":"|cffd6d5b7以全身之力击碎地面，使得大地为之震颤。|r|n|n|cffecad9e主动效果：|r|n跳向|cfff4606c800|r码内的指定敌方目标，对目标及其周围|cfff4606c400|r码范围内的所有敌方单位造成|cfff4606c20000+力量×160|r的法术伤害，并眩晕敌人|cfff4606c3|r秒。如果此时自身存在|cfff4606c猫返|r状态，将会附加|cfff4606c7|r次余震，每次对目标点|cfff4606c200|r码范围内的敌人造成|cfff4606c4000+力量×32|r的法术伤害。|n冷却时间|cfff4606c44|r秒。|n跳跃过程中|cfff4606c无敌|r。",
 			"icon":"war3mapImported\\\\BTNSTR-2-T.png",
@@ -1427,7 +1427,7 @@ var data = {
 			"icon":"war3mapImported\\\\BTNMJ.png",
 			"name":"|cffcc99ff古神魔核-岩之巨人|r"
 		},
-		"d":{
+		"d2":{
 			"desc":"<p><span style=\"color:#d6d5b7\">旅行者简介</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#ffffff\">罗克本是一名人类探险家。在大山中探险的他莫名被席卷而来的瘴气冲洒全身，等他睁开眼睛时，发现自己已经与环境融为一体。在他回到小镇后，所到之处全是惊恐的目光。被普通人类敬而远之的他开始探索如何能恢复原来的样貌。</span></p>",
 			"desc2":"罗克本是一名人类探险家。在大山中探险的他莫名被席卷而来的瘴气冲洒全身，等他睁开眼睛时，发现自己已经与环境融为一体。在他回到小镇后，所到之处全是惊恐的目光。被普通人类敬而远之的他开始探索如何能恢复原来的样貌。",
 			"icon":"PASBTNyingxiongjieshao.png",
@@ -1460,7 +1460,7 @@ var data = {
 			"icon":"ReplaceableTextures\\\\CommandButtons\\\\BTNEatTree.png",
 			"name":"旋转树击"
 		},
-		"t":{
+		"t2":{
 			"desc":"<p><span style=\"color:#ffffff\">岩之雨</span></p><p><span style=\"color:#d6d5b7\">令多处岩石发生崩裂，四散飞溅的碎石如雨一般落下。</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\"></span></p><p><span style=\"color:#ecad9e\">主动效果：</span><span style=\"color:#fff\"></span></p><p><span style=\"color:#fff\">使得指定区域边缘的</span><span style=\"color:#f4606c\">6<span style=\"color:#fff\">处岩石发生崩裂，崩裂的岩石会溅射到区域</span><span style=\"color:#f4606c\">500<span style=\"color:#fff\">码范围内所有敌方单位，造成</span><span style=\"color:#f4606c\">当前所学习的岩石投掷技能的技能伤害<span style=\"color:#fff\">的</span><span style=\"color:#ea9f03\">土属性<span style=\"color:#fff\">物理伤害。崩裂岩石的大小出现概率与</span><span style=\"color:#f4606c\">岩石投掷<span style=\"color:#fff\">一致。</span></p><p><span style=\"color:#fff\">冷却时间</span><span style=\"color:#f4606c\">46<span style=\"color:#fff\">秒。</span></p>",
 			"desc2":"|cffd6d5b7令多处岩石发生崩裂，四散飞溅的碎石如雨一般落下。|r|n|n|cffecad9e主动效果：|r|n使得指定区域边缘的|cfff4606c6|r处岩石发生崩裂，崩裂的岩石会溅射到区域|cfff4606c500|r码范围内所有敌方单位，造成|cfff4606c当前所学习的岩石投掷技能的技能伤害|r的|cffea9f03土属性|r物理伤害。崩裂岩石的大小出现概率与|cfff4606c岩石投掷|r一致。|n冷却时间|cfff4606c46|r秒。",
 			"icon":"ReplaceableTextures\\\\CommandButtons\\\\BTNTaunt.png",
