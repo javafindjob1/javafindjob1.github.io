@@ -5,29 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>尚硅谷</title>
-  <link rel="favicon icon" href="./flex/favicon.ico">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./flex/index-flex.css">
+  <link rel="favicon icon" href="./favicon.ico">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="./index-flex.css">
 
-  <script src="./turbo.es2017-umd.js" defer></script>
+  <script src="../js/turbo.es2017-umd.js" defer></script>
 </head>
 
 <body>
   <header class="page-header clearfix">
     <ul class="clearfix">
       <li>
-        <a href="./flex/component/about.html" 
+        <a href="./component/about.html" 
         data-turbo-frame="repo-content-turbo-frame" 
         data-view-component="true"
-        >国内校区</a>
+        >关于我们</a>
       </li>
-      <li><a href="#">缅甸校区</a></li>
+      <li><a href="./component/nav.html" 
+        data-turbo-frame="repo-content-turbo-frame" 
+        data-view-component="true">导航</a></li>
       <li><a href="#">非洲校区</a></li>
       <li><a href="#">美国校区</a></li>
     </ul>
   </header>
   
-  <turbo-frame id="repo-content-turbo-frame" src="./flex/component/nav.html">
+  <turbo-frame id="repo-content-turbo-frame" src="./component/nav.html">
     <p>加载中...</p>
   </turbo-frame>
   <script>
