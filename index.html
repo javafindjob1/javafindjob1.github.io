@@ -106,10 +106,11 @@
             changeSubnavSrc(e.target.getAttribute('data-img'))
           } else {
             // 获取URL中的锚点
-            const hash = window.location.hash
+            let hash = window.location.hash
             if(hash==='#' || hash === ''){
               hash = '#x7'
             }
+            console.log("hash==="+hash)
             window._self.type = hash
             changeSubnavSrc(dom.subnav.querySelector(`a[href="${hash}"]`).getAttribute('data-img'))
           }
