@@ -167,13 +167,15 @@
   <script>
     (function () {
       // 获取URL中的锚点
-      const hash = window.location.hash;
+      const hash = window._self.type;
       if (hash === "#mp") {
         var datajs = "/mp/mp-data.js"
         var dataImg = "/mp/mp-imgs"
+        var data = mpdata
       } else {
         var datajs = "/x7/x7-data.js"
         var dataImg = "/x7/x7-imgs"
+        var data = x7data
       }
       class Dom {
         constructor() {
@@ -188,48 +190,83 @@
       }
       var dom = new Dom()
 
-      // 调用函数加载 x7-data.js
-      loadScript(datajs, function () {
-        console.log("加载完成" + window._self.dataHeroId)
-        console.log(data[window._self.dataHeroId]);
-        const hero = data[window._self.dataHeroId]
-        if (hero.intro !== null && hero.intro !== undefined) {
-          dom.info.innerHTML = hero.intro
-          dom.info.classList.add('active')
-        }
+      console.log("加载完成" + window._self.dataHeroId)
+      console.log(data[window._self.dataHeroId])
+      const hero = data[window._self.dataHeroId]
 
-        changePifu(dom.consoleAbility.children[0], hero.p1)
-        changePifu(dom.consoleAbility.children[1], hero.p2)
-        // 梦的第2排技能
-        changeAbility(dom.consoleAbility.children[4], hero.core)
-        changeAbility(dom.consoleAbility.children[5], hero.d2)
-        changeAbility(dom.consoleAbility.children[7], hero.t2)
+      if (hero.intro !== null && hero.intro !== undefined) {
+        dom.info.innerHTML = formatHtmlString(hero.intro)
+        dom.info.classList.add('active')
+      }
 
-        // x7的第2排技能
-        changeAbility(dom.consoleAbility.children[6], hero.t)
-        changeAbility(dom.consoleAbility.children[7], hero.d)
+      changePifu(dom.consoleAbility.children[0], hero.p1)
+      changePifu(dom.consoleAbility.children[1], hero.p2)
+      // 梦的第2排技能
+      changeAbility(dom.consoleAbility.children[4], hero.core)
+      changeAbility(dom.consoleAbility.children[5], hero.d2)
+      changeAbility(dom.consoleAbility.children[7], hero.t2)
 
-        changeAbility(dom.consoleAbility.children[8], hero.q)
-        changeAbility(dom.consoleAbility.children[9], hero.w)
-        changeAbility(dom.consoleAbility.children[10], hero.e)
-        changeAbility(dom.consoleAbility.children[11], hero.r)
+      // x7的第2排技能
+      changeAbility(dom.consoleAbility.children[6], hero.t)
+      changeAbility(dom.consoleAbility.children[7], hero.d)
 
-        console.log(hero)
-        console.log(hero.q)
-      });
+      changeAbility(dom.consoleAbility.children[8], hero.q)
+      changeAbility(dom.consoleAbility.children[9], hero.w)
+      changeAbility(dom.consoleAbility.children[10], hero.e)
+      changeAbility(dom.consoleAbility.children[11], hero.r)
 
       function changeAbility(ele, viewData) {
         if (viewData) {
           ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
-          ele.innerHTML = `<div class="console-info">${viewData.desc}</div>`
+          ele.innerHTML = `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
         }
       }
       function changePifu(ele, viewData) {
         if (viewData) {
-          ele.innerHTML = `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${viewData.desc}</div>`
+          ele.innerHTML = `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${formatHtmlString(viewData.desc)}</div>`
           ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
         }
       }
+
+      function formatHtmlString(desc) {
+        let strs = desc.split("|n")
+        var obj = {
+          str: '',
+          buf: '',
+          lastColor: '|cfffff'
+        }
+        for (const p of strs) {
+          obj.str = p
+          obj = handle(obj)
+        }
+        return obj.buf
+      }
+
+
+      function handle({ str, buf, lastColor }) {
+
+        str = str.replaceAll("/\|r\|cff/gi", "|cff")
+        str = str.replaceAll("|r", "|cfffff")
+
+        if (!str.startsWith("|cff")) {
+          str = lastColor + str
+        }
+
+        buf += "<p>"
+
+        const pat = /(\|cff(\w{3,6}))(.*?)(?=((\|cff)|$))/gi
+        const mat = str.matchAll(pat)
+        for (const match of mat) {
+          lastColor = match[1]
+          const color = match[2]
+          const text = match[3]
+          buf += `<span style="color:#${color}">${text}</span>`
+        }
+
+        buf += "</p>"
+        return { str, buf, lastColor }
+      }
+
     })()
 
   </script>

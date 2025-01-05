@@ -8,9 +8,9 @@
   <link rel="favicon icon" href="/bilibili/favicon.ico">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/bilibili/index-flex.css">
-
-  <script src="/js/turbo.es2017-umd.js" defer></script>
-
+  <script src="/js/turbo.es2017-umd.js" defer></script> 
+  <link rel="preload" as="script" href="/mp/mp-data.js">
+  <link rel="preload" as="script" href="/x7/x7-data.js">
 </head>
 
 <body>
@@ -121,7 +121,7 @@
             // 获取URL中的锚点
             let hash = window.location.hash
             if (hash === '#' || hash === '') {
-              hash = '#x7'
+              hash = '#mp'
             }
             console.log("hash===" + hash)
             window._self.type = hash
@@ -166,6 +166,7 @@
         script.src = url;
         script.type = 'text/javascript';
         script.async = true; // 或 script.defer = true;
+
         script.onload = function () {
           if (callback) callback()
         }
@@ -181,12 +182,13 @@
 
     <footer>
       <span>© 技术支持 Email： java_findjob@163.com</span>
+      <div style="background-image:url('/x7/x7-imgs/war3mapImported/PASBTNSpell_WangMieYiJi.png');" alt=""></div>
       <!-- <span> © 网站备案号： 鲁ICP备20016477号-1</span> -->
     </footer>
 
   </div>
-
-
+<script src="/mp/mp-data.js"  defer></script>
+<script src="/x7/x7-data.js"  defer></script>
 </body>
 
 </html>

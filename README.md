@@ -28,6 +28,18 @@ git config --global https.proxy http://localhost:10809
 <!-- 禁止跳转 -->
 <a href="" data-turbo="false"></a>
 
+#js正则表达式
+const str = "|cffbeedc7狂战神：根据无畏跳斩的技能等级提高自身物理伤害。|r|cffbeedc7ABC"
+
+const pat = /(\|cff\w{3,6})(.*?)(?=((\|cff)|$))/gi
+const mat = str.matchAll(pat)
+
+for (const match of mat) {
+  console.log("Full match:", match[0]);
+  console.log("Group 1:", match[1]);
+  console.log("Group 2:", match[2]);
+}
+
 #地图更新日志
 https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=193337&start=0&limit=5
 https://kk.kkdzpt.com/map/193337/detail
