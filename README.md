@@ -40,6 +40,27 @@ for (const match of mat) {
   console.log("Group 2:", match[2]);
 }
 
+#使用webp格式减少图片体积
+<repositories>
+  <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+  </repository>
+</repositories>
+<!-- webp-imageio 依赖 -->
+<dependency>
+    <groupId>org.sejda.imageio</groupId>
+    <artifactId>webp-imageio</artifactId>
+    <version>0.1.6</version>
+</dependency>
+
+#使用 UglifyJS压缩js文件
+npm install -g uglify-js
+uglifyjs input.js -o output.min.js
+
+#vscode对比文件差异
+ctrl + shift+g 打开源代码管理
+
 #地图更新日志
 https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=193337&start=0&limit=5
 https://kk.kkdzpt.com/map/193337/detail

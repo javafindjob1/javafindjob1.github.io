@@ -8,7 +8,8 @@
   <link rel="favicon icon" href="/bilibili/favicon.ico">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/bilibili/index-flex.css">
-  <script src="/js/turbo.es2017-umd.min.js" defer></script> 
+  <link rel="stylesheet" href="/kk/font/a0.font.7ad948.css">
+  <script src="/js/turbo.es2017-umd.min.js" defer></script>
   <link rel="preload" as="script" href="/mp/mp-data.js">
   <link rel="preload" as="script" href="/x7/x7-data.js">
 </head>
@@ -173,6 +174,12 @@
         document.head.appendChild(script);
       }
 
+      function loadCSS(url) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        document.head.appendChild(link);
+      }
       // 禁止所有元素被拖拽 防止a链接出现url
       document.addEventListener('dragstart', function (e) {
         e.preventDefault();
@@ -186,8 +193,8 @@
     </footer>
 
   </div>
-<script src="/mp/mp-data.js"  defer></script>
-<script src="/x7/x7-data.js"  defer></script>
+  <script src="/mp/mp-data.js" defer></script>
+  <script src="/x7/x7-data.js" defer></script>
 </body>
 
 </html>

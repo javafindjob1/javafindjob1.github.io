@@ -61,3 +61,5 @@ function handle({ str, buf, lastColor }) {
 
   return { str, buf, lastColor }
 }
+
+fetch
