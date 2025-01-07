@@ -1,5 +1,9 @@
+## 技术
 
-#步骤
+### github.io
+
+#### 提交代码
+
 git clone https://github.com/javafindjob1/javafindjob1.github.io
 cd javafindjob1.github.io
 echo "hello world" > index.html
@@ -8,13 +12,22 @@ git add --all
 git commit -m "update"
 git push origin main
 
+#### 还原代码
+
+git restore xx
+
+#### 设置代理
+
 git config --global http.proxy http://localhost:10809
 git config --global https.proxy http://localhost:10809
 
-#turbo-frame使用
+### turbo-frame
+
+```
 <!-- 主页 -->
+
   <script src="./js/turbo.es2017-umd.js" defer></script>
-  
+
   <turbo-frame id="repo-content-turbo-frame" src="./flex/component/nav.html">
     <p>加载中...</p>
   </turbo-frame>
@@ -25,10 +38,20 @@ git config --global https.proxy http://localhost:10809
     </style>
     导航页
   </turbo-frame>
+
+```
+
+#### 禁止跳转
+
+```
 <!-- 禁止跳转 -->
 <a href="" data-turbo="false"></a>
+```
 
-#js正则表达式
+### js正则表达式
+
+#### js正则表达式
+```
 const str = "|cffbeedc7狂战神：根据无畏跳斩的技能等级提高自身物理伤害。|r|cffbeedc7ABC"
 
 const pat = /(\|cff\w{3,6})(.*?)(?=((\|cff)|$))/gi
@@ -39,8 +62,84 @@ for (const match of mat) {
   console.log("Group 1:", match[1]);
   console.log("Group 2:", match[2]);
 }
+```
 
-#使用webp格式减少图片体积
+
+
+### vscode
+
+#### vscode对比文件差异
+
+ctrl + shift+g 打开源代码管理
+
+#### live server配置项目根目录
+
+1. vscode【设置】 
+2. 搜【live server】
+3. 修改 live server:settings.json
+4. 重启vscode
+
+### 样式
+
+#### 排查下面代码，超过屏幕宽度出现滚动条
+
+width: 100%;
+padding: 20px;
+
+#### transform对fixed影响
+
+```
+tranform之后，fixed 不再相对于视口
+```
+
+```
+<style>
+    .outer {
+      width: 300px;
+      height: 300px;
+      background-color: gray;
+      padding: 10px;
+      border: 1px solid black;
+      transform: scale(0.5);
+    }
+    .box{
+      width: 90px;
+      height: 90px;
+    }
+
+    .box1{
+      background-color: aqua;
+    }
+    .box2{
+      background-color: red;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .box3{
+      background-color: green;
+    }
+
+    
+  </style>
+  <div class="outer">
+    <div class="box box1">1</div>
+    <div class=" box2" style="z-index:2">2</div>
+    <div class=" box2">2222</div>
+    <div class="box box3">3</div>
+  </div>
+```
+
+
+
+## 建站优化
+
+### 大图片外链
+
+### 使用webp格式减少图片体积
+```
 <repositories>
   <repository>
       <id>central</id>
@@ -54,28 +153,24 @@ for (const match of mat) {
     <version>0.1.6</version>
 </dependency>
 
-#使用 UglifyJS压缩js文件
+ImageIO.read ImageIo.write
+```
+
+
+
+### 使用 UglifyJS压缩js文件
 npm install -g uglify-js
 uglifyjs input.js -o output.min.js
 
-#vscode对比文件差异
-ctrl + shift+g 打开源代码管理
 
-#地图更新日志
-https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=193337&start=0&limit=5
-https://kk.kkdzpt.com/map/193337/detail
 
-#live server配置项目根目录
-1. vscode【设置】 
-2. 搜【live server】
-3. 修改 live server:settings.json
-4. 重启vscdoe
 
-#排查下面代码，超过屏幕宽度出现滚动条
-width: 100%;
-padding: 20px;
 
-#英雄列表
+
+
+## 功能
+
+### 英雄列表
 war3map.j
 找到所有英雄皮肤额外的技能数据
 找到所有英雄的变量map
@@ -97,17 +192,17 @@ war3map.j
 神界九大持翼天使之一，使用炽热的火焰软剑扫荡敌人，神界两任圣十字天使都与她有密切关系。"
 
 
-<p><span style="color:#ffcc00">红翼天使【布莱恩】</span></p>
+<p><span style="color:### ffcc00">红翼天使【布莱恩】</span></p>
 <br>
-<p>单体打击能力<span style="color:#ff0303">★★★☆</span></p>
-<p>群体打击能力<span style="color:#ff0303">★★★★</span></p>
-<p>战场生存能力<span style="color:#ff0303">★★★★</span></p>
-<p>战技战术能力<span style="color:#ff0303">★★★☆</span></p>
+<p>单体打击能力<span style="color:### ff0303">★★★☆</span></p>
+<p>群体打击能力<span style="color:### ff0303">★★★★</span></p>
+<p>战场生存能力<span style="color:### ff0303">★★★★</span></p>
+<p>战技战术能力<span style="color:### ff0303">★★★☆</span></p>
 <br>
-<p><span style="color:#ffcc00">英雄技能</span></p>
-<p>赤霞羽刃，夕影之舞，炎之理，神族护盾，<span style="color:#ff0000">神凰朝宗</span></p>
+<p><span style="color:### ffcc00">英雄技能</span></p>
+<p>赤霞羽刃，夕影之舞，炎之理，神族护盾，<span style="color:### ff0000">神凰朝宗</span></p>
 <br>
-<p><span style="color:#ffcc00">英雄介绍</span></p>
+<p><span style="color:### ffcc00">英雄介绍</span></p>
 <p>神界九大持翼天使之一，使用炽热的火焰软剑扫荡敌人，神界两任圣十字天使都与她有密切关系。</p>
 
 var data = {
@@ -267,20 +362,40 @@ ability.ini
   12 = "|cffccffff类型：|r|cffffcc99护盾（被动）|n|r|cffccffff|n红翼天使发动技能时，可形成一个|r|cffffce002500点|r|cffccffff生命值的护盾，护盾可完全抵御伤害。以下情况可增加护盾强度：|n|r|cffffcc991.追加的赤霞羽刃，每次增加20%护盾强度|n2.本体或幻象打出的炎之理，增加10%护盾强度|r",
 
 
-<p><span style="color:#ccffff">类型：</span><span style="color:#ffcc99">物理伤害、分身<span></p>
-<p><span style="color:#ccffff">属性：</span><span style="color:#ffcc99">攻击力</span></p>
+<p><span style="color:### ccffff">类型：</span><span style="color:### ffcc99">物理伤害、分身<span></p>
+<p><span style="color:### ccffff">属性：</span><span style="color:### ffcc99">攻击力</span></p>
 <br>
-<p><span style="color:#ccffff">红翼天使在附近敌人身上创造</span><span style="color:#ffce00">分身</span><span style="color:#ccffff">进行攻击，分身拥有本体</span><span style="color:#ffce00">78%攻击力，</span><span style="color:#ccffff">额外</span><span style="color:#ffce00">60%攻击速度，</span><span style="color:#ccffff">且无法控制，但也不会受到伤害。最多制造</span><span style="color:#ffcc00">2个</span><span style="color:#ccffff">分身</span></p>
-<p><span style="color:#ffce00">持续5秒<span></p>
-  
+<p><span style="color:### ccffff">红翼天使在附近敌人身上创造</span><span style="color:### ffce00">分身</span><span style="color:### ccffff">进行攻击，分身拥有本体</span><span style="color:### ffce00">78%攻击力，</span><span style="color:### ccffff">额外</span><span style="color:### ffce00">60%攻击速度，</span><span style="color:### ccffff">且无法控制，但也不会受到伤害。最多制造</span><span style="color:### ffcc00">2个</span><span style="color:### ccffff">分身</span></p>
+<p><span style="color:### ffce00">持续5秒<span></p>
 
-#物品列表
+
+### 物品列表
 item.ini
 所有物品的描述、图标、类型
 
+### 地图更新日志
+
+https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=193337&start=0&limit=5
+https://kk.kkdzpt.com/map/193337/detail
+
+### 羁绊系统
+
+[岩之巨人:[猫灵、雷魂]]
+[]
+
+### 往世记忆 >5
+
+将需求当做p1
 
 
-#LOL资料中心
+
+### 英雄详情转冰球帖子
+
+在技能栏
+
+单独开一个窗口
+
+### LOL资料中心
 攻略中心
 
 最佳双排
@@ -288,13 +403,13 @@ item.ini
   位置 上单 打野 中路 下路  辅助
   定位 战士 法师 刺客 坦克 射手 辅助
   列表图文
-  
-  
+
+
   英雄详情
     总览 大神攻略 英雄克制 装备推荐 符文推荐 数据曲线 皮肤详情
    法师
-   
-   
+
+
    辅助
    技能描述
    难度
@@ -302,7 +417,7 @@ item.ini
    搬率 
    登场率
    最佳双排
-  
+
    符文推荐  
    出门装推荐
    核心装推荐
@@ -312,12 +427,12 @@ item.ini
    胜率随版本趋势
    胜率随时间趋势
    胜率随所玩局数
-   
+
    召唤师技能
    推荐技能加点
-   
+
    优势对线 劣势对线
-   
+
 
 装备列表  品质（普通史诗传说） 类型（防具武器鞋子）
           更新提示 

@@ -14,25 +14,35 @@
       display: flex;
       height: 100%;
       justify-content: center;
+      position: relative;
     }
 
     .hero .container {
       flex-shrink: 1;
-      margin: auto;
       position: relative;
-      transform: scale(0.7);
+      transform: scale(0.999);
+
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-nav {
+      flex-shrink: 1;
     }
 
     /* #region英雄列表 */
     .hero ul.hero-list {
-      width: 1903px;
-      height: 1008px;
-      margin: auto;
+      position: relative;
+      width: calc(1903px * 0.7);
+      height: calc(1000px * 0.7);
+      margin-top: 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-content: center;
 
+      flex-shrink: 1;
       /* background-color: #d2c075; */
     }
 
@@ -61,256 +71,58 @@
       font-size: 16px;
     }
 
-    .hero .hero-list li {
-      flex-shrink: 1;
+    .hero .hero-list li:not([empty]):hover {
+      border-radius: 10px;
     }
 
-    .hero .hero-list li:not(:last-child, :first-child, [empty]):hover {
-      border-radius: 20px;
-      /* transform: scale(1.2); */
-    }
-
-    /* #endregion */
-
-    /* #region更新说明 */
-    #repo-content-turbo-frame {
-      position: relative;
-    }
-
-    .update {
+    #version-update-turbo-frame {
       position: absolute;
-      top: 0;
+      top: -20px;
       right: 0;
-      width: 150px;
-    }
-
-    .update span {
-      vertical-align: baseline;
-    }
-
-    .update i {
-      color: #6bba17;
-      vertical-align: middle;
-    }
-
-    .update a {
-      text-decoration: underline;
-      color: #6bba17;
-      vertical-align: baseline;
-    }
-
-    #updateModal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #000000b3;
-
-
-      display: none;
-    }
-
-    #updateModal.show {
-      display: flex;
-    }
-
-    #updateModal .inner {
-      width: 70%;
-      height: 80%;
-      margin: auto;
-      background-color: #1c232c;
-      border-radius: 3px;
-      position: relative;
-    }
-
-    #updateModal .inner header {
-      width: 100%;
-      height: 70px;
-      font-weight: 700;
-      font-size: 25px;
-      color: rgb(226, 244, 255);
-      background: url("/kk/f29ff3.png") no-repeat;
-      position: relative;
-      line-height: 70px;
-      padding-left: 14px;
-      box-sizing: border-box;
-    }
-
-    #updateModal .inner header::before {
-      content: '';
-      width: 7px;
-      height: 100%;
-      position: absolute;
-      left: 0px;
-      background: linear-gradient(180deg, #0b9fff, #01ceff);
-    }
-
-    #updateModal .inner header::after {
-      background: linear-gradient(90deg, #2fafff, #1c232c);
-      content: "";
-      height: 70px;
-      left: 0;
-      opacity: .2;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-    #updateModal .inner ul.tab {
-      height: 50px;
-      background-color: #27323d;
-      color: white;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    #updateModal .inner ul.tab li {
-      padding: 0px 10px;
-      font-size: 16px;
-    }
-
-    .update-item {
-      padding: 5px 20px;
-      color: white;
-      overflow-y: auto;
-      height: calc(100% - 132px);
-    }
-
-    .update-item .update-detail {
-      width: 100%;
-      display: none;
-    }
-
-    .update-detail.active {
-      display: list-item;
-    }
-
-    .update-detail .meta {
-      display: flex;
-      justify-content: space-between;
-      padding: 30px 0;
-    }
-
-    .update-version {
-      color: white;
-      font-weight: 700;
-      font-size: 16px;
-      padding-left: 2px;
-    }
-
-    .update-detail .meta .updatetime {
-      color: hsla(0, 0%, 100%, .47);
-      font-style: italic;
-      font-weight: 700;
-      font-size: 16px;
-      padding-right: 2px;
-    }
-   
-
-    #updateModal .tab li {
-      height: 50px;
-    }
-
-    #updateModal .tabno.active {
-      border-bottom: 3px solid orange;
-    }
-
-    #updateModal .tabno {
-      cursor: pointer;
-      display: block;
-      line-height: 50px;
-      height: 50px;
-      box-sizing: border-box;
-      user-select: none;
-    }
-
-    #updateModal .close {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      color: white;
-      font-size: 30px;
-      line-height: 30px;
-      padding-right: 2px;
-      cursor: pointer;
-      user-select: none;
     }
 
     /* #endregion */
   </style>
   <div class="hero">
     <div class="container">
+      <!-- <div class="hero-nav" style="width:300px;height: 100px;background-color: red;">12341234</div> -->
       <ul class="hero-list">
         <!-- <li empty></li>
         <li><a href="#" data-turbo-frame="console-turbo-frame"></a></li>
         <li empty></li> -->
+
+        <li>
+          <turbo-frame id="console-turbo-frame" class="console">
+          </turbo-frame>
+        </li>
+        <li>
+          <turbo-frame id="version-update-turbo-frame" src="/bilibili/hero/version-update.html">
+
+          </turbo-frame>
+        </li>
       </ul>
 
-      <turbo-frame id="console-turbo-frame" class="console">
-
-      </turbo-frame>
+      <!-- <div class="hero-nav" style="width:300px;height: 100px;background-color: red;">12341234</div> -->
     </div>
 
+
+
   </div>
-  <div class="update">
-    <p>
-      <span></span>
-      <a href="#" data-turbo="false">更新说明</a><i class="iconfont icon-refresh-v2"></i>
-    </p>
-  </div>
-  <div id="updateModal">
-    <div class="inner" class="modal">
-      <header>更新说明</header>
-      <div class="_sticky_top" style="position: relative; top: -1px; height: 1px;"></div>
-      <ul class="tab">
-        <!-- <li><span class="tabno active" data-tabno="1.9.8">1.9.8</span></li> -->
-      </ul>
-      <ul class="update-item ">
-        <!-- <li class="update-detail active" data-tabno="1.9.8">
-          <h3 class="meta"><span class="update-version">1.9.8</span><span class="updatetime">2024-12-28</span></h3>
-          <p>
-            增加某某信息
-          </p>
-        </li> -->
-      </ul>
-      <div class="close">×</div>
-    </div>
-  </div>
+
   <script>
-    // 发送网络请求并解析 JSON 数据
-    function fetchData(url, updateUpdateDetails) {
-      fetch(url)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log(data);
-          // 处理 JSON 数据
-          updateUpdateDetails(data);
-        })
-        .catch(error => {
-          console.error('There was a problem with the fetch operation:', error);
-        });
-    }
 
     (function () {
-
       // 获取URL中的锚点
       window._self = window._self || { type: "#mp" }
       const hash = window._self.type;
       if (hash === "#mp") {
         var locArr = [
-          [1903],
-          [413, 585, 757, 956, 1159, 1347, 1523, 1903],
-          [360, 545, 757, 956, 1159, 1347, 1583, 1903],
-          [280, 545, 757, 956, 1159, 1407, 1623, 1903],
-          [250, 495, 757, 956, 1159, 1437, 1693, 1903],
-          [1903],
+          [0, 1903],
+          [0, 413, 585, 757, 956, 1159, 1347, 1523, 1903],
+          [0, 360, 545, 757, 956, 1159, 1347, 1583, 1903],
+          [0, 280, 545, 757, 956, 1159, 1407, 1623, 1903],
+          [0, 250, 495, 757, 956, 1159, 1437, 1693, 1903],
+          [0, 1903],
         ]
 
         var heroArr = [
@@ -322,20 +134,20 @@
           [''],
         ]
 
-        var heightArr = [50, 151, 161, 190, 169, 286]
+        var heightArr = [0, 50, 201, 362, 552, 721, 1000]
 
         var heroImg = 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=MWDHPhmPkKRr03CnMKYgGJKUCZA%3D'
 
         var mapId = 192822
       } else {
         var locArr = [
-          [1903],
-          [263, 416, 545, 717, 913, 1026, 1257, 1419, 1517, 1723, 1903],
-          [179, 351, 529, 717, 913, 1050, 1257, 1455, 1594, 1757, 1903],
-          [77, 323, 488, 717, 913, 1057, 1297, 1497, 1620, 1820, 1903],
+          [0, 1903],
+          [0, 263, 416, 545, 717, 913, 1026, 1257, 1419, 1517, 1723, 1903],
+          [0, 179, 351, 529, 717, 913, 1050, 1257, 1455, 1594, 1757, 1903],
+          [0, 77, 323, 488, 717, 913, 1057, 1297, 1497, 1620, 1820, 1903],
 
-          [405, 717, 1065, 1303, 1620, 1903],
-          [1903],
+          [0, 405, 717, 1065, 1303, 1620, 1903],
+          [0, 1903],
         ]
 
         var heroArr = [
@@ -347,7 +159,7 @@
           [''],
         ]
 
-        var heightArr = [40, 176, 161, 190, 179, 260]
+        var heightArr = [0, 40, 216, 377, 567, 744, 1000]
         var heroImg = 'https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/994ee5ff602a4f74953ec88b4b4de6da~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=SDpnrLH%2FugNY8VDREqu5%2FuVhQAM%3D'
 
         var mapId = 193337
@@ -370,50 +182,44 @@
       var dom = new Dom()
 
 
-      let index = -1;
       let height = 0;
-
       var ulHtml = ''
-      for (let i = 0; i < locArr.length; i++) {
-        let preWidth = 0;
 
-        let heroIndex = -1;
-        locArr[i].forEach(function (v) {
-          // <li empty></li>
-          // <li><a href="#" data-turbo-frame="console-turbo-frame"></a></li>
-          // <li empty></li> 
+      for (let i = 0; i < heroArr.length; i++) {
+        const height = (heightArr[i + 1] - heightArr[i]) * 0.7
+        const offsety = heightArr[i] * -0.7
+        for (let j = 0; j < heroArr[i].length; j++) {
+          const heroId = heroArr[i][j]
+          const width = (locArr[i][j + 1] - locArr[i][j]) * 0.7
+          const offsetx = locArr[i][j] * -0.7
 
-          // 英雄ID
-          const heroId = heroArr[i][++heroIndex]
           if (heroId !== '') {
             let liHtml = `
-            <li style="background: url('${heroImg}') no-repeat;background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;">
-              <a href="/bilibili/hero/hero-console.html" data-hero-id="${heroId}" data-turbo-frame="console-turbo-frame" class="no-drag" title=""></a>
+            <li style="background: url('${heroImg}') no-repeat left top / 1332px 700px;width: ${width}px;height: ${height}px;background-position: ${offsetx}px ${offsety}px;">
+                <a href="/bilibili/hero/hero-console.html" data-hero-id="${heroId}" data-turbo-frame="console-turbo-frame" class="no-drag" title=""></a>
             </li>`
             ulHtml += liHtml
           } else {
             let liHtml = `
-            <li empty style="background: url('${heroImg}') no-repeat;background-position: -${preWidth}px -${height}px; width: ${v - preWidth}px;height: ${heightArr[i]}px;">
+            <li empty style="background: url('${heroImg}') no-repeat left top / 1332px 700px;width: ${width}px;height: ${height}px;background-position: ${offsetx}px ${offsety}px;">
             </li>`
             ulHtml += liHtml
           }
-          preWidth = v
 
-        })
-        height += heightArr[i];
-
+        }
       }
-      dom.heroul.innerHTML = ulHtml
+      dom.heroul.innerHTML = ulHtml + dom.heroul.innerHTML
       dom.heroul.style = "background-color: #d2c075;"
 
 
       // 英雄点击事件
       dom.heroul.addEventListener('click', e => {
-        e.target.tagName == 'A' && changeHeroInfo(e.target)
+        console.log("英雄点击事件", e.target.classList)
+        e.target.tagName === 'A' && changeHeroInfo(e.target)
       })
       dom.console.setAttribute("r", new Date().getTime())
       dom.console.addEventListener('click', e => {
-        e.target.tagName == 'A' && changeHeroInfo(e.target)
+        e.target.tagName === 'A' && changeHeroInfo(e.target)
       })
 
       function changeHeroInfo(a) {
@@ -422,84 +228,7 @@
         window._self.dataHeroId = id
       }
 
-      // 更新数据
-      dom.updateModal.addEventListener('click', e => {
-        console.log("tabno=====", e.target)
-        e.target.classList.contains('tabno') && changeUpdateInfo(e.target)
-      })
-      function changeUpdateInfo(a) {
-        const tabno = a.getAttribute("data-tabno")
-        console.log("tabno=====")
-        console.log(dom.updateModal.querySelector(".update-detail.active"))
-        dom.updateModal.querySelector(".tabno.active").classList.remove("active")
-        dom.updateModal.querySelector(".tabno[data-tabno='" + tabno + "']").classList.add("active")
 
-        dom.updateModal.querySelector(".update-detail.active").classList.remove("active")
-        dom.updateModal.querySelector(".update-detail[data-tabno='" + tabno + "']").classList.add("active")
-      }
-
-      dom.updateClose.addEventListener('click', e => {
-        showUpdate(false)
-      })
-      dom.updateA.addEventListener('click', e => {
-        e.target.tagName == 'A' && showUpdate(e.target)
-      })
-
-      function showUpdate(flag) {
-        // <li><span class="tabno active" data-tabno="1.9.8">1.9.8</span></li>
-
-        console.log("update")
-        if (flag) {
-          fetchUpdate()
-          document.querySelector("#updateModal").classList.add("show")
-        } else {
-          document.querySelector("#updateModal").classList.remove("show")
-
-        }
-      }
-
-      function fetchUpdate() {
-        fetchData(`https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=${mapId}&start=0&limit=5`, (data) => {
-          console.log("开始处理更新数据", data.data.rows)
-          let tabnoHtml = ''
-          let updateDetailHtml = ''
-          for(const v of data.data.rows){
-            // <ul class="tab">
-            //   <!-- <li><span class="tabno active" data-tabno="1.9.8">1.9.8</span></li> -->
-            // </ul>
-            // <ul class="update-item">
-            //   <!-- <li class="update-detail active" data-tabno="1.9.8">
-            //     <h3 class="meta"><span class="update-version">1.9.8</span><span class="updatetime">2024-12-28</span></h3>
-            //     <p>
-            //       增加某某信息
-            //     </p>
-            //   </li> -->
-            // </ul>
-
-            tabnoHtml += `<li><span class="tabno" data-tabno="${v.mapVersion}">${v.mapVersion}</span></li>`
-            updateDetailHtml +=`
-              <li class="update-detail" data-tabno="${v.mapVersion}">
-                <h3 class="meta"><span class="update-version">${v.mapVersion}</span><span class="updatetime">${v.createTime}</span></h3>
-                <p>
-                  ${v.content}
-                </p>
-              </li>
-            `
-          }
-
-          if(data.data.rows.length>0){
-            dom.update.querySelector("span").innerHTML = data.data.rows[0].mapVersion
-          }
-          dom.updateModal.querySelector(".tab").innerHTML = tabnoHtml
-          dom.updateModal.querySelector(".update-item").innerHTML = updateDetailHtml
-
-          dom.updateModal.querySelector(".tab li:first-child .tabno").classList.add("active")
-          dom.updateModal.querySelector(".update-item li:first-child").classList.add("active")
-          
-        })
-      }
-
-      fetchUpdate()
     })()
   </script>
 

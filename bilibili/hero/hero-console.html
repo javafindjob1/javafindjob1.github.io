@@ -13,16 +13,17 @@
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
+      /* background-color: gray; */
     }
 
 
     .hero .info {
       position: absolute;
-      right: 675px;
-      bottom: 500px;
-      width: 1094px;
+      right: calc(675px * 0.7);
+      bottom: calc(500px * 0.7);
+      width: calc(1094px * 0.7);
       color: white;
-      font-size: 22px;
+      font-size: calc(22px * 0.7);
       line-height: 1.2em;
       pointer-events: none;
       opacity: 0;
@@ -38,11 +39,11 @@
 
     .hero .console-info {
       position: absolute;
-      right: 278px;
-      bottom: 270px;
-      width: 515px;
+      right: calc(278px * 0.7);
+      bottom: calc(270px * 0.7);
+      width: calc(515px * 0.7);
       color: white;
-      font-size: 22px;
+      font-size: calc(22px * 0.7);
       line-height: 1.2em;
       ;
       background-color: #0d1b26;
@@ -69,7 +70,7 @@
 
 
     .hero .console-item {
-      width: 159px;
+      width: calc(159px * .7);
       display: flex;
       flex-wrap: wrap;
       align-content: flex-end;
@@ -78,8 +79,8 @@
     }
 
     .hero .console-item div[class^="console-item"] {
-      width: 60px;
-      height: 59px;
+      width: calc(60px * .7);
+      height: calc(59px * .7);
       /* background-color: #ccffff; */
       margin: 3px 4px;
     }
@@ -89,20 +90,20 @@
     }
 
     .hero .console-ability {
-      width: 375px;
+      width: calc(375px * 0.7);
       display: flex;
       flex-wrap: wrap;
-      margin-right: 245px;
+      margin-right: calc(256px * 0.7);
       justify-content: flex-end;
       align-content: flex-end;
       /* background-color: red; */
     }
 
     .hero .console-ability div[class^="console-ability-"] {
-      width: 75px;
-      height: 75px;
+      width: calc(75px * .7);
+      height: calc(75px * .7);
       /* background-color: #ccffff; */
-      margin: 1px 1.6px;
+      margin: 1px calc(1.6px * .7);
     }
 
     .hero .console-ability div[class^="console-ability-"]:hover .console-info {
@@ -186,7 +187,6 @@
         get info() {
           return document.querySelector(".hero .info")
         }
-        get
       }
       var dom = new Dom()
 
@@ -199,29 +199,29 @@
         dom.info.classList.add('active')
       }
 
-      changePifu(dom.consoleAbility.children[0], hero.p1)
-      changePifu(dom.consoleAbility.children[1], hero.p2)
+      addPifu(dom.consoleAbility.children[0], hero.p1)
+      addPifu(dom.consoleAbility.children[1], hero.p2)
       // 梦的第2排技能
-      changeAbility(dom.consoleAbility.children[4], hero.core)
-      changeAbility(dom.consoleAbility.children[5], hero.d2)
-      changeAbility(dom.consoleAbility.children[7], hero.t2)
+      addAbility(dom.consoleAbility.children[4], hero.core)
+      addAbility(dom.consoleAbility.children[5], hero.d2)
+      addAbility(dom.consoleAbility.children[7], hero.t2)
 
       // x7的第2排技能
-      changeAbility(dom.consoleAbility.children[6], hero.t)
-      changeAbility(dom.consoleAbility.children[7], hero.d)
+      addAbility(dom.consoleAbility.children[6], hero.t)
+      addAbility(dom.consoleAbility.children[7], hero.d)
 
-      changeAbility(dom.consoleAbility.children[8], hero.q)
-      changeAbility(dom.consoleAbility.children[9], hero.w)
-      changeAbility(dom.consoleAbility.children[10], hero.e)
-      changeAbility(dom.consoleAbility.children[11], hero.r)
+      addAbility(dom.consoleAbility.children[8], hero.q)
+      addAbility(dom.consoleAbility.children[9], hero.w)
+      addAbility(dom.consoleAbility.children[10], hero.e)
+      addAbility(dom.consoleAbility.children[11], hero.r)
 
-      function changeAbility(ele, viewData) {
+      function addAbility(ele, viewData) {
         if (viewData) {
           ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
           ele.innerHTML = `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
         }
       }
-      function changePifu(ele, viewData) {
+      function addPifu(ele, viewData) {
         if (viewData) {
           ele.innerHTML = `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${formatHtmlString(viewData.desc)}</div>`
           ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`

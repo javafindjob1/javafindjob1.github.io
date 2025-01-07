@@ -5,38 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>游戏攻略</title>
-  <link rel="favicon icon" href="/bilibili/favicon.ico">
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/bilibili/index-flex.css">
-  <link rel="stylesheet" href="/kk/font/a0.font.7ad948.css">
-  <script src="/js/turbo.es2017-umd.min.js" defer></script>
-  <link rel="preload" as="script" href="/mp/mp-data.js">
-  <link rel="preload" as="script" href="/x7/x7-data.js">
+  <link rel="stylesheet" href="./css/reset.css">
+  <script defer src="./js/turbo.es2017-umd.min.js"></script>
+  <script defer src="./js/common.js"></script>
+  <link rel="favicon icon" href="./bilibili/asset/favicon.ico">
+  <link rel="stylesheet" href="./bilibili/asset/index-flex.css">
+  <link rel="stylesheet" href="./kk/font/a0.font.7ad948.css">
+  <link rel="preload" as="script" href="./mp/mp-data.js">
+  <link rel="preload" as="script" href="./x7/x7-data.js">
 </head>
 
 <body>
   <div id="app">
     <header class="page-header clearfix">
       <div class="type leftfix">
-        <img src1="/bilibili/logo.webp" alt="">
+        <img src1="./bilibili/asset/logo.webp" alt="">
       </div>
       <ul class="menu rightfix clearfix">
         <li>
-          <a href="/bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
+          <a href="./bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
             data-view-component="true">主播</a>
         </li>
         <!-- <li><a href="/bilibili/item/item.html" data-turbo-frame="repo-content-turbo-frame"
             data-view-component="true">装备列表</a></li> -->
-        <li><a href="/bilibili/hero/hero-list.html" data-turbo-frame="repo-content-turbo-frame"
+        <li><a href="./bilibili/hero/hero-list.html" data-turbo-frame="repo-content-turbo-frame"
             data-view-component="true">英雄列表</a></li>
-        <li><a href="/bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
+        <li><a href="./bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
             data-view-component="true">关于</a></li>
       </ul>
 
       <div class="subnav">
         <ul>
-          <li><a href="#x7" data-img="/bilibili/header/西7.webp" data-turbo="false">西方世界的劫难7</a></li>
-          <li><a href="#mp" data-img="/bilibili/header/mp.webp" data-turbo="false">梦想愿景</a></li>
+          <li><a href="#x7" data-img="./bilibili/header/西7.webp" data-turbo="false">西方世界的劫难7</a></li>
+          <li><a href="#mp" data-img="./bilibili/header/mp.webp" data-turbo="false">梦想愿景</a></li>
         </ul>
       </div>
     </header>
@@ -54,7 +55,6 @@
         }
 
         dom.menu.addEventListener('click', e => {
-          console.log(e.target)
           e.target.tagName == 'A' && changeIframeSrc(e.target)
         })
 
@@ -65,12 +65,9 @@
           img.classList.add('active')
         }
 
-
-
         // 游戏分类
         let preSrc = dom.type.src;
         dom.subnav.addEventListener('click', e => {
-          console.log(e.target)
           if (e.target.tagName == 'A') {
             preSrc = e.target.getAttribute('data-img')
             recordAnchor(e)
@@ -83,17 +80,11 @@
         })
 
         dom.subnav.addEventListener('mouseover', e => {
-          console.log(e.target)
           e.target.tagName == 'A' && changeSubnavSrc(e.target.getAttribute('data-img'))
         })
         dom.subnav.addEventListener('mouseout', e => {
-          console.log(e.target)
           e.target.tagName == 'A' && changeSubnavSrc(preSrc)
         })
-
-
-        // 默认展示哪个游戏
-        // changeSubnavSrc(dom.subnava[2])
 
         function initMenu() {
           // 创建一个新的点击事件
@@ -109,6 +100,7 @@
         function changeSubnavSrc(v) {
           dom.type.src = v;
         }
+        
         /**
           * 记录锚点供其他页面识别游戏类别
           */
@@ -124,11 +116,10 @@
             if (hash === '#' || hash === '') {
               hash = '#x7'
             }
-            console.log("hash===" + hash)
             window._self.type = hash
             const src = dom.subnav.querySelector(`a[href="${hash}"]`).getAttribute('data-img')
-            changeSubnavSrc(src)
             preSrc = src
+            changeSubnavSrc(src)
           }
 
           initMenu()
@@ -158,34 +149,6 @@
     <turbo-frame id="repo-content-turbo-frame" src1="/bilibili/hero/hero-list.html">
       <p>加载中...</p>
     </turbo-frame>
-
-    <script>
-
-      // 动态加载 JavaScript 文件
-      function loadScript(url, callback) {
-        const script = document.createElement('script');
-        script.src = url;
-        script.type = 'text/javascript';
-        script.async = true; // 或 script.defer = true;
-
-        script.onload = function () {
-          if (callback) callback()
-        }
-        document.head.appendChild(script);
-      }
-
-      function loadCSS(url) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = url;
-        document.head.appendChild(link);
-      }
-      // 禁止所有元素被拖拽 防止a链接出现url
-      document.addEventListener('dragstart', function (e) {
-        e.preventDefault();
-      });
-
-    </script>
 
     <footer>
       <span>© 技术支持 Email： java_findjob@163.com</span>
