@@ -70,19 +70,20 @@
 
 
     .hero .console-item {
-      width: calc(159px * .7);
+      width: calc(153px * .7);
       display: flex;
       flex-wrap: wrap;
       align-content: flex-end;
-      justify-content: flex-end;
-      /* background-color: #ccffff; */
+      justify-content: center;
+      padding-bottom: 1px;
+      /* background-color: red; */
     }
 
     .hero .console-item div[class^="console-item"] {
       width: calc(60px * .7);
       height: calc(59px * .7);
       /* background-color: #ccffff; */
-      margin: 3px 4px;
+      margin: 1px 2px;
     }
 
     .hero .console-item div[class^="console-item-"]:hover .console-info {
@@ -90,13 +91,13 @@
     }
 
     .hero .console-ability {
-      width: calc(375px * 0.7);
+      width: calc(350px * 0.7);
       display: flex;
       flex-wrap: wrap;
       margin-right: calc(256px * 0.7);
       justify-content: flex-end;
       align-content: flex-end;
-      /* background-color: red; */
+      /* background-color: blue; */
     }
 
     .hero .console-ability div[class^="console-ability-"] {
@@ -183,6 +184,7 @@
           this.hero = document.querySelector(".hero")
           this.heroul = document.querySelector(".hero ul")
           this.consoleAbility = document.querySelector(".hero .console .console-ability")
+          this.consoleItem = document.querySelector(".hero .console .console-item")
         }
         get info() {
           return document.querySelector(".hero .info")
@@ -214,6 +216,12 @@
       addAbility(dom.consoleAbility.children[9], hero.w)
       addAbility(dom.consoleAbility.children[10], hero.e)
       addAbility(dom.consoleAbility.children[11], hero.r)
+
+      if(hero.items!=null){
+        for(let i =0; i<hero.items.length; i++){
+          addAbility(dom.consoleItem.children[i], hero.items[i])
+        }
+      }
 
       function addAbility(ele, viewData) {
         if (viewData) {
