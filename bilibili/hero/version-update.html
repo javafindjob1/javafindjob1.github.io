@@ -276,7 +276,7 @@
           }
 
           if (data.data.rows.length > 0) {
-            dom.update.querySelector("span").innerHTML = data.data.rows[0].mapVersion
+            dom.update.querySelector("span").innerHTML = "页面版本"+currentVersion+" 最新" + data.data.rows[0].mapVersion
             // dom.update.querySelector("span").innerHTML = "网站地图版本可能落后 " +  currentVersion
           }
           dom.updateModal.querySelector(".tab").innerHTML = tabnoHtml

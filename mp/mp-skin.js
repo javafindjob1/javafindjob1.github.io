@@ -90,7 +90,7 @@ var mpskin = {
   heroHeadImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6b9aa6ae43454c2c9900ce22449ba447~tplv-obj.image?lk3s=993df49e&traceid=20250109212707F243562175C39FD419E1&x-expires=2147483647&x-signature=6ozQcOajxiJT0OpTGtdzmfrR1dw%3D',
   imgSize: '730px 995px',
   mapId: 192822,
-  calc(i,j,baseUnitId, unitId, p1, p2 ){
+  calc(i,j,unitId, p1, p2 ){
     const basex = 172 * -0.7
     const basey = 179 * -0.7
     if (p1 != null && p1.unitId === unitId) {

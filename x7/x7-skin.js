@@ -84,7 +84,7 @@ var x7skin = {
   heroHeadImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/51fe0ffd02264cfcb7647d4da3a952ff~tplv-obj.image?lk3s=993df49e&traceid=20250109212707F243562175C39FD419E1&x-expires=2147483647&x-signature=d0foH6l4Wuf2mSRUz50za4yUD8M%3D',
   imgSize: '1070px 1484px',
   mapId : 193337,
-  calc(i,j,baseUnitId, unitId, p1, p2 ){
+  calc(i,j,unitId, p1, p2 ){
     const basex = 169 * -0.7
     const basey = 178 * -0.7
     if (p1 != null && p1.unitId === unitId) {
