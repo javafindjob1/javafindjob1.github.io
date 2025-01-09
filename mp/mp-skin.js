@@ -39,6 +39,7 @@ var mpskin = {
   DAMAGETIP_HERO: "对|cfff7f295光属性护甲|r造成|cff00f000130%|r伤害，对|cffc552e6暗属性护甲|r造成100%伤害，对其他类型护甲造成|cff00f000120%|r伤害",
   DAMAGETIP_MAGIC: "对|cffc552e6暗属性护甲|r造成|cff00f000130%|r伤害|n对其他类型护甲造成100%伤害|n|cfff40000无法攻击魔法免疫的单位|r",
   DAMAGETIP_MELEE: "对|cff73b4ea水属性护甲|r造成|cff00f000120%|r伤害|n对|cff78b58c风属性护甲|r和|cfff7f295光属性护甲|r造成|cfff4000080%|r伤害|n对其他类型护甲造成100%伤害",
+  DAMAGETIP_NORMAL: "对|cff73b4ea水属性护甲|r造成|cff00f000120%|r伤害|n对|cff78b58c风属性护甲|r和|cfff7f295光属性护甲|r造成|cfff4000080%|r伤害|n对其他类型护甲造成100%伤害",
   DAMAGETIP_PIERCE: "对|cffea9f03土属性护甲|r造成|cff00f000120%|r伤害|n对|cffda400c火属性护甲|r和|cfff7f295光属性护甲|r造成|cfff4000080%|r伤害|n对其他类型护甲造成100%伤害",
   DAMAGETIP_SIEGE: "对|cff78b58c风属性护甲|r造成|cff00f000120%|r伤害|n对|cff73b4ea水属性护甲|r和|cfff7f295光属性护甲|r造成|cfff4000080%|r伤害|n对其他类型护甲造成100%伤害",
   DAMAGE_CHAOS: "种类： |cff73b4ea水属性攻击|r",
