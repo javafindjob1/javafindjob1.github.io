@@ -7,15 +7,18 @@
       right: 0;
       bottom: 0;
       /* 控制台宽高 */
-      width: 759px;
+      width: 1350px;
 
       /* transform: scale(0.9); */
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
       /* background-color: gray; */
+      /* box-sizing: border-box;
+      border: 1px solid black; */
     }
 
+    /* #region 提示信息 */
 
     .hero .info {
       position: absolute;
@@ -37,6 +40,9 @@
       opacity: 1;
     }
 
+    /* #endregion */
+
+    /*  #region控制台提示信息 */
     .hero .console-info {
       position: absolute;
       right: calc(278px * 0.7);
@@ -68,7 +74,9 @@
       opacity: 1;
     }
 
+    /* #endregion */
 
+    /* #region物品栏 */
     .hero .console-item {
       width: calc(153px * .7);
       display: flex;
@@ -80,7 +88,7 @@
     }
 
     .hero .console-item div[class^="console-item"] {
-      width: calc(60px * .7);
+      width: calc(63px * .7);
       height: calc(59px * .7);
       /* background-color: #ccffff; */
       margin: 1px 2px;
@@ -90,6 +98,9 @@
       visibility: visible;
     }
 
+    /* #endregion */
+
+    /* #region技能栏 */
     .hero .console-ability {
       width: calc(350px * 0.7);
       display: flex;
@@ -116,8 +127,198 @@
       display: block;
       height: 100%;
     }
+
+    /* #endregion */
+
+    /* #region 英雄基础面板 */
+
+    .console-head {
+      width: 109px;
+      height: 140px;
+      /* background-color: yellowgreen; */
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .console-head .head-img {
+      width: 94px;
+      height: 95px;
+      border-top-left-radius: 72px 45px;
+      border-top-right-radius: 72px 45px;
+    }
+
+    .console-head .head-text {
+      font-size: 12px;
+      line-height: 17px;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .console-head .head-text .left-text {
+      text-align: right;
+    }
+
+    .console-head .head-text .split-text {
+      display: inline-block;
+      padding: 0 5px;
+    }
+
+    .console-head .head-text .right-text {
+      text-align: left;
+    }
+
+    .console-head .head-text .red {
+      color: red;
+    }
+
+    .console-head .head-text .blue {
+      color: blue;
+    }
+
+
+    .console-base {
+      width: 264px;
+      height: 136px;
+      padding: 0 15px;
+      box-sizing: border-box;
+      user-select: none;
+      /* background-color: yellowgreen; */
+    }
+
+    .console-base .hero-propsname {
+      color: white;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .console-base .hero-level-name {
+      color: white;
+      font-size: 12px;
+      line-height: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      border: 1px solid orange;
+      border-radius: 5px;
+      transform: scale(0.96);
+    }
+
+    .hero-base {}
+
+    .hero-prop {
+      width: 110px;
+      line-height: 1em;
+      margin-bottom: -3px;
+    }
+
+    .hero-prop::nth-child(3) {
+      margin-top: 5px;
+    }
+
+    .hero-prop-img {
+      width: 35px;
+      height: 35px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 2px;
+    }
+
+    .hero-prop-text {
+      width: 50px;
+      font-size: 12px;
+      display: inline-block;
+      vertical-align: top;
+      color: whitesmoke;
+      white-space: nowrap;
+      margin-left: -6px;
+      transform: scale(0.95);
+    }
+
+    .hero-prop:first-child .hero-prop-img,
+    .hero-prop:first-child .hero-prop-text {
+      vertical-align: middle;
+    }
+
+    .hero-prop:not(:first-child) .hero-prop-text {
+      padding-top: 5px;
+    }
+
+    .hero-prop-text p:nth-child(2n+3) {
+      padding-top: 5px;
+    }
+
+    .hero-prop-text .green {
+      color: green;
+    }
+
+    .hero-prop-text span[class]::before,
+    .hero-status span[class]::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+    }
+
+    .hero-status {
+      color: whitesmoke;
+      font-size: 12px;
+    }
+
+    .hero-prop:hover .console-info {
+      visibility: visible;
+    }
+
+    /* #endregion */
   </style>
   <div class="info">
+  </div>
+  <div class="console-head">
+    <!-- <div class="head-img" style="background: url('/bilibili/hero/headimg.png') no-repeat center center / cover;">
+    </div>
+    <div class="head-text">
+      <p class="red"><span class="left-text">744</span><span class="split-text">/</span><span
+          class="right-text">744</span></p>
+      <p class="blue"><span class="left-text">456</span><span class="split-text">/</span><span
+          class="right-text">456</span></p>
+    </div> -->
+  </div>
+  <div class="console-base">
+    <!-- <p class="hero-propsname">￥</p>
+    <p class="hero-level-name"><span>等级 1 </span><span class="name">红翼天使</span></p>
+    <div class="hero-base clearfix">
+      <div class="hero-prop rightfix">
+        <div class="hero-prop-img" style="background: url('/bilibili/hero/agi.png') no-repeat center center/contain;">
+        </div>
+        <div class="hero-prop-text">
+          <p class="orange">力量：</p>
+          <p><span class="white">32</span><span class="green"></span></p>
+          <p class="orange">敏捷：</p>
+          <p><span class="white">21</span><span class="green"></span></p>
+          <p class="orange">智力：</p>
+          <p><span class="white">14</span><span class="green"></span></p>
+        </div>
+      </div>
+      <div class="hero-prop leftfix">
+        <div class="hero-prop-img"
+          style="background: url('/bilibili/hero/attack.png') no-repeat center center/contain;"></div>
+        <div class="hero-prop-text">
+          <p class="orange">攻击力：</p>
+          <p><span class="white">81 - 103</span><span class="green"></span></p>
+        </div>
+      </div>
+      <div class="hero-prop leftfix">
+        <div class="hero-prop-img" style="background: url('/bilibili/hero/def.png') no-repeat center center/contain;">
+          <div class="console-info">
+          </div>
+        </div>
+        <div class="hero-prop-text">
+          <p class="orange">护甲：</p>
+          <p><span class="white">7</span><span class="green"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-status">状态：</div> -->
   </div>
   <div class="console-item">
     <div class="console-item-1">
@@ -174,10 +375,12 @@
         var datajs = "/mp/mp-data.js"
         var dataImg = "/mp/mp-imgs"
         var data = mpdata
+        var skin = mpskin
       } else {
         var datajs = "/x7/x7-data.js"
         var dataImg = "/x7/x7-imgs"
         var data = x7data
+        var skin = x7skin
       }
       class Dom {
         constructor() {
@@ -185,6 +388,8 @@
           this.heroul = document.querySelector(".hero ul")
           this.consoleAbility = document.querySelector(".hero .console .console-ability")
           this.consoleItem = document.querySelector(".hero .console .console-item")
+          this.consoleBase = document.querySelector(".hero .console .console-base")
+          this.consoleHead = document.querySelector(".hero .console .console-head")
         }
         get info() {
           return document.querySelector(".hero .info")
@@ -196,11 +401,13 @@
       console.log(data[window._self.dataHeroId])
       const hero = data[window._self.dataHeroId]
 
+      // 英雄介绍
       if (hero.intro !== null && hero.intro !== undefined) {
         dom.info.innerHTML = formatHtmlString(hero.intro)
         dom.info.classList.add('active')
       }
 
+      // 技能
       addPifu(dom.consoleAbility.children[0], hero.p1)
       addPifu(dom.consoleAbility.children[1], hero.p2)
       // 梦的第2排技能
@@ -217,12 +424,19 @@
       addAbility(dom.consoleAbility.children[10], hero.e)
       addAbility(dom.consoleAbility.children[11], hero.r)
 
-      if(hero.items!=null){
-        for(let i =0; i<hero.items.length; i++){
+      // 物品
+      if (hero.items != null) {
+        for (let i = 0; i < hero.items.length; i++) {
           addAbility(dom.consoleItem.children[i], hero.items[i])
         }
       }
 
+      // 面板
+      // "prop":"2,68,25,38",
+      // "attack":"262 - 383,140,1.6",
+      // "armor":"15,320",
+      handlePanel(hero)
+      handleHead(hero)
       function addAbility(ele, viewData) {
         if (viewData) {
           ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
@@ -255,6 +469,7 @@
 
         str = str.replaceAll("/\|r\|cff/gi", "|cff")
         str = str.replaceAll("|r", "|cfffff")
+        str = str.replaceAll("|R", "|cfffff")
 
         if (!str.startsWith("|cff")) {
           str = lastColor + str
@@ -275,6 +490,129 @@
         return { str, buf, lastColor }
       }
 
+      function addAbility(ele, viewData) {
+        if (viewData) {
+          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
+          ele.innerHTML = `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
+        }
+      }
+
+      function handlePanel({ prop, attack, armor, name, propernames }) {
+        if (prop === null || prop === undefined) {
+          return
+        }
+
+        const propArr = prop.split(",")
+        const attackArr = attack.split(",")
+        const armorArr = armor.split(",")
+
+        console.log("1234", attackArr)
+        const propIcon = skin["InfoPanelIconHeroIcon" + propArr[0]]
+        const attackIcon = skin["InfoPanelIconDamage" + attackArr[0].substring(0, 1).toUpperCase() + attackArr[0].substring(1)]
+        const armorIcon = skin["InfoPanelIconArmor" + armorArr[0].substring(0, 1).toUpperCase() + armorArr[0].substring(1)]
+
+        const infopanel_level_class = formatHtmlString(skin["INFOPANEL_LEVEL_CLASS"].replace("%u", 1).replace("%s", name))
+        const primary_attribute = formatHtmlString(skin["PRIMARY_ATTRIBUTE"])
+        const colon_damage = formatHtmlString(skin["COLON_DAMAGE"])
+        const colon_armor = formatHtmlString(skin["COLON_ARMOR"])
+        const colon_hero_attributes = formatHtmlString(skin["COLON_HERO_ATTRIBUTES"])
+        const colon_strength = formatHtmlString(skin["COLON_STRENGTH"])
+        const colon_agility = formatHtmlString(skin["COLON_AGILITY"])
+        const colon_intellect = formatHtmlString(skin["COLON_INTELLECT"])
+        const colon_status = formatHtmlString(skin["COLON_STATUS"])
+
+        // 拼接攻击护甲属性等描述字符串
+        const propInfoDesc = `${skin["COLON_HERO_ATTRIBUTES"]}|n${skin["COLON_STRENGTH"]}|n${propArr[0] === '0' ? skin["PRIMARY_ATTRIBUTE"] : ""}${skin["str"]}|n${skin["COLON_AGILITY"]}|n ${propArr[0] === '1' ? skin["PRIMARY_ATTRIBUTE"] : ""}${skin["agi"]}|n${skin["COLON_INTELLECT"]}|n${propArr[0] === '2' ? skin["PRIMARY_ATTRIBUTE"] : ""}${skin["int"]}`
+        const propInfo = formatHtmlString(propInfoDesc)
+        const attackInfoDesc = `${skin["COLON_DAMAGE"]} ${attackArr[1]}|n${skin["DAMAGE_"+attackArr[0].toUpperCase()]}|r|n范围： ${attackArr[2]}|n速度： |cff00ff00${((100+propArr[2]/5)/(100*attackArr[3])).toFixed(3)}/sec|r|n攻击间隔： |cff00ff00${attackArr[3]} |r|n|n${skin["DAMAGETIP_"+attackArr[0].toUpperCase()]}`
+        const attackInfo = formatHtmlString(attackInfoDesc)
+        const defInfoDesc = `${skin["COLON_ARMOR"]} ${armorArr[1]}|n${skin["ARMOR_"+armorArr[0].toUpperCase()]}|r|n伤害减少：${((armorArr[1]*skin["DefenseArmor"])*100/(1+armorArr[1]*skin["DefenseArmor"])).toFixed(0)}%|r|n移动速度：${armorArr[2]}|r|n视野：${skin["view"]}|r|n|n${skin["ARMORTIP_"+armorArr[0].toUpperCase()]}`
+        const defInfo = formatHtmlString(defInfoDesc)
+        let panelHtml = `
+        <div class="hero-propsname">${propernames}</div>
+        <div class="hero-level-name">${infopanel_level_class}</div>
+        <div class="hero-base clearfix">
+          <div class="hero-prop rightfix">
+            <div class="hero-prop-img" style="background: url('${dataImg}/${propIcon}') no-repeat center center/contain;">
+              <div class="console-info">
+                ${propInfo}
+              </div>
+            </div>
+            <div class="hero-prop-text">
+              <div>${colon_strength}</div>
+              <div><span class="white">${propArr[1]}</span><span class="green"></span></div>
+              <div>${colon_agility}</div>
+              <div><span class="white">${propArr[2]}</span><span class="green"></span></div>
+              <div>${colon_intellect}</div>
+              <div><span class="white">${propArr[3]}</span><span class="green"></span></div>
+            </div>
+          </div>
+          <div class="hero-prop leftfix">
+            <div class="hero-prop-img"
+              style="background: url('${dataImg}/${attackIcon}') no-repeat center center/contain;">
+              <div class="console-info">
+                ${attackInfo}
+              </div>
+            </div>
+            <div class="hero-prop-text">
+              <div>${colon_damage}</div>
+              <div><span class="white">${attackArr[1]}</span><span class="green"></span></div>
+            </div>
+          </div>
+          <div class="hero-prop leftfix">
+            <div class="hero-prop-img" style="background: url('${dataImg}/${armorIcon}') no-repeat center center/contain;">
+              <div class="console-info">
+                ${defInfo}
+              </div>
+            </div>
+            <div class="hero-prop-text">
+              <div>${colon_armor}</div>
+              <div><span class="white">${armorArr[1]}</span><span class="green"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-status">${colon_status}</div>
+        `
+        dom.consoleBase.innerHTML = panelHtml
+      }
+
+      function handleHead({ hp, baseUnitId, unitId, p1, p2 }) {
+        if (hp === null || hp === undefined) {
+          return
+        }
+
+        console.log("设置头像", { hp, baseUnitId, unitId, p1, p2 })
+        const hpArr = hp.split(",")
+
+        
+        // 计算英雄头像位置
+        let { i, j } = (() => {
+          for (let i = 0; i < skin.heroArr.length; i++) {
+            for (let j = 0; j < skin.heroArr[i].length; j++) {
+              if (skin.heroArr[i][j] === baseUnitId) {
+                console.log("定位头像位置：", { i, j })
+                return { i, j };
+              }
+            }
+          }
+        })()
+        let {offsetx,offsety} = skin.calc(i,j,baseUnitId, unitId, p1, p2 )
+       
+        console.log({ offsetx, offsety })
+
+        const html = `
+          <div class="head-img" style = "background: url('${skin["heroHeadImg"]}') no-repeat ${offsetx}px ${offsety}px / ${skin["imgSize"]};" >
+          </div >
+          <div class="head-text">
+            <p class="red"><span class="left-text">${hpArr[0]}</span><span class="split-text">/</span><span
+              class="right-text">${hpArr[0]}</span></p>
+            <p class="blue"><span class="left-text">${hpArr[1]}</span><span class="split-text">/</span><span
+              class="right-text">${hpArr[1]}</span></p>
+          </div>
+        `
+        console.log({ hp, baseUnitId, unitId, p1, p2 })
+        dom.consoleHead.innerHTML = html
+      }
     })()
 
   </script>

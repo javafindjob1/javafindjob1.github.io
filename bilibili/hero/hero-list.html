@@ -113,57 +113,16 @@
 
     (function () {
       // 获取URL中的锚点
-      window._self = window._self || { type: "#mp" }
-      const hash = window._self.type;
-      if (hash === "#mp") {
-        var locArr = [
-          [0, 1903],
-          [0, 413, 585, 757, 956, 1159, 1347, 1523, 1903],
-          [0, 360, 545, 757, 956, 1159, 1347, 1583, 1903],
-          [0, 280, 545, 757, 956, 1159, 1407, 1623, 1903],
-          [0, 250, 495, 757, 956, 1159, 1437, 1693, 1903],
-          [0, 1903],
-        ]
-
-        var heroArr = [
-          [''],
-          ['', 'O000', 'E011', 'E004', 'E008', 'E016', 'H00S', ''],
-          ['', 'O001', 'O003', 'E015', 'H006', 'H007', 'H00H', ''],
-          ['', 'O004', 'E01H', 'O00M', 'N06G', 'E014', 'H005', ''],
-          ['', 'N02D', '', '', 'O002', 'H00B', 'H00U', ''],
-          [''],
-        ]
-
-        var heightArr = [0, 50, 201, 362, 552, 721, 1000]
-
-        var heroImg = 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=MWDHPhmPkKRr03CnMKYgGJKUCZA%3D'
-
-        var mapId = 192822
+      if (window._self.type === "#mp") {
+        var skin = mpskin
       } else {
-        var locArr = [
-          [0, 1903],
-          [0, 263, 416, 545, 717, 913, 1026, 1257, 1419, 1517, 1723, 1903],
-          [0, 179, 351, 529, 717, 913, 1050, 1257, 1455, 1594, 1757, 1903],
-          [0, 77, 323, 488, 717, 913, 1057, 1297, 1497, 1620, 1820, 1903],
-
-          [0, 405, 717, 1065, 1303, 1620, 1903],
-          [0, 1903],
-        ]
-
-        var heroArr = [
-          [''],
-          ['', 'H00X', 'H00F', 'H003', 'H00D', 'E006', 'O005', 'H002', 'O001', 'O000', ''],
-          ['', 'U000', 'E003', 'E00Y', 'O003', 'H001', 'O002', 'N006', 'H005', 'H00E', ''],
-          ['', 'U001', 'H000', 'O00J', 'H006', 'E021', 'H00G', 'E00T', 'E00C', 'E029', ''],
-          ['', 'O010', '', 'E03O', 'O018', ''],
-          [''],
-        ]
-
-        var heightArr = [0, 40, 216, 377, 567, 744, 1000]
-        var heroImg = 'https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/994ee5ff602a4f74953ec88b4b4de6da~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=SDpnrLH%2FugNY8VDREqu5%2FuVhQAM%3D'
-
-        var mapId = 193337
+        var skin = x7skin
       }
+      var locArr = skin.locArr
+      var heroArr = skin.heroArr
+      var heightArr = skin.heightArr
+      var heroImg = skin.heroImg
+      var mapId = skin.mapId
 
       class Dom {
         constructor() {
