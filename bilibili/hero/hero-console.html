@@ -2,6 +2,42 @@
 
 
   <style>
+    .loading-text {
+      animation: loading 1.2s 1s linear infinite;
+      font-size: 20px;
+      line-height: 1em;
+      color: white;
+      text-align: center;
+
+      i::before {
+        content: '.';
+        opacity: 0;
+        animation: loading 0.3s linear infinite alternate;
+      }
+
+      i:nth-of-type(1)::before {
+        animation-delay: 0s;
+      }
+
+      i:nth-of-type(2)::before {
+        animation-delay: 0.3s;
+      }
+
+      i:nth-of-type(3)::before {
+        animation-delay: 0.6s;
+      }
+    }
+
+    @keyframes loading {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
     .hero .console {
       position: absolute;
       right: 0;
@@ -123,8 +159,9 @@
       box-sizing: border-box;
       padding: 1px 1px;
     }
+
     .hero .console-ability div[class="console-ability-1"] {
-      padding-top:2px;
+      padding-top: 2px;
     }
 
     .hero .console-ability div[class^="console-ability-"]:hover .console-info {
@@ -448,14 +485,38 @@
       handleHead(hero)
       function addAbility(ele, viewData) {
         if (viewData) {
-          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain content-box;`
-          ele.innerHTML = `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
+          ele.innerHTML += `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
+          loadImg(ele, `${dataImg}/${viewData.icon}`, (ele,src) => {
+            ele.style = `background:url("${src}") no-repeat center center / contain content-box;`
+          })
         }
       }
       function addPifu(ele, viewData) {
         if (viewData) {
-          ele.innerHTML = `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${formatHtmlString(viewData.desc)}</div>`
-          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain content-box;`
+          ele.innerHTML += `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${formatHtmlString(viewData.desc)}</div>`
+          loadImg(ele, `${dataImg}/${viewData.icon}`, (ele,src) => {
+            ele.style = `background:url("${src}") no-repeat center center / contain content-box;`
+          })
+        }
+      }
+
+      function loadImg(outer, src, callback) {
+        const img = new Image()
+        img.src = src
+        var loadingText = document.createElement('div')
+        loadingText.className = 'loading-text'
+        loadingText.innerHTML = "<i></i><i></i><i></i>"
+        outer.insertBefore(loadingText, outer.firstChild)
+        img.onload = function () {
+          console.log("图片加载完成移除loading-text")
+          callback(outer, src)
+          loadingText.remove()
+        }
+        img.onerror = function () {
+          img.onerror = null
+          img.onload = null
+          loadingText.innerText="图片加载失败"
+          console.log('图片加载失败')
         }
       }
 
@@ -499,13 +560,6 @@
         return { str, buf, lastColor }
       }
 
-      function addAbility(ele, viewData) {
-        if (viewData) {
-          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain content-box;`
-          ele.innerHTML = `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
-        }
-      }
-
       function handlePanel({ prop, attack, armor, name, propernames }) {
         if (prop === null || prop === undefined) {
           return
@@ -534,9 +588,9 @@
         // 拼接攻击护甲属性等描述字符串
         const propInfoDesc = `${skin["COLON_HERO_ATTRIBUTES"]}|n${skin["COLON_STRENGTH"]}|n${propArr[0] === '0' ? skin["PRIMARY_ATTRIBUTE"] : ""}${skin["str"]}|n${skin["COLON_AGILITY"]}|n ${propArr[0] === '1' ? skin["PRIMARY_ATTRIBUTE"] : ""}${skin["agi"]}|n${skin["COLON_INTELLECT"]}|n${propArr[0] === '2' ? skin["PRIMARY_ATTRIBUTE"] : ""}${skin["int"]}`
         const propInfo = formatHtmlString(propInfoDesc)
-        const attackInfoDesc = `${skin["COLON_DAMAGE"]} ${attackArr[1]}|n${skin["DAMAGE_"+attackArr[0].toUpperCase()]}|r|n范围： ${attackArr[2]}|n速度： |cff00ff00${((100+propArr[2]/5)/(100*attackArr[3])).toFixed(3)}/sec|r|n攻击间隔： |cff00ff00${attackArr[3]} |r|n|n${skin["DAMAGETIP_"+attackArr[0].toUpperCase()]}`
+        const attackInfoDesc = `${skin["COLON_DAMAGE"]} ${attackArr[1]}|n${skin["DAMAGE_" + attackArr[0].toUpperCase()]}|r|n范围： ${attackArr[2]}|n速度： |cff00ff00${((100 + propArr[2] / 5) / (100 * attackArr[3])).toFixed(3)}/sec|r|n攻击间隔： |cff00ff00${attackArr[3]} |r|n|n${skin["DAMAGETIP_" + attackArr[0].toUpperCase()]}`
         const attackInfo = formatHtmlString(attackInfoDesc)
-        const defInfoDesc = `${skin["COLON_ARMOR"]} ${armorArr[1]}|n${skin["ARMOR_"+armorArr[0].toUpperCase()]}|r|n伤害减少：${((armorArr[1]*skin["DefenseArmor"])*100/(1+armorArr[1]*skin["DefenseArmor"])).toFixed(0)}%|r|n移动速度：${armorArr[2]}|r|n视野：${skin["view"]}|r|n|n${skin["ARMORTIP_"+armorArr[0].toUpperCase()]}`
+        const defInfoDesc = `${skin["COLON_ARMOR"]} ${armorArr[1]}|n${skin["ARMOR_" + armorArr[0].toUpperCase()]}|r|n伤害减少：${((armorArr[1] * skin["DefenseArmor"]) * 100 / (1 + armorArr[1] * skin["DefenseArmor"])).toFixed(0)}%|r|n移动速度：${armorArr[2]}|r|n视野：${skin["view"]}|r|n|n${skin["ARMORTIP_" + armorArr[0].toUpperCase()]}`
         const defInfo = formatHtmlString(defInfoDesc)
         let panelHtml = `
         <div class="hero-propsname">${propernames}</div>
@@ -594,7 +648,7 @@
         console.log("设置头像", { hp, baseUnitId, unitId, p1, p2 })
         const hpArr = hp.split(",")
 
-        
+
         // 计算英雄头像位置
         let { i, j } = (() => {
           for (let i = 0; i < skin.heroArr.length; i++) {
@@ -606,8 +660,8 @@
             }
           }
         })()
-        let {offsetx,offsety} = skin.calc(i,j,unitId, p1, p2 )
-       
+        let { offsetx, offsety } = skin.calc(i, j, unitId, p1, p2)
+
         console.log({ offsetx, offsety })
 
         const html = `
