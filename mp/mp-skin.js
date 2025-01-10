@@ -88,7 +88,8 @@ var mpskin = {
   heightArr: [0, 50, 201, 362, 552, 721, 1000],
 
   heroImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=MWDHPhmPkKRr03CnMKYgGJKUCZA%3D',
-  heroHeadImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6b9aa6ae43454c2c9900ce22449ba447~tplv-obj.image?lk3s=993df49e&traceid=20250109212707F243562175C39FD419E1&x-expires=2147483647&x-signature=6ozQcOajxiJT0OpTGtdzmfrR1dw%3D',
+  heroHeadImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/7576135464ae43ddb1c042c1043d3971~tplv-obj.image?lk3s=993df49e&traceid=2025011010593544A34E9449781607BA70&x-expires=2147483647&x-signature=7r%2BUtzA1baHjR%2FFF8tuEpvAV0zg%3D',
+  // heroHeadImg:'/mp/mphead.png',
   imgSize: '730px 995px',
   mapId: 192822,
   calc(i,j,unitId, p1, p2 ){

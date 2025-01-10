@@ -16,6 +16,19 @@ git push origin main
 
 git restore xx
 
+#### 停止跟踪代码
+
+```
+#### 删除已提交的classes
+
+git rm -r --cached Spring-Demo/target
+git add .gitignore
+git commit -m "untrack .idea+target"
+git push
+```
+
+
+
 #### 设置代理
 
 git config --global http.proxy http://localhost:10809

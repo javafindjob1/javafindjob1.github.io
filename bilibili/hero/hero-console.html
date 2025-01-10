@@ -105,17 +105,26 @@
       width: calc(350px * 0.7);
       display: flex;
       flex-wrap: wrap;
-      margin-right: calc(256px * 0.7);
+      margin-right: calc(258px * 0.7);
+      margin-bottom: 3px;
       justify-content: flex-end;
       align-content: flex-end;
+      box-sizing: border-box;
+      /* border: 1px solid green; */
       /* background-color: blue; */
     }
 
     .hero .console-ability div[class^="console-ability-"] {
-      width: calc(75px * .7);
-      height: calc(75px * .7);
+      width: 54.3px;
+      height: 52px;
       /* background-color: #ccffff; */
-      margin: 1px calc(1.6px * .7);
+      /* margin: 1px; */
+      /* border: 1px solid red; */
+      box-sizing: border-box;
+      padding: 1px 1px;
+    }
+    .hero .console-ability div[class="console-ability-1"] {
+      padding-top:2px;
     }
 
     .hero .console-ability div[class^="console-ability-"]:hover .console-info {
@@ -439,14 +448,14 @@
       handleHead(hero)
       function addAbility(ele, viewData) {
         if (viewData) {
-          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
+          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain content-box;`
           ele.innerHTML = `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
         }
       }
       function addPifu(ele, viewData) {
         if (viewData) {
           ele.innerHTML = `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${formatHtmlString(viewData.desc)}</div>`
-          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
+          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain content-box;`
         }
       }
 
@@ -492,7 +501,7 @@
 
       function addAbility(ele, viewData) {
         if (viewData) {
-          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain;`
+          ele.style = `background:url("${dataImg}/${viewData.icon}") no-repeat center center / contain content-box;`
           ele.innerHTML = `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
         }
       }
