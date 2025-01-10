@@ -368,8 +368,28 @@ ability.ini
 <p><span style="color:### ccffff">红翼天使在附近敌人身上创造</span><span style="color:### ffce00">分身</span><span style="color:### ccffff">进行攻击，分身拥有本体</span><span style="color:### ffce00">78%攻击力，</span><span style="color:### ccffff">额外</span><span style="color:### ffce00">60%攻击速度，</span><span style="color:### ccffff">且无法控制，但也不会受到伤害。最多制造</span><span style="color:### ffcc00">2个</span><span style="color:### ccffff">分身</span></p>
 <p><span style="color:### ffce00">持续5秒<span></p>
 
+### 控制台面版
+
+#### 技能介绍
+
+ability.ini 技能
+
+#### 皮肤介绍
+
+unit.ini  单位
+
+#### 面板介绍
+
+table/misc.ini 游戏平衡常数
+
+map/war3mapextra.txt 面板图标路径
+
+#### 头像
+
+游戏内截图
 
 ### 物品列表
+
 item.ini
 所有物品的描述、图标、类型
 
@@ -377,6 +397,29 @@ item.ini
 
 https://map-api.kkdzpt.com/api/v3/map/changelogs?mapId=193337&start=0&limit=5
 https://kk.kkdzpt.com/map/193337/detail
+
+```
+// 发送网络请求并解析 JSON 数据
+function fetchData(url, handle) {
+  fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      // 处理 JSON 数据
+      handle(data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+}
+```
+
+
 
 ### 羁绊系统
 

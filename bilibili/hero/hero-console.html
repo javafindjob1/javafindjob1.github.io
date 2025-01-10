@@ -511,6 +511,7 @@
         const attackIcon = skin["InfoPanelIconDamage" + attackArr[0].substring(0, 1).toUpperCase() + attackArr[0].substring(1)]
         const armorIcon = skin["InfoPanelIconArmor" + armorArr[0].substring(0, 1).toUpperCase() + armorArr[0].substring(1)]
 
+        propernames = formatHtmlString(propernames)
         const infopanel_level_class = formatHtmlString(skin["INFOPANEL_LEVEL_CLASS"].replace("%u", 1).replace("%s", name))
         const primary_attribute = formatHtmlString(skin["PRIMARY_ATTRIBUTE"])
         const colon_damage = formatHtmlString(skin["COLON_DAMAGE"])

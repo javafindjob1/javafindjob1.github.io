@@ -25,7 +25,7 @@ document.addEventListener('dragstart', function (e) {
 });
 
 // 发送网络请求并解析 JSON 数据
-function fetchData(url, updateUpdateDetails) {
+function fetchData(url, handle) {
   fetch(url)
     .then(response => {
       if (!response.ok) {
@@ -36,7 +36,7 @@ function fetchData(url, updateUpdateDetails) {
     .then(data => {
       console.log(data);
       // 处理 JSON 数据
-      updateUpdateDetails(data);
+      handle(data);
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
