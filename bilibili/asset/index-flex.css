@@ -2,7 +2,7 @@
 
 #app {
   flex-direction: column;
-  background: white url("./bg.webp") no-repeat center center / cover;
+  /* background: white url("./bg.webp") no-repeat center center / cover; */
 
   display: flex;
   /* justify-content: center; */
