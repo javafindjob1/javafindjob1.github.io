@@ -62,4 +62,11 @@ function handle({ str, buf, lastColor }) {
   return { str, buf, lastColor }
 }
 
-fetch
+var obj = {
+  a: 1,
+  b(){
+    return this.a
+  }
+}
+
+console.log(obj.b())

@@ -2,23 +2,23 @@
 var mpskin = {
 
   InfoPanelTextFont: "Fonts\\\\ZITI1.ttf",
-  InfoPanelIconHeroIcon0: "ATTshuxing-str.webp",
-  InfoPanelIconHeroIcon1: "ATTshuxing-agi.webp",
-  InfoPanelIconHeroIcon2: "ATTshuxing-int.webp",
+  InfoPanelIconHeroIcon0: 0,
+  InfoPanelIconHeroIcon1: 1,
+  InfoPanelIconHeroIcon2: 2,
 
-  InfoPanelIconArmorDivine: "TYPElightdef.webp",
-  InfoPanelIconArmorHero: "TYPEdarkdef.webp",
-  InfoPanelIconArmorLarge: "TYPEwaterdef.webp",
-  InfoPanelIconArmorMedium: "TYPEfiredef.webp",
-  InfoPanelIconArmorNone: "TYPEstonedef.webp",
-  InfoPanelIconArmorSmall: "TYPEwinddef.webp",
-  InfoPanelIconDamageChaos: "TYPEwateratk.webp",
-  InfoPanelIconDamageHero: "TYPEdarkatk.webp",
-  InfoPanelIconDamageMagic: "TYPElightatk.webp",
-  InfoPanelIconDamageMelee: "TYPEstoneatk.webp",
-  InfoPanelIconDamageNormal: "TYPEstoneatk.webp",
-  InfoPanelIconDamagePierce: "TYPEwindatk.webp",
-  InfoPanelIconDamageSiege: "TYPEfireatk.webp",
+  InfoPanelIconArmorDivine: 3,
+  InfoPanelIconArmorHero: 4,
+  InfoPanelIconArmorLarge: 5,
+  InfoPanelIconArmorMedium: 6,
+  InfoPanelIconArmorNone: 7,
+  InfoPanelIconArmorSmall: 8,
+  InfoPanelIconDamageChaos: 9,
+  InfoPanelIconDamageHero: 10,
+  InfoPanelIconDamageMagic: 11,
+  InfoPanelIconDamageMelee: 12,
+  InfoPanelIconDamageNormal: 13,
+  InfoPanelIconDamagePierce: 14,
+  InfoPanelIconDamageSiege: 15,
 
 
   ARMORTIP_DIVINE: "|cfffcd211法术抗性+20%|r|n来自其他类型攻击的伤害降低为|cff00f00080%|r|n来自|cffc552e6暗属性攻击|r的伤害提高为|cfff40000130%|r",
@@ -88,28 +88,69 @@ var mpskin = {
   heightArr: [0, 50, 201, 362, 552, 721, 1000],
 
   heroImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=MWDHPhmPkKRr03CnMKYgGJKUCZA%3D',
-  heroHeadImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/7576135464ae43ddb1c042c1043d3971~tplv-obj.image?lk3s=993df49e&traceid=2025011010593544A34E9449781607BA70&x-expires=2147483647&x-signature=7r%2BUtzA1baHjR%2FFF8tuEpvAV0zg%3D',
-  // heroHeadImg:'/mp/mphead.png',
-  imgSize: '730px 995px',
+  heroPanelImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/f279df5e11f445a1b600196da7573238~tplv-obj.image?lk3s=993df49e&traceid=202501110910070218CC9891BE765339F3&x-expires=2147483647&x-signature=BXoYMyrCVp21GiPM71QlxF1H85Q%3D',
+  heroPanelImgWidth: 3420,
+  heroPanelImgHeight: 1744,
   mapId: 192822,
-  calc(i,j,unitId, p1, p2 ){
-    const basex = 172 * -0.7
-    const basey = 179 * -0.7
+  // 英雄的坐标位置
+  i:0,
+  j:0,
+  calcAbility(unitId, p1, p2, i2,j2, rate){
+    let {i,j} = this
+    const basex = 145+70*6+6
+    const basey = 70*3
+
     if (p1 != null && p1.unitId === unitId) {
 
       console.log("定位头像位置：皮1")
       offsetx = (j - 1) * basex
       offsety = ((i - 1) * 2 + 1) * basey
-    } else if (p2 != null && p2.unitId === unitId) {
-      console.log("定位头像位置：皮2")
-      offsetx = (j - 1) * basex
-      offsety = ((i - 1) * 2 + 2) * basey
     } else {
       console.log("定位头像位置：原皮")
       offsetx = (j - 1) * basex
       offsety = (i - 1) * 2 * basey
     }
 
-    return {offsetx, offsety}
-  }
+    offsetx = offsetx+145+6+i2*70
+    offsety = offsety+j2*70
+    rate = rate || 0.84
+    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx*rate}px -${offsety*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+
+  },
+  calcHead(unitId, p1, p2 ){
+    let {i,j} = this
+    const basex = 145+70*6+6
+    const basey = 70*3
+    if (p1 != null && p1.unitId === unitId) {
+      console.log("定位头像位置：皮1")
+      offsetx = (j - 1) * basex
+      offsety = ((i - 1) * 2 + 1) * basey
+    } else {
+      console.log("定位头像位置：原皮")
+      offsetx = (j - 1) * basex
+      offsety = (i - 1) * 2 * basey
+    }
+
+    const rate = 0.7
+    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx*rate}px -${offsety*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+  },
+  calcDef(defType){
+    const name = "InfoPanelIconArmor" + defType.substring(0, 1).toUpperCase() + defType.substring(1)
+    const i = this[name]
+    return this.calcStyle(i)
+  },
+  calcProp(propType){
+    const name = "InfoPanelIconHeroIcon" + propType
+    const i = this[name]
+    return this.calcStyle(i)
+  },
+  calcAttack(attackType){
+    const name = "InfoPanelIconDamage" + attackType.substring(0, 1).toUpperCase() + attackType.substring(1)
+    const i = this[name]
+    return this.calcStyle(i)
+  },
+  calcStyle(i){
+    const rate = 0.5
+    return `background: url('${this.heroPanelImg}') no-repeat -${i*70*rate}px -${(this.heroPanelImgHeight-64)*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+  },
 }

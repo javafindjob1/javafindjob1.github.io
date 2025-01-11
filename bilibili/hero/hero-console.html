@@ -125,7 +125,7 @@
 
     .hero .console-item div[class^="console-item"] {
       width: calc(63px * .7);
-      height: calc(59px * .7);
+      height: calc(61px * .7);
       /* background-color: #ccffff; */
       margin: 1px 2px;
     }
@@ -179,7 +179,7 @@
     /* #region 英雄基础面板 */
 
     .console-head {
-      width: 109px;
+      width: 106px;
       height: 140px;
       /* background-color: yellowgreen; */
       text-align: center;
@@ -190,7 +190,7 @@
     }
 
     .console-head .head-img {
-      width: 94px;
+      width: 95px;
       height: 95px;
       border-top-left-radius: 72px 45px;
       border-top-right-radius: 72px 45px;
@@ -447,6 +447,21 @@
       console.log(data[window._self.dataHeroId])
       const hero = data[window._self.dataHeroId]
 
+      // 计算英雄头像位置
+      function calc(){
+        for (let i = 0; i < skin.heroArr.length; i++) {
+          for (let j = 0; j < skin.heroArr[i].length; j++) {
+            if (skin.heroArr[i][j] === hero.baseUnitId) {
+              console.log("定位头像位置：", { i, j })
+              skin.i = i
+              skin.j = j
+              return;
+            }
+          }
+        }
+      }
+      calc()
+
       // 英雄介绍
       if (hero.intro !== null && hero.intro !== undefined) {
         dom.info.innerHTML = formatHtmlString(hero.intro)
@@ -454,26 +469,26 @@
       }
 
       // 技能
-      addPifu(dom.consoleAbility.children[0], hero.p1)
-      addPifu(dom.consoleAbility.children[1], hero.p2)
+      addPifu(dom.consoleAbility.children[0], hero.p1, hero.unitId, hero.p1, hero.p2, 0, 0)
+      addPifu(dom.consoleAbility.children[1], hero.p2, hero.unitId, hero.p1, hero.p2, 1, 0)
       // 梦的第2排技能
-      addAbility(dom.consoleAbility.children[4], hero.core)
-      addAbility(dom.consoleAbility.children[5], hero.d2)
-      addAbility(dom.consoleAbility.children[7], hero.t2)
+      addAbility(dom.consoleAbility.children[4], hero.core, hero.unitId, hero.p1, hero.p2, 0, 1)
+      addAbility(dom.consoleAbility.children[5], hero.d2, hero.unitId, hero.p1, hero.p2, 1, 1)
+      addAbility(dom.consoleAbility.children[7], hero.t2, hero.unitId, hero.p1, hero.p2, 3, 1)
 
       // x7的第2排技能
-      addAbility(dom.consoleAbility.children[6], hero.t)
-      addAbility(dom.consoleAbility.children[7], hero.d)
+      addAbility(dom.consoleAbility.children[6], hero.t, hero.unitId, hero.p1, hero.p2, 2, 1)
+      addAbility(dom.consoleAbility.children[7], hero.d, hero.unitId, hero.p1, hero.p2, 3, 1)
 
-      addAbility(dom.consoleAbility.children[8], hero.q)
-      addAbility(dom.consoleAbility.children[9], hero.w)
-      addAbility(dom.consoleAbility.children[10], hero.e)
-      addAbility(dom.consoleAbility.children[11], hero.r)
+      addAbility(dom.consoleAbility.children[8], hero.q, hero.unitId, hero.p1, hero.p2, 0, 2)
+      addAbility(dom.consoleAbility.children[9], hero.w, hero.unitId, hero.p1, hero.p2, 1, 2)
+      addAbility(dom.consoleAbility.children[10], hero.e, hero.unitId, hero.p1, hero.p2, 2, 2)
+      addAbility(dom.consoleAbility.children[11], hero.r, hero.unitId, hero.p1, hero.p2, 3, 2)
 
       // 物品
       if (hero.items != null) {
         for (let i = 0; i < hero.items.length; i++) {
-          addAbility(dom.consoleItem.children[i], hero.items[i])
+          addAbility(dom.consoleItem.children[i], hero.items[i], hero.unitId, hero.p1, hero.p2, i%2+4, Math.floor(i/2), 0.68)
         }
       }
 
@@ -483,19 +498,19 @@
       // "armor":"15,320",
       handlePanel(hero)
       handleHead(hero)
-      function addAbility(ele, viewData) {
+      function addAbility(ele, viewData, unitId, p1, p2, i , j, rate) {
         if (viewData) {
           ele.innerHTML += `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
-          loadImg(ele, `${dataImg}/${viewData.icon}`, (ele,src) => {
-            ele.style = `background:url("${src}") no-repeat center center / contain content-box;`
+          loadImg(ele, `${skin["heroPanelImg"]}`, (ele, src) => {
+            ele.style = skin.calcAbility(unitId, p1, p2, i,j,rate)
           })
         }
       }
-      function addPifu(ele, viewData) {
+      function addPifu(ele, viewData, unitId, p1, p2, i , j) {
         if (viewData) {
           ele.innerHTML += `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${formatHtmlString(viewData.desc)}</div>`
-          loadImg(ele, `${dataImg}/${viewData.icon}`, (ele,src) => {
-            ele.style = `background:url("${src}") no-repeat center center / contain content-box;`
+          loadImg(ele, `${skin["heroPanelImg"]}`, (ele, src) => {
+            ele.style = skin.calcAbility(unitId, p1, p2, i,j)
           })
         }
       }
@@ -515,7 +530,7 @@
         img.onerror = function () {
           img.onerror = null
           img.onload = null
-          loadingText.innerText="图片加载失败"
+          loadingText.innerText = "图片加载失败"
           console.log('图片加载失败')
         }
       }
@@ -597,7 +612,7 @@
         <div class="hero-level-name">${infopanel_level_class}</div>
         <div class="hero-base clearfix">
           <div class="hero-prop rightfix">
-            <div class="hero-prop-img" style="background: url('${dataImg}/${propIcon}') no-repeat center center/contain;">
+            <div class="hero-prop-img" style="${skin.calcProp(propArr[0])}">
               <div class="console-info">
                 ${propInfo}
               </div>
@@ -613,7 +628,7 @@
           </div>
           <div class="hero-prop leftfix">
             <div class="hero-prop-img"
-              style="background: url('${dataImg}/${attackIcon}') no-repeat center center/contain;">
+              style="${skin.calcAttack(attackArr[0])}">
               <div class="console-info">
                 ${attackInfo}
               </div>
@@ -624,7 +639,7 @@
             </div>
           </div>
           <div class="hero-prop leftfix">
-            <div class="hero-prop-img" style="background: url('${dataImg}/${armorIcon}') no-repeat center center/contain;">
+            <div class="hero-prop-img" style="${skin.calcDef(armorArr[0])}">
               <div class="console-info">
                 ${defInfo}
               </div>
@@ -647,25 +662,8 @@
 
         console.log("设置头像", { hp, baseUnitId, unitId, p1, p2 })
         const hpArr = hp.split(",")
-
-
-        // 计算英雄头像位置
-        let { i, j } = (() => {
-          for (let i = 0; i < skin.heroArr.length; i++) {
-            for (let j = 0; j < skin.heroArr[i].length; j++) {
-              if (skin.heroArr[i][j] === baseUnitId) {
-                console.log("定位头像位置：", { i, j })
-                return { i, j };
-              }
-            }
-          }
-        })()
-        let { offsetx, offsety } = skin.calc(i, j, unitId, p1, p2)
-
-        console.log({ offsetx, offsety })
-
         const html = `
-          <div class="head-img" style = "background: url('${skin["heroHeadImg"]}') no-repeat ${offsetx}px ${offsety}px / ${skin["imgSize"]};" >
+          <div class="head-img" style = "${skin.calcHead(unitId, p1, p2)}" >
           </div >
           <div class="head-text">
             <p class="red"><span class="left-text">${hpArr[0]}</span><span class="split-text">/</span><span

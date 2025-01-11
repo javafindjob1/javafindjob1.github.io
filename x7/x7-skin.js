@@ -1,21 +1,21 @@
 var x7skin = {
-  InfoPanelIconArmorFort: "war3mapImported\\\\tYPEDeFend_Light.webp",
-  InfoPanelIconArmorHero: "war3mapImported\\\\tYPEDefDark.webp",
-  InfoPanelIconArmorLarge: "war3mapImported\\\\tYPEDefend_Land.webp",
-  InfoPanelIconArmorMedium: "war3mapImported\\\\tYPESystemPic_Defend_Wind.webp",
-  InfoPanelIconArmorNone: "war3mapImported\\\\tYPEDeFend_Water.webp",
-  InfoPanelIconArmorSmall: "war3mapImported\\\\tYPEDeFend_Fire.webp",
-  InfoPanelIconDamageChaos: "war3mapImported\\\\tYPEAttack_Fire.webp",
-  InfoPanelIconDamageHero: "war3mapImported\\\\tYPESystemPic_Attack_Dark.webp",
-  InfoPanelIconDamageMagic: "war3mapImported\\\\tYPEAttack_Light.webp",
-  InfoPanelIconDamageMelee: "war3mapImported\\\\tYPEAttack_Water.webp",
-  InfoPanelIconDamageNormal: "war3mapImported\\\\tYPEAttack_Water.webp",
-  InfoPanelIconDamagePierce: "war3mapImported\\\\tYPEAttack2_Feng.webp",
-  InfoPanelIconDamageSiege: "war3mapImported\\\\tYPEAttackLand.webp",
+  InfoPanelIconArmorFort: 3,
+  InfoPanelIconArmorHero: 4,
+  InfoPanelIconArmorLarge: 5,
+  InfoPanelIconArmorMedium: 6,
+  InfoPanelIconArmorNone: 7,
+  InfoPanelIconArmorSmall: 8,
+  InfoPanelIconDamageChaos: 9,
+  InfoPanelIconDamageHero: 10,
+  InfoPanelIconDamageMagic: 11,
+  InfoPanelIconDamageMelee: 12,
+  InfoPanelIconDamageNormal: 13,
+  InfoPanelIconDamagePierce: 14,
+  InfoPanelIconDamageSiege: 15,
 
-  InfoPanelIconHeroIcon0: "UI\\\\Widgets\\\\Console\\\\Human\\\\infocard-heroattributes-str.webp",
-  InfoPanelIconHeroIcon1: "UI\\\\Widgets\\\\Console\\\\Human\\\\infocard-heroattributes-agi.webp",
-  InfoPanelIconHeroIcon2: "UI\\\\Widgets\\\\Console\\\\Human\\\\infocard-heroattributes-int.webp",
+  InfoPanelIconHeroIcon0: 0,
+  InfoPanelIconHeroIcon1: 1,
+  InfoPanelIconHeroIcon2: 2,
 
   ARMORTIP_FORT: "|cffffffcc光属性护甲受到风水火地属性攻击伤害较少。|r|n|n|cff80ff80风属性攻击 - 80%|n水属性攻击 - 80%|n火属性攻击 - 80%|n地属性攻击 - 80%|n光属性攻击 - 80%|r|n|cffff0000暗属性攻击  - 130%",
   ARMORTIP_HERO: "|cffcc99ff暗属性护甲会受到光属性攻击的极大伤害。|r|n|n风属性攻击 - 100%|n水属性攻击 - 100%|n火属性攻击 - 100%|n地属性攻击 - 100%|n|cffff0000光属性攻击 - 160%|n暗属性攻击 - 130%",
@@ -81,12 +81,18 @@ var x7skin = {
 
   heightArr : [0, 40, 216, 377, 567, 744, 1000],
   heroImg : 'https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/994ee5ff602a4f74953ec88b4b4de6da~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=SDpnrLH%2FugNY8VDREqu5%2FuVhQAM%3D',
-  heroHeadImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/51fe0ffd02264cfcb7647d4da3a952ff~tplv-obj.image?lk3s=993df49e&traceid=20250109212707F243562175C39FD419E1&x-expires=2147483647&x-signature=d0foH6l4Wuf2mSRUz50za4yUD8M%3D',
-  imgSize: '1070px 1484px',
+  heroPanelImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/b1f7a529ad65431aabbd4fbf86c78713~tplv-obj.image?lk3s=993df49e&traceid=202501102251566EFFC6D83AD390E63551&x-expires=2147483647&x-signature=AnrWMJXpjSCru5bL2WD7MryDxPM%3D',
+  heroPanelImgWidth: 5133,
+  heroPanelImgHeight: 2584,
   mapId : 193337,
-  calc(i,j,unitId, p1, p2 ){
-    const basex = 169 * -0.7
-    const basey = 178 * -0.7
+  // 英雄的坐标位置
+  i:0,
+  j:0,
+  calcAbility(unitId, p1, p2, i2,j2,rate){
+    let {i,j} = this
+    const basex = 145+70*6+6
+    const basey = 70*3
+
     if (p1 != null && p1.unitId === unitId) {
 
       console.log("定位头像位置：皮1")
@@ -102,6 +108,51 @@ var x7skin = {
       offsety = (i - 1) * 3 * basey
     }
 
-    return {offsetx, offsety}
-  }
+    offsetx = offsetx+145+6+i2*70
+    offsety = offsety+j2*70
+    rate = rate||0.84
+    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx*rate}px -${offsety*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+
+  },
+  calcHead(unitId, p1, p2 ){
+    let {i,j} = this
+    const basex = (145+70*6+6) * -0.7
+    const basey = (70*3) * -0.7
+    if (p1 != null && p1.unitId === unitId) {
+
+      console.log("定位头像位置：皮1")
+      offsetx = (j - 1) * basex
+      offsety = ((i - 1) * 3 + 1) * basey
+    } else if (p2 != null && p2.unitId === unitId) {
+      console.log("定位头像位置：皮2")
+      offsetx = (j - 1) * basex
+      offsety = ((i - 1) * 3 + 2) * basey
+    } else {
+      console.log("定位头像位置：原皮")
+      offsetx = (j - 1) * basex
+      offsety = (i - 1) * 3 * basey
+    }
+
+    return `background: url('${this.heroPanelImg}') no-repeat ${offsetx}px ${offsety}px / ${this.heroPanelImgWidth*0.7}px ${this.heroPanelImgHeight*0.7}px`
+  },
+  calcDef(defType){
+    const name = "InfoPanelIconArmor" + defType.substring(0, 1).toUpperCase() + defType.substring(1)
+    const i = this[name]
+    return this.calcStyle(i)
+  },
+  calcProp(propType){
+    const name = "InfoPanelIconHeroIcon" + propType
+    const i = this[name]
+    return this.calcStyle(i)
+  },
+  calcAttack(attackType){
+    const name = "InfoPanelIconDamage" + attackType.substring(0, 1).toUpperCase() + attackType.substring(1)
+    const i = this[name]
+    return this.calcStyle(i)
+  },
+  calcStyle(i){
+    const rate = 0.5
+    return `background: url('${this.heroPanelImg}') no-repeat -${i*70*rate}px -${(this.heroPanelImgHeight-64)*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+  },
+
 }
