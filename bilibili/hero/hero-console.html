@@ -418,13 +418,9 @@
       // 获取URL中的锚点
       const hash = window._self.type;
       if (hash === "#mp") {
-        var datajs = "/mp/mp-data.js"
-        var dataImg = "/mp/mp-imgs"
         var data = mpdata
         var skin = mpskin
       } else {
-        var datajs = "/x7/x7-data.js"
-        var dataImg = "/x7/x7-imgs"
         var data = x7data
         var skin = x7skin
       }
@@ -448,7 +444,7 @@
       const hero = data[window._self.dataHeroId]
 
       // 计算英雄头像位置
-      function calc(){
+      function calc() {
         for (let i = 0; i < skin.heroArr.length; i++) {
           for (let j = 0; j < skin.heroArr[i].length; j++) {
             if (skin.heroArr[i][j] === hero.baseUnitId) {
@@ -468,70 +464,56 @@
         dom.info.classList.add('active')
       }
 
-      // 技能
-      addPifu(dom.consoleAbility.children[0], hero.p1, hero.unitId, hero.p1, hero.p2, 0, 0)
-      addPifu(dom.consoleAbility.children[1], hero.p2, hero.unitId, hero.p1, hero.p2, 1, 0)
-      // 梦的第2排技能
-      addAbility(dom.consoleAbility.children[4], hero.core, hero.unitId, hero.p1, hero.p2, 0, 1)
-      addAbility(dom.consoleAbility.children[5], hero.d2, hero.unitId, hero.p1, hero.p2, 1, 1)
-      addAbility(dom.consoleAbility.children[7], hero.t2, hero.unitId, hero.p1, hero.p2, 3, 1)
+      loadImg(skin["heroPanelImg"], (src) => {
+        skin["heroPanelImg"] = src
 
-      // x7的第2排技能
-      addAbility(dom.consoleAbility.children[6], hero.t, hero.unitId, hero.p1, hero.p2, 2, 1)
-      addAbility(dom.consoleAbility.children[7], hero.d, hero.unitId, hero.p1, hero.p2, 3, 1)
+        handleAbility()
 
-      addAbility(dom.consoleAbility.children[8], hero.q, hero.unitId, hero.p1, hero.p2, 0, 2)
-      addAbility(dom.consoleAbility.children[9], hero.w, hero.unitId, hero.p1, hero.p2, 1, 2)
-      addAbility(dom.consoleAbility.children[10], hero.e, hero.unitId, hero.p1, hero.p2, 2, 2)
-      addAbility(dom.consoleAbility.children[11], hero.r, hero.unitId, hero.p1, hero.p2, 3, 2)
+        // 面板
+        // "prop":"2,68,25,38",
+        // "attack":"262 - 383,140,1.6",
+        // "armor":"15,320",
+        handlePanel(hero)
+        handleHead(hero)
 
-      // 物品
-      if (hero.items != null) {
-        for (let i = 0; i < hero.items.length; i++) {
-          addAbility(dom.consoleItem.children[i], hero.items[i], hero.unitId, hero.p1, hero.p2, i%2+4, Math.floor(i/2), 0.68)
+      })
+
+      function handleAbility() {
+        // 技能
+        addPifu(dom.consoleAbility.children[0], hero.p1, hero.unitId, hero.p1, hero.p2, 0, 0)
+        addPifu(dom.consoleAbility.children[1], hero.p2, hero.unitId, hero.p1, hero.p2, 1, 0)
+        // 梦的第2排技能
+        addAbility(dom.consoleAbility.children[4], hero.core, hero.unitId, hero.p1, hero.p2, 0, 1)
+        addAbility(dom.consoleAbility.children[5], hero.d2, hero.unitId, hero.p1, hero.p2, 1, 1)
+        addAbility(dom.consoleAbility.children[7], hero.t2, hero.unitId, hero.p1, hero.p2, 3, 1)
+
+        // x7的第2排技能
+        addAbility(dom.consoleAbility.children[6], hero.t, hero.unitId, hero.p1, hero.p2, 2, 1)
+        addAbility(dom.consoleAbility.children[7], hero.d, hero.unitId, hero.p1, hero.p2, 3, 1)
+
+        addAbility(dom.consoleAbility.children[8], hero.q, hero.unitId, hero.p1, hero.p2, 0, 2)
+        addAbility(dom.consoleAbility.children[9], hero.w, hero.unitId, hero.p1, hero.p2, 1, 2)
+        addAbility(dom.consoleAbility.children[10], hero.e, hero.unitId, hero.p1, hero.p2, 2, 2)
+        addAbility(dom.consoleAbility.children[11], hero.r, hero.unitId, hero.p1, hero.p2, 3, 2)
+
+        // 物品
+        if (hero.items != null) {
+          for (let i = 0; i < hero.items.length; i++) {
+            addAbility(dom.consoleItem.children[i], hero.items[i], hero.unitId, hero.p1, hero.p2, i % 2 + 4, Math.floor(i / 2), 0.68)
+          }
         }
       }
 
-      // 面板
-      // "prop":"2,68,25,38",
-      // "attack":"262 - 383,140,1.6",
-      // "armor":"15,320",
-      handlePanel(hero)
-      handleHead(hero)
-      function addAbility(ele, viewData, unitId, p1, p2, i , j, rate) {
+      function addAbility(ele, viewData, unitId, p1, p2, i, j, rate) {
         if (viewData) {
           ele.innerHTML += `<div class="console-info">${formatHtmlString(viewData.desc)}</div>`
-          loadImg(ele, `${skin["heroPanelImg"]}`, (ele, src) => {
-            ele.style = skin.calcAbility(unitId, p1, p2, i,j,rate)
-          })
+          ele.style = skin.calcAbility(unitId, p1, p2, i, j, rate)
         }
       }
-      function addPifu(ele, viewData, unitId, p1, p2, i , j) {
+      function addPifu(ele, viewData, unitId, p1, p2, i, j) {
         if (viewData) {
           ele.innerHTML += `<a href="/bilibili/hero/hero-console.html" data-hero-id="${viewData.unitId}" data-turbo-frame="console-turbo-frame"></a><div class="console-info">${formatHtmlString(viewData.desc)}</div>`
-          loadImg(ele, `${skin["heroPanelImg"]}`, (ele, src) => {
-            ele.style = skin.calcAbility(unitId, p1, p2, i,j)
-          })
-        }
-      }
-
-      function loadImg(outer, src, callback) {
-        const img = new Image()
-        img.src = src
-        var loadingText = document.createElement('div')
-        loadingText.className = 'loading-text'
-        loadingText.innerHTML = "<i></i><i></i><i></i>"
-        outer.insertBefore(loadingText, outer.firstChild)
-        img.onload = function () {
-          console.log("图片加载完成移除loading-text")
-          callback(outer, src)
-          loadingText.remove()
-        }
-        img.onerror = function () {
-          img.onerror = null
-          img.onload = null
-          loadingText.innerText = "图片加载失败"
-          console.log('图片加载失败')
+          ele.style = skin.calcAbility(unitId, p1, p2, i, j)
         }
       }
 

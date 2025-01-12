@@ -45,22 +45,22 @@ var x7skin = {
   DAMAGE_PIERCE: "种类： |Cff99cc00风属性攻击|r",
   DAMAGE_SIEGE: "种类： |Cffff9900地属性攻击|R",
 
-  INFOPANEL_LEVEL_CLASS:"等级|r %u %s",
-  PRIMARY_ATTRIBUTE:"|cfffcd211 - 主属性|r|n - 每点增加2的攻击力|n",
-  COLON_DAMAGE:"|cfffcd211攻击力：|r",
-  COLON_ARMOR:"|cfffcd211护甲：|r",
-  COLON_HERO_ATTRIBUTES:"|cfffcd211英雄属性|r",
-  COLON_STRENGTH:"|cfffcd211力量：|r",
-  COLON_AGILITY:"|cfffcd211敏捷：|r",
-  COLON_INTELLECT:"|cfffcd211智力：|r",
-  COLON_STATUS:"状态：|r",
+  INFOPANEL_LEVEL_CLASS: "等级|r %u %s",
+  PRIMARY_ATTRIBUTE: "|cfffcd211 - 主属性|r|n - 每点增加2的攻击力|n",
+  COLON_DAMAGE: "|cfffcd211攻击力：|r",
+  COLON_ARMOR: "|cfffcd211护甲：|r",
+  COLON_HERO_ATTRIBUTES: "|cfffcd211英雄属性|r",
+  COLON_STRENGTH: "|cfffcd211力量：|r",
+  COLON_AGILITY: "|cfffcd211敏捷：|r",
+  COLON_INTELLECT: "|cfffcd211智力：|r",
+  COLON_STATUS: "状态：|r",
 
   str: " - 每点增加17的生命值|n - 每3点增加1的生命值恢复速度",
   agi: " - 每16点增加1点的护甲|n - 每5点增加1%攻击速度",
   int: " - 每点增加11的魔法值|n - 每20点增加1的魔法恢复速度",
   view: "1600",
-  DefenseArmor :"0.03",
-  locArr : [
+  DefenseArmor: "0.03",
+  locArr: [
     [0, 1903],
     [0, 263, 416, 545, 717, 913, 1026, 1257, 1419, 1517, 1723, 1903],
     [0, 179, 351, 529, 717, 913, 1050, 1257, 1425, 1594, 1757, 1903],
@@ -70,7 +70,7 @@ var x7skin = {
     [0, 1903],
   ],
 
-  heroArr : [
+  heroArr: [
     [''],
     ['', 'H00X', 'H00F', 'H003', 'H00D', 'E006', 'O005', 'H002', 'O001', 'O000', ''],
     ['', 'U000', 'E003', 'E00Y', 'O003', 'H001', 'O002', 'N006', 'H005', 'H00E', ''],
@@ -79,19 +79,23 @@ var x7skin = {
     [''],
   ],
 
-  heightArr : [0, 40, 216, 377, 567, 744, 1000],
-  heroImg : 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/63f4d6f9467648869aa534c2b80b8b02~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=gv1j23DChnLwfuzL1djZHJhHuxY%3D',
-  heroPanelImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/b1f7a529ad65431aabbd4fbf86c78713~tplv-obj.image?lk3s=993df49e&traceid=202501102251566EFFC6D83AD390E63551&x-expires=2147483647&x-signature=AnrWMJXpjSCru5bL2WD7MryDxPM%3D',
+  heightArr: [0, 40, 216, 377, 567, 744, 1000],
+  heroImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/63f4d6f9467648869aa534c2b80b8b02~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=gv1j23DChnLwfuzL1djZHJhHuxY%3D',
+    '/x7/x7-heros.webp',
+  ],
+  heroPanelImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/b1f7a529ad65431aabbd4fbf86c78713~tplv-obj.image?lk3s=993df49e&traceid=202501102251566EFFC6D83AD390E63551&x-expires=2147483647&x-signature=AnrWMJXpjSCru5bL2WD7MryDxPM%3D',
+    '/x7/x7-imgs/out.webp',
+  ],
   heroPanelImgWidth: 5133,
   heroPanelImgHeight: 2584,
-  mapId : 193337,
+  mapId: 193337,
   // 英雄的坐标位置
-  i:0,
-  j:0,
-  calcAbility(unitId, p1, p2, i2,j2,rate){
-    let {i,j} = this
-    const basex = 145+70*6+6
-    const basey = 70*3
+  i: 0,
+  j: 0,
+  calcAbility(unitId, p1, p2, i2, j2, rate) {
+    let { i, j } = this
+    const basex = 145 + 70 * 6 + 6
+    const basey = 70 * 3
 
     if (p1 != null && p1.unitId === unitId) {
 
@@ -108,16 +112,16 @@ var x7skin = {
       offsety = (i - 1) * 3 * basey
     }
 
-    offsetx = offsetx+145+6+i2*70
-    offsety = offsety+j2*70
-    rate = rate||0.84
-    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx*rate}px -${offsety*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+    offsetx = offsetx + 145 + 6 + i2 * 70
+    offsety = offsety + j2 * 70
+    rate = rate || 0.84
+    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx * rate}px -${offsety * rate}px / ${this.heroPanelImgWidth * rate}px ${this.heroPanelImgHeight * rate}px`
 
   },
-  calcHead(unitId, p1, p2 ){
-    let {i,j} = this
-    const basex = (145+70*6+6) * -0.7
-    const basey = (70*3) * -0.7
+  calcHead(unitId, p1, p2) {
+    let { i, j } = this
+    const basex = (145 + 70 * 6 + 6) * -0.7
+    const basey = (70 * 3) * -0.7
     if (p1 != null && p1.unitId === unitId) {
 
       console.log("定位头像位置：皮1")
@@ -133,26 +137,26 @@ var x7skin = {
       offsety = (i - 1) * 3 * basey
     }
 
-    return `background: url('${this.heroPanelImg}') no-repeat ${offsetx}px ${offsety}px / ${this.heroPanelImgWidth*0.7}px ${this.heroPanelImgHeight*0.7}px`
+    return `background: url('${this.heroPanelImg}') no-repeat ${offsetx}px ${offsety}px / ${this.heroPanelImgWidth * 0.7}px ${this.heroPanelImgHeight * 0.7}px`
   },
-  calcDef(defType){
+  calcDef(defType) {
     const name = "InfoPanelIconArmor" + defType.substring(0, 1).toUpperCase() + defType.substring(1)
     const i = this[name]
     return this.calcStyle(i)
   },
-  calcProp(propType){
+  calcProp(propType) {
     const name = "InfoPanelIconHeroIcon" + propType
     const i = this[name]
     return this.calcStyle(i)
   },
-  calcAttack(attackType){
+  calcAttack(attackType) {
     const name = "InfoPanelIconDamage" + attackType.substring(0, 1).toUpperCase() + attackType.substring(1)
     const i = this[name]
     return this.calcStyle(i)
   },
-  calcStyle(i){
+  calcStyle(i) {
     const rate = 0.5
-    return `background: url('${this.heroPanelImg}') no-repeat -${i*70*rate}px -${(this.heroPanelImgHeight-64)*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+    return `background: url('${this.heroPanelImg}') no-repeat -${i * 70 * rate}px -${(this.heroPanelImgHeight - 64) * rate}px / ${this.heroPanelImgWidth * rate}px ${this.heroPanelImgHeight * rate}px`
   },
 
 }

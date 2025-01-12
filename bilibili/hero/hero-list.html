@@ -121,8 +121,10 @@
       var locArr = skin.locArr
       var heroArr = skin.heroArr
       var heightArr = skin.heightArr
-      var heroImg = skin.heroImg
       var mapId = skin.mapId
+      var heroImg = skin.heroImg
+
+
 
       class Dom {
         constructor() {
@@ -141,39 +143,42 @@
       var dom = new Dom()
 
 
-      let height = 0;
-      var ulHtml = ''
+      // 初始化图像加载
+      loadImg(heroImg, (src) => {
+        heroImg = src
+        let height = 0;
+        var ulHtml = ''
 
-      for (let i = 0; i < heroArr.length; i++) {
-        const height = (heightArr[i + 1] - heightArr[i]) * 0.7
-        const offsety = heightArr[i] * -0.7
-        for (let j = 0; j < heroArr[i].length; j++) {
-          const heroId = heroArr[i][j]
-          const width = (locArr[i][j + 1] - locArr[i][j]) * 0.7
-          const offsetx = locArr[i][j] * -0.7
+        for (let i = 0; i < heroArr.length; i++) {
+          const height = (heightArr[i + 1] - heightArr[i]) * 0.7
+          const offsety = heightArr[i] * -0.7
+          for (let j = 0; j < heroArr[i].length; j++) {
+            const heroId = heroArr[i][j]
+            const width = (locArr[i][j + 1] - locArr[i][j]) * 0.7
+            const offsetx = locArr[i][j] * -0.7
 
-          if (heroId !== '') {
-            let liHtml = `
+            if (heroId !== '') {
+              let liHtml = `
             <li style="background: url('${heroImg}') no-repeat left top / 1332px 700px;width: ${width}px;height: ${height}px;background-position: ${offsetx}px ${offsety}px;">
                 <a href="/bilibili/hero/hero-console.html" data-hero-id="${heroId}" data-turbo-frame="console-turbo-frame" class="no-drag" title=""></a>
             </li>`
-            ulHtml += liHtml
-          } else {
-            let liHtml = `
+              ulHtml += liHtml
+            } else {
+              let liHtml = `
             <li empty style="background: url('${heroImg}') no-repeat left top / 1332px 700px;width: ${width}px;height: ${height}px;background-position: ${offsetx}px ${offsety}px;">
             </li>`
-            ulHtml += liHtml
+              ulHtml += liHtml
+            }
+
           }
-
         }
-      }
-      dom.heroul.innerHTML = ulHtml + dom.heroul.innerHTML
-      dom.heroul.style = "background-color: #d2c075;"
+        dom.heroul.innerHTML = ulHtml + dom.heroul.innerHTML
+        dom.heroul.style = "background-color: #d2c075;"
 
+      });
 
       // 英雄点击事件
       dom.heroul.addEventListener('click', e => {
-        console.log("英雄点击事件", e.target.classList)
         e.target.tagName === 'A' && changeHeroInfo(e.target)
       })
       dom.console.setAttribute("r", new Date().getTime())
@@ -183,10 +188,8 @@
 
       function changeHeroInfo(a) {
         const id = a.getAttribute('data-hero-id')
-        console.log("id=====" + id)
         window._self.dataHeroId = id
       }
-
 
     })()
   </script>

@@ -1,72 +1,15 @@
-// const text = "Abc def abc def";
-// const pattern = /(abc) (def)/gi;
-// const matches = text.matchAll(pattern);
-
-// for (const match of matches) {
-//   console.log("Full match:", match[0]);
-//   console.log("Group 1:", match[1]);
-//   console.log("Group 2:", match[2]);
-// }
-
-const str = "|cffbeedc7狂战神：根据无畏跳斩的技能等级提高自身物理伤害。|r|cffbeedc7ABC"
-// const str2 = "|cffbeedc7狂战神：根据无畏跳斩的技能等级提高自身物理伤害。|r|n|n|cffd6d5b7爱尔莎处获得的八角形怪异魔晶，明明只是无机物，却总感觉它在慢慢蠕动......|r"
-const str2 = "好好先生|n|cffbeedc7狂战神：根据无畏跳斩的技能等级提高自身物理伤害。|r|n|n|cffd6d5b7爱尔莎处获得的八角形怪异魔晶，明明只是无机物，却总感觉它在慢慢蠕动......|r"
-
-// String[] sdf = desc.split("\\|n");
-// StringBuffer buf = new StringBuffer();
-// String color = "|cffffffff";
-// for (String string : sdf) {
-//   color = handle(string, buf, color);
-// }
-// return buf.toString();
-
-let strs = str2.split("|n")
-console.log(formatHtmlString(strs))
-
-function formatHtmlString(strs){
-  var obj = {
-    str: '',
-    buf: '',
-    lastColor: '|cfffff'
+function loadImg(src, callback) {
+  const img = new Image()
+  img.src = src
+  img.onload = function () {
+    console.log("onload")
   }
-  for(const p of strs){
-    obj.str = p
-    obj = handle(obj)
-  }
-  return obj.buf
-}
-
-function handle({ str, buf, lastColor }) {
-
-  str = str.replace("/\|r\|cff/gi", "|cff")
-  str = str.replace("|r", "|cfffff")
-
-  if (!str.startsWith("|cff")) {
-    str = lastColor + str
-  }
-  buf += "<p>"
-
-  const pat = /(\|cff(\w{3,6}))(.*?)(?=((\|cff)|$))/gi
-  const mat = str.matchAll(pat)
-  for (const match of mat) {
-    console.log("Full match:", match[0]);
-    console.log("Group 1:", match[2]);
-    console.log("Group 2:", match[3]);
-    lastColor = match[1]
-    const color = match[2]
-    const text = match[3]
-    buf += `<span style="color:#${color}">${text}</span>`
-  }
-  buf += "</p>"
-
-  return { str, buf, lastColor }
-}
-
-var obj = {
-  a: 1,
-  b(){
-    return this.a
+  img.onerror = function () {
+    console.log("onerror")
+    img.onerror = null
+    img.onload = null
   }
 }
+loadImg("https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/f279df5e11f445a1b600196da7573238~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483641&x-signature=BXoYMyrCVp21GiPM71QlxF1H85Q%3D")
 
-console.log(obj.b())
+

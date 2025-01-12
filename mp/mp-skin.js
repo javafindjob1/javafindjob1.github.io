@@ -87,18 +87,22 @@ var mpskin = {
 
   heightArr: [0, 50, 201, 362, 552, 721, 1000],
 
-  heroImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=3KlKBPea95liavnpDRXfPtk8tqs%3D',
-  heroPanelImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/f279df5e11f445a1b600196da7573238~tplv-obj.image?lk3s=993df49e&traceid=202501110910070218CC9891BE765339F3&x-expires=2147483647&x-signature=BXoYMyrCVp21GiPM71QlxF1H85Q%3D',
+  heroImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=3KlKBPea95liavnpDRXfPtk8tqs%3D',
+    '/mp/mp-heros.webp',
+  ],
+  heroPanelImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/f279df5e11f445a1b600196da7573238~tplv-obj.image?lk3s=993df49e&traceid=202501110910070218CC9891BE765339F3&x-expires=2147483647&x-signature=BXoYMyrCVp21GiPM71QlxF1H85Q%3D',
+    '/mp/mp-imgs/out.webp',
+  ],
   heroPanelImgWidth: 3420,
   heroPanelImgHeight: 1744,
   mapId: 192822,
   // 英雄的坐标位置
-  i:0,
-  j:0,
-  calcAbility(unitId, p1, p2, i2,j2, rate){
-    let {i,j} = this
-    const basex = 145+70*6+6
-    const basey = 70*3
+  i: 0,
+  j: 0,
+  calcAbility(unitId, p1, p2, i2, j2, rate) {
+    let { i, j } = this
+    const basex = 145 + 70 * 6 + 6
+    const basey = 70 * 3
 
     if (p1 != null && p1.unitId === unitId) {
 
@@ -111,16 +115,16 @@ var mpskin = {
       offsety = (i - 1) * 2 * basey
     }
 
-    offsetx = offsetx+145+6+i2*70
-    offsety = offsety+j2*70
+    offsetx = offsetx + 145 + 6 + i2 * 70
+    offsety = offsety + j2 * 70
     rate = rate || 0.84
-    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx*rate}px -${offsety*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx * rate}px -${offsety * rate}px / ${this.heroPanelImgWidth * rate}px ${this.heroPanelImgHeight * rate}px`
 
   },
-  calcHead(unitId, p1, p2 ){
-    let {i,j} = this
-    const basex = 145+70*6+6
-    const basey = 70*3
+  calcHead(unitId, p1, p2) {
+    let { i, j } = this
+    const basex = 145 + 70 * 6 + 6
+    const basey = 70 * 3
     if (p1 != null && p1.unitId === unitId) {
       console.log("定位头像位置：皮1")
       offsetx = (j - 1) * basex
@@ -132,25 +136,25 @@ var mpskin = {
     }
 
     const rate = 0.7
-    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx*rate}px -${offsety*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+    return `background: url('${this.heroPanelImg}') no-repeat -${offsetx * rate}px -${offsety * rate}px / ${this.heroPanelImgWidth * rate}px ${this.heroPanelImgHeight * rate}px`
   },
-  calcDef(defType){
+  calcDef(defType) {
     const name = "InfoPanelIconArmor" + defType.substring(0, 1).toUpperCase() + defType.substring(1)
     const i = this[name]
     return this.calcStyle(i)
   },
-  calcProp(propType){
+  calcProp(propType) {
     const name = "InfoPanelIconHeroIcon" + propType
     const i = this[name]
     return this.calcStyle(i)
   },
-  calcAttack(attackType){
+  calcAttack(attackType) {
     const name = "InfoPanelIconDamage" + attackType.substring(0, 1).toUpperCase() + attackType.substring(1)
     const i = this[name]
     return this.calcStyle(i)
   },
-  calcStyle(i){
+  calcStyle(i) {
     const rate = 0.5
-    return `background: url('${this.heroPanelImg}') no-repeat -${i*70*rate}px -${(this.heroPanelImgHeight-64)*rate}px / ${this.heroPanelImgWidth*rate}px ${this.heroPanelImgHeight*rate}px`
+    return `background: url('${this.heroPanelImg}') no-repeat -${i * 70 * rate}px -${(this.heroPanelImgHeight - 64) * rate}px / ${this.heroPanelImgWidth * rate}px ${this.heroPanelImgHeight * rate}px`
   },
 }

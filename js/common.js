@@ -42,3 +42,29 @@ function fetchData(url, handle) {
       console.error('There was a problem with the fetch operation:', error);
     });
 }
+
+/**
+ * 多个地方加载图片，直到成功为止
+ * @param {*} srcArr 
+ * @param {*} resolve 
+ * @param {*} reject 
+ * @returns 
+ */
+function loadImg(srcArr, resolve, reject) {
+  if (!Array.isArray(srcArr)) {
+    return loadImg([srcArr], resolve, reject)
+  }
+
+  const img = new Image();
+  img.src = srcArr[0];
+  img.onload = function () {
+    resolve && resolve(srcArr[0]);
+  };
+  img.onerror = function () {
+    if (srcArr.length > 1) {
+      loadImg(srcArr.slice(1), resolve, reject);
+    } else {
+      reject && reject();
+    }
+  };
+}
