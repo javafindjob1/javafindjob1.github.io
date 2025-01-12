@@ -87,7 +87,7 @@ var mpskin = {
 
   heightArr: [0, 50, 201, 362, 552, 721, 1000],
 
-  heroImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=MWDHPhmPkKRr03CnMKYgGJKUCZA%3D',
+  heroImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=3KlKBPea95liavnpDRXfPtk8tqs%3D',
   heroPanelImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/f279df5e11f445a1b600196da7573238~tplv-obj.image?lk3s=993df49e&traceid=202501110910070218CC9891BE765339F3&x-expires=2147483647&x-signature=BXoYMyrCVp21GiPM71QlxF1H85Q%3D',
   heroPanelImgWidth: 3420,
   heroPanelImgHeight: 1744,

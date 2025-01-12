@@ -80,7 +80,7 @@ var x7skin = {
   ],
 
   heightArr : [0, 40, 216, 377, 567, 744, 1000],
-  heroImg : 'https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/994ee5ff602a4f74953ec88b4b4de6da~tplv-tt-origin-web:gif.jpeg?_iz=58558&from=article.pc_detail&lk3s=953192f4&x-expires=1736609776&x-signature=SDpnrLH%2FugNY8VDREqu5%2FuVhQAM%3D',
+  heroImg : 'https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/63f4d6f9467648869aa534c2b80b8b02~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=gv1j23DChnLwfuzL1djZHJhHuxY%3D',
   heroPanelImg: 'https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/b1f7a529ad65431aabbd4fbf86c78713~tplv-obj.image?lk3s=993df49e&traceid=202501102251566EFFC6D83AD390E63551&x-expires=2147483647&x-signature=AnrWMJXpjSCru5bL2WD7MryDxPM%3D',
   heroPanelImgWidth: 5133,
   heroPanelImgHeight: 2584,
