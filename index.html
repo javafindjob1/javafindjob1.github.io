@@ -13,28 +13,33 @@
   <link rel="stylesheet" href="./bilibili/asset/index-flex.css">
   <!-- <link rel="stylesheet" href="./kk/font/a0.font.7ad948.css" media="none" onload="this.media='all'"> -->
   <script>
-
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = "https://124.64.64.8:8183/kk/font/a0.font.7ad948.css";
-    link.onerror = function () {
-      console.log("error link")
-      link.href = "/kk/font/a0.font.7ad948.css";
-      loadOtherJS(link.href)
+    function loadCSS(arr) {
+      if(!Array.isArray(arr)){
+        return loadCSS([arr])
+      }
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = arr[0]
+      link.onerror = function () {
+        console.log("error link", link.href)
+        link.remove()
+        loadCSS(arr.slice(1))
+      }
+      link.onload = function () {
+        console.log("load link", link.href)
+        loadOtherJS(link.href)
+      }
+      document.head.appendChild(link);
     }
-    link.onload = function () {
-      console.log("load link")
-      loadOtherJS(link.href)
-    }
-    document.head.appendChild(link);
-
-    function loadOtherJS(href){
+    loadCSS(['https://192.168.2.124:8182/kk/font/a0.font.7ad948.css','https://124.64.64.8:8183/kk/font/a0.font.7ad948.css','/kk/font/a0.font.7ad948.css'])
+    console.log("jjjjjjjjj")
+    function loadOtherJS(href) {
       const url = new URL(href)
-      document.head.appendChild(Object.assign(document.createElement('script'),{src: url.origin+"/js/common.js"}))
-      document.head.appendChild(Object.assign(document.createElement('script'),{src: url.origin+"/mp/mp-skin.js"}))
-      document.head.appendChild(Object.assign(document.createElement('script'),{src: url.origin+"/mp/mp-data.js"}))
-      document.head.appendChild(Object.assign(document.createElement('script'),{src: url.origin+"/x7/x7-skin.js"}))
-      document.head.appendChild(Object.assign(document.createElement('script'),{src: url.origin+"/x7/x7-data.js"}))
+      document.head.appendChild(Object.assign(document.createElement('script'), { src: url.origin + "/js/common.js" }))
+      document.head.appendChild(Object.assign(document.createElement('script'), { src: url.origin + "/mp/mp-skin.js" }))
+      document.head.appendChild(Object.assign(document.createElement('script'), { src: url.origin + "/mp/mp-data.js" }))
+      document.head.appendChild(Object.assign(document.createElement('script'), { src: url.origin + "/x7/x7-skin.js" }))
+      document.head.appendChild(Object.assign(document.createElement('script'), { src: url.origin + "/x7/x7-data.js" }))
     }
   </script>
 </head>
