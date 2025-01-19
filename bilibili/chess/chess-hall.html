@@ -1,0 +1,410 @@
+<!-- 英雄 -->
+<turbo-frame id="repo-content-turbo-frame">
+  <style>
+    /* body{  font-size: 12px; line-height: 150%; text-align:center} */
+    .chess_box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .prepare-mask {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 523px;
+      height: 700px;
+      background-color: #ccccccab;
+    }
+
+    .prepare-button {
+      user-select: none;
+      font: normal 24px/500px "微软雅黑", sans-serif;
+    }
+
+    .board {
+      /* width: 100%; */
+      margin: 100px auto;
+    }
+
+    .board-canvas {
+      margin-right: 100px;
+      position: relative;
+    }
+
+    .menu_box {
+      display: block;
+      width: 316px;
+      height: 232px;
+      padding-top: 160px;
+      background: url(/chess/img/init_bg.png);
+      margin: 60px auto 0;
+    }
+
+    .menu_box a {
+      width: 214px;
+      height: 46px;
+      text-align: center;
+      line-height: 46px;
+      background: url(/chess/img/btn_bg.png) center 0 no-repeat;
+      display: block;
+      margin: 10px 0 10px 45px;
+      font: normal 18px/46px "微软雅黑", sans-serif;
+      color: #FF8A00;
+      cursor: pointer;
+    }
+
+    .menu_box a:hover {
+      background: url(/chess/img/btn_bg.png) center -46px no-repeat;
+      color: #FFA433;
+    }
+
+    .menu_info {
+      background: #463521;
+      color: #FFF;
+      padding: 5px 10px;
+      line-height: 190%;
+      text-align: left;
+      width: 194px;
+      margin: 10px 0 10px 45px;
+    }
+
+    .menu_fh {
+      background: url(/chess/img/btn_fh.png);
+      width: 14px;
+      height: 14px;
+      float: right;
+      cursor: pointer
+    }
+
+    .bn_box input {
+      font: normal 14px/46px "微软雅黑", sans-serif;
+      margin: 3px 5px 0;
+      padding: 2px;
+      width: 100px
+    }
+
+
+    .chatBox {
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+
+    .chat-tab {
+      font: normal 14px/46px "微软雅黑", sans-serif;
+    }
+
+    .chat-tab ul {
+      display: flex;
+      justify-content: center;
+      height: 700px;
+      width: 600px;
+    }
+
+    .chat-tab ul li {
+      height: 500px;
+
+      &:nth-child(1) {
+        width: 40%;
+
+        .errConsole {
+          padding: 20px;
+          overflow: auto;
+          background-color: white;
+          height: 500px;
+          overflow-y: auto;
+          border-right: 1px solid black;
+
+          img {
+            width: 80%;
+          }
+
+          .red {
+            float: right;
+            width: 150px;
+            text-align: right;
+            line-height: 1em;
+          }
+
+          .black {
+            float: left;
+            width: 150px;
+            text-align: left;
+            line-height: 1em;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        width: 60%;
+
+        .message {
+          margin: auto;
+          padding: 5px 10px;
+          height: 80px;
+          width: 267px;
+          overflow: auto;
+          background-color: white;
+          text-align: left;
+          vertical-align: top;
+          box-sizing: border-box;
+          display: inline-block;
+
+          img {
+            width: 10%;
+          }
+        }
+      }
+
+      .gameinfo {
+        border-radius: 5px;
+        background-color: black;
+
+        span {
+          color: white;
+        }
+      }
+
+      .chatConsole {
+        padding: 20px;
+        height: 350px;
+        overflow: auto;
+        background-color: white;
+      }
+    }
+
+
+    /* 弹窗的位置和背景颜色 */
+    .modal {
+      display: none;
+      position: fixed;
+      /* 绝对定位 */
+      z-index: 1;
+      /* 元素置前 */
+      padding-top: 50px;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      /* 溢出出现滚动条 */
+      bottom: 0px;
+    }
+
+    /* 弹窗图片的大小 */
+    .content {
+      margin: auto;
+      display: block;
+      min-height: 500px;
+      max-height: 600px;
+    }
+
+    .mask {
+      display: none;
+    }
+
+    .progress {
+      display: none;
+    }
+
+    .thank-author {
+      margin-top: 500px;
+      text-align: center;
+    }
+  </style>
+
+  <div class="chess_box " style="text-align:center;">
+    <audio src="/chess/audio/click.wav" id="clickAudio" preload="auto"></audio>
+    <audio src="/chess/audio/select.wav" id="selectAudio" preload="auto"></audio>
+    <div id="board1" class="board clearfix">
+      <div class="board-canvas leftfix">
+        <div>
+          <input type="button" name="stypeBtn">更换皮肤
+          <input type="button" name="playDtBtn">准备
+          <input type="button" name="playBtn">准备
+        </div>
+        <canvas></canvas>
+        <div class="bn_box">
+          <input type="button" name="restartBtn" value="  重新开始  ">
+          <input type="button" name="regretBtn" value="  悔   棋  ">
+        </div>
+
+        <div class="prepare-mask">
+          <div class="prepare-button">
+            <label style="background-color: aliceblue;"><input name="role" class="changeBlackBtn" disabled type="radio"
+                value="-1">
+              黑（人机）
+            </label>
+            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="radio" value="1">
+              选红
+            </label>
+          </div>
+        </div>
+
+
+        <div class="mask"></div>
+        <div class="progress">
+          <p>
+            <label for="file">完成度：</label>
+            <progress max="100" value="0">30% </progress>
+          </p>
+        </div>
+      </div>
+      <div class="chatBox rightfix">
+        <!-- <textarea id="errConsole" name="errConsole" rows="10" cols="60" readonly></textarea> -->
+        <div class="chat-tab">
+          <ul>
+            <li class="pub active">
+              <div class="gameinfo"><span data-group="pub">对局信息</span></div>
+              <div class="errConsole clearfix" name="errConsole">
+
+              </div>
+            </li>
+            <li class="pri">
+              <div class="gameinfo"><span data-group="pri">公屏聊天</span></div>
+
+              <div class="chatConsole" name="chatConsole">
+
+              </div>
+              <hr style="margin: auto;width:100%;">
+              <form onsubmit="return subfun();">
+                <div contenteditable class="message">
+                </div><input type="submit"
+                  style="font-size: 26px;height:80px;width:83px;padding-right: 8px;display:inline-block;" value="发送">
+                <input name="image" type="file" accept="image/*" multiple="multiple">
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="board2" class="board clearfix">
+      <div class="board-canvas leftfix">
+        <div>
+          <input type="button" name="stypeBtn">更换皮肤
+          <input type="button" name="playDtBtn">准备
+          <input type="button" name="playBtn">准备
+        </div>
+        <canvas></canvas>
+        <div class="bn_box">
+          <input type="button" name="restartBtn" value="  重新开始  ">
+          <input type="button" name="gohomeBtn" value="  返回首页  ">
+          <input type="button" name="regretBtn" value="  悔   棋  ">
+        </div>
+
+        <div class="prepare-mask">
+          <div class="prepare-button">
+            <label style="background-color: aliceblue;"><input name="role" class="changeBlackBtn" type="radio"
+                value="-1">
+              选黑
+            </label>
+            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="radio" value="1">
+              选红
+            </label>
+          </div>
+        </div>
+
+
+        <div class="mask"></div>
+        <div class="progress">
+          <p>
+            <label for="file">完成度：</label>
+            <progress max="100" value="0">30% </progress>
+          </p>
+        </div>
+      </div>
+      <div class="chatBox rightfix">
+        <!-- <textarea id="errConsole" name="errConsole" rows="10" cols="60" readonly></textarea> -->
+        <div class="chat-tab">
+          <ul>
+            <li class="pub active"><span data-group="pub">对局信息</span></li>
+            <li class="pri"><span data-group="pri">公屏聊天</span></li>
+          </ul>
+        </div>
+        <div class="errConsole" name="errConsole"
+          style="padding: 20px;height: 350px; width: 480px; overflow:auto;background-color: white;">
+
+        </div>
+        <hr style="margin: auto;width:518px;">
+        <form style="width: 520px;margin:auto;padding: 0px;" onsubmit="return subfun();">
+          <div contenteditable class="message">
+          </div><input type="submit"
+            style="font-size: 26px;height:80px;width:83px;padding-right: 8px;display:inline-block;" value="发送">
+          <input name="image" type="file" accept="image/*" multiple="multiple">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    void function () {
+      var dom = {
+        chatTab: document.querySelector('.chat-tab ul')
+      }
+
+      new Com("stype2", "#board1");
+      new Com("stype2", "#board2");
+
+      var linkArr = []
+      function clearWs(v) {
+        v.onerror = null
+        v.onopen = null
+        v.onmessage = null
+        v.onclose = null
+        v.close()
+      }
+      function wsconnect(wsurl) {
+        if (!WebSocket) {
+          confirm("您的浏览器不支持WebSocket，请升级浏览器！")
+        } else {
+          if (window._self.wsFinal == null || window._self.wsFinal.readyState != 1) {
+            var ws = new WebSocket(wsurl)
+            linkArr[linkArr.length] = ws
+
+            ws.onerror = function (e) {
+              console.log('Error : ' + e.message)
+              setTimeout(function () {
+                console.log('重连中...')
+                wsconnect(wsurl)
+              }, 5000)
+              clearWs(ws)
+            }
+
+            ws.onopen = function () {
+              console.log('connected')
+              for (const v of linkArr) {
+                if (v !== ws) {
+                  clearWs(v)
+                }
+              }
+              linkArr = []
+              window._self.wsFinal = ws
+
+              if (!window._self.wsInterval) {
+                window._self.wsInterval = setInterval(() => {
+                  window._self.wsFinal.send("ping")
+                }, 2000)
+              }
+            }
+
+            ws.onclose = function () {
+              console.log('disconnected')
+            }
+
+            ws.onmessage = function (d) {
+              console.log('Response : ' + d.data)
+            }
+
+          }
+        }
+      }
+
+
+      wsconnect("wss://192.168.2.124:8182/ws")
+      wsconnect("wss://124.64.64.8:8183/ws")
+
+    }()
+  </script>
+
+  <div class="thank-author">
+    <span>本页面改编来自于【一叶孤舟 | qq:28701884】的html5-chess，添加了网络对战功能</span>
+  </div>
+</turbo-frame>

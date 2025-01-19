@@ -92,12 +92,43 @@ ctrl + shift+g 打开源代码管理
 3. 修改 live server:settings.json
 4. 重启vscode
 
+#### 配置Java项目的JDK
+
+```
+JAVA PROJECTS 视图可以改变jdk
+```
+
+
+
 ### 样式
 
 #### 排查下面代码，超过屏幕宽度出现滚动条
 
 width: 100%;
 padding: 20px;
+
+#### 滚动条样式
+
+```
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+::-webkit-scrollbar-thumb {
+    background: #b59758;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background: 0 0;
+}
+```
+
+
 
 #### transform对fixed影响
 
@@ -145,7 +176,139 @@ tranform之后，fixed 不再相对于视口
   </div>
 ```
 
+#### 背景图缩小
 
+background-size: cover | contain | 100px 100px;
+
+```
+`background: url('${this.heroPanelImg}') no-repeat -${offsetx * rate}px -${offsety * rate}px / ${this.heroPanelImgWidth * rate}px ${this.heroPanelImgHeight * rate}px`
+
+```
+
+#### 嵌套选择器
+
+```
+.hello {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	&:before{
+		content:'abc',
+		display:block
+	}
+}
+```
+
+
+
+### aidlux
+
+web http://192.168.2.124:8000/
+
+shell http://192.168.2.124:9022/
+
+#### 解决ailux被杀
+
+```
+adb 历史版本下载
+https://blog.csdn.net/hyfand1/article/details/138718492
+
+建立连接
+adb devices
+
+修复aidlux被杀的问题
+adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent"
+```
+
+
+
+#### nginx
+
+安装
+
+```
+nginx依赖包提前安装
+sudo apt-get update
+sudo apt-get install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
+
+nginx 安装
+
+
+https://www.bilibili.com/opus/862749347993878545?from=search&spm_id_from=333.337.0.0
+
+./configure  --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.45
+```
+
+nginx https签名
+
+```
+openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt
+openssl req -newkey rsa:4096 -nodes -sha256 -keyout www.test.com.key -out www.test.com.csr
+openssl  x509 -req -days 3650 -in www.test.com.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out www.test.com.crt
+cat www.test.com.crt ca.crt > www.test.com.pem
+
+```
+
+#### nginx 跨域
+
+```
+    server {                                                                                            
+        listen       8182 ssl;                                                                          
+        server_name  localhost www.test.com;                                  
+                                                                              
+        ssl_certificate /usr/local/webserver/nginx/ssl/www.test.com.pem;      
+        ssl_certificate_key /usr/local/webserver/nginx/ssl/www.test.com.key;   
+        ssl_session_cache shared:sslcache:20m;                                                          
+        ssl_session_timeout 10m;                                              
+                                                                              
+                                                                              
+        error_page 500 502 503 504  /error.html;                              
+        location = /error.html {                                              
+            root /home/aidlux/javafindjob1.github.io;                         
+        }                                                                     
+        error_page 497  https://$http_host$uri?$args;                         
+        #charset koi8-r;                                                                            
+                                                                                                    
+        #access_log  logs/host.access.log  main;                            
+                                                                            
+        location / {                                                           
+            add_header 'Access-Control-Allow-Origin' '*';                                               
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';                             
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization';
+                                                                                                    
+            if ($request_method = 'OPTIONS') {                                                      
+                add_header 'Access-Control-Allow-Origin' '*';                                       
+                add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';                         
+                add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization';
+                add_header 'Access-Control-Max-Age' 1728000;                                            
+                add_header 'Content-Type' 'text/plain charset=UTF-8';                                   
+                add_header 'Content-Length' 0;                                                          
+                return 204;                                                                             
+            }                                                                                           
+            root   /home/aidlux/javafindjob1.github.io;                                                 
+        } 
+        
+   }
+```
+
+
+
+#### tree
+
+```
+安装tree
+apt-get install tree
+tree乱码问题
+echo 'export LANG=en_US.UTF-8' >> ~/.bashrc
+source ~/.bashrc
+```
+
+### netty
+
+#### websocket
+
+### canvas
 
 ## 建站优化
 
@@ -182,6 +345,14 @@ uglifyjs input.js -o output.min.js
 
 
 ## 功能
+
+### 在线象棋对弈
+
+### 梦批添加声带
+
+#### 选择英雄时
+
+#### 查看技能时
 
 ### 英雄列表
 war3map.j
