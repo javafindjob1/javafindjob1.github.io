@@ -1,95 +1,74 @@
 class Play {
-	constructor(com) {
-		this.com = com
-	}
-
-	init(depth, map) {
-		var map = map || Man.initMap;
-		var depth = depth || 3
-		this.my = this.com.my;				//玩家方
+	constructor(depth=3, map=Man.initMap, my=1, com) {
+		this.depth = depth;			//搜索深度
 		this.nowMap = map;
+		this.my = my;				//玩家方
+		this.com = com
+		this.com.my = my;
+		this.com.play = this;
+
 		this.map = Com.arr2Clone(map);		//初始化棋盘
 		this.nowManKey = false;			//现在要操作的棋子
 		this.pace = [];				//记录每一步
 		this.isPlay = true;			//是否能走棋
 
-		// this.bylaw = this.com.bylaw;
-		// this.show = this.com.show;
-		// this.showPane = this.com.showPane;
 		this.isOffensive = true;			//是否先手
-		this.depth = depth;			//搜索深度
 		this.isFoul = false;			//是否犯规长将
-		this.com.pane.isShow = false;			//隐藏方块
 
-		//清除所有旗子
-		this.mans = this.com.mans;
-		//这么搞有点2，以后说不定出啥问题，先放着记着以后改
-		this.com.childList.length = 3
-
-		//初始化棋子
-		this.com.createMans(map)		//生成棋子
-		this.com.bg.show();
-		this.com.show();
+		this.com.repaint(this.map)
+		this.mans = this.com.mans
 
 		this.AI = new AI(this.com)
+	}
 
-		//绑定点击事件
-		var that = this
-		this.com.canvas.addEventListener("click", e => {
-			if (!that.isPlay) return false;
-			var key = that.getClickMan(e);
-			var point = that.getClickPoint(e);
+	// 点击棋子事件
+	click(e){
+		if (!this.isPlay) return false;
+		var key = this.getClickMan(e);
+		var point = this.getClickPoint(e);
 
-			var x = point.x;
-			var y = point.y;
+		var x = point.x;
+		var y = point.y;
 
-			if (key) {
-				that.clickMan(key, x, y);
-			} else {
-				that.clickPoint(x, y);
-			}
-			that.isFoul = that.checkFoul();//检测是不是长将
-		})
-
+		if (key) {
+			this.clickMan(key, x, y);
+		} else {
+			this.clickPoint(x, y);
+		}
+		this.isFoul = this.checkFoul();//检测是不是长将
 	}
 
 	//悔棋
-	regret() {
-		var map = Com.arr2Clone(Man.initMap);
-		//初始化所有棋子
-		for (var i = 0; i < map.length; i++) {
-			for (var n = 0; n < map[i].length; n++) {
-				var key = map[i][n];
-				if (key) {
-					this.com.mans[key].x = n;
-					this.com.mans[key].y = i;
-					this.com.mans[key].isShow = true;
-				}
+	regret(step = 2) {
+		step = Math.min(step,this.pace.length)
+		for (var i = 0; i < step; i++) {
+			var pace = this.pace.pop();
+			console.log("退回",pace)
+			var arr = pace.split("")
+
+			var key = this.map[arr[3]][arr[2]]
+			this.map[arr[1]][arr[0]] = this.map[arr[3]][arr[2]]
+			this.mans[key].move(arr[0], arr[1])
+			if(pace.length>4){
+				var eatedMan = pace.substring(4)
+				this.map[arr[3]][arr[2]] = eatedMan
+				this.mans[eatedMan].isShow=true
+				
+			}else{
+				this.map[arr[3]][arr[2]] = undefined
 			}
 		}
-		var pace = this.pace;
-		pace.pop();
-		pace.pop();
 
-		for (var i = 0; i < pace.length; i++) {
-			var p = pace[i].split("")
-			var x = parseInt(p[0], 10);
-			var y = parseInt(p[1], 10);
-			var newX = parseInt(p[2], 10);
-			var newY = parseInt(p[3], 10);
-			var key = map[y][x];
-
-			var cMan = map[newY][newX];
-			if (cMan) this.com.mans[map[newY][newX]].isShow = false;
-			this.com.mans[key].move(newX, newY)
-			map[newY][newX] = key;
-			delete map[y][x];
-			if (i == pace.length - 1) {
-				this.com.pane.setMan(this.com.mans[key])
-			}
+		// 显示最后一手棋
+		var lastPace = this.pace.at(-1)
+		if(lastPace){
+			var lastArr = lastPace.split("")
+			var lastKey = this.map[lastArr[3]][lastArr[2]]
+			this.com.pane.setMan(this.mans[lastKey])
+		}else{
+			this.com.pane.setMan(null)
 		}
-		this.map = map;
-		this.my = this.com.my;
+
 		this.isPlay = true;
 		this.com.dot.isShow = false;
 		this.com.show();
@@ -107,12 +86,13 @@ class Play {
 				man.isShow = false;
 				var pace = nowMan.x + "" + nowMan.y
 
+				var eatedMan = this.map[y][x]
 				// todo 打印招式
 				this.com.log(this.com.createMove(this.map, nowMan.x, nowMan.y, x, y))
 				nowMan.move(x, y)
 				this.com.pane.setMan(nowMan)
 
-				this.pace.push(pace + x + y);
+				this.pace.push(pace + x + y + eatedMan);
 
 				if (this.my == -1) {
 					//对于黑方选手，需要变换坐标系
@@ -122,8 +102,28 @@ class Play {
 					arr[2] = 8 - x;
 					arr[3] = 9 - y;
 					// send(this.my + arr.join(""));
+
+					window._self.wsFinal.send(JSON.stringify({
+						type: "pace",
+						deskId: this.com.board.getAttribute('id'),
+						my: this.my,
+						player: window._self.channelId,
+						index: this.pace.length,
+						pace: arr.join("") + eatedMan
+					}))
+
 				} else {
 					// send(this.my + pace + x + y);
+
+					window._self.wsFinal.send(JSON.stringify({
+						type: "pace",
+						deskId: this.com.board.getAttribute('id'),
+						my: this.my,
+						player: window._self.channelId,
+						index: this.pace.length,
+						pace: pace + x + y + eatedMan
+					}))
+
 				}
 
 				this.nowManKey = false;
@@ -133,7 +133,7 @@ class Play {
 				this.com.show()
 				document.querySelector("#clickAudio").play();
 				var that = this
-				setTimeout(()=>{
+				setTimeout(() => {
 					that.AIPlay()
 				}, 500);
 				if (key == "j0") this.showWin(-1);
@@ -141,14 +141,14 @@ class Play {
 			}
 		} else {
 			// 选中棋子
-			console.log(this.my + "玩家选中棋子：" + man.my + man.text)
+			console.log(this.my + "玩家选中棋子：" + man.my + man.text, man)
 			if (man.my === this.my) {
 				if (nowMan) nowMan.alpha = 1;
 				this.nowManKey = key;
 				this.com.mans[key].ps = this.com.mans[key].bl(); //获得所有能着点
 				this.com.dot.dots = this.com.mans[key].ps
 				this.com.pane.setMan(man);
-				man.alpha=0.8
+				man.alpha = 0.8
 
 				this.com.show();
 				//this.com.get("selectAudio").start(0);
@@ -166,7 +166,7 @@ class Play {
 				var pace = man.x + "" + man.y
 
 				this.com.log(this.com.createMove(this.map, man.x, man.y, x, y))
-				man.move(x,y)
+				man.move(x, y)
 				this.pace.push(pace + x + y);
 				if (this.my == -1) {
 					//对于黑方选手，需要变换坐标系
@@ -176,17 +176,35 @@ class Play {
 					arr[2] = 8 - x;
 					arr[3] = 9 - y;
 					// send(this.my + arr.join(""));
+
+					window._self.wsFinal.send(JSON.stringify({
+						type: "pace",
+						deskId: this.com.board.getAttribute('id'),
+						my: this.my,
+						player: window._self.channelId,
+						index: this.pace.length,
+						pace: arr.join("")
+					}))
+
 				} else {
-					// send(this.my + pace + x + y);
+					// send(this.my + pace + x + y);		
+					window._self.wsFinal.send(JSON.stringify({
+						type: "pace",
+						deskId: this.com.board.getAttribute('id'),
+						my: this.my,
+						player: window._self.channelId,
+						index: this.pace.length,
+						pace: pace + x + y
+					}))
 				}
-				
+
 				this.nowManKey = false;
 				this.com.dot.dots = [];
 				this.com.pane.setMan(man)
 				this.com.show();
 				document.querySelector("#clickAudio").play();
 				var that = this
-				setTimeout(()=>{
+				setTimeout(() => {
 					that.AIPlay()
 				}, 500);
 			} else {
@@ -196,11 +214,10 @@ class Play {
 
 	}
 
-	//Ai自动走棋
+	//Ai自动走棋 p代表网络走棋
 	AIPlay(p) {
-		if (!p ) {
-			// 大厅模式的话，不使用AI
-			// return;
+		if(!p && this.com.board.id !== 'board1'){
+			return
 		}
 
 		//return
@@ -210,6 +227,12 @@ class Play {
 		if (!pace) {
 			this.showWin(1);
 			return;
+		}
+
+		if(!p){
+			// 机器人走棋需要补充吃掉的子
+			var eatedMan = this.map[pace[3]][pace[2]]
+			pace.push(eatedMan)
 		}
 
 		this.pace.push(pace.join(""));
@@ -225,7 +248,7 @@ class Play {
 		} else {
 			this.AIclickPoint(pace[2], pace[3]);
 		}
-		
+
 		this.isPlay = true;
 		document.querySelector("#clickAudio").play();
 	}
@@ -265,7 +288,7 @@ class Play {
 			var oldY = man.y
 			delete this.map[oldY][oldX];
 			this.map[y][x] = key;
-			man.move(x,y)
+			man.move(x, y)
 			this.com.pane.setMan(man)
 
 			this.nowManKey = false;

@@ -2,7 +2,7 @@
 <turbo-frame id="repo-content-turbo-frame">
   <style>
     /* body{  font-size: 12px; line-height: 150%; text-align:center} */
-    .chess_box {
+    .chess-box {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -14,7 +14,8 @@
       left: 0px;
       width: 523px;
       height: 700px;
-      background-color: #ccccccab;
+      background-color: #cccccc52;
+      /* opacity: 0.4; */
     }
 
     .prepare-button {
@@ -77,7 +78,7 @@
       cursor: pointer
     }
 
-    .bn_box input {
+    .bn-box input {
       font: normal 14px/46px "微软雅黑", sans-serif;
       margin: 3px 5px 0;
       padding: 2px;
@@ -107,7 +108,7 @@
       &:nth-child(1) {
         width: 40%;
 
-        .errConsole {
+        .game-console {
           padding: 20px;
           overflow: auto;
           background-color: white;
@@ -152,6 +153,26 @@
 
           img {
             width: 10%;
+            display: inline-block;
+          }
+        }
+
+        .chatConsole {
+          padding: 20px;
+          height: 350px;
+          text-wrap: wrap;
+          text-align: left;
+          line-height: 1.5em;
+          background-color: white;
+          overflow-y: auto;
+
+          p.my {
+            text-align: right;
+          }
+
+          img {
+            width: 100px;
+            display: inline-block;
           }
         }
       }
@@ -165,12 +186,6 @@
         }
       }
 
-      .chatConsole {
-        padding: 20px;
-        height: 350px;
-        overflow: auto;
-        background-color: white;
-      }
     }
 
 
@@ -209,12 +224,16 @@
       margin-top: 500px;
       text-align: center;
     }
+
+    .hide {
+      display: none;
+    }
   </style>
 
-  <div class="chess_box " style="text-align:center;">
+  <div class="chess-box " style="text-align:center;">
     <audio src="/chess/audio/click.wav" id="clickAudio" preload="auto"></audio>
     <audio src="/chess/audio/select.wav" id="selectAudio" preload="auto"></audio>
-    <div id="board1" class="board clearfix">
+    <div id="board1" class="board clearfix ">
       <div class="board-canvas leftfix">
         <div>
           <input type="button" name="stypeBtn">更换皮肤
@@ -222,20 +241,79 @@
           <input type="button" name="playBtn">准备
         </div>
         <canvas></canvas>
-        <div class="bn_box">
+        <div class="bn-box">
           <input type="button" name="restartBtn" value="  重新开始  ">
           <input type="button" name="regretBtn" value="  悔   棋  ">
         </div>
 
         <div class="prepare-mask">
           <div class="prepare-button">
-            <label style="background-color: aliceblue;"><input name="role" class="changeBlackBtn" disabled type="radio"
-                value="-1">
-              黑（人机）
+            <label style="background-color: aliceblue;"><input name="role" disabled checked class="changeBlackBtn"
+                type="checkbox" value="-1">
+              黑(电脑)
             </label>
-            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="radio" value="1">
+            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="checkbox"
+                value="1">
               选红
             </label>
+          </div>
+        </div>
+      </div>
+      <div class="chatBox rightfix">
+        <!-- <textarea id="game-console" name="game-console" rows="10" cols="60" readonly></textarea> -->
+        <div class="chat-tab">
+          <ul>
+            <li class="pub active">
+              <div class="gameinfo"><span data-group="pub">对局信息</span></div>
+              <div class="game-console clearfix" name="game-console">
+
+              </div>
+            </li>
+            <!-- <li class="pri">
+              <div class="gameinfo"><span data-group="pri">公屏聊天</span></div>
+
+              <div class="chatConsole" name="chatConsole">
+
+              </div>
+              <hr style="margin: auto;width:100%;">
+              <div class="message-form">
+                <div contenteditable class="message">
+                </div><input type="submit"
+                  style="font-size: 1.625rem;height:5rem;width:5.1875rem;padding-right: .5rem;display:inline-block;" value="发送">
+                <input name="image" class="imageMessage" type="file" accept="image/*" multiple="multiple">
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="boardN" class="board clearfix hide">
+      <div class="board-canvas leftfix">
+        <div>
+          <input type="button" name="stypeBtn">更换皮肤
+          <input type="button" name="playDtBtn">准备
+          <input type="button" name="playBtn">准备
+        </div>
+        <canvas></canvas>
+        <div class="bn-box">
+          <input type="button" name="restartBtn" value="  重新开始  ">
+          <input type="button" name="regretBtn" value="  悔   棋  ">
+        </div>
+
+        <div class="prepare-mask">
+          <div class="prepare-button">
+            <label style="background-color: aliceblue;"><input name="role" class="changeBlackBtn" type="checkbox"
+                value="-1">
+              黑
+            </label>
+            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="checkbox"
+                value="1">
+              选红
+            </label>
+          </div>
+          <div class="watch-info hide">
+            观战中
           </div>
         </div>
 
@@ -249,12 +327,12 @@
         </div>
       </div>
       <div class="chatBox rightfix">
-        <!-- <textarea id="errConsole" name="errConsole" rows="10" cols="60" readonly></textarea> -->
+        <!-- <textarea id="game-console" name="game-console" rows="10" cols="60" readonly></textarea> -->
         <div class="chat-tab">
           <ul>
             <li class="pub active">
               <div class="gameinfo"><span data-group="pub">对局信息</span></div>
-              <div class="errConsole clearfix" name="errConsole">
+              <div class="game-console clearfix" name="game-console">
 
               </div>
             </li>
@@ -265,83 +343,305 @@
 
               </div>
               <hr style="margin: auto;width:100%;">
-              <form onsubmit="return subfun();">
+              <div class="message-form">
                 <div contenteditable class="message">
                 </div><input type="submit"
-                  style="font-size: 26px;height:80px;width:83px;padding-right: 8px;display:inline-block;" value="发送">
-                <input name="image" type="file" accept="image/*" multiple="multiple">
-              </form>
+                  style="font-size: 1.625rem;height:5rem;width:5.1875rem;padding-right: .5rem;display:inline-block;"
+                  value="发送">
+                <input name="image" class="imageMessage" type="file" accept="image/*" multiple="multiple">
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div id="board2" class="board clearfix">
-      <div class="board-canvas leftfix">
-        <div>
-          <input type="button" name="stypeBtn">更换皮肤
-          <input type="button" name="playDtBtn">准备
-          <input type="button" name="playBtn">准备
-        </div>
-        <canvas></canvas>
-        <div class="bn_box">
-          <input type="button" name="restartBtn" value="  重新开始  ">
-          <input type="button" name="gohomeBtn" value="  返回首页  ">
-          <input type="button" name="regretBtn" value="  悔   棋  ">
-        </div>
-
-        <div class="prepare-mask">
-          <div class="prepare-button">
-            <label style="background-color: aliceblue;"><input name="role" class="changeBlackBtn" type="radio"
-                value="-1">
-              选黑
-            </label>
-            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="radio" value="1">
-              选红
-            </label>
-          </div>
-        </div>
-
-
-        <div class="mask"></div>
-        <div class="progress">
-          <p>
-            <label for="file">完成度：</label>
-            <progress max="100" value="0">30% </progress>
-          </p>
-        </div>
-      </div>
-      <div class="chatBox rightfix">
-        <!-- <textarea id="errConsole" name="errConsole" rows="10" cols="60" readonly></textarea> -->
-        <div class="chat-tab">
-          <ul>
-            <li class="pub active"><span data-group="pub">对局信息</span></li>
-            <li class="pri"><span data-group="pri">公屏聊天</span></li>
-          </ul>
-        </div>
-        <div class="errConsole" name="errConsole"
-          style="padding: 20px;height: 350px; width: 480px; overflow:auto;background-color: white;">
-
-        </div>
-        <hr style="margin: auto;width:518px;">
-        <form style="width: 520px;margin:auto;padding: 0px;" onsubmit="return subfun();">
-          <div contenteditable class="message">
-          </div><input type="submit"
-            style="font-size: 26px;height:80px;width:83px;padding-right: 8px;display:inline-block;" value="发送">
-          <input name="image" type="file" accept="image/*" multiple="multiple">
-        </form>
-      </div>
-    </div>
   </div>
-
+  <!-- 弹窗 -->
+  <div id="myModal" class="modal" onclick="document.getElementById('myModal').style.display='none'">
+    <!-- 弹窗内容 -->
+    <img class="content" id="img01">
+  </div>
+  <!--相应图片点击操作-->
+  <script>
+    function demo(id) {
+      document.getElementById('myModal').style.display = "block";
+      document.getElementById("img01").src = document.getElementById(id).src;
+    }
+  </script>
   <script>
     void function () {
       var dom = {
-        chatTab: document.querySelector('.chat-tab ul')
+        chatTab: document.querySelector('.chat-tab ul'),
+        boardN: document.querySelector("#boardN"),
+        chessbox: document.querySelector(".chess-box"),
       }
 
-      new Com("stype2", "#board1");
-      new Com("stype2", "#board2");
+      var com1 = new Com("stype2", "#board1");
+      com1.repaint(Man.initMap)
+      com1.initClick()
+      window.com1 = com1
+
+      document.addEventListener('init', function (e) {
+        window._self.channelId = e.detail.player
+        console.log("init", e.detail.data)
+        for (const k of e.detail.data) {
+          var board = dom.boardN.cloneNode(true)
+          board.id = k.deskId
+          board.classList.remove("hide")
+
+          if (k.seat[0] && k.seat[1]) {
+            board.querySelector(".prepare-mask .prepare-button").classList.add("hide");
+          } else {
+            if (k.seat[0]) {
+              var bt = board.querySelector("input[type='checkbox'][value='-1']")
+              bt.checked = true
+              bt.disabled = true
+            }
+            if (k.seat[1]) {
+              var bt = board.querySelector("input[type='checkbox'][value='1']")
+              bt.checked = true
+              bt.disabled = true
+            }
+          }
+
+          dom.chessbox.appendChild(board)
+
+          var com = new Com("stype2", "#" + board.id);
+          com.repaint(k.map, k.lastManKey, k.lastPace?.split("")[0], k.lastPace?.split("")[1])
+          com.initClick()
+          window[board.id] = com
+        }
+      })
+
+      document.addEventListener('restart', function (e) {
+        const desk = e.detail.data
+        console.log("restart", desk)
+
+        window[desk.deskId].repaint(desk.map)
+        var board = window[desk.deskId].board
+        if (desk.seat[0] && desk.seat[1]) {
+          board.querySelector(".prepare-mask").classList.add("hide");
+          board.querySelector(".prepare-mask .prepare-button").classList.add("hide");
+        } else {
+          board.querySelector(".prepare-mask").classList.remove("hide");
+          board.querySelector(".prepare-mask .prepare-button").classList.remove("hide");
+          if (desk.seat[0]) {
+            var bt = board.querySelector("input[type='checkbox'][value='-1']")
+            bt.checked = true
+            bt.disabled = true
+          } else {
+            var bt = board.querySelector("input[type='checkbox'][value='-1']")
+            bt.checked = false
+            bt.disabled = false
+          }
+          if (desk.seat[1]) {
+            var bt = board.querySelector("input[type='checkbox'][value='1']")
+            bt.checked = true
+            bt.disabled = true
+          } else {
+            var bt = board.querySelector("input[type='checkbox'][value='1']")
+            bt.checked = false
+            bt.disabled = false
+          }
+        }
+      })
+
+      document.addEventListener("sitDown", function (e) {
+        console.log("sitDown", e, e.detail.player, window._self.channelId)
+        var desk = e.detail.data
+        if (e.detail.retCode === '0000') {
+          var that = window[e.detail.deskId]
+          var players = desk.players
+          if (window._self.channelId === e.detail.player) {
+            // 首次坐下，或者重新开始比赛都会进入这里，bylaw就可以不用初始化了
+            var my = players[window._self.channelId];
+            that.bylaw = that.bylaw || new Bylaw(that)
+            if (my == -1) {
+              var reverseMap = desk.map.reverse();
+              for(const v of reverseMap){
+                v.reverse()
+              }
+              new Play(3, reverseMap, my, that);
+            } else {
+              new Play(3, desk.map, my, that);
+            }
+
+            that.get(".game-console").innerHTML = '';
+
+            that.get(".progress progress").value = 100;
+            that.get(".prepare-mask").classList.add('hide')
+            that.get(".progress").style.display = 'none';
+          } else {
+            // 其他人收到某个座位上座信息后，改变样式
+            if (desk.seat[0] && desk.seat[1]) {
+              that.board.querySelector(".prepare-mask .prepare-button").classList.add('hide');
+            } else {
+              that.board.querySelector(".prepare-mask .prepare-button").classList.remove('hide');
+              if (desk.seat[0]) {
+                var bt = that.board.querySelector("input[type='checkbox'][value='-1']")
+                bt.checked = true
+                bt.disabled = true
+              } else {
+                var bt = that.board.querySelector("input[type='checkbox'][value='-1']")
+                bt.checked = false
+                bt.disabled = false
+              }
+              if (desk.seat[1]) {
+                var bt = that.board.querySelector("input[type='checkbox'][value='1']")
+                bt.checked = true
+                bt.disabled = true
+              } else {
+                var bt = that.board.querySelector("input[type='checkbox'][value='1']")
+                bt.checked = false
+                bt.disabled = false
+              }
+            }
+          }
+
+        }
+
+      })
+
+      document.addEventListener("pace", function (e) {
+        console.log("pace", e, e.detail.player, window._self.channelId)
+        if (e.detail.retCode === '0000') {
+          var desk = e.detail.data
+          var that = window[e.detail.deskId]
+          if (desk.players[window._self.channelId] == null) {
+            // 观众
+            that.repaint(desk.map, desk.lastManKey, desk.lastPace?.split("")[0], desk.lastPace?.split("")[1])
+          } else {
+            // 玩家
+            console.log(desk.index, that.play.pace.length + 1)
+            if (desk.index == that.play.pace.length + 1) {
+
+              var pace = desk.lastPace.split("");
+              var arr = []
+              if (that.my == -1) {
+                //对于黑方选手，需要变换坐标系
+                arr[0] = 8 - pace[0];
+                arr[1] = 9 - pace[1];
+                arr[2] = 8 - pace[2];
+                arr[3] = 9 - pace[3];
+              } else {
+                arr[0] = pace[0] - 0;
+                arr[1] = pace[1] - 0;
+                arr[2] = pace[2] - 0;
+                arr[3] = pace[3] - 0;
+              }
+              // 加上末尾的被吃的棋子名字
+              arr.push(desk.lastPace.substring(4))
+              that.play.AIPlay(arr)
+            }
+
+          }
+        } else {
+          var that = window[e.detail.deskId]
+          that.play.regret(1);
+        }
+
+      })
+
+      document.addEventListener("regret", function (e) {
+        console.log("regret", e, e.detail.player, window._self.channelId)
+        if (e.detail.retCode === '0000') {
+          var desk = e.detail.data
+          var that = window[e.detail.deskId]
+          if (desk.players[window._self.channelId] == null) {
+            // 观众
+            that.repaint(desk.map, desk.lastManKey, desk.lastPace?.split("")[0], desk.lastPace?.split("")[1])
+          } else {
+            // 玩家
+            var that = window[e.detail.deskId]
+            that.play.regret();
+          }
+        }
+
+      })
+
+      document.querySelector(".chess-box").addEventListener("click", function (e) {
+        if (e.target.tagName == "INPUT" && e.target.getAttribute("type") == 'submit') {
+          var messageEle = e.target.closest(".message-form").querySelector(".message")
+          console.log("发送消息", e.target, messageEle.innerText)
+
+          var boardId = e.target.closest(".board").id
+          var com = window[boardId]
+          if (messageEle.innerHTML == '') {
+            messageEle.focus();
+          } else {
+            var vv
+            for (const node of messageEle.childNodes) {
+              var message
+              var messageType
+              if (node.tagName === "IMG") {
+                messageType = "image"
+                message = node.src
+
+                vv = JSON.stringify({
+                  type: "message",
+                  deskId: boardId,
+                  my: com.my,
+                  messageType: "image"
+                })
+                vv = vv + node.src
+              } else {
+                if (/^\\s+$/.test(node.text)) continue;
+                vv = JSON.stringify({
+                  type: "message",
+                  deskId: boardId,
+                  my: com.my,
+                  messageType: "text",
+                  message: node.data,
+                })
+              }
+
+              console.log(vv.substring(0, 100))
+
+              window._self.wsFinal.send(vv)
+            }
+
+            messageEle.innerHTML = ""
+          }
+
+        }
+      })
+      document.addEventListener("message", function (e) {
+        console.log("message", e, e.detail.player, window._self.channelId)
+        if (e.detail.retCode === '0000') {
+          var that = window[e.detail.deskId]
+          var desk = e.detail.data
+          var pretext = "[红方]"
+          if (desk.my == -1) {
+            pretext = "[黑方]"
+          } else if (desk.my == 0) {
+            pretext = "[观众]"
+          }
+
+
+          var text = document.createElement("p")
+          if (e.detail.player === window._self.channelId) {
+            text.classList.add("my")
+            pretext += "(我)"
+          }
+
+          if (desk.type === "image") {
+            var id = Math.random().toString(36).substring(3)
+            var img = document.createElement("img")
+            img.src = desk.value
+            img.id = id
+            img.ondblclick = "demo('" + id + "')"
+
+            text.innerText = pretext + ": "
+            text.appendChild(img)
+            that.get(".chatConsole").appendChild(text)
+          } else {
+            text.innerText = pretext + ": " + desk.value
+            that.get(".chatConsole").appendChild(text)
+          }
+          that.get(".chatConsole").scrollTop = that.get(".chatConsole").scrollHeight;
+        }
+
+      })
 
       var linkArr = []
       function clearWs(v) {
@@ -350,6 +650,7 @@
         v.onmessage = null
         v.onclose = null
         v.close()
+        v = null
       }
       function wsconnect(wsurl) {
         if (!WebSocket) {
@@ -362,7 +663,7 @@
             ws.onerror = function (e) {
               console.log('Error : ' + e.message)
               setTimeout(function () {
-                console.log('重连中...')
+                console.log('重连中...', wsurl)
                 wsconnect(wsurl)
               }, 5000)
               clearWs(ws)
@@ -380,7 +681,16 @@
 
               if (!window._self.wsInterval) {
                 window._self.wsInterval = setInterval(() => {
-                  window._self.wsFinal.send("ping")
+                  if (window._self.wsFinal == null || window._self.wsFinal.readyState != 1) {
+                    clearWs(window._self.wsFinal)
+                    wsconnect(wsurl)
+                  } else {
+                    if (window._self.type === '#chess') {
+                      // window._self.wsFinal.send("ping")
+                    } else {
+                      clearWs(window._self.wsFinal)
+                    }
+                  }
                 }, 2000)
               }
             }
@@ -390,7 +700,20 @@
             }
 
             ws.onmessage = function (d) {
-              console.log('Response : ' + d.data)
+              console.log('Response : ', d, d.data)
+
+              var data
+              if (d.data.indexOf('data:image/') > -1) {
+                var body = d.data.substring(0, d.data.indexOf('data:image/'))
+                data = JSON.parse(body)
+                data.data.value = d.data.substring(d.data.indexOf('data:image/'))
+              } else {
+                data = JSON.parse(d.data)
+              }
+              // 创建并触发playerReady事件
+              document.dispatchEvent(new CustomEvent(data.type, {
+                detail: data
+              }));
             }
 
           }
@@ -399,7 +722,8 @@
 
 
       wsconnect("wss://192.168.2.124:8182/ws")
-      wsconnect("wss://124.64.64.8:8183/ws")
+      // wsconnect("ws://localhost:8888/ws")
+      wsconnect("ws://124.64.64.8:8183/ws")
 
     }()
   </script>

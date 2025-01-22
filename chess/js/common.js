@@ -43,23 +43,32 @@ class Com {
 
 		this.board = document.querySelector(boardId);
 		this.canvas = this.get("canvas"); //画布
-		this.ct = this.canvas.getContext("2d");
 		this.canvas.width = this.width;
 		this.canvas.height = this.height;
+		this.ctx = this.canvas.getContext("2d");
 
+		this.my = 1		                 // 默认选择红方
+	}
+	
+	repaint(map, mankey, oldX, oldY) {
+		document.querySelector(".chess-box").style.background = "url(/chess/img/" + this.page + "/bg.jpg)";
 		this.bg = new Bg(this)
 		this.dot = new Dot(this);
 		this.pane = new Pane(this);
+
 		this.childList = [this.bg, this.dot, this.pane];
-		this.my = 1;                  // 默认选择红方
-
-		this.createMans(Man.initMap)
-
+		this.mans = {}
+		this.createMans(map)
+		if (mankey) {
+			// 标注最后一手棋
+			this.mans[mankey].oldX = oldX
+			this.mans[mankey].oldY = oldY
+			mankey && this.pane.setMan(this.mans[mankey])
+		}
 		this.loadAllImages().then(() => {
 			this.show();
-			this.initClick()
 		});
-		document.getElementsByTagName("body")[0].style.background = "url(/chess/img/" + stype + "/bg.jpg)";
+
 	}
 
 	get(cssSelector) {
@@ -78,7 +87,6 @@ class Com {
 	}
 	//生成map里面有的棋子
 	createMans(map) {
-		this.mans = {}
 		for (var i = 0; i < map.length; i++) {
 			for (var n = 0; n < map[i].length; n++) {
 				var key = map[i][n];
@@ -91,7 +99,7 @@ class Com {
 	}
 	//显示列表
 	show() {
-		this.ct.clearRect(0, 0, this.width, this.height);
+		this.ctx.clearRect(0, 0, this.width, this.height);
 		for (var i = 0; i < this.childList.length; i++) {
 			this.childList[i].show();
 		}
@@ -103,41 +111,55 @@ class Com {
 		var that = this
 		// 悔棋
 		this.get("input[name=regretBtn]").addEventListener("click", function (e) {
-			that.play.regret();
+			if(that.board.id === "board1"){
+				that.play.regret();
+			}else{
+				window._self.wsFinal.send(JSON.stringify({
+					type: "regret",
+					player: window._self.channelId,
+					deskId: that.board.getAttribute('id'),
+				}))
+			}
 		})
 
 		// 选黑
 		this.get(".changeBlackBtn").addEventListener("click", function (e) {
-			that.get(".prepare-mask").style = "display:none"
-			syncingFun("选黑", -1, Com.arr2Clone(Man.initMap).reverse());
+			syncingFun(-1);
 		})
 
 		// 选红
 		this.get(".changeRedBtn").addEventListener("click", function (e) {
-			that.get(".prepare-mask").style = "display:none"
-			syncingFun("选红", 1, Com.arr2Clone(Man.initMap));
+			syncingFun(1);
 		})
 
-		function syncingFun(detail, role, map) {
-			console.log(detail)
+		this.canvas.addEventListener("click", e => {
+			that.play.click(e)
+		})
 
-			that.get(".mask").style.display = 'block';
-			that.get(".progress").style.display = 'block';
-			that.get(".progress progress").value = 0;
 
-			var play = new Play(that)
-			that.play = play
-			that.bylaw = new Bylaw(that)
-			that.my = role;
-			play.my = role;
-			play.map = map;
+		function syncingFun(role) {
 
-			play.init(3, play.map);
-			// that.get("errConsole").innerHTML = '';
+			console.log("桌号", that.board.getAttribute('id'), "阵营（-1黑1红0观众）", role)
 
-			that.get(".progress progress").value = 100;
-			that.get(".mask").style.display = 'none';
-			that.get(".progress").style.display = 'none';
+			if (that.board.getAttribute('id') === "board1") {
+
+				that.get(".game-console").innerHTML = '';
+				that.get(".prepare-mask").classList.add("hide");
+
+				that.play = new Play(3,Man.initMap,1,that)
+				that.bylaw = new Bylaw(that)
+			} else {
+				that.get(".mask").style.display = 'block';
+				that.get(".progress").style.display = 'block';
+				that.get(".progress progress").value = 0;
+
+				window._self.wsFinal.send(JSON.stringify({
+					type: "sitDown",
+					deskId: that.board.getAttribute('id'),
+					my: role,
+				}))
+			}
+
 		}
 
 
@@ -149,10 +171,18 @@ class Com {
 			if (result) {
 				console.log("重新开始")
 				// 点击确定后。。
-				that.play.isPlay = true;
-				that.play.init(that.play.depth, that.play.nowMap);
-				that.get(".errConsole").innerHTML = '';
-				send("重新开始");
+				that.get(".game-console").innerHTML = '';
+
+				if(that.board.id==="board1"){
+					// 单机的棋盘
+					that.play = new Play(3,Man.initMap,1,that)
+				}else{
+					window._self.wsFinal.send(JSON.stringify({
+						type: "restart",
+						player: window._self.channelId,
+						deskId: that.board.getAttribute('id'),
+					}))
+				}
 			}
 
 		})
@@ -171,6 +201,53 @@ class Com {
 			this.show();
 		})
 
+		this.get(".imageMessage")?.addEventListener("change", function () {
+			console.log("change");
+
+			for (var i = 0; i < this.files.length; i++) {
+				var file = this.files[i];
+				console.log(file);
+				that.imageHandle(file);
+			}
+		});
+
+		//此事件监听也可以添加在document上，该事件会有冒泡行为，则本页面上任何地方的粘贴操作都会触发
+		this.get('.message')?.addEventListener('paste', function (e) {
+
+			const items = (e.clipboardData || window.clipboardData).items;
+			if (items && items.length) {
+				for (var i = 0; i < items.length; i++) {
+					if (items[i].type.indexOf('image') !== -1) {
+						let file = items[i].getAsFile();
+						e.preventDefault();
+						that.imageHandle(file);
+					}
+				}
+			}
+		});
+
+	}
+
+	imageHandle(img) {
+		console.log(img);
+		var that = this;
+		var reader = new FileReader();
+		reader.readAsDataURL(img);
+		reader.onload = function () {
+			var ele = that.get(".message");
+			var id = "aaaa" + Math.random().toString(36).substring(10);
+			ele.innerHTML += '<img src="' + this.result + '" alt="" id="' + id + '" ondblclick=\'demo("' + id + '")\' />';
+			ele.scrollTop = ele.scrollHeight;
+
+			// 将获得焦点的光标移动到最后的输入位置
+			let range = document.createRange();
+			range.selectNodeContents(ele);
+			range.collapse(false);
+			let sel = window.getSelection();
+			sel.removeAllRanges();
+			sel.addRange(range);
+
+		}
 	}
 
 	//debug alert
@@ -192,7 +269,7 @@ class Com {
 			temp.innerHTML = "<div class='black'>" + val + "</div>"
 		}
 
-		var ele = this.get(".errConsole");
+		var ele = this.get(".game-console");
 		ele.appendChild(temp.firstChild);
 		ele.scrollTop = ele.scrollHeight;
 	}
@@ -773,7 +850,7 @@ class Man {
 		this.alpha = 1;
 		this.ps = []; //着点
 		this.com = com;
-		this.ct = com.ct;
+		this.ctx = com.ctx;
 
 		this.img = new Image();
 		this.promise = new Promise((resolve, reject) => {
@@ -798,10 +875,10 @@ class Man {
 
 	show() {
 		if (this.isShow) {
-			this.ct.save();
-			this.ct.globalAlpha = this.alpha;
-			this.ct.drawImage(this.img, this.com.spaceX * this.x + this.com.pointStartX, this.com.spaceY * this.y + this.com.pointStartY);
-			this.ct.restore();
+			this.ctx.save();
+			this.ctx.globalAlpha = this.alpha;
+			this.ctx.drawImage(this.img, this.com.spaceX * this.x + this.com.pointStartX, this.com.spaceY * this.y + this.com.pointStartY);
+			this.ctx.restore();
 		}
 	}
 
@@ -824,7 +901,7 @@ class Bg {
 	}
 
 	show() {
-		if (this.isShow) this.com.ct.drawImage(this.img, this.com.spaceX * this.x, this.com.spaceY * this.y);
+		if (this.isShow) this.com.ctx.drawImage(this.img, this.com.spaceX * this.x, this.com.spaceY * this.y);
 	}
 }
 class Pane {
@@ -843,16 +920,21 @@ class Pane {
 	}
 	show() {
 		if (this.isShow) {
-			this.com.ct.drawImage(this.img, this.com.spaceX * this.man.oldX + this.com.pointStartX, this.com.spaceY * this.man.oldY + this.com.pointStartY)
-			this.com.ct.drawImage(this.img, this.com.spaceX * this.man.x + this.com.pointStartX, this.com.spaceY * this.man.y + this.com.pointStartY)
+			this.com.ctx.drawImage(this.img, this.com.spaceX * this.man.oldX + this.com.pointStartX, this.com.spaceY * this.man.oldY + this.com.pointStartY)
+			this.com.ctx.drawImage(this.img, this.com.spaceX * this.man.x + this.com.pointStartX, this.com.spaceY * this.man.y + this.com.pointStartY)
 		}
 	}
 
 	//显示移动的棋子外框
 	setMan(man) {
-		this.isShow = true;
-		this.man = man
-		this.man.alpha = 1
+		if(!man){
+			this.isShow = false;
+			this.man = undefined
+		}else{
+			this.isShow = true;
+			this.man = man
+			this.man.alpha = 1
+		}
 	}
 
 }
@@ -871,7 +953,7 @@ class Dot {
 	}
 	show() {
 		for (var i = 0; i < this.dots.length; i++) {
-			if (this.isShow) this.com.ct.drawImage(this.img, this.com.spaceX * this.dots[i][0] + 10 + this.com.pointStartX, this.com.spaceY * this.dots[i][1] + 10 + this.com.pointStartY)
+			if (this.isShow) this.com.ctx.drawImage(this.img, this.com.spaceX * this.dots[i][0] + 10 + this.com.pointStartX, this.com.spaceY * this.dots[i][1] + 10 + this.com.pointStartY)
 		}
 	}
 }

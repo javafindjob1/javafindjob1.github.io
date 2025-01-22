@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>游戏攻略</title>
-  <link rel="dns-prefetch" href="https://124.64.64.8:8183">
+  <link rel="dns-prefetch" href="//124.64.64.8:8183">
+  <link rel="dns-prefetch" href="//p3-sign.toutiaoimg.com">
+  <link rel="dns-prefetch" href="//unpkg.com">
   <link rel="stylesheet" href="./css/reset.css">
   <!-- <script defer src="./js/turbo.es2017-umd.min.js"></script> -->
   <link rel="favicon icon" href="./bilibili/asset/favicon.ico">
@@ -51,7 +53,7 @@
     }
     loadCSS([
       '/kk/font/a0.font.7ad948.css',
-      'https://192.168.2.124:8182/kk/font/a0.font.7ad948.css',
+      // 'https://192.168.2.124:8182/kk/font/a0.font.7ad948.css',
       'https://124.64.64.8:8183/kk/font/a0.font.7ad948.css',
     ])
     console.log("loadCSS不会产生阻塞")
@@ -65,14 +67,18 @@
       loadJS("/mp/mp-data.js")
       loadJS("/x7/x7-skin.js")
       loadJS("/x7/x7-data.js")
-      loadJS("/chess/js/common.js")
+      loadJS("/chess/js/common.js",function(){
+        loadJS("/chess/js/gambit.js")
+        loadJS("/chess/js/clasli.js")
+      })
       loadJS("/chess/js/AI.js")
       loadJS("/chess/js/play.js")
-      loadJS("/chess/js/gambit.js")
-      loadJS("/chess/js/clasli.js")
 
-      function loadJS(pathname) {
-        document.head.appendChild(Object.assign(document.createElement('script'), { src: cdn + pathname }))
+      function loadJS(pathname, fn) {
+        var script = document.createElement('script')
+        script.src = cdn + pathname
+        script.onload = fn
+        document.head.appendChild(script)
       }
     }
   </script>

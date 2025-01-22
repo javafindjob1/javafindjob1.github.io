@@ -16,7 +16,7 @@ class AI {
 
 	//人工智能初始化
 	init(pace) {
-		var bill = AI.historyBill; //开局库
+		var bill = AI.historyBill || com.gambit; //开局库
 		if (bill.length) {
 			var len = pace.length;
 			var arr = [];

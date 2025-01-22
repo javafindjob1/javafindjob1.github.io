@@ -308,6 +308,10 @@ source ~/.bashrc
 
 #### websocket
 
+传送大文本（base64图片）时，只读128Kb的问题。导致图片缺失
+
+
+
 ### canvas
 
 ## 建站优化
