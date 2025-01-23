@@ -47,9 +47,9 @@ class Com {
 		this.canvas.height = this.height;
 		this.ctx = this.canvas.getContext("2d");
 
-		this.my = 1		                 // 默认选择红方
+		this.my = 0		                 // 默认选择红方
 	}
-	
+
 	repaint(map, mankey, oldX, oldY) {
 		document.querySelector(".chess-box").style.background = "url(/chess/img/" + this.page + "/bg.jpg)";
 		this.bg = new Bg(this)
@@ -63,7 +63,7 @@ class Com {
 			// 标注最后一手棋
 			this.mans[mankey].oldX = oldX
 			this.mans[mankey].oldY = oldY
-			mankey && this.pane.setMan(this.mans[mankey])
+			mankey && this.pane.showMove(this.mans[mankey])
 		}
 		this.loadAllImages().then(() => {
 			this.show();
@@ -111,9 +111,9 @@ class Com {
 		var that = this
 		// 悔棋
 		this.get("input[name=regretBtn]").addEventListener("click", function (e) {
-			if(that.board.id === "board1"){
+			if (that.board.id === "board1") {
 				that.play.regret();
-			}else{
+			} else {
 				window._self.wsFinal.send(JSON.stringify({
 					type: "regret",
 					player: window._self.channelId,
@@ -146,18 +146,28 @@ class Com {
 				that.get(".game-console").innerHTML = '';
 				that.get(".prepare-mask").classList.add("hide");
 
-				that.play = new Play(3,Man.initMap,1,that)
-				that.bylaw = new Bylaw(that)
+				new Play(3, Man.initMap, 1, that)
 			} else {
-				that.get(".mask").style.display = 'block';
-				that.get(".progress").style.display = 'block';
-				that.get(".progress progress").value = 0;
 
-				window._self.wsFinal.send(JSON.stringify({
-					type: "sitDown",
-					deskId: that.board.getAttribute('id'),
-					my: role,
-				}))
+				const a = document.createElement('a')
+				a.href="./bilibili/chess/login.html"
+				a.setAttribute("data-turbo-frame", "login-content-turbo-frame")
+				a.setAttribute("data-view-component", "true")
+				document.body.appendChild(a)
+				a.click()
+				a.remove()
+				document.querySelector("#login-content-turbo-frame").classList.add("show")
+
+
+				// that.get(".mask").style.display = 'block';
+				// that.get(".progress").style.display = 'block';
+				// that.get(".progress progress").value = 0;
+
+				// window._self.wsFinal.send(JSON.stringify({
+				// 	type: "sitDown",
+				// 	deskId: that.board.getAttribute('id'),
+				// 	my: role,
+				// }))
 			}
 
 		}
@@ -173,10 +183,10 @@ class Com {
 				// 点击确定后。。
 				that.get(".game-console").innerHTML = '';
 
-				if(that.board.id==="board1"){
+				if (that.board.id === "board1") {
 					// 单机的棋盘
-					that.play = new Play(3,Man.initMap,1,that)
-				}else{
+					that.play = new Play(3, Man.initMap, 1, that)
+				} else {
 					window._self.wsFinal.send(JSON.stringify({
 						type: "restart",
 						player: window._self.channelId,
@@ -341,79 +351,6 @@ class Com {
 			XMLHttpRequestObject.send(null);
 		}
 	}
-	//把坐标生成着法
-	createMove(map, x, y, newX, newY) {
-
-		var man = this.mans[map[y][x]];
-		map[newY][newX] = map[y][x];
-		delete map[y][x];
-
-		return this.moveStep(man, x, y, newX, newY);
-	}
-
-	moveStep(man, x, y, newX, newY) {
-		var name = "红方";
-		if (man.my == -1) {
-			name = "黑方";
-		} else if (man.my == 0) {
-			name = "观众";
-		}
-
-		var h = `${name}：${man.text}`;
-		if (this.my == -1) {
-			//对于黑方选手，需要变换坐标系
-			x = 8 - x;
-			y = 9 - y;
-			newX = 8 - newX;
-			newY = 9 - newY;
-		}
-
-		if (man.my === 1) {
-			var mumTo = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
-			newX = 8 - newX;
-			h += mumTo[8 - x];
-			if (newY > y) {
-				h += "退";
-				if (man.pater == "m" || man.pater == "s" || man.pater == "x") {
-					h += mumTo[newX];
-				} else {
-					h += mumTo[newY - y - 1];
-				}
-			} else if (newY < y) {
-				h += "进";
-				if (man.pater == "m" || man.pater == "s" || man.pater == "x") {
-					h += mumTo[newX];
-				} else {
-					h += mumTo[y - newY - 1];
-				}
-			} else {
-				h += "平";
-				h += mumTo[newX];
-			}
-		} else {
-			var mumTo = ["１", "２", "３", "４", "５", "６", "７", "８", "９", "10"];
-			h += mumTo[x];
-			if (newY > y) {
-				h += "进";
-				if (man.pater == "M" || man.pater == "S" || man.pater == "X") {
-					h += mumTo[newX];
-				} else {
-					h += mumTo[newY - y - 1];
-				}
-			} else if (newY < y) {
-				h += "退";
-				if (man.pater == "M" || man.pater == "S" || man.pater == "X") {
-					h += mumTo[newX];
-				} else {
-					h += mumTo[y - newY - 1];
-				}
-			} else {
-				h += "平";
-				h += mumTo[newX];
-			}
-		}
-		return h;
-	}
 
 }
 
@@ -422,6 +359,7 @@ class Bylaw {
 
 	constructor(com) {
 		this.com = com
+		com.bylaw = this
 	}
 
 	//车
@@ -886,6 +824,86 @@ class Man {
 		var map = map || this.com.play.map
 		return this.com.bylaw[this.o.bl](this.x, this.y, map, this.my)
 	}
+
+
+	moveStep() {
+		var x = this.oldX;
+		var y = this.oldY;
+		var newX = this.x;
+		var newY = this.y;
+		// 对于黑方棋手，坐标系要重新计算
+		if (this.com.my == -1) {
+			x = 8 - x;
+			y = 9 - y;
+			newX = 8 - newX;
+			newY = 9 - newY;
+		}
+		return Man.moveStep(this, x, y, newX, newY);
+	}
+
+	static moveStep(man, x, y, newX, newY) {
+		var name = "红方";
+		if (man.my == -1) {
+			name = "黑方";
+		} else if (man.my == 0) {
+			name = "观众";
+		}
+
+		var h = `${name}：${man.text}`;
+		if (this.my == -1) {
+			//对于黑方选手，需要变换坐标系
+			x = 8 - x;
+			y = 9 - y;
+			newX = 8 - newX;
+			newY = 9 - newY;
+		}
+
+		if (man.my === 1) {
+			var mumTo = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+			newX = 8 - newX;
+			h += mumTo[8 - x];
+			if (newY > y) {
+				h += "退";
+				if (man.pater == "m" || man.pater == "s" || man.pater == "x") {
+					h += mumTo[newX];
+				} else {
+					h += mumTo[newY - y - 1];
+				}
+			} else if (newY < y) {
+				h += "进";
+				if (man.pater == "m" || man.pater == "s" || man.pater == "x") {
+					h += mumTo[newX];
+				} else {
+					h += mumTo[y - newY - 1];
+				}
+			} else {
+				h += "平";
+				h += mumTo[newX];
+			}
+		} else {
+			var mumTo = ["１", "２", "３", "４", "５", "６", "７", "８", "９", "10"];
+			h += mumTo[x];
+			if (newY > y) {
+				h += "进";
+				if (man.pater == "M" || man.pater == "S" || man.pater == "X") {
+					h += mumTo[newX];
+				} else {
+					h += mumTo[newY - y - 1];
+				}
+			} else if (newY < y) {
+				h += "退";
+				if (man.pater == "M" || man.pater == "S" || man.pater == "X") {
+					h += mumTo[newX];
+				} else {
+					h += mumTo[y - newY - 1];
+				}
+			} else {
+				h += "平";
+				h += mumTo[newX];
+			}
+		}
+		return h;
+	}
 }
 
 class Bg {
@@ -926,15 +944,22 @@ class Pane {
 	}
 
 	//显示移动的棋子外框
-	setMan(man) {
-		if(!man){
+	showMove(man) {
+		if (!man) {
 			this.isShow = false;
 			this.man = undefined
-		}else{
+		} else {
 			this.isShow = true;
 			this.man = man
-			this.man.alpha = 1
 		}
+	}
+
+	showSelect(man){
+		if(this.selectMan){
+			this.selectMan.alpha = 1
+		}
+		this.selectMan = man
+		man.alpha = 0.8
 	}
 
 }

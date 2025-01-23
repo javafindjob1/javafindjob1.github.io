@@ -1,4 +1,4 @@
-<!-- 英雄 -->
+<!-- 象棋 -->
 <turbo-frame id="repo-content-turbo-frame">
   <style>
     /* body{  font-size: 12px; line-height: 150%; text-align:center} */
@@ -361,6 +361,7 @@
     <!-- 弹窗内容 -->
     <img class="content" id="img01">
   </div>
+  <turbo-frame id="login-content-turbo-frame"></turbo-frame>
   <!--相应图片点击操作-->
   <script>
     function demo(id) {
@@ -455,7 +456,6 @@
           if (window._self.channelId === e.detail.player) {
             // 首次坐下，或者重新开始比赛都会进入这里，bylaw就可以不用初始化了
             var my = players[window._self.channelId];
-            that.bylaw = that.bylaw || new Bylaw(that)
             if (my == -1) {
               var reverseMap = desk.map.reverse();
               for(const v of reverseMap){

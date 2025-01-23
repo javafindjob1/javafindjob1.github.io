@@ -1,11 +1,12 @@
 class Play {
-	constructor(depth=3, map=Man.initMap, my=1, com) {
+	constructor(depth = 3, map = Man.initMap, my = 1, com) {
 		this.depth = depth;			//搜索深度
 		this.nowMap = map;
 		this.my = my;				//玩家方
 		this.com = com
 		this.com.my = my;
 		this.com.play = this;
+		this.com.bylaw = com.bylaw || new Bylaw(com)
 
 		this.map = Com.arr2Clone(map);		//初始化棋盘
 		this.nowManKey = false;			//现在要操作的棋子
@@ -22,7 +23,7 @@ class Play {
 	}
 
 	// 点击棋子事件
-	click(e){
+	click(e) {
 		if (!this.isPlay) return false;
 		var key = this.getClickMan(e);
 		var point = this.getClickPoint(e);
@@ -40,33 +41,32 @@ class Play {
 
 	//悔棋
 	regret(step = 2) {
-		step = Math.min(step,this.pace.length)
+		step = Math.min(step, this.pace.length)
 		for (var i = 0; i < step; i++) {
 			var pace = this.pace.pop();
-			console.log("退回",pace)
+			console.log("退回", pace)
 			var arr = pace.split("")
 
 			var key = this.map[arr[3]][arr[2]]
 			this.map[arr[1]][arr[0]] = this.map[arr[3]][arr[2]]
 			this.mans[key].move(arr[0], arr[1])
-			if(pace.length>4){
+			if (pace.length > 4) {
 				var eatedMan = pace.substring(4)
 				this.map[arr[3]][arr[2]] = eatedMan
-				this.mans[eatedMan].isShow=true
-				
-			}else{
-				this.map[arr[3]][arr[2]] = undefined
+				this.mans[eatedMan].isShow = true
+			} else {
+				delete this.map[arr[3]][arr[2]]
 			}
 		}
 
 		// 显示最后一手棋
 		var lastPace = this.pace.at(-1)
-		if(lastPace){
+		if (lastPace) {
 			var lastArr = lastPace.split("")
 			var lastKey = this.map[lastArr[3]][lastArr[2]]
-			this.com.pane.setMan(this.mans[lastKey])
-		}else{
-			this.com.pane.setMan(null)
+			this.com.pane.showMove(this.mans[lastKey])
+		} else {
+			this.com.pane.showMove(null)
 		}
 
 		this.isPlay = true;
@@ -84,58 +84,19 @@ class Play {
 			//man为被吃掉的棋子
 			if (this.indexOfPs(nowMan.ps, [x, y])) {
 				man.isShow = false;
-				var pace = nowMan.x + "" + nowMan.y
 
-				var eatedMan = this.map[y][x]
-				// todo 打印招式
-				this.com.log(this.com.createMove(this.map, nowMan.x, nowMan.y, x, y))
-				nowMan.move(x, y)
-				this.com.pane.setMan(nowMan)
-
-				this.pace.push(pace + x + y + eatedMan);
-
-				if (this.my == -1) {
-					//对于黑方选手，需要变换坐标系
-					var arr = [];
-					arr[0] = 8 - pace[0];
-					arr[1] = 9 - pace[1];
-					arr[2] = 8 - x;
-					arr[3] = 9 - y;
-					// send(this.my + arr.join(""));
-
-					window._self.wsFinal.send(JSON.stringify({
-						type: "pace",
-						deskId: this.com.board.getAttribute('id'),
-						my: this.my,
-						player: window._self.channelId,
-						index: this.pace.length,
-						pace: arr.join("") + eatedMan
-					}))
-
-				} else {
-					// send(this.my + pace + x + y);
-
-					window._self.wsFinal.send(JSON.stringify({
-						type: "pace",
-						deskId: this.com.board.getAttribute('id'),
-						my: this.my,
-						player: window._self.channelId,
-						index: this.pace.length,
-						pace: pace + x + y + eatedMan
-					}))
-
-				}
-
+				this.moveMan(nowMan, x, y)
+				this.com.log(nowMan.moveStep())
+				
 				this.nowManKey = false;
 				this.isPlay = false
-				this.com.pane.isShow = false;
+				this.com.pane.showMove(nowMan)
 				this.com.dot.dots = [];
 				this.com.show()
 				document.querySelector("#clickAudio").play();
-				var that = this
-				setTimeout(() => {
-					that.AIPlay()
-				}, 500);
+
+				this.sendPace()
+
 				if (key == "j0") this.showWin(-1);
 				if (key == "J0") this.showWin(1);
 			}
@@ -143,12 +104,11 @@ class Play {
 			// 选中棋子
 			console.log(this.my + "玩家选中棋子：" + man.my + man.text, man)
 			if (man.my === this.my) {
-				if (nowMan) nowMan.alpha = 1;
+				// if (nowMan) nowMan.alpha = 1;
 				this.nowManKey = key;
 				this.com.mans[key].ps = this.com.mans[key].bl(); //获得所有能着点
 				this.com.dot.dots = this.com.mans[key].ps
-				this.com.pane.setMan(man);
-				man.alpha = 0.8
+				this.com.pane.showSelect(man);
 
 				this.com.show();
 				//this.com.get("selectAudio").start(0);
@@ -160,53 +120,20 @@ class Play {
 	//点击着点
 	clickPoint(x, y) {
 		var key = this.nowManKey;
-		var man = this.com.mans[key];
 		if (key) {
-			if (this.indexOfPs(this.com.mans[key].ps, [x, y])) {
-				var pace = man.x + "" + man.y
+			var man = this.com.mans[key];
+			if (this.indexOfPs(man.ps, [x, y])) {
 
-				this.com.log(this.com.createMove(this.map, man.x, man.y, x, y))
-				man.move(x, y)
-				this.pace.push(pace + x + y);
-				if (this.my == -1) {
-					//对于黑方选手，需要变换坐标系
-					var arr = [];
-					arr[0] = 8 - pace[0];
-					arr[1] = 9 - pace[1];
-					arr[2] = 8 - x;
-					arr[3] = 9 - y;
-					// send(this.my + arr.join(""));
-
-					window._self.wsFinal.send(JSON.stringify({
-						type: "pace",
-						deskId: this.com.board.getAttribute('id'),
-						my: this.my,
-						player: window._self.channelId,
-						index: this.pace.length,
-						pace: arr.join("")
-					}))
-
-				} else {
-					// send(this.my + pace + x + y);		
-					window._self.wsFinal.send(JSON.stringify({
-						type: "pace",
-						deskId: this.com.board.getAttribute('id'),
-						my: this.my,
-						player: window._self.channelId,
-						index: this.pace.length,
-						pace: pace + x + y
-					}))
-				}
-
+				this.moveMan(man, x, y)
+				
+				this.com.log(man.moveStep())
 				this.nowManKey = false;
 				this.com.dot.dots = [];
-				this.com.pane.setMan(man)
+				this.com.pane.showMove(man)
 				this.com.show();
 				document.querySelector("#clickAudio").play();
-				var that = this
-				setTimeout(() => {
-					that.AIPlay()
-				}, 500);
+
+				this.sendPace()
 			} else {
 				//alert("不能这么走哦！")
 			}
@@ -214,9 +141,63 @@ class Play {
 
 	}
 
+	
+	//把坐标生成着法
+	moveMan(man, newX, newY) {
+		const {x, y} = man
+		// 单纯移动棋子，eatedMan为空
+		var eatedMan = this.map[newY][newX]
+		console.log("吃掉了", eatedMan)
+		this.pace.push("" + x + y + newX + newY + (eatedMan?eatedMan:""));
+
+		man.move(newX, newY)
+		this.map[newY][newX] = man.key;
+		delete this.map[y][x];
+	}
+
+
+	sendPace() {
+		if (this.com.board.id === 'board1') {
+			var that = this
+			setTimeout(() => {
+				that.AIPlay()
+			}, 500);
+			return
+		}
+
+		const paceS = this.pace.at(-1)
+		const pace = paceS.split("")
+		if (this.my == -1) {
+			//对于黑方选手，需要变换坐标系
+			var arr = [];
+			arr[0] = 8 - pace[0];
+			arr[1] = 9 - pace[1];
+			arr[2] = 8 - pace[2];
+			arr[3] = 9 - pace[3];
+			const eatedMan = paceS.substring(4)
+			window._self.wsFinal.send(JSON.stringify({
+				type: "pace",
+				deskId: this.com.board.getAttribute('id'),
+				my: this.my,
+				player: window._self.channelId,
+				index: this.pace.length,
+				pace: arr.join("") + eatedMan
+			}))
+		} else {
+			window._self.wsFinal.send(JSON.stringify({
+				type: "pace",
+				deskId: this.com.board.getAttribute('id'),
+				my: this.my,
+				player: window._self.channelId,
+				index: this.pace.length,
+				pace: paceS
+			}))
+		}
+	}
+
 	//Ai自动走棋 p代表网络走棋
 	AIPlay(p) {
-		if(!p && this.com.board.id !== 'board1'){
+		if (!p && this.com.board.id !== 'board1') {
 			return
 		}
 
@@ -229,7 +210,7 @@ class Play {
 			return;
 		}
 
-		if(!p){
+		if (!p) {
 			// 机器人走棋需要补充吃掉的子
 			var eatedMan = this.map[pace[3]][pace[2]]
 			pace.push(eatedMan)
@@ -239,9 +220,6 @@ class Play {
 		var key = this.map[pace[1]][pace[0]]
 		this.nowManKey = key;
 
-		// todo 记录招式
-		this.com.log(this.com.moveStep(this.com.mans[key], pace[0], pace[1], pace[2], pace[3]))
-
 		var key = this.map[pace[3]][pace[2]];
 		if (key) {
 			this.AIclickMan(key, pace[2], pace[3]);
@@ -249,7 +227,14 @@ class Play {
 			this.AIclickPoint(pace[2], pace[3]);
 		}
 
+		const man = this.com.mans[this.nowManKey]
+		this.com.pane.showMove(man)
+		// todo 记录招式
+		this.com.log(man.moveStep())
+		this.nowManKey = false;
+		this.com.show()
 		this.isPlay = true;
+
 		document.querySelector("#clickAudio").play();
 	}
 
@@ -271,10 +256,6 @@ class Play {
 		delete this.map[nowMan.y][nowMan.x];
 		this.map[y][x] = this.nowManKey;
 		nowMan.move(x, y)
-		this.com.pane.setMan(nowMan)
-		this.com.show()
-
-		this.nowManKey = false;
 
 		if (key == "j0") this.showWin(-1);
 		if (key == "J0") this.showWin(1);
@@ -289,12 +270,7 @@ class Play {
 			delete this.map[oldY][oldX];
 			this.map[y][x] = key;
 			man.move(x, y)
-			this.com.pane.setMan(man)
-
-			this.nowManKey = false;
-
 		}
-		this.com.show();
 	}
 
 

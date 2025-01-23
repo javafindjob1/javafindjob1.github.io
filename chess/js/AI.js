@@ -11,11 +11,19 @@ class AI {
 		this.historyTable = {};		//历史表
 		this.com = com
 		this.play = com.play
+		this.pace = this.play.pace
 		AI.historyBill = Com.gambit
 	}
 
 	//人工智能初始化
-	init(pace) {
+	init() {
+		// 删掉吃掉的字
+		var pace2 = []
+		for (const v of this.pace) {
+			pace2.push(v.substring(0, 4))
+		}
+		var pace = pace2.join("")
+
 		var bill = AI.historyBill || com.gambit; //开局库
 		if (bill.length) {
 			var len = pace.length;
@@ -55,8 +63,9 @@ class AI {
 		if (val && val.value != -8888) {
 			var man = this.play.mans[val.key];
 			var nowTime = new Date().getTime();
+
 			console.log('最佳着法：' +
-				this.com.createMove(Com.arr2Clone(this.play.map), man.x, man.y, val.x, val.y) +
+				Man.moveStep(man, man.x, man.y, val.x, val.y) +
 				' 搜索深度：' + this.treeDepth + ' 搜索分支：' +
 				this.number + '个  最佳着法评估：' +
 				val.value + '分' +
@@ -95,8 +104,6 @@ class AI {
 			for (var n = 0; n < map[i].length; n++) {
 				var key = map[i][n];
 				if (key && this.play.mans[key].my == my) {
-					this.play.mans[key].x = n;
-					this.play.mans[key].y = i;
 					mans.push(this.play.mans[key])
 				}
 			}
