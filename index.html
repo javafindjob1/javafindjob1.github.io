@@ -17,6 +17,13 @@
   <script>
     // 并行加载找出最快CDN节点，提升网页加载速度
     var linkArr = []
+    
+    function clearCSS(e) {
+        e.onerror = null
+        e.onload = null
+        e.href = "#"
+        e.remove()
+      }
     function loadCSS(arr, callback) {
       if (!Array.isArray(arr)) {
         return loadCSS([arr])
@@ -44,12 +51,6 @@
       document.head.appendChild(link);
 
       linkArr[linkArr.length] = link
-      function clearCSS(e) {
-        e.onerror = null
-        e.onload = null
-        e.href = "#"
-        e.remove()
-      }
     }
     loadCSS([
       '/kk/font/a0.font.7ad948.css',
