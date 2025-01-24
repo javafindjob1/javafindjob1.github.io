@@ -63,6 +63,7 @@
       var cdn = url.origin
       window._self = window._self || {}
       window._self.cdn = cdn
+      console.log("loadOther", cdn)
       loadJS("/js/common.js")
       loadJS("/mp/mp-skin.js")
       loadJS("/mp/mp-data.js")
