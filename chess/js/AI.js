@@ -1,12 +1,5 @@
 class AI {
 	static historyBill
-	static {
-		// Com.getData("/chess/js/gambit.all.js",
-		// 	function (data) {
-		// 		Com.gambit = data.split(" ");
-		// 		AI.historyBill = Com.gambit
-		// 	})
-	}
 	constructor(com) {
 		this.historyTable = {};		//历史表
 		this.com = com
@@ -24,7 +17,7 @@ class AI {
 		}
 		var pace = pace2.join("")
 
-		var bill = AI.historyBill || com.gambit; //开局库
+		var bill = AI.historyBill || Com.gambit; //开局库
 		if (bill.length) {
 			var len = pace.length;
 			var arr = [];
@@ -224,7 +217,12 @@ class AI {
 			for (var n = 0; n < map[i].length; n++) {
 				var key = map[i][n];
 				if (key) {
-					val += this.play.mans[key].value[i][n] * this.play.mans[key].my;
+					try{
+						val += this.play.mans[key].value[i][n] * this.play.mans[key].my;
+					}catch(e){
+						console.log(key, this.play.mans[key], i, n)
+						throw e
+					}
 				}
 			}
 		}
@@ -235,4 +233,13 @@ class AI {
 		return val * my;
 	}
 
+}
+
+
+{
+	// Com.getData("/chess/js/gambit.all.js",
+	// 	function (data) {
+	// 		Com.gambit = data.split(" ");
+	// 		AI.historyBill = Com.gambit
+	// 	})
 }

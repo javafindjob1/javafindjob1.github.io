@@ -17,7 +17,7 @@
   <script>
     // 并行加载找出最快CDN节点，提升网页加载速度
     var linkArr = []
-    function loadCSS(arr) {
+    function loadCSS(arr, callback) {
       if (!Array.isArray(arr)) {
         return loadCSS([arr])
       }
@@ -35,7 +35,7 @@
         for (const v of linkArr) {
           if (v != link) clearCSS(v)
         }
-        loadOtherJS(link.href)
+        callback && callback(link.href)
       }
       link.onerror = function () {
         console.log("error link", link.href)
@@ -53,32 +53,41 @@
     }
     loadCSS([
       '/kk/font/a0.font.7ad948.css',
-      'https://192.168.2.124:8182/kk/font/a0.font.7ad948.css',
+      // 'https://192.168.2.124:8182/kk/font/a0.font.7ad948.css',
       'https://124.64.64.8:8183/kk/font/a0.font.7ad948.css',
-    ])
+    ], loadOther)
     console.log("loadCSS不会产生阻塞")
-    function loadOtherJS(href) {
+    function loadOther(href) {
       const url = new URL(href)
       var cdn = url.origin
-      window._self = window._self||{}
+      window._self = window._self || {}
       window._self.cdn = cdn
       loadJS("/js/common.js")
       loadJS("/mp/mp-skin.js")
       loadJS("/mp/mp-data.js")
       loadJS("/x7/x7-skin.js")
       loadJS("/x7/x7-data.js")
-      loadJS("/chess/js/common.js",function(){
+      loadJS("/chess/js/common.js", function () {
         loadJS("/chess/js/gambit.js")
         loadJS("/chess/js/clasli.js")
       })
       loadJS("/chess/js/AI.js")
       loadJS("/chess/js/play.js")
 
+      loadCSS('/bilibili/asset/font-icon/iconfont.css')
+
       function loadJS(pathname, fn) {
         var script = document.createElement('script')
         script.src = cdn + pathname
         script.onload = fn
         document.head.appendChild(script)
+      }
+
+      function loadCSS(pathname) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = cdn + pathname
+        document.head.appendChild(link)
       }
     }
   </script>

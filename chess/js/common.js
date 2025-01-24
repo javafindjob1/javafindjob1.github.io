@@ -124,12 +124,12 @@ class Com {
 
 		// 选黑
 		this.get(".changeBlackBtn").addEventListener("click", function (e) {
-			syncingFun(-1);
+			syncingFun(-1, e);
 		})
 
 		// 选红
 		this.get(".changeRedBtn").addEventListener("click", function (e) {
-			syncingFun(1);
+			syncingFun(1, e);
 		})
 
 		this.canvas.addEventListener("click", e => {
@@ -137,7 +137,7 @@ class Com {
 		})
 
 
-		function syncingFun(role) {
+		function syncingFun(role, e) {
 
 			console.log("桌号", that.board.getAttribute('id'), "阵营（-1黑1红0观众）", role)
 
@@ -148,26 +148,28 @@ class Com {
 
 				new Play(3, Man.initMap, 1, that)
 			} else {
+				if (!window._self.channelId) {
+					e.preventDefault()
+					const a = document.createElement('a')
+					a.href = "./bilibili/chess/login.html"
+					a.setAttribute("data-turbo-frame", "login-content-turbo-frame")
+					a.setAttribute("data-view-component", "true")
+					document.body.appendChild(a)
+					a.click()
+					a.remove()
+				} else {
+					that.get(".mask").style.display = 'block';
+					that.get(".progress").style.display = 'block';
+					that.get(".progress progress").value = 0;
 
-				const a = document.createElement('a')
-				a.href="./bilibili/chess/login.html"
-				a.setAttribute("data-turbo-frame", "login-content-turbo-frame")
-				a.setAttribute("data-view-component", "true")
-				document.body.appendChild(a)
-				a.click()
-				a.remove()
-				document.querySelector("#login-content-turbo-frame").classList.add("show")
+					window._self.wsFinal.send(JSON.stringify({
+						type: "sitDown",
+						deskId: that.board.getAttribute('id'),
+						my: role,
+					}))
+				}
 
 
-				// that.get(".mask").style.display = 'block';
-				// that.get(".progress").style.display = 'block';
-				// that.get(".progress progress").value = 0;
-
-				// window._self.wsFinal.send(JSON.stringify({
-				// 	type: "sitDown",
-				// 	deskId: that.board.getAttribute('id'),
-				// 	my: role,
-				// }))
 			}
 
 		}
@@ -743,6 +745,7 @@ class Man {
 			[0, 0, 0, 0, 0, 0, 0, 0, 0]
 		]
 	}
+	
 	static {
 		//黑子为红字价值位置的倒置
 		Man.value.C = Com.arr2Clone(Man.value.c).reverse();
@@ -906,6 +909,8 @@ class Man {
 	}
 }
 
+
+
 class Bg {
 
 	constructor(com) {
@@ -954,8 +959,8 @@ class Pane {
 		}
 	}
 
-	showSelect(man){
-		if(this.selectMan){
+	showSelect(man) {
+		if (this.selectMan) {
 			this.selectMan.alpha = 1
 		}
 		this.selectMan = man
@@ -967,7 +972,7 @@ class Pane {
 class Dot {
 	constructor(com) {
 		this.isShow = true;
-		this.dots = []
+		this.dotss = []
 		this.com = com
 		this.img = new Image();
 		this.promise = new Promise((resolve, reject) => {
@@ -975,6 +980,14 @@ class Dot {
 			this.img.onerror = reject;
 		});
 		this.img.src = window._self.cdn + "/chess/img/" + this.com.page + "/dot.png";
+	}
+
+	get dots(){
+		return this.dotss
+	}
+	set dots(dots){
+		this.isShow = true
+		this.dotss = dots
 	}
 	show() {
 		for (var i = 0; i < this.dots.length; i++) {

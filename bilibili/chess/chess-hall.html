@@ -16,16 +16,24 @@
       height: 700px;
       background-color: #cccccc52;
       /* opacity: 0.4; */
-    }
 
-    .prepare-button {
-      user-select: none;
-      font: normal 24px/500px "微软雅黑", sans-serif;
+      .prepare-button {
+        user-select: none;
+        font: normal 24px/500px "微软雅黑", sans-serif;
+      }
+
+      .prepare {
+        cursor: pointer;
+
+        &:hover {
+          color: red;
+        }
+      }
     }
 
     .board {
       /* width: 100%; */
-      margin: 100px auto;
+      margin: 20px auto;
     }
 
     .board-canvas {
@@ -88,7 +96,6 @@
 
     .chatBox {
       margin-top: 20px;
-      margin-right: 20px;
     }
 
     .chat-tab {
@@ -97,13 +104,28 @@
 
     .chat-tab ul {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       height: 700px;
       width: 600px;
     }
 
     .chat-tab ul li {
       height: 500px;
+
+      display: flex;
+      flex-direction: column;
+
+      .gameinfo {
+        border-radius: 5px;
+        background-color: black;
+        height: 50px;
+        box-sizing: border-box;
+        flex-basis: 46px;
+
+        & span {
+          color: white;
+        }
+      }
 
       &:nth-child(1) {
         width: 40%;
@@ -112,11 +134,12 @@
           padding: 20px;
           overflow: auto;
           background-color: white;
-          height: 500px;
+          height: 454px;
+          box-sizing: border-box;
           overflow-y: auto;
           border-right: 1px solid black;
 
-          img {
+          & img {
             width: 80%;
           }
 
@@ -139,51 +162,91 @@
       &:nth-child(2) {
         width: 60%;
 
-        .message {
-          margin: auto;
-          padding: 5px 10px;
-          height: 80px;
-          width: 267px;
-          overflow: auto;
-          background-color: white;
-          text-align: left;
-          vertical-align: top;
-          box-sizing: border-box;
-          display: inline-block;
-
-          img {
-            width: 10%;
-            display: inline-block;
-          }
-        }
-
         .chatConsole {
           padding: 20px;
-          height: 350px;
+          height: 300px;
+          box-sizing: border-box;
           text-wrap: wrap;
           text-align: left;
           line-height: 1.5em;
           background-color: white;
-          overflow-y: auto;
+          overflow-y: scroll;
+          resize: vertical;
 
-          p.my {
+          & p.my {
             text-align: right;
           }
 
-          img {
+          & img {
             width: 100px;
             display: inline-block;
           }
         }
-      }
 
-      .gameinfo {
-        border-radius: 5px;
-        background-color: black;
+        .message-tool {
+          background-color: white;
+          height: 30px;
+          text-align: left;
 
-        span {
-          color: white;
+          .left {
+            height: 30px;
+            line-height: 30px;
+            padding: 0px 10px;
+
+            & span {
+              cursor: pointer;
+            }
+          }
+
+          .imageMessage {
+            display: none;
+          }
         }
+
+        .message-form {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          flex-grow: 1;
+          background-color: white;
+
+          .message {
+            margin: auto;
+            padding: 5px 10px;
+            height: 80px;
+            line-height: 1.5em;
+            width: 100%;
+            overflow: auto;
+            background-color: white;
+            text-align: left;
+            vertical-align: top;
+            box-sizing: border-box;
+            display: inline-block;
+            flex-grow: 1;
+
+            & img {
+              width: 10%;
+              display: inline-block;
+            }
+          }
+
+          & input[type=submit] {
+            font-size: 14px;
+            height: 30px;
+            width: 80px;
+            border-radius: 3px;
+            margin: 5px 15px 10px 0px;
+            color: #07c160;
+            background-color: #e9e9e9;
+            display: inline-block;
+
+            &:hover {
+              background-color: #d2d2d2;
+              cursor: pointer;
+            }
+          }
+        }
+
       }
 
     }
@@ -221,7 +284,7 @@
     }
 
     .thank-author {
-      margin-top: 500px;
+      margin-top: 100px;
       text-align: center;
     }
 
@@ -252,9 +315,9 @@
                 type="checkbox" value="-1">
               黑(电脑)
             </label>
-            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="checkbox"
-                value="1">
-              选红
+            <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeRedBtn"
+                type="checkbox" value="1">
+              红(准备)
             </label>
           </div>
         </div>
@@ -303,12 +366,12 @@
 
         <div class="prepare-mask">
           <div class="prepare-button">
-            <label style="background-color: aliceblue;"><input name="role" class="changeBlackBtn" type="checkbox"
-                value="-1">
+            <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeBlackBtn"
+                type="checkbox" value="-1">
               黑
             </label>
-            <label style="background-color: aliceblue;"><input name="role" class="changeRedBtn" type="checkbox"
-                value="1">
+            <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeRedBtn"
+                type="checkbox" value="1">
               选红
             </label>
           </div>
@@ -343,12 +406,17 @@
 
               </div>
               <hr style="margin: auto;width:100%;">
+              <div class="message-tool">
+                <div class="left">
+                  <span class="iconfont icon-wenjianjia">
+                    <input name="image" class="imageMessage" type="file" accept="image/*" multiple="multiple">
+                  </span>
+                </div>
+              </div>
               <div class="message-form">
-                <div contenteditable class="message">
-                </div><input type="submit"
-                  style="font-size: 1.625rem;height:5rem;width:5.1875rem;padding-right: .5rem;display:inline-block;"
-                  value="发送">
-                <input name="image" class="imageMessage" type="file" accept="image/*" multiple="multiple">
+                <div contenteditable class="message" onkeydown="chatEnter(event,this)">
+                </div>
+                <input type="submit" value="发送(S)">
               </div>
             </li>
           </ul>
@@ -368,6 +436,22 @@
       document.getElementById('myModal').style.display = "block";
       document.getElementById("img01").src = document.getElementById(id).src;
     }
+
+    void function () {
+      document.querySelector(".chess-box").addEventListener("click", function (e) {
+        if (e.target.classList.contains("icon-wenjianjia")) {
+          e.target.querySelector("input").click()
+        }
+      })
+    }()
+
+    function chatEnter(e, obj) {
+      console.log(e, e.shiftKey, e.ctrlKey)
+      if (e.keyCode == 13 && (!e.shiftKey && !e.ctrlKey)) {
+        e.preventDefault()
+        obj.closest(".message-form").querySelector("input").click()
+      }
+    }
   </script>
   <script>
     void function () {
@@ -383,34 +467,46 @@
       window.com1 = com1
 
       document.addEventListener('init', function (e) {
-        window._self.channelId = e.detail.player
-        console.log("init", e.detail.data)
-        for (const k of e.detail.data) {
-          var board = dom.boardN.cloneNode(true)
-          board.id = k.deskId
-          board.classList.remove("hide")
+        console.log("init", e.detail)
+        if (e.detail.retCode === "0000") {
+          // 存储用户标识
+          window._self.channelId = e.detail.player
+          for (const k of e.detail.data) {
+            console.log("init board", k.seat, k)
+            var board = document.querySelector("#" + k.deskId)
+            
 
-          if (k.seat[0] && k.seat[1]) {
-            board.querySelector(".prepare-mask .prepare-button").classList.add("hide");
-          } else {
-            if (k.seat[0]) {
-              var bt = board.querySelector("input[type='checkbox'][value='-1']")
-              bt.checked = true
-              bt.disabled = true
+            var com;
+            if (!board) {
+              board = dom.boardN.cloneNode(true)
+              board.id = k.deskId
+              board.classList.remove("hide")
+              dom.chessbox.appendChild(board)
+              
+              com = new Com("stype2", "#" + board.id);
+              com.repaint(k.map, k.lastManKey, k.lastPace?.split("")[0], k.lastPace?.split("")[1])
+              com.initClick()
+              window[board.id] = com
+            }else{
+              com = window[board.id]
+              com.repaint(k.map, k.lastManKey, k.lastPace?.split("")[0], k.lastPace?.split("")[1])
             }
-            if (k.seat[1]) {
-              var bt = board.querySelector("input[type='checkbox'][value='1']")
-              bt.checked = true
-              bt.disabled = true
+
+            if (k.seat[0] && k.seat[1]) {
+              board.querySelector(".prepare-mask .prepare-button").classList.add("hide");
+            } else {
+              if (k.seat[0]) {
+                var bt = board.querySelector("input[type='checkbox'][value='-1']")
+                bt.checked = true
+              }
+              if (k.seat[1]) {
+                var bt = board.querySelector("input[type='checkbox'][value='1']")
+                bt.checked = true
+              }
             }
+
+            start(k)
           }
-
-          dom.chessbox.appendChild(board)
-
-          var com = new Com("stype2", "#" + board.id);
-          com.repaint(k.map, k.lastManKey, k.lastPace?.split("")[0], k.lastPace?.split("")[1])
-          com.initClick()
-          window[board.id] = com
         }
       })
 
@@ -447,31 +543,52 @@
         }
       })
 
+      function start(desk) {
+        // 首次坐下，或者重新开始比赛都会进入这里，bylaw就可以不用初始化了
+        var my = desk.players[window._self.channelId];
+        if(!my){
+          return
+        }
+
+        var that = window[desk.deskId]
+        if (my == -1) {
+          var reverseMap = desk.map.reverse();
+          for (const v of reverseMap) {
+            v.reverse()
+          }
+
+          var reversePace = []
+          for (const v of desk.pace) {
+            var arr = v.split("")
+            arr[0] = 8 - arr[0];
+            arr[1] = 9 - arr[1];
+            arr[2] = 8 - arr[2];
+            arr[3] = 9 - arr[3];
+            // 子
+            arr[4] = v.substring(4)
+            reversePace.push(arr.join(""))
+          }
+
+          var play = new Play(3, reverseMap, my, reversePace, that);
+        } else {
+          var play = new Play(3, desk.map, my, desk.pace, that);
+        }
+        
+        that.get(".game-console").innerHTML = '';
+
+        that.get(".progress progress").value = 100;
+        that.get(".prepare-mask").classList.add('hide')
+        that.get(".progress").style.display = 'none';
+      }
+
       document.addEventListener("sitDown", function (e) {
         console.log("sitDown", e, e.detail.player, window._self.channelId)
         var desk = e.detail.data
         if (e.detail.retCode === '0000') {
-          var that = window[e.detail.deskId]
-          var players = desk.players
           if (window._self.channelId === e.detail.player) {
-            // 首次坐下，或者重新开始比赛都会进入这里，bylaw就可以不用初始化了
-            var my = players[window._self.channelId];
-            if (my == -1) {
-              var reverseMap = desk.map.reverse();
-              for(const v of reverseMap){
-                v.reverse()
-              }
-              new Play(3, reverseMap, my, that);
-            } else {
-              new Play(3, desk.map, my, that);
-            }
-
-            that.get(".game-console").innerHTML = '';
-
-            that.get(".progress progress").value = 100;
-            that.get(".prepare-mask").classList.add('hide')
-            that.get(".progress").style.display = 'none';
+            start(desk)
           } else {
+            var that = window[e.detail.deskId]
             // 其他人收到某个座位上座信息后，改变样式
             if (desk.seat[0] && desk.seat[1]) {
               that.board.querySelector(".prepare-mask .prepare-button").classList.add('hide');
@@ -498,6 +615,14 @@
             }
           }
 
+        } else if (e.detail.retCode === 'NOT-LOGIN') {
+          const a = document.createElement('a')
+          a.href = "./bilibili/chess/login.html"
+          a.setAttribute("data-turbo-frame", "login-content-turbo-frame")
+          a.setAttribute("data-view-component", "true")
+          document.body.appendChild(a)
+          a.click()
+          a.remove()
         }
 
       })
@@ -559,10 +684,12 @@
 
       })
 
+
+
       document.querySelector(".chess-box").addEventListener("click", function (e) {
         if (e.target.tagName == "INPUT" && e.target.getAttribute("type") == 'submit') {
           var messageEle = e.target.closest(".message-form").querySelector(".message")
-          console.log("发送消息", e.target, messageEle.innerText)
+          console.log("发送消息", messageEle.innerText)
 
           var boardId = e.target.closest(".board").id
           var com = window[boardId]
@@ -574,6 +701,7 @@
               var message
               var messageType
               if (node.tagName === "IMG") {
+                console.log("图片消息", node.data)
                 messageType = "image"
                 message = node.src
 
@@ -585,13 +713,15 @@
                 })
                 vv = vv + node.src
               } else {
-                if (/^\\s+$/.test(node.text)) continue;
+                console.log("文本消息", node.data, node.innerText)
+                var msg = node.data || node.innerText
+                if (!msg || msg.trim().length == 0) continue;
                 vv = JSON.stringify({
                   type: "message",
                   deskId: boardId,
                   my: com.my,
                   messageType: "text",
-                  message: node.data,
+                  message: msg,
                 })
               }
 
@@ -652,7 +782,7 @@
         v.close()
         v = null
       }
-      function wsconnect(wsurl) {
+      var wsconnect = function (wsurl) {
         if (!WebSocket) {
           confirm("您的浏览器不支持WebSocket，请升级浏览器！")
         } else {
@@ -661,7 +791,7 @@
             linkArr[linkArr.length] = ws
 
             ws.onerror = function (e) {
-              console.log('Error : ' + e.message)
+              console.log('Error : ', e)
               setTimeout(function () {
                 console.log('重连中...', wsurl)
                 wsconnect(wsurl)
@@ -720,9 +850,11 @@
         }
       }
 
+      window._self.wsconnect = wsconnect
+
 
       wsconnect("wss://192.168.2.124:8182/ws")
-      // wsconnect("ws://localhost:8888/ws")
+      // wsconnect("ws://192.168.2.124:8888/ws")
       wsconnect("wss://124.64.64.8:8183/ws")
 
     }()

@@ -3,7 +3,7 @@
   <style>
     #login-content-turbo-frame {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
@@ -33,7 +33,7 @@
       text-align: center;
       border: 1px solid black;
 
-      input {
+      & input {
         border: 1px solid #ccc;
         height: 30px;
         width: 200px;
@@ -58,6 +58,11 @@
         }
       }
 
+      & p {
+        text-align: right;
+        padding-right: 5px;
+      }
+
       .close {
         position: absolute;
         top: 0px;
@@ -72,13 +77,16 @@
     }
   </style>
   <div class="login">
-    <input type="text" name="username" placeholder="用户名" maxlength="20" minlength="1" />
+    <input type="text" name="username" placeholder="昵称" maxlength="20" />
     <br>
     <input type="submit" value="登录">
+    <p>1天内有效</p>
     <div class="close">×</div>
   </div>
   <script>
     void function () {
+      document.querySelector("#login-content-turbo-frame").classList.add("show")
+
       var dom = {
         login: document.querySelector('#login-content-turbo-frame'),
         username: document.querySelector('.login input[name=username]'),
@@ -88,26 +96,40 @@
 
       dom.username.addEventListener('keydown', function (e) {
         if (e.keyCode === 13) {
-          console.log(dom.username.value)
-          if (dom.username.value) {
-            fetch("https://192.168.2.124:8182/login?username=" + dom.username.value, {
-              credentials: 'include'
-            })
-          } else {
-            fetch("https://192.168.2.124:8182/login?", {
-              credentials: 'include'
-            })
-          }
+          dom.button.click()
         }
       })
-
-
       dom.button.addEventListener('click', function (e) {
-        fetch("http://localhost:8888/login?username=" + dom.username.value, {
-          credentials: 'include'
-        }, function (aa) {
-          console.log(aa)
-        })
+        var username = dom.username.value
+        username = username.trim()
+        console.log("username", username)
+        // window._self.wsFinal wss://192.168.2.124:8182/ws
+        if (window._self.wsFinal && username.length > 0) {
+          const url = new URL(window._self.wsFinal.url)
+          fetch(`https://${url.host}/login?username=${username}`, {
+            method: 'POST', // 使用 POST 方法
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/json' // 设置 Content-Type 为 application/json
+            },
+            body: JSON.stringify({ username}) // 将数据转换为 JSON 字符串
+          }).then(function (response) {
+            console.log("登录结果：", response)
+            if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+          }).then(function (data) {
+            console.log("登录结果：", data, data.retmsg)
+            // 关闭之前登录链接
+            window._self.wsFinal.close()
+            // 移除登录标识
+            delete window._self.channelId
+            window._self.wsconnect(url.href)
+            dom.close.click()
+          })
+        }
+
       })
 
       dom.close.addEventListener('click', e => {

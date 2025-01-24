@@ -1,5 +1,5 @@
 class Play {
-	constructor(depth = 3, map = Man.initMap, my = 1, com) {
+	constructor(depth = 3, map = Man.initMap, my = 1, pace=[], com) {
 		this.depth = depth;			//搜索深度
 		this.nowMap = map;
 		this.my = my;				//玩家方
@@ -10,13 +10,21 @@ class Play {
 
 		this.map = Com.arr2Clone(map);		//初始化棋盘
 		this.nowManKey = false;			//现在要操作的棋子
-		this.pace = [];				//记录每一步
+		this.pace = pace;				//记录每一步
 		this.isPlay = true;			//是否能走棋
 
 		this.isOffensive = true;			//是否先手
 		this.isFoul = false;			//是否犯规长将
 
-		this.com.repaint(this.map)
+		var lastPace = pace.at(-1)
+		if(lastPace){
+			// 如果重新加载棋盘，则显示最后一手棋
+			var lastArr = lastPace.split("")
+			var lastKey = map[lastArr[3]][lastArr[2]]
+			this.com.repaint(this.map, lastKey, lastArr[0], lastArr[1])
+		}else{
+			this.com.repaint(this.map)
+		}
 		this.mans = this.com.mans
 
 		this.AI = new AI(this.com)
