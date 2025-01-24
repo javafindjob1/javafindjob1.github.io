@@ -146,7 +146,7 @@ class Com {
 				that.get(".game-console").innerHTML = '';
 				that.get(".prepare-mask").classList.add("hide");
 
-				new Play(3, Man.initMap, 1, that)
+				new Play(3, Man.initMap, 1, [], that)
 			} else {
 				if (!window._self.channelId) {
 					e.preventDefault()
