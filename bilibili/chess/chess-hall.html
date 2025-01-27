@@ -900,6 +900,7 @@
         v = null
       }
       var wsconnect = function (wsurl) {
+        console.log("wsconnect", wsurl)
         if (!WebSocket) {
           confirm("您的浏览器不支持WebSocket，请升级浏览器！")
         } else {
@@ -917,7 +918,7 @@
             }
 
             ws.onopen = function () {
-              console.log('connected')
+              console.log('connected', wsurl)
               for (const v of linkArr) {
                 if (v !== ws) {
                   clearWs(v)
@@ -928,13 +929,14 @@
 
               if (!window._self.wsInterval) {
                 window._self.wsInterval = setInterval(() => {
-                  if (window._self.wsFinal == null || window._self.wsFinal.readyState != 1) {
+                  if (window._self.type ==='#chess' && (window._self.wsFinal == null || window._self.wsFinal.readyState != 1)) {
                     clearWs(window._self.wsFinal)
                     wsconnect(wsurl)
                   } else {
                     if (window._self.type === '#chess') {
                       // window._self.wsFinal.send("ping")
                     } else {
+                      clearInterval(window._self.wsInterval)
                       clearWs(window._self.wsFinal)
                     }
                   }
@@ -943,7 +945,7 @@
             }
 
             ws.onclose = function () {
-              console.log('disconnected')
+              console.log('disconnected', wsurl)
             }
 
             ws.onmessage = function (d) {
