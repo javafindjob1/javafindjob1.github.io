@@ -592,6 +592,7 @@
 
         window[desk.deskId].repaint(desk.map)
         var board = window[desk.deskId].board
+        loadTime(desk)
         if (desk.seat[0] && desk.seat[1]) {
           board.querySelector(".prepare-mask").classList.add("hide");
           board.querySelector(".prepare-mask .watch-info").classList.add("hide");
@@ -661,8 +662,11 @@
       }
 
       function loadTime(desk) {
-        var that = window[desk.deskId]
         console.log(desk, desk.pace, desk.pace.length)
+        var that = window[desk.deskId]
+        that.timeoutInterval && clearInterval(that.timeoutInterval)
+        that.get(".timeout input").value = ''
+        
         if (Object.keys(desk.players).length == 2) {
           var off = 60
           if (desk.pace.length == 0) {
@@ -670,7 +674,6 @@
           }
           var time = Math.min(Math.floor(off - (new Date().getTime() - desk.lastPace.updateTime) / 1000) + 1, off)
           console.log("timeout", new Date().getTime(), desk.lastPace.updateTime, time)
-          that.timeoutInterval && clearInterval(that.timeoutInterval)
           that.timeoutInterval = setInterval(function () {
             console.log("timeout", time)
             that.get(".timeout input").value = time
