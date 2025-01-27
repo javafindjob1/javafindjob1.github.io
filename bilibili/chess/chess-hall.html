@@ -17,18 +17,41 @@
       background-color: #cccccc52;
       /* opacity: 0.4; */
 
-      .prepare-button {
-        user-select: none;
-        font: normal 24px/500px "微软雅黑", sans-serif;
-      }
+      .watch-info {
+        height: 100px;
+        width: 400px;
+        padding: 10px;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: white;
 
-      .prepare {
-        cursor: pointer;
+        .prepare-button {
+          user-select: none;
+          font: normal 24px "微软雅黑", sans-serif;
+        }
 
-        &:hover {
-          color: red;
+        .prepare {
+          cursor: pointer;
+
+          &:hover {
+            color: red;
+          }
+        }
+
+        & section {
+          font-size: 14px;
+
+          & ul {
+            text-align: left;
+          }
         }
       }
+
     }
 
     .board {
@@ -39,6 +62,27 @@
     .board-canvas {
       margin-right: 100px;
       position: relative;
+
+      .timeout {
+        position: absolute;
+        top: 45%;
+        right: -50px;
+
+        & input {
+          font-size: 40px;
+          width: 45px;
+          height: 40px;
+          text-align: right;
+
+          &.red {
+            color: red;
+          }
+
+          &.black {
+            color: black;
+          }
+        }
+      }
     }
 
     .menu_box {
@@ -310,15 +354,17 @@
         </div>
 
         <div class="prepare-mask">
-          <div class="prepare-button">
-            <label style="background-color: aliceblue;"><input name="role" disabled checked class="changeBlackBtn"
-                type="checkbox" value="-1">
-              黑(电脑)
-            </label>
-            <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeRedBtn"
-                type="checkbox" value="1">
-              红(准备)
-            </label>
+          <div class="watch-info">
+            <div class="prepare-button">
+              <label style="background-color: aliceblue;"><input name="role" disabled checked class="changeBlackBtn"
+                  type="checkbox" value="-1">
+                黑(电脑)
+              </label>
+              <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeRedBtn"
+                  type="checkbox" value="1">
+                红(准备)
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -363,17 +409,33 @@
           <input type="button" name="restartBtn" value="  重新开始  ">
           <input type="button" name="regretBtn" value="  悔   棋  ">
         </div>
+        <div class="timeout ">
+          <input type="text" class="red" name="timeout" value="0">
+        </div>
 
         <div class="prepare-mask">
-          <div class="prepare-button">
-            <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeBlackBtn"
-                type="checkbox" value="-1">
-              黑
-            </label>
-            <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeRedBtn"
-                type="checkbox" value="1">
-              选红
-            </label>
+          <div class="watch-info">
+            <div class="prepare-button">
+              <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeBlackBtn"
+                  type="checkbox" value="-1">
+                选黑
+              </label>
+              <label class="prepare" style="background-color: aliceblue;"><input name="role" class="changeRedBtn"
+                  type="checkbox" value="1">
+                选红
+              </label>
+              <section>
+                <h3>局时设置</h3>
+                <ul>
+                  <li>
+                    <p>双方就位后，红方需要在20秒内走第一步棋，超时游戏结束</p>
+                  </li>
+                  <li>
+                    <p>以后每步棋超时时间为60秒</p>
+                  </li>
+                </ul>
+              </section>
+            </div>
           </div>
           <div class="watch-info hide">
             观战中
@@ -443,6 +505,7 @@
           e.target.querySelector("input").click()
         }
       })
+
     }()
 
     function chatEnter(e, obj) {
@@ -474,34 +537,47 @@
           for (const k of e.detail.data) {
             console.log("init board", k.seat, k)
             var board = document.querySelector("#" + k.deskId)
-            
 
+            var lastPace = k.lastPace
             var com;
             if (!board) {
               board = dom.boardN.cloneNode(true)
               board.id = k.deskId
               board.classList.remove("hide")
               dom.chessbox.appendChild(board)
-              
+
               com = new Com("stype2", "#" + board.id);
-              com.repaint(k.map, k.lastManKey, k.lastPace?.split("")[0], k.lastPace?.split("")[1])
+              com.repaint(k.map, lastPace.manKey, lastPace.pace?.split("")[0], lastPace.pace?.split("")[1])
               com.initClick()
               window[board.id] = com
-            }else{
+            } else {
               com = window[board.id]
-              com.repaint(k.map, k.lastManKey, k.lastPace?.split("")[0], k.lastPace?.split("")[1])
+              com.repaint(k.map, lastPace.manKey, lastPace.pace?.split("")[0], lastPace.pace?.split("")[1])
             }
 
             if (k.seat[0] && k.seat[1]) {
+              board.querySelector(".prepare-mask").classList.add("hide");
               board.querySelector(".prepare-mask .prepare-button").classList.add("hide");
             } else {
+              board.querySelector(".prepare-mask").classList.remove("hide");
+              board.querySelector(".prepare-mask .prepare-button").classList.remove("hide");
               if (k.seat[0]) {
                 var bt = board.querySelector("input[type='checkbox'][value='-1']")
                 bt.checked = true
+                bt.disabled = true
+              } else {
+                var bt = board.querySelector("input[type='checkbox'][value='-1']")
+                bt.checked = false
+                bt.disabled = false
               }
               if (k.seat[1]) {
                 var bt = board.querySelector("input[type='checkbox'][value='1']")
                 bt.checked = true
+                bt.disabled = true
+              } else {
+                var bt = board.querySelector("input[type='checkbox'][value='1']")
+                bt.checked = false
+                bt.disabled = false
               }
             }
 
@@ -518,10 +594,10 @@
         var board = window[desk.deskId].board
         if (desk.seat[0] && desk.seat[1]) {
           board.querySelector(".prepare-mask").classList.add("hide");
-          board.querySelector(".prepare-mask .prepare-button").classList.add("hide");
+          board.querySelector(".prepare-mask .watch-info").classList.add("hide");
         } else {
           board.querySelector(".prepare-mask").classList.remove("hide");
-          board.querySelector(".prepare-mask .prepare-button").classList.remove("hide");
+          board.querySelector(".prepare-mask .watch-info").classList.remove("hide");
           if (desk.seat[0]) {
             var bt = board.querySelector("input[type='checkbox'][value='-1']")
             bt.checked = true
@@ -546,7 +622,7 @@
       function start(desk) {
         // 首次坐下，或者重新开始比赛都会进入这里，bylaw就可以不用初始化了
         var my = desk.players[window._self.channelId];
-        if(!my){
+        if (!my) {
           return
         }
 
@@ -573,12 +649,45 @@
         } else {
           var play = new Play(3, desk.map, my, desk.pace, that);
         }
-        
+
         that.get(".game-console").innerHTML = '';
 
         that.get(".progress progress").value = 100;
         that.get(".prepare-mask").classList.add('hide')
         that.get(".progress").style.display = 'none';
+
+        loadTime(desk)
+
+      }
+
+      function loadTime(desk) {
+        var that = window[desk.deskId]
+        console.log(desk, desk.pace, desk.pace.length)
+        if (Object.keys(desk.players).length == 2) {
+          var off = 60
+          if (desk.pace.length == 0) {
+            off = 20
+          }
+          var time = Math.floor(off - (new Date().getTime() - desk.lastPace.updateTime) / 1000) + 1
+          console.log("timeout", new Date().getTime(), desk.lastPace.updateTime, time)
+          that.timeoutInterval && clearInterval(that.timeoutInterval)
+          that.timeoutInterval = setInterval(function () {
+            console.log("timeout", time)
+            that.get(".timeout input").value = time
+
+            if(desk.pace.length % 2==0){
+              that.get(".timeout input").classList.remove("black")
+              that.get(".timeout input").classList.add("red")
+            }else{
+              that.get(".timeout input").classList.remove("red")
+              that.get(".timeout input").classList.add("black")
+            }
+            time -= 1
+            if (time === -1) {
+              clearInterval(that.timeoutInterval)
+            }
+          }, 1000)
+        }
       }
 
       document.addEventListener("sitDown", function (e) {
@@ -588,12 +697,13 @@
           if (window._self.channelId === e.detail.player) {
             start(desk)
           } else {
+            loadTime(desk)
             var that = window[e.detail.deskId]
             // 其他人收到某个座位上座信息后，改变样式
             if (desk.seat[0] && desk.seat[1]) {
-              that.board.querySelector(".prepare-mask .prepare-button").classList.add('hide');
+              that.board.querySelector(".prepare-mask .watch-info").classList.add('hide');
             } else {
-              that.board.querySelector(".prepare-mask .prepare-button").classList.remove('hide');
+              that.board.querySelector(".prepare-mask .watch-info").classList.remove('hide');
               if (desk.seat[0]) {
                 var bt = that.board.querySelector("input[type='checkbox'][value='-1']")
                 bt.checked = true
@@ -632,15 +742,19 @@
         if (e.detail.retCode === '0000') {
           var desk = e.detail.data
           var that = window[e.detail.deskId]
+
+          var lastPace = desk.lastPace
+
+          loadTime(desk)
           if (desk.players[window._self.channelId] == null) {
             // 观众
-            that.repaint(desk.map, desk.lastManKey, desk.lastPace?.split("")[0], desk.lastPace?.split("")[1])
+            that.repaint(desk.map, lastPace.manKey, lastPace.pace?.split("")[0], lastPace.pace?.split("")[1])
           } else {
             // 玩家
-            console.log(desk.index, that.play.pace.length + 1)
-            if (desk.index == that.play.pace.length + 1) {
+            console.log(desk.pace.length, that.play.pace.length + 1)
+            if (desk.pace.length == that.play.pace.length + 1) {
 
-              var pace = desk.lastPace.split("");
+              var pace = lastPace.pace.split("");
               var arr = []
               if (that.my == -1) {
                 //对于黑方选手，需要变换坐标系
@@ -655,7 +769,7 @@
                 arr[3] = pace[3] - 0;
               }
               // 加上末尾的被吃的棋子名字
-              arr.push(desk.lastPace.substring(4))
+              arr.push(lastPace.pace.substring(4))
               that.play.AIPlay(arr)
             }
 
