@@ -668,7 +668,7 @@
           if (desk.pace.length == 0) {
             off = 20
           }
-          var time = Math.floor(off - (new Date().getTime() - desk.lastPace.updateTime) / 1000) + 1
+          var time = Math.min(Math.floor(off - (new Date().getTime() - desk.lastPace.updateTime) / 1000) + 1, off)
           console.log("timeout", new Date().getTime(), desk.lastPace.updateTime, time)
           that.timeoutInterval && clearInterval(that.timeoutInterval)
           that.timeoutInterval = setInterval(function () {
