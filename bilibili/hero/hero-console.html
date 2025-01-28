@@ -66,6 +66,7 @@
       line-height: 1.2em;
       pointer-events: none;
       opacity: 0;
+      z-index: 1;
     }
 
     .hero .info p {
@@ -77,6 +78,7 @@
     }
 
     /* #endregion */
+
 
     /*  #region控制台提示信息 */
     .hero .console-info {
@@ -95,6 +97,7 @@
       padding: 10px;
       opacity: 1;
       visibility: hidden;
+      z-index: 1;
     }
 
     .hero .console-info p {
@@ -194,6 +197,7 @@
       height: 95px;
       border-top-left-radius: 72px 45px;
       border-top-right-radius: 72px 45px;
+      cursor: pointer;
     }
 
     .console-head .head-text {
@@ -413,6 +417,7 @@
     <div class="console-ability-12">
     </div>
   </div>
+
   <script>
     (function () {
       // 获取URL中的锚点
@@ -432,16 +437,31 @@
           this.consoleItem = document.querySelector(".hero .console .console-item")
           this.consoleBase = document.querySelector(".hero .console .console-base")
           this.consoleHead = document.querySelector(".hero .console .console-head")
+          this.canvasMdx = document.querySelector(".hero .canvas-mdx")
         }
         get info() {
           return document.querySelector(".hero .info")
         }
       }
       var dom = new Dom()
-
       console.log("加载完成" + window._self.dataHeroId)
       console.log(data[window._self.dataHeroId])
       const hero = data[window._self.dataHeroId]
+
+      clearModel()
+      loadModel(window._self.dataHeroId + '.mdx', (name) => {
+        return skin.mdx + name
+      })
+      var id = new Date().getTime()
+      dom.consoleHead.addEventListener("click", (e) => {
+
+        if (e.target.classList.contains("head-img")) {
+          dom.canvasMdx.classList.toggle("hide")
+          console.log("点击了头像", id)
+        }
+
+      })
+
 
       // 计算英雄头像位置
       function calc() {

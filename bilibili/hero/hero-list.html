@@ -82,6 +82,53 @@
     }
 
     /* #endregion */
+
+
+    /* #region mdx */
+    .hero .canvas-mdx {
+      position: absolute;
+      top: 20px;
+      margin: auto;
+      width: 800px;
+      height: 497px;
+      color: white;
+    }
+
+    .hero .drag-head {
+      position: absolute;
+      z-index: 2;
+      background-color: white;
+      height: 20px;
+      width: 100%;
+      cursor: move;
+      top: 0;
+      right: 0;
+      color: red;
+      text-align: center;
+    }
+
+    .hero .canvas-mdx canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero .canvas-mdx.hide {
+      top: -2000px!important;
+    }
+
+    .hero .close {
+      position: absolute;
+      top: 0px;
+      right: -30px;
+      color: white;
+      font-size: 30px;
+      line-height: 30px;
+      padding-right: 2px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* #endregion */
   </style>
   <div class="hero">
     <div class="container">
@@ -102,6 +149,11 @@
         </li>
       </ul>
 
+      <div class="canvas-mdx hide">
+        <div class="drag-head"><p>新年快乐</p></div>
+        <canvas></canvas>
+        <div class="close">×</div>
+      </div>
       <!-- <div class="hero-nav" style="width:300px;height: 100px;background-color: red;">12341234</div> -->
     </div>
 
@@ -135,12 +187,41 @@
           this.update = document.querySelector("#repo-content-turbo-frame .update")
           this.updateA = document.querySelector("#repo-content-turbo-frame .update a")
           this.updateClose = document.querySelector("#updateModal .close")
+          this.canvasMdx = document.querySelector(".canvas-mdx")
+          this.canvasClose = document.querySelector(".canvas-mdx .close")
+          this.draggableDiv = document.querySelector(".canvas-mdx .drag-head")
         }
         get info() {
           return document.querySelector(".hero .info")
         }
       }
       var dom = new Dom()
+
+
+      let offsetX, offsetY;
+      dom.draggableDiv.addEventListener('mousedown', (e) => {
+        offsetX = e.clientX - dom.canvasMdx.offsetLeft;
+        offsetY = e.clientY - dom.canvasMdx.offsetTop;
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+      });
+
+      function onMouseMove(e) {
+        dom.canvasMdx.style.left = (e.clientX - offsetX) + 'px';
+        dom.canvasMdx.style.top = (e.clientY - offsetY) + 'px';
+      }
+
+      function onMouseUp() {
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+      }
+
+      initModelViewer(dom.canvasMdx.querySelector("canvas"))
+
+      dom.canvasClose.addEventListener('click', e => {
+        console.log("close canvas", dom.canvasMdx.classList)
+        dom.canvasMdx.classList.add("hide")
+      })
 
 
       // 初始化图像加载

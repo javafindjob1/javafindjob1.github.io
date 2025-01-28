@@ -79,6 +79,7 @@ var x7skin = {
     [''],
   ],
 
+  mdx: '/x7/x7-mdx/',
   heightArr: [0, 40, 216, 377, 567, 744, 1000],
   heroImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/63f4d6f9467648869aa534c2b80b8b02~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=gv1j23DChnLwfuzL1djZHJhHuxY%3D',
     '/x7/x7-heros.webp',
