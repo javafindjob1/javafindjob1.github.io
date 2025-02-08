@@ -448,10 +448,9 @@
       console.log(data[window._self.dataHeroId])
       const hero = data[window._self.dataHeroId]
 
+
       clearModel()
-      loadModel(window._self.dataHeroId + '.mdx', (name) => {
-        return skin.mdx + name
-      })
+      loadModel(window._self.dataHeroId.toLowerCase() + '.mdx')
       var id = new Date().getTime()
       dom.consoleHead.addEventListener("click", (e) => {
 

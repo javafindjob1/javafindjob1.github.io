@@ -176,8 +176,6 @@
       var mapId = skin.mapId
       var heroImg = skin.heroImg
 
-
-
       class Dom {
         constructor() {
           this.hero = document.querySelector(".hero")
@@ -216,13 +214,11 @@
         document.removeEventListener('mouseup', onMouseUp);
       }
 
-      initModelViewer(dom.canvasMdx.querySelector("canvas"))
-
+      initModelViewer(dom.canvasMdx.querySelector("canvas"), skin.mdx)
       dom.canvasClose.addEventListener('click', e => {
         console.log("close canvas", dom.canvasMdx.classList)
         dom.canvasMdx.classList.add("hide")
       })
-
 
       // 初始化图像加载
       loadImg(heroImg, (src) => {
