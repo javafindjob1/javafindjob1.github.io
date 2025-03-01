@@ -84,7 +84,7 @@ var x7skin = {
   heroImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/9e9c7094d35440d6ac2092dd60b4a0c3~tplv-obj.image?lk3s=993df49e&traceid=20250206202129BB6FE2AF1EA380C848B2&x-expires=2147483647&x-signature=yh6Aa350aKPffw%2BTsdxeEw0k9QA%3D',
     '/x7/x7-heros.webp',
   ],
-  heroPanelImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/53959470afea40ed83c65af00ac68bdc~tplv-obj.image?lk3s=993df49e&traceid=20250206220730F7F7FF55D6EC8BF84124&x-expires=2147483647&x-signature=u2KOXpK50Z7yuHCw%2BQtBoZeNY9w%3D',
+  heroPanelImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/a2125b5316184bb5b87528de700c5c13~tplv-obj.image?lk3s=993df49e&traceid=202503010924164FB02A9A44D47C7610C6&x-expires=2147483647&x-signature=%2FDUSmcxvaXvctNwI1xzk0JEvnfg%3D',
     '/x7/x7-imgs/out.webp',
   ],
   heroPanelImgWidth: 5133,
