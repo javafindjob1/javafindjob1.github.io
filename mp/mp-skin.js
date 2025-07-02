@@ -69,10 +69,10 @@ var mpskin = {
   mdx: '/mp/mp-mdx/',
   locArr: [
     [0, 1903],
-    [0, 413, 585, 757, 956, 1159, 1347, 1523, 1903],
+    [0, 413, 585, 757, 956, 1109, 1307, 1523, 1903],
     [0, 360, 545, 757, 956, 1159, 1347, 1583, 1903],
-    [0, 280, 545, 757, 956, 1159, 1407, 1623, 1903],
-    [0, 250, 495, 757, 956, 1159, 1437, 1693, 1903],
+    [0, 250, 495, 757, 956, 1159, 1407, 1623, 1903],
+    [0, 250, 495, 657, 956, 1159, 1407, 1623, 1903],
     [0, 1903],
   ],
 
@@ -81,16 +81,16 @@ var mpskin = {
     ['', 'O000', 'E011', 'E004', 'E008', 'E016', 'H00S', ''],
     ['', 'O001', 'O003', 'E015', 'H006', 'H007', 'H00H', ''],
     ['', 'O004', 'E01H', 'O00M', 'N06G', 'E014', 'H005', ''],
-    ['', 'N02D', '', '', 'O002', 'H00B', 'H00U', ''],
+    ['', 'N02D', 'O00X', 'E01N', 'O002', 'H00B', 'H00U', ''],
     [''],
   ],
 
   heightArr: [0, 50, 201, 362, 552, 721, 1000],
 
-  heroImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/c97723ed8c8043e480d6790975363a61~tplv-obj.image?lk3s=993df49e&traceid=202501120839018944C39A56B6F348F6C8&x-expires=2147483647&x-signature=3KlKBPea95liavnpDRXfPtk8tqs%3D',
+  heroImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/70fdbe0ff77e4127b1bee7f49d33a90c~tplv-obj.image?lk3s=993df49e&traceid=20250703003134D4D5032C596DA95E16E1&x-expires=2147483647&x-signature=WChlw4VP4HWSfViv7%2BewheAnci4%3D',
     '/mp/mp-heros.webp',
   ],
-  heroPanelImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/f279df5e11f445a1b600196da7573238~tplv-obj.image?lk3s=993df49e&traceid=202501110910070218CC9891BE765339F3&x-expires=2147483647&x-signature=BXoYMyrCVp21GiPM71QlxF1H85Q%3D',
+  heroPanelImg: ['https://p3-sign.toutiaoimg.com/tos-cn-i-eyfl5e3fp8/ad7244b672d34b51a09813c51a8d504b~tplv-obj.image?lk3s=993df49e&traceid=20250703003335EE6EE4E9253BF5386B35&x-expires=2147483647&x-signature=twjYrC25rRX%2BCSUoxtz0T%2BnIvZ0%3D',
     '/mp/mp-imgs/out.webp',
   ],
   heroPanelImgWidth: 3420,
