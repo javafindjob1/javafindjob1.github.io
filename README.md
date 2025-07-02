@@ -678,3 +678,13 @@ function fetchData(url, handle) {
      
 趣味数据 上单 打野 中路 下路 辅助  日周月 玩家等级
 
+
+
+## 西7
+
+处理幸运女神
+1. unit.ini
+    复制H01H 为H02H
+2. ability.ini 
+    PASBTNHero_MSY.blp -> PASBTNHero_MSY2.blp
+3. 新增一个war3imported/PASBTNHero_MSY2.blp
