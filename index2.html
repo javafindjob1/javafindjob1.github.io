@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游戏攻略</title>
+  <link rel="dns-prefetch" href="//124.64.64.8:8183">
+  <link rel="dns-prefetch" href="//p3-sign.toutiaoimg.com">
+  <link rel="dns-prefetch" href="//unpkg.com">
+  <link rel="stylesheet" href="./css/reset.css">
+  <!-- <script defer src="./js/turbo.es2017-umd.min.js"></script> -->
+  <link rel="favicon icon" href="./bilibili/asset/favicon.ico">
+  <link rel="stylesheet" href="./bilibili/asset/index-flex.css">
+  <script defer src="https://unpkg.com/@hotwired/turbo@8.0.12/dist/turbo.es2017-umd.js"></script>
+  <!-- <link rel="stylesheet" href="./kk/font/a0.font.7ad948.css" media="none" onload="this.media='all'"> -->
+  <script>
+    // 并行加载找出最快CDN节点，提升网页加载速度1234567
+    var linkArr = []
+    
+    function clearCSS(e) {
+        e.onerror = null
+        e.onload = null
+        e.href = "#"
+        e.remove()
+      }
+    function loadCSS(arr, callback) {
+      if (!Array.isArray(arr)) {
+        return loadCSS([arr])
+      }
+      if (arr.length == 0) {
+        return
+      } else if (arr.length > 1) {
+        loadCSS(arr.slice(1))
+      }
+
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = arr[0]
+      link.onload = function () {
+        console.log("load link", link.href)
+        for (const v of linkArr) {
+          if (v != link) clearCSS(v)
+        }
+        callback && callback(link.href)
+      }
+      link.onerror = function () {
+        console.log("error link", link.href)
+        clearCSS(link)
+      }
+      document.head.appendChild(link);
+
+      linkArr[linkArr.length] = link
+    }
+    loadCSS([
+      '/kk/font/a0.font.7ad948.css',
+      // 'https://192.168.2.124:8182/kk/font/a0.font.7ad948.css',
+      'https://124.64.64.8:8183/kk/font/a0.font.7ad948.css',
+    ], loadOther)
+    console.log("loadCSS不会产生阻塞")
+    function loadOther(href) {
+      const url = new URL(href)
+      var cdn = url.origin
+      window._self = window._self || {}
+      window._self.cdn = cdn
+      console.log("loadOther", cdn)
+      loadJS("/js/common.js")
+      loadJS("/mp/mp-skin.js")
+      loadJS("/mp/mp-data.js")
+      loadJS("/x7/x7-skin.js")
+      loadJS("/x7/x7-data.js")
+      loadJS("/chess/js/common.js", function () {
+        loadJS("/chess/js/gambit.js")
+        loadJS("/chess/js/clasli.js")
+      })
+      loadJS("/chess/js/AI.js")
+      loadJS("/chess/js/play.js")
+      loadJS("/bilibili/hero/example.min.js")
+
+      loadCSS('/bilibili/asset/font-icon/iconfont.css')
+
+      function loadJS(pathname, fn) {
+        var script = document.createElement('script')
+        script.src = cdn + pathname
+        script.onload = fn
+        document.head.appendChild(script)
+      }
+
+      function loadCSS(pathname) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = cdn + pathname
+        document.head.appendChild(link)
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="page-header clearfix">
+      <div class="type leftfix">
+        <img src1="./bilibili/asset/logo.webp" alt="">
+      </div>
+      <ul class="menu rightfix clearfix">
+        <!-- <li>
+          <a href="./bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">主播</a>
+        </li>
+        <li><a href="/bilibili/chess/chess-hall.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">大厅</a></li>
+        <li><a href="./bilibili/hero/hero-list.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">英雄列表</a></li>
+        <li><a href="./bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
+            data-view-component="true">关于</a></li> -->
+      </ul>
+
+      <div class="subnav">
+        <ul>
+          <li><a href="#x7" data-img="./bilibili/header/西7.webp" data-turbo="false">西方世界的劫难7</a></li>
+          <li><a href="#mp" data-img="./bilibili/header/mp.webp" data-turbo="false">梦想愿景</a></li>
+          <li><a href="#chess" data-img="./bilibili/header/chess.webp" data-turbo="false">中国象棋</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <script>
+
+      (function () {
+
+        class Dom {
+          constructor() {
+            this.type = document.querySelector(".page-header .type img")
+            this.menu = document.querySelector(".page-header ul.menu")
+            this.subnav = document.querySelector(".page-header .subnav")
+            this.subnava = document.querySelectorAll(".page-header .subnav a")
+          }
+
+          get menua() {
+            return document.querySelectorAll(".page-header ul.menu a")
+          }
+        }
+
+        var dom = new Dom()
+
+        dom.menu.addEventListener('click', e => {
+          e.target.tagName == 'A' && changeIframeSrc(e.target)
+        })
+
+        function changeIframeSrc(img) {
+          dom.menua.forEach(function (v) {
+            v.classList.remove('active')
+          })
+          img.classList.add('active')
+        }
+
+        // 游戏分类
+        let preSrc = dom.type.src;
+        dom.subnav.addEventListener('click', e => {
+          if (e.target.tagName == 'A') {
+            preSrc = e.target.getAttribute('data-img')
+            dom.subnava.forEach(function (v) {
+              v.classList.remove('active')
+            })
+            e.target.classList.add('active')
+            recordAnchor(e)
+          }
+        })
+
+        dom.subnav.addEventListener('mouseover', e => {
+          e.target.tagName == 'A' &&
+            changeSubnavSrc(e.target.getAttribute('data-img')) && changeType(e.target.getAttribute('href'))
+        })
+        dom.subnav.addEventListener('mouseout', e => {
+          e.target.tagName == 'A' && changeSubnavSrc(preSrc)
+        })
+
+        function initMenu(n = 2) {
+          // 创建一个新的点击事件
+          const clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+          });
+          // 触发点击事件
+          document.querySelector(`.page-header ul.menu li:nth-child(${n}) a`).dispatchEvent(clickEvent);
+        }
+
+        function changeSubnavSrc(v) {
+          dom.type.src = v;
+        }
+
+        function changeType(type) {
+          if (type === '#chess') {
+            dom.menu.innerHTML = `
+              <li>
+                <a href="./bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
+                  data-view-component="true">主播</a>
+              </li>
+              <li><a href="/bilibili/chess/chess-hall.html" data-turbo-frame="repo-content-turbo-frame"
+                  data-view-component="true">大厅</a></li>
+              <li><a href="./bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
+                  data-view-component="true">关于</a></li>
+              `
+            initMenu(2)
+          } else {
+            dom.menu.innerHTML = `
+              <li>
+                <a href="./bilibili/live/live.html" data-turbo-frame="repo-content-turbo-frame"
+                  data-view-component="true">主播</a>
+              </li>
+              <li><a href="./bilibili/hero/hero-list.html" data-turbo-frame="repo-content-turbo-frame"
+                  data-view-component="true">英雄列表</a></li>
+              <li><a href="./bilibili/about/about.html" data-turbo-frame="repo-content-turbo-frame"
+                  data-view-component="true">关于</a></li>
+              `
+
+            initMenu(2)
+          }
+        }
+
+        /**
+          * 记录锚点供其他页面识别游戏类别
+          */
+        function recordAnchor(e) {
+          window._self = window._self || {}
+          if (e) {
+            window._self.type = e.target.getAttribute('href')
+            changeSubnavSrc(e.target.getAttribute('data-img'))
+          } else {
+            // 获取URL中的锚点
+            let hash = window.location.hash
+            if (hash === '#' || hash === '') {
+              hash = '#chess'
+            }
+            window._self.type = hash
+            const src = dom.subnav.querySelector(`a[href="${hash}"]`).getAttribute('data-img')
+            preSrc = src
+            changeSubnavSrc(src)
+          }
+
+          changeType(window._self.type)
+        }
+
+        document.addEventListener("turbo:load", function () {
+          console.log("turbo:load event");
+          recordAnchor && recordAnchor()
+        });
+        document.addEventListener("turbo:before-visit", function () {
+          console.log("turbo:before-visit event");
+        });
+        document.addEventListener("turbo:before-fetch-request", function () {
+          console.log("turbo:before-fetch-request event");
+        });
+        document.addEventListener("turbo:before-render", function () {
+          console.log("turbo:before-render event");
+        });
+        document.addEventListener("turbo:render", function () {
+          console.log("turbo:render event");
+        });
+
+      })()
+
+    </script>
+
+    <turbo-frame id="repo-content-turbo-frame" src1="/bilibili/hero/hero-list.html">
+      <p>加载中...</p>
+    </turbo-frame>
+
+    <footer>
+      <span>© 技术支持 Email： java_findjob@163.com</span>
+      <!-- <span> © 网站备案号： 鲁ICP备20016477号-1</span> -->
+    </footer>
+
+  </div>
+</body>
+
+</html>

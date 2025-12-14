@@ -1,0 +1,37 @@
+{
+  "id": "4797486",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4893191",
+      "name": "文件夹",
+      "font_class": "wenjianjia",
+      "unicode": "ec17",
+      "unicode_decimal": 60439
+    },
+    {
+      "icon_id": "9305753",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e80b",
+      "unicode_decimal": 59403
+    },
+    {
+      "icon_id": "42092014",
+      "name": "094_备注",
+      "font_class": "a-094_beizhu",
+      "unicode": "e815",
+      "unicode_decimal": 59413
+    },
+    {
+      "icon_id": "42092015",
+      "name": "094_城市服务",
+      "font_class": "a-094_chengshifuwu",
+      "unicode": "e816",
+      "unicode_decimal": 59414
+    }
+  ]
+}

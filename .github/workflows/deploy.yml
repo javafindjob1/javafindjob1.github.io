@@ -1,0 +1,23 @@
+name: Deploy Vue App to Pages
+on:
+  push:
+    branches: ['main'] # 设置在 main 分支推送时触发
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 系统作为构建环境
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # 拉取你的代码
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '25' # 设置 Node.js 版本
+      - name: Install Dependencies
+        run: npm ci # 或 npm install， 安装项目依赖
+      - name: Build
+        run: npm run build # 执行打包命令
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # 部署到 gh-pages 分支
+          folder: dist # 要部署的文件夹，即构建产物
