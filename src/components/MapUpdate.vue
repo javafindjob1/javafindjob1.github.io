@@ -27,7 +27,7 @@ function showUpdate(flag: boolean) {
   showModal.value.show = Boolean(flag)
 }
 
-function fetchData(url: string, handle: (e) => void) {
+function fetchData(url: string, handle: (d:{data:any}) => void) {
   fetch(url)
     .then(response => {
       if (!response.ok) {
@@ -155,7 +155,7 @@ fetchUpdate()
   font-weight: 700;
   font-size: 25px;
   color: rgb(226, 244, 255);
-  background: url("@/kk/f29ff3.png") no-repeat;
+  background: url("/kk/f29ff3.png") no-repeat;
   position: relative;
   line-height: 70px;
   padding-left: 14px;
