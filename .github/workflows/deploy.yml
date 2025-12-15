@@ -21,4 +21,4 @@ jobs:
         with:
           branch: gh-pages # 部署到 gh-pages 分支
           folder: dist # 要部署的文件夹，即构建产物
-          token: ${{ secrets.GITHUB_TOKEN }} # 关键：使用自动生成的GITHUB_TOKEN，无需手动配置PAT
+          #token: ${{ secrets.GITHUB_TOKEN }} # 关键：使用自动生成的GITHUB_TOKEN，无需手动配置PAT
