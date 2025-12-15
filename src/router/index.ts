@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-  	  redirect: '/x7'
+      redirect: '/x7'
     },
     {
       path: '/about',
@@ -31,6 +31,28 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/X7View.vue'),
     },
+    {
+      //404
+      path: '/404',
+      component: () => import('../views/404.vue'),
+      name: '404',
+      meta: {
+        title: '404',
+        hidden: true,
+        icon: 'DocumentDelete',
+      },
+    },
+    {
+      //任意路由
+      path: '/:pathMatch(.*)*',
+      redirect: '/404',
+      name: 'Any',
+      meta: {
+        title: '任意路由',
+        hidden: true,
+        icon: 'DataLine',
+      },
+    }
   ],
 })
 
