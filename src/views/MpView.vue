@@ -3,7 +3,7 @@ import HeroList from '@/components/HeroList.vue'
 import { mpskin } from '@/assets/mp/mpskin.ts'
 import { mpdata } from '@/assets/mp/mpdata'
 import { provide } from 'vue'
-console.log('X7View', mpskin, mpdata)
+console.log('MpView', mpskin, mpdata)
 
 provide('data', mpdata)
 
