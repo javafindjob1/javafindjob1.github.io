@@ -98,7 +98,7 @@ export const mpskin: Skin ={
   heroPanelImgWidth: 3420,
   heroPanelImgHeight: 2164,
   mapId: 192822,
-  currentVersion: '1.2.13',
+  currentVersion: '1.4.3',
   // 英雄的坐标位置
   i: 0,
   j: 0,
