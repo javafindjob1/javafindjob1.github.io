@@ -92,7 +92,7 @@ var mpskin = {
   heroImg: ['https://image-tt-private.toutiao.com/tos-cn-i-eyfl5e3fp8/82eb7b51ccaf4888881f270a2ee3d81d~tplv-obj.image?lk3s=993df49e&policy=eyJ2bSI6MywidWlkIjoiMjM2NTc0MDc4Mjk4ODU4OSJ9&traceid=202509302339001C9E2D8E6AC85E90F83C&x-orig-authkey=5a21e4afda5945d9a206a695e4c78a63&x-orig-expires=2147483647&x-orig-sign=A4bgGFVA4Og7j%2FSOv2E9Xp%2FXcI0%3D',
     '/mp/mp-heros.webp',
   ],
-  heroPanelImg: ['https://image-tt-private.toutiao.com/tos-cn-i-eyfl5e3fp8/e5ddafd031174df1b1cd44f47231a87b~tplv-obj.image?lk3s=993df49e&policy=eyJ2bSI6MywidWlkIjoiMjM2NTc0MDc4Mjk4ODU4OSJ9&traceid=202510011019089D7BF505699816AD2FBF&x-orig-authkey=5a21e4afda5945d9a206a695e4c78a63&x-orig-expires=2147483647&x-orig-sign=IanarUm2a8nTsmYT7HvtaVukc%2BM%3D',
+  heroPanelImg: ['https://image-tt-private.toutiao.com/tos-cn-i-eyfl5e3fp8/f4970e3ebab64e09a1bd78277257aef2~tplv-obj.image?lk3s=993df49e&policy=eyJ2bSI6MywidWlkIjoiMjM2NTc0MDc4Mjk4ODU4OSJ9&traceid=2025122421313909AB1BF672D0FCCE0CE5&x-orig-authkey=5a21e4afda5945d9a206a695e4c78a63&x-orig-expires=2147483647&x-orig-sign=CwHseii%2BHYBmStWymDN9u62zr%2F0%3D',
     '/mp/mp-imgs/out.webp',
   ],
   heroPanelImgWidth: 3420,
